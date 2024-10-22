@@ -1,0 +1,491 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9E4F30702CC7CE5F009C59A4 /* TheGreatestYourManito_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4F306F2CC7CE5F009C59A4 /* TheGreatestYourManito_iOSApp.swift */; };
+		9E4F30722CC7CE5F009C59A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4F30712CC7CE5F009C59A4 /* ContentView.swift */; };
+		9E4F30742CC7CE61009C59A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F30732CC7CE61009C59A4 /* Assets.xcassets */; };
+		9E4F30772CC7CE61009C59A4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F30762CC7CE61009C59A4 /* Preview Assets.xcassets */; };
+		9E4F308A2CC7D484009C59A4 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4F30892CC7D484009C59A4 /* UIFont+.swift */; };
+		9E4F30952CC7D686009C59A4 /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F308B2CC7D686009C59A4 /* Pretendard-Black.otf */; };
+		9E4F30962CC7D686009C59A4 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F308C2CC7D686009C59A4 /* Pretendard-Bold.otf */; };
+		9E4F30972CC7D686009C59A4 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F308D2CC7D686009C59A4 /* Pretendard-ExtraBold.otf */; };
+		9E4F30982CC7D686009C59A4 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F308E2CC7D686009C59A4 /* Pretendard-ExtraLight.otf */; };
+		9E4F30992CC7D686009C59A4 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F308F2CC7D686009C59A4 /* Pretendard-Light.otf */; };
+		9E4F309A2CC7D686009C59A4 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F30902CC7D686009C59A4 /* Pretendard-Medium.otf */; };
+		9E4F309B2CC7D686009C59A4 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F30912CC7D686009C59A4 /* Pretendard-Regular.otf */; };
+		9E4F309C2CC7D686009C59A4 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F30922CC7D686009C59A4 /* Pretendard-SemiBold.otf */; };
+		9E4F309D2CC7D686009C59A4 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F30932CC7D686009C59A4 /* Pretendard-Thin.otf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9E4F306C2CC7CE5F009C59A4 /* TheGreatestYourManito-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TheGreatestYourManito-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E4F306F2CC7CE5F009C59A4 /* TheGreatestYourManito_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheGreatestYourManito_iOSApp.swift; sourceTree = "<group>"; };
+		9E4F30712CC7CE5F009C59A4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9E4F30732CC7CE61009C59A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9E4F30762CC7CE61009C59A4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9E4F30892CC7D484009C59A4 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		9E4F308B2CC7D686009C59A4 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
+		9E4F308C2CC7D686009C59A4 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		9E4F308D2CC7D686009C59A4 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
+		9E4F308E2CC7D686009C59A4 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
+		9E4F308F2CC7D686009C59A4 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
+		9E4F30902CC7D686009C59A4 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		9E4F30912CC7D686009C59A4 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		9E4F30922CC7D686009C59A4 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		9E4F30932CC7D686009C59A4 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9E4F30692CC7CE5F009C59A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9E4F30632CC7CE5E009C59A4 = {
+			isa = PBXGroup;
+			children = (
+				9E4F306E2CC7CE5F009C59A4 /* TheGreatestYourManito-iOS */,
+				9E4F306D2CC7CE5F009C59A4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9E4F306D2CC7CE5F009C59A4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9E4F306C2CC7CE5F009C59A4 /* TheGreatestYourManito-iOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9E4F306E2CC7CE5F009C59A4 /* TheGreatestYourManito-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				9E4F307D2CC7CEF2009C59A4 /* Application */,
+				9E4F307F2CC7CF5D009C59A4 /* Network */,
+				9E4F307E2CC7CF22009C59A4 /* Global */,
+				9E4F30872CC7D0A2009C59A4 /* Presentation */,
+				9E4F30712CC7CE5F009C59A4 /* ContentView.swift */,
+				9E4F30752CC7CE61009C59A4 /* Preview Content */,
+			);
+			path = "TheGreatestYourManito-iOS";
+			sourceTree = "<group>";
+		};
+		9E4F30752CC7CE61009C59A4 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9E4F30762CC7CE61009C59A4 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9E4F307D2CC7CEF2009C59A4 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				9E4F306F2CC7CE5F009C59A4 /* TheGreatestYourManito_iOSApp.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		9E4F307E2CC7CF22009C59A4 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				9E4F30862CC7D08B009C59A4 /* Extension */,
+				9E4F30852CC7D049009C59A4 /* Literal */,
+				9E4F30842CC7D043009C59A4 /* Resource */,
+				9E4F30832CC7D039009C59A4 /* Utility */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		9E4F307F2CC7CF5D009C59A4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9E4F30802CC7CFE8009C59A4 /* Base */,
+				9E4F30812CC7CFF8009C59A4 /* DTO */,
+				9E4F30822CC7D005009C59A4 /* Router */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		9E4F30802CC7CFE8009C59A4 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		9E4F30812CC7CFF8009C59A4 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		9E4F30822CC7D005009C59A4 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		9E4F30832CC7D039009C59A4 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		9E4F30842CC7D043009C59A4 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				9E4F30732CC7CE61009C59A4 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		9E4F30852CC7D049009C59A4 /* Literal */ = {
+			isa = PBXGroup;
+			children = (
+				9E4F30942CC7D686009C59A4 /* Font */,
+			);
+			path = Literal;
+			sourceTree = "<group>";
+		};
+		9E4F30862CC7D08B009C59A4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9E4F30892CC7D484009C59A4 /* UIFont+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		9E4F30872CC7D0A2009C59A4 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				9E4F30882CC7D0C4009C59A4 /* Components */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		9E4F30882CC7D0C4009C59A4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9E4F30942CC7D686009C59A4 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				9E4F308B2CC7D686009C59A4 /* Pretendard-Black.otf */,
+				9E4F308C2CC7D686009C59A4 /* Pretendard-Bold.otf */,
+				9E4F308D2CC7D686009C59A4 /* Pretendard-ExtraBold.otf */,
+				9E4F308E2CC7D686009C59A4 /* Pretendard-ExtraLight.otf */,
+				9E4F308F2CC7D686009C59A4 /* Pretendard-Light.otf */,
+				9E4F30902CC7D686009C59A4 /* Pretendard-Medium.otf */,
+				9E4F30912CC7D686009C59A4 /* Pretendard-Regular.otf */,
+				9E4F30922CC7D686009C59A4 /* Pretendard-SemiBold.otf */,
+				9E4F30932CC7D686009C59A4 /* Pretendard-Thin.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9E4F306B2CC7CE5F009C59A4 /* TheGreatestYourManito-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9E4F307A2CC7CE61009C59A4 /* Build configuration list for PBXNativeTarget "TheGreatestYourManito-iOS" */;
+			buildPhases = (
+				9E4F30682CC7CE5F009C59A4 /* Sources */,
+				9E4F30692CC7CE5F009C59A4 /* Frameworks */,
+				9E4F306A2CC7CE5F009C59A4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TheGreatestYourManito-iOS";
+			productName = "TheGreatestYourManito-iOS";
+			productReference = 9E4F306C2CC7CE5F009C59A4 /* TheGreatestYourManito-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9E4F30642CC7CE5E009C59A4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					9E4F306B2CC7CE5F009C59A4 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+				};
+			};
+			buildConfigurationList = 9E4F30672CC7CE5E009C59A4 /* Build configuration list for PBXProject "TheGreatestYourManito-iOS" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9E4F30632CC7CE5E009C59A4;
+			productRefGroup = 9E4F306D2CC7CE5F009C59A4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9E4F306B2CC7CE5F009C59A4 /* TheGreatestYourManito-iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9E4F306A2CC7CE5F009C59A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E4F30982CC7D686009C59A4 /* Pretendard-ExtraLight.otf in Resources */,
+				9E4F30772CC7CE61009C59A4 /* Preview Assets.xcassets in Resources */,
+				9E4F30962CC7D686009C59A4 /* Pretendard-Bold.otf in Resources */,
+				9E4F309A2CC7D686009C59A4 /* Pretendard-Medium.otf in Resources */,
+				9E4F309B2CC7D686009C59A4 /* Pretendard-Regular.otf in Resources */,
+				9E4F30972CC7D686009C59A4 /* Pretendard-ExtraBold.otf in Resources */,
+				9E4F30992CC7D686009C59A4 /* Pretendard-Light.otf in Resources */,
+				9E4F309C2CC7D686009C59A4 /* Pretendard-SemiBold.otf in Resources */,
+				9E4F30952CC7D686009C59A4 /* Pretendard-Black.otf in Resources */,
+				9E4F309D2CC7D686009C59A4 /* Pretendard-Thin.otf in Resources */,
+				9E4F30742CC7CE61009C59A4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9E4F30682CC7CE5F009C59A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E4F30722CC7CE5F009C59A4 /* ContentView.swift in Sources */,
+				9E4F308A2CC7D484009C59A4 /* UIFont+.swift in Sources */,
+				9E4F30702CC7CE5F009C59A4 /* TheGreatestYourManito_iOSApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		9E4F30782CC7CE61009C59A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9E4F30792CC7CE61009C59A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9E4F307B2CC7CE61009C59A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TheGreatestYourManito-iOS/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.TheGreatestYourManito-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9E4F307C2CC7CE61009C59A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TheGreatestYourManito-iOS/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.TheGreatestYourManito-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9E4F30672CC7CE5E009C59A4 /* Build configuration list for PBXProject "TheGreatestYourManito-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E4F30782CC7CE61009C59A4 /* Debug */,
+				9E4F30792CC7CE61009C59A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9E4F307A2CC7CE61009C59A4 /* Build configuration list for PBXNativeTarget "TheGreatestYourManito-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E4F307B2CC7CE61009C59A4 /* Debug */,
+				9E4F307C2CC7CE61009C59A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9E4F30642CC7CE5E009C59A4 /* Project object */;
+}
