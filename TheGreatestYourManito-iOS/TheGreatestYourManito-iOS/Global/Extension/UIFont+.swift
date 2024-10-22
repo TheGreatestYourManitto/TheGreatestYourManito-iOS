@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension UIFont {
+extension Font {
     
     static func pretendardFont(for type: PretendardFont) -> UIFont {
         return UIFont(name: type.weight, size: type.size) ?? .systemFont(ofSize: type.size)
