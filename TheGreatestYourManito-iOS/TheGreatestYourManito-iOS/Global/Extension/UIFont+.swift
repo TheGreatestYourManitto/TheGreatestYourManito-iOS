@@ -56,26 +56,5 @@ extension UIFont {
         }
     }
     
-    static func customFont(for style: PretendardFont) -> UIFont {
-        switch style {
-        case .heading1:
-            return UIFont.systemFont(ofSize: 38, weight: .bold)
-        case .heading2:
-            return UIFont.systemFont(ofSize: 32, weight: .bold)
-        case .heading3:
-            return UIFont.systemFont(ofSize: 24, weight: .bold)
-        case .heading4:
-            return UIFont.systemFont(ofSize: 20, weight: .bold)
-        case .heading5:
-            return UIFont.systemFont(ofSize: 18, weight: .bold)
-        case .heading6:
-            return UIFont.systemFont(ofSize: 16, weight: .medium)
-        case .subtitle1:
-            return UIFont.systemFont(ofSize: 14, weight: .medium)
-        case .subtitle2:
-            return UIFont.systemFont(ofSize: 12, weight: .medium)
-        }
-    }
-    
 }
 
