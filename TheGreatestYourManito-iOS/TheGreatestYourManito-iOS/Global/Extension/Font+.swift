@@ -9,9 +9,9 @@ import SwiftUI
 
 extension Font {
     
-    static func pretendardFont(for type: PretendardFont) -> UIFont {
-        return UIFont(name: type.weight, size: type.size) ?? .systemFont(ofSize: type.size)
-    }
+    static func pretendardFont(for type: PretendardFont) -> Font {
+           return .custom(type.weight, size: type.size)
+       }
     
     enum PretendardFont {
         case heading1, heading2, heading3, heading4, heading5
