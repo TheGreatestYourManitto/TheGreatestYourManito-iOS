@@ -19,6 +19,7 @@ struct YMTextField: View {
         TextField(placeholder, text: text)
             .font(.pretendardFont(for: .heading5))
             .padding()
+            .frame(height: 64)
             .background(backgroundColor)
             .cornerRadius(16)
             .overlay(

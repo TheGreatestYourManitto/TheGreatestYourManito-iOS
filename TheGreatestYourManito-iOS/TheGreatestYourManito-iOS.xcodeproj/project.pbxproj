@@ -11,7 +11,7 @@
 		9E4F30722CC7CE5F009C59A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4F30712CC7CE5F009C59A4 /* ContentView.swift */; };
 		9E4F30742CC7CE61009C59A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F30732CC7CE61009C59A4 /* Assets.xcassets */; };
 		9E4F30772CC7CE61009C59A4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F30762CC7CE61009C59A4 /* Preview Assets.xcassets */; };
-		9E4F308A2CC7D484009C59A4 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4F30892CC7D484009C59A4 /* UIFont+.swift */; };
+		9E4F308A2CC7D484009C59A4 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4F30892CC7D484009C59A4 /* Font+.swift */; };
 		9E4F30952CC7D686009C59A4 /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F308B2CC7D686009C59A4 /* Pretendard-Black.otf */; };
 		9E4F30962CC7D686009C59A4 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F308C2CC7D686009C59A4 /* Pretendard-Bold.otf */; };
 		9E4F30972CC7D686009C59A4 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F308D2CC7D686009C59A4 /* Pretendard-ExtraBold.otf */; };
@@ -21,6 +21,10 @@
 		9E4F309B2CC7D686009C59A4 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F30912CC7D686009C59A4 /* Pretendard-Regular.otf */; };
 		9E4F309C2CC7D686009C59A4 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F30922CC7D686009C59A4 /* Pretendard-SemiBold.otf */; };
 		9E4F309D2CC7D686009C59A4 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F30932CC7D686009C59A4 /* Pretendard-Thin.otf */; };
+		ED6669EC2CC8CA680005D599 /* YMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6669EB2CC8CA680005D599 /* YMButton.swift */; };
+		ED6669EE2CC8CE950005D599 /* YMTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6669ED2CC8CE950005D599 /* YMTextField.swift */; };
+		ED831DEF2CC8E1A100486C5A /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED831DEE2CC8E1A100486C5A /* SignUpView.swift */; };
+		ED831DF22CC8E1EE00486C5A /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED831DF12CC8E1EE00486C5A /* IntroView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +33,7 @@
 		9E4F30712CC7CE5F009C59A4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9E4F30732CC7CE61009C59A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E4F30762CC7CE61009C59A4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		9E4F30892CC7D484009C59A4 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		9E4F30892CC7D484009C59A4 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		9E4F308B2CC7D686009C59A4 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
 		9E4F308C2CC7D686009C59A4 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		9E4F308D2CC7D686009C59A4 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
@@ -39,6 +43,10 @@
 		9E4F30912CC7D686009C59A4 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		9E4F30922CC7D686009C59A4 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		9E4F30932CC7D686009C59A4 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
+		ED6669EB2CC8CA680005D599 /* YMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMButton.swift; sourceTree = "<group>"; };
+		ED6669ED2CC8CE950005D599 /* YMTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMTextField.swift; sourceTree = "<group>"; };
+		ED831DEE2CC8E1A100486C5A /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		ED831DF12CC8E1EE00486C5A /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,7 +173,7 @@
 		9E4F30862CC7D08B009C59A4 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				9E4F30892CC7D484009C59A4 /* UIFont+.swift */,
+				9E4F30892CC7D484009C59A4 /* Font+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -173,6 +181,8 @@
 		9E4F30872CC7D0A2009C59A4 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				ED831DF02CC8E1D700486C5A /* Intro */,
+				ED831DED2CC8E18500486C5A /* SignUp */,
 				9E4F30882CC7D0C4009C59A4 /* Components */,
 			);
 			path = Presentation;
@@ -181,6 +191,8 @@
 		9E4F30882CC7D0C4009C59A4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				ED6669EB2CC8CA680005D599 /* YMButton.swift */,
+				ED6669ED2CC8CE950005D599 /* YMTextField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -199,6 +211,30 @@
 				9E4F30932CC7D686009C59A4 /* Pretendard-Thin.otf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		ED831DEC2CC8E0AC00486C5A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ED831DEE2CC8E1A100486C5A /* SignUpView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ED831DED2CC8E18500486C5A /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				ED831DEC2CC8E0AC00486C5A /* Views */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		ED831DF02CC8E1D700486C5A /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				ED831DF12CC8E1EE00486C5A /* IntroView.swift */,
+			);
+			path = Intro;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,9 +316,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED831DF22CC8E1EE00486C5A /* IntroView.swift in Sources */,
 				9E4F30722CC7CE5F009C59A4 /* ContentView.swift in Sources */,
-				9E4F308A2CC7D484009C59A4 /* UIFont+.swift in Sources */,
+				ED6669EC2CC8CA680005D599 /* YMButton.swift in Sources */,
+				9E4F308A2CC7D484009C59A4 /* Font+.swift in Sources */,
 				9E4F30702CC7CE5F009C59A4 /* TheGreatestYourManito_iOSApp.swift in Sources */,
+				ED831DEF2CC8E1A100486C5A /* SignUpView.swift in Sources */,
+				ED6669EE2CC8CE950005D599 /* YMTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,8 +456,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TheGreatestYourManito-iOS/Preview Content\"";
+				DEVELOPMENT_TEAM = WJKNV9KXF2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TheGreatestYourManito-iOS/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -444,8 +487,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TheGreatestYourManito-iOS/Preview Content\"";
+				DEVELOPMENT_TEAM = WJKNV9KXF2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TheGreatestYourManito-iOS/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
