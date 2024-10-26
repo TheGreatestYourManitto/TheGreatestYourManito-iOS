@@ -25,6 +25,8 @@
 		ED6669EE2CC8CE950005D599 /* YMTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6669ED2CC8CE950005D599 /* YMTextField.swift */; };
 		ED831DEF2CC8E1A100486C5A /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED831DEE2CC8E1A100486C5A /* SignUpView.swift */; };
 		ED831DF22CC8E1EE00486C5A /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED831DF12CC8E1EE00486C5A /* IntroView.swift */; };
+		ED831DF52CCD4A7600486C5A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED831DF42CCD4A7600486C5A /* MainView.swift */; };
+		ED831DF72CCD506600486C5A /* RoomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED831DF62CCD506600486C5A /* RoomCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		ED6669ED2CC8CE950005D599 /* YMTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMTextField.swift; sourceTree = "<group>"; };
 		ED831DEE2CC8E1A100486C5A /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		ED831DF12CC8E1EE00486C5A /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
+		ED831DF42CCD4A7600486C5A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		ED831DF62CCD506600486C5A /* RoomCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +185,7 @@
 		9E4F30872CC7D0A2009C59A4 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				ED831DF32CCD4A6900486C5A /* Main */,
 				ED831DF02CC8E1D700486C5A /* Intro */,
 				ED831DED2CC8E18500486C5A /* SignUp */,
 				9E4F30882CC7D0C4009C59A4 /* Components */,
@@ -193,6 +198,7 @@
 			children = (
 				ED6669EB2CC8CA680005D599 /* YMButton.swift */,
 				ED6669ED2CC8CE950005D599 /* YMTextField.swift */,
+				ED831DF62CCD506600486C5A /* RoomCardView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -235,6 +241,14 @@
 				ED831DF12CC8E1EE00486C5A /* IntroView.swift */,
 			);
 			path = Intro;
+			sourceTree = "<group>";
+		};
+		ED831DF32CCD4A6900486C5A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				ED831DF42CCD4A7600486C5A /* MainView.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,12 +331,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED831DF22CC8E1EE00486C5A /* IntroView.swift in Sources */,
+				ED831DF52CCD4A7600486C5A /* MainView.swift in Sources */,
 				9E4F30722CC7CE5F009C59A4 /* ContentView.swift in Sources */,
 				ED6669EC2CC8CA680005D599 /* YMButton.swift in Sources */,
 				9E4F308A2CC7D484009C59A4 /* Font+.swift in Sources */,
 				9E4F30702CC7CE5F009C59A4 /* TheGreatestYourManito_iOSApp.swift in Sources */,
 				ED831DEF2CC8E1A100486C5A /* SignUpView.swift in Sources */,
 				ED6669EE2CC8CE950005D599 /* YMTextField.swift in Sources */,
+				ED831DF72CCD506600486C5A /* RoomCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
