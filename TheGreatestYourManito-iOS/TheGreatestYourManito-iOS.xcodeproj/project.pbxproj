@@ -21,6 +21,7 @@
 		9E4F309B2CC7D686009C59A4 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F30912CC7D686009C59A4 /* Pretendard-Regular.otf */; };
 		9E4F309C2CC7D686009C59A4 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F30922CC7D686009C59A4 /* Pretendard-SemiBold.otf */; };
 		9E4F309D2CC7D686009C59A4 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F30932CC7D686009C59A4 /* Pretendard-Thin.otf */; };
+		9EB811CA2CCE1FFC003C104D /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 9EB811C92CCE1FFC003C104D /* Moya */; };
 		ED6669EC2CC8CA680005D599 /* YMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6669EB2CC8CA680005D599 /* YMButton.swift */; };
 		ED6669EE2CC8CE950005D599 /* YMTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6669ED2CC8CE950005D599 /* YMTextField.swift */; };
 		ED831DEF2CC8E1A100486C5A /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED831DEE2CC8E1A100486C5A /* SignUpView.swift */; };
@@ -54,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EB811CA2CCE1FFC003C104D /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +255,9 @@
 			dependencies = (
 			);
 			name = "TheGreatestYourManito-iOS";
+			packageProductDependencies = (
+				9EB811C92CCE1FFC003C104D /* Moya */,
+			);
 			productName = "TheGreatestYourManito-iOS";
 			productReference = 9E4F306C2CC7CE5F009C59A4 /* TheGreatestYourManito-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -281,6 +286,9 @@
 				Base,
 			);
 			mainGroup = 9E4F30632CC7CE5E009C59A4;
+			packageReferences = (
+				9EB811C82CCE1FFC003C104D /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = 9E4F306D2CC7CE5F009C59A4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -542,6 +550,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9EB811C82CCE1FFC003C104D /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9EB811C92CCE1FFC003C104D /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9EB811C82CCE1FFC003C104D /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9E4F30642CC7CE5E009C59A4 /* Project object */;
 }
