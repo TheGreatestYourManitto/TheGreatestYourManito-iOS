@@ -24,7 +24,3 @@ struct NameTagView: View {
         }
     }
 }
-
-#Preview {
-    NameTagView(name: "꾸까?")
-}
