@@ -9,22 +9,26 @@ import SwiftUI
 
 struct PlayManittoBottomView: View {
     
-    @State var cheerType: CheerType = .fire
-    @State var text: String = ""
+    @EnvironmentObject var viewModel: PlayManittoViewModel
     
     var body: some View {
         VStack {
             VStack(alignment: .leading, spacing: 24) {
                 cheerLabelView()
-                buttonStack(cheerType: $cheerType)
-                YMTextField(placeholder: "응원메세지 입력", text: $text)
+                buttonStack(cheerType: Binding(get: { viewModel.cheerType }, set: { viewModel.performAction(.tapCheerItem($0))}))
+                YMTextField(
+                    placeholder: "응원메세지 입력",
+                    text: Binding(get: { viewModel.cheerText }, set: { viewModel.performAction(.typeCheerText($0))})
+                )
             }
            
             Spacer(minLength: 100)
             
             VStack(spacing: 20) {
                 OpenLabelView(status: .ongoing(dDay: 7))
-                YMButton(title: "보내기", buttonType: .confirm, action: {})
+                YMButton(title: "보내기", buttonType: .confirm, action: {
+                    viewModel.performAction(.tapSendButton)
+                })
             }
         }
         .padding(.horizontal, 16)
@@ -49,7 +53,7 @@ extension PlayManittoBottomView {
 
 extension PlayManittoBottomView {
     struct buttonStack: View {
-        @Binding var cheerType: CheerType
+        @Binding var cheerType: CheerType?
         
         var body: some View {
             HStack(spacing: 16) {

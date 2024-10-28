@@ -6,15 +6,15 @@
 //
 
 import SwiftUI
-// TODO: 커스텀 네비게이션 바 만들기
 
 struct PlayManittoView: View {
     @Environment(\.dismiss) private var dismiss
+    @StateObject var viewModel: PlayManittoViewModel
     
     var body: some View {
         VStack(alignment: .leading) {
             Spacer()
-            NameTagView(name: "꾸까?")
+            NameTagView(name: viewModel.receiverUserName)
                 .padding(.horizontal, 16)
             Spacer()
             PlayManittoBottomView()
@@ -22,6 +22,7 @@ struct PlayManittoView: View {
                 .cornerRadius(20, corners: [.topLeft, .topRight])
                 .shadow(radius: 10)
         }
+        .environmentObject(viewModel)
         .background(.gray4)
         .ymNavBar(center: {
             Text("이게 도대체 뭔데")
