@@ -44,7 +44,7 @@ public struct YMNavigationBarModifier<C, L, R>: ViewModifier where C: View, L: V
             }
             .frame(height: 100)
             
-            Spacer()
+            Spacer(minLength: 0)
             
             content
             
