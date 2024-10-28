@@ -14,6 +14,7 @@
 		88A356542CCFB24E005E2893 /* ManittoEventStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A356532CCFB24E005E2893 /* ManittoEventStatus.swift */; };
 		88A356562CCFB54F005E2893 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A356552CCFB54F005E2893 /* View+.swift */; };
 		88A356592CCFB57E005E2893 /* roundCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A356582CCFB57E005E2893 /* roundCorner.swift */; };
+		88A3565B2CCFB648005E2893 /* YMCapsuleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3565A2CCFB648005E2893 /* YMCapsuleLabel.swift */; };
 		9E4F30702CC7CE5F009C59A4 /* TheGreatestYourManito_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4F306F2CC7CE5F009C59A4 /* TheGreatestYourManito_iOSApp.swift */; };
 		9E4F30722CC7CE5F009C59A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4F30712CC7CE5F009C59A4 /* ContentView.swift */; };
 		9E4F30742CC7CE61009C59A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F30732CC7CE61009C59A4 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		88A356532CCFB24E005E2893 /* ManittoEventStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManittoEventStatus.swift; sourceTree = "<group>"; };
 		88A356552CCFB54F005E2893 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		88A356582CCFB57E005E2893 /* roundCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundCorner.swift; sourceTree = "<group>"; };
+		88A3565A2CCFB648005E2893 /* YMCapsuleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMCapsuleLabel.swift; sourceTree = "<group>"; };
 		9E4F306C2CC7CE5F009C59A4 /* TheGreatestYourManito-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TheGreatestYourManito-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E4F306F2CC7CE5F009C59A4 /* TheGreatestYourManito_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheGreatestYourManito_iOSApp.swift; sourceTree = "<group>"; };
 		9E4F30712CC7CE5F009C59A4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 			children = (
 				ED6669EB2CC8CA680005D599 /* YMButton.swift */,
 				ED6669ED2CC8CE950005D599 /* YMTextField.swift */,
+				88A3565A2CCFB648005E2893 /* YMCapsuleLabel.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				ED831DF22CC8E1EE00486C5A /* IntroView.swift in Sources */,
 				88A356542CCFB24E005E2893 /* ManittoEventStatus.swift in Sources */,
 				9E4F30722CC7CE5F009C59A4 /* ContentView.swift in Sources */,
+				88A3565B2CCFB648005E2893 /* YMCapsuleLabel.swift in Sources */,
 				ED6669EC2CC8CA680005D599 /* YMButton.swift in Sources */,
 				9E4F308A2CC7D484009C59A4 /* Font+.swift in Sources */,
 				9E4F30702CC7CE5F009C59A4 /* TheGreatestYourManito_iOSApp.swift in Sources */,

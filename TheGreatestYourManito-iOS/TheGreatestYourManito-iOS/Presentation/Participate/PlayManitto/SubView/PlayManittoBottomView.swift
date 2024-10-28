@@ -49,7 +49,6 @@ extension PlayManittoBottomView {
 
 extension PlayManittoBottomView {
     struct buttonStack: View {
-        
         @Binding var cheerType: CheerType
         
         var body: some View {
@@ -65,34 +64,16 @@ extension PlayManittoBottomView {
 }
 
 extension PlayManittoBottomView {
-
-    struct DDayCapsuleLabel: View {
-        let status: ManittoEventStatus
-        
-        var body: some View {
-            Text(status.labelString)
-                .font(.pretendardFont(for: .heading6))
-                .foregroundStyle(status.foregroundColor)
-                .padding(.horizontal, 19)
-                .padding(.vertical, 4)
-                .background(status.backgroundColor)
-                .clipShape(Capsule())
-        }
-    }
-    
     struct OpenLabelView: View {
         let status: ManittoEventStatus
         
         var body: some View {
             HStack {
                 Spacer()
-                
                 Text("마니또 공개까지")
                     .font(.pretendardFont(for: .heading5))
                     .foregroundStyle(.gray1)
-                
-                DDayCapsuleLabel(status: status)
-                
+                YMDDayLabel(status: status)
                 Spacer()
             }
         }
