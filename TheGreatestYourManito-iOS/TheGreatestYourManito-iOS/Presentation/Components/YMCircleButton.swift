@@ -17,14 +17,16 @@ struct YMCircleButton: View {
     
     var action: () -> Void
     var body: some View {
-        Button(action: {
-            action()
-        }) {
-            Image(uiImage: image)
-                .frame(width: 48, height: 48, alignment: .center)
-                .foregroundColor(.gray1)
-                .background(.gray3)
-                .clipShape(Circle())
+        VStack {
+            Button(action: {
+                action()
+            }) {
+                Image(uiImage: image)
+                    .frame(width: 48, height: 48, alignment: .center)
+                    .foregroundColor(.gray1)
+                    .background(.gray3)
+                    .clipShape(Circle())
+            }
         }
     }
     
