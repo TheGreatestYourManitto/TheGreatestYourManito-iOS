@@ -24,6 +24,7 @@
 		9EB811CA2CCE1FFC003C104D /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 9EB811C92CCE1FFC003C104D /* Moya */; };
 		9EB811CE2CCFB25E003C104D /* YMCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811CD2CCFB25E003C104D /* YMCircleButton.swift */; };
 		9EB811D02CCFB4BC003C104D /* YMJoinCodeStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811CF2CCFB4BC003C104D /* YMJoinCodeStackView.swift */; };
+		9EB811D82CCFBD64003C104D /* CreateRoomView_AfterWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811D72CCFBD64003C104D /* CreateRoomView_AfterWrite.swift */; };
 		ED6669EC2CC8CA680005D599 /* YMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6669EB2CC8CA680005D599 /* YMButton.swift */; };
 		ED6669EE2CC8CE950005D599 /* YMTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6669ED2CC8CE950005D599 /* YMTextField.swift */; };
 		ED831DEF2CC8E1A100486C5A /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED831DEE2CC8E1A100486C5A /* SignUpView.swift */; };
@@ -48,6 +49,7 @@
 		9E4F30932CC7D686009C59A4 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
 		9EB811CD2CCFB25E003C104D /* YMCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMCircleButton.swift; sourceTree = "<group>"; };
 		9EB811CF2CCFB4BC003C104D /* YMJoinCodeStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMJoinCodeStackView.swift; sourceTree = "<group>"; };
+		9EB811D72CCFBD64003C104D /* CreateRoomView_AfterWrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomView_AfterWrite.swift; sourceTree = "<group>"; };
 		ED6669EB2CC8CA680005D599 /* YMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMButton.swift; sourceTree = "<group>"; };
 		ED6669ED2CC8CE950005D599 /* YMTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMTextField.swift; sourceTree = "<group>"; };
 		ED831DEE2CC8E1A100486C5A /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 		9E4F30872CC7D0A2009C59A4 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				9EB811D12CCFBC73003C104D /* CreateRoom(After-Write) */,
 				ED831DF02CC8E1D700486C5A /* Intro */,
 				ED831DED2CC8E18500486C5A /* SignUp */,
 				9E4F30882CC7D0C4009C59A4 /* Components */,
@@ -219,6 +222,22 @@
 				9E4F30932CC7D686009C59A4 /* Pretendard-Thin.otf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		9EB811D12CCFBC73003C104D /* CreateRoom(After-Write) */ = {
+			isa = PBXGroup;
+			children = (
+				9EB811D22CCFBCDD003C104D /* Views */,
+			);
+			path = "CreateRoom(After-Write)";
+			sourceTree = "<group>";
+		};
+		9EB811D22CCFBCDD003C104D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9EB811D72CCFBD64003C104D /* CreateRoomView_AfterWrite.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		ED831DEC2CC8E0AC00486C5A /* Views */ = {
@@ -332,6 +351,7 @@
 			files = (
 				ED831DF22CC8E1EE00486C5A /* IntroView.swift in Sources */,
 				9E4F30722CC7CE5F009C59A4 /* ContentView.swift in Sources */,
+				9EB811D82CCFBD64003C104D /* CreateRoomView_AfterWrite.swift in Sources */,
 				9EB811D02CCFB4BC003C104D /* YMJoinCodeStackView.swift in Sources */,
 				ED6669EC2CC8CA680005D599 /* YMButton.swift in Sources */,
 				9EB811CE2CCFB25E003C104D /* YMCircleButton.swift in Sources */,

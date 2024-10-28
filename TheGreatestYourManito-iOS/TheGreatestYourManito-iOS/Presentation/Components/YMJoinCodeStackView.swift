@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct YMJoinCodeStackView: View {
-    @State var joinCode: String
+    @Binding var joinCode: String
     
     var body: some View {
         VStack {
@@ -47,6 +47,6 @@ extension YMJoinCodeStackView {
     
 }
 
-#Preview {
-    YMJoinCodeStackView(joinCode: "asdfghjkl")
-}
+//#Preview {
+//    YMJoinCodeStackView(joinCode: "asdfghjkl")
+//}
