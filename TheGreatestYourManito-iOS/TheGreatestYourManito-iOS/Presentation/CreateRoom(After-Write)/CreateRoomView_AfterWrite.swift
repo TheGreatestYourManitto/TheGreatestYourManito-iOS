@@ -14,7 +14,7 @@ struct CreateRoomView_AfterWrite: View {
     var body: some View {
         VStack(spacing: 21) {
             HStack {
-                titleView(roomName: $roomName)
+                CreateRoom_AfterWriteTitleView(roomName: $roomName)
                 Spacer()
             }.padding(.horizontal, -2)
             
@@ -32,17 +32,7 @@ struct CreateRoomView_AfterWrite: View {
 
 extension CreateRoomView_AfterWrite {
     
-    struct titleView: View {
-        @Binding var roomName: String
-        
-        var body: some View {
-            VStack {
-                Text(roomName)
-                    .font(.pretendardFont(for: .heading2))
-                    .foregroundStyle(.ymBlack)
-            }
-        }
-    }
+    
     
 }
 
