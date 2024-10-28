@@ -30,12 +30,6 @@ struct CreateRoomView_AfterWrite: View {
     }
 }
 
-extension CreateRoomView_AfterWrite {
-    
-    
-    
-}
-
 #Preview {
     CreateRoomView_AfterWrite(roomName: "ㄴㄴㄴ", joinCode: "~~~~~~~~~")
 }
