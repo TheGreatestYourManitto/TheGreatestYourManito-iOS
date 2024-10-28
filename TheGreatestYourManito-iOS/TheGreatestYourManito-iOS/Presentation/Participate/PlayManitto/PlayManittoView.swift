@@ -13,6 +13,7 @@ struct PlayManittoView: View {
         VStack(alignment: .leading) {
             Spacer()
             NameTagView(name: "꾸까?")
+                .padding(.horizontal, 16)
             Spacer()
             PlayManittoBottomView()
                 .frame(height: 557)

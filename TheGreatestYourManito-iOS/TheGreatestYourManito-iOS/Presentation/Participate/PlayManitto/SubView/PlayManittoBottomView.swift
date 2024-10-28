@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PlayManittoBottomView:View {
+struct PlayManittoBottomView: View {
     
     @State var cheerType: CheerType = .fire
     @State var text: String = ""
@@ -29,7 +29,7 @@ struct PlayManittoBottomView:View {
         }
         .padding(.horizontal, 16)
         .padding(.top, 48)
-        .padding(.bottom, 24)
+        .padding(.bottom, 54)
         .background(.ymWhite)
     }
 }
