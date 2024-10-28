@@ -23,7 +23,7 @@ struct PlayManittoBottomView:View {
             Spacer(minLength: 100)
             
             VStack(spacing: 20) {
-                OpenLabelView(dDate: 7)
+                OpenLabelView(status: .ongoing(dDay: 7))
                 YMButton(title: "보내기", buttonType: .confirm, action: {})
             }
         }
@@ -67,21 +67,21 @@ extension PlayManittoBottomView {
 extension PlayManittoBottomView {
 
     struct DDayCapsuleLabel: View {
-        let leftDayCount: Int
+        let status: ManittoEventStatus
         
         var body: some View {
-            Text(leftDayCount == 0 ? "D-Day" : "D-\(leftDayCount)")
+            Text(status.labelString)
                 .font(.pretendardFont(for: .heading6))
-                .foregroundStyle(.ymPrimary)
+                .foregroundStyle(status.foregroundColor)
                 .padding(.horizontal, 19)
                 .padding(.vertical, 4)
-                .background(.sub2)
+                .background(status.backgroundColor)
                 .clipShape(Capsule())
         }
     }
     
     struct OpenLabelView: View {
-        var dDate: Int
+        let status: ManittoEventStatus
         
         var body: some View {
             HStack {
@@ -91,7 +91,7 @@ extension PlayManittoBottomView {
                     .font(.pretendardFont(for: .heading5))
                     .foregroundStyle(.gray1)
                 
-                DDayCapsuleLabel(leftDayCount: dDate)
+                DDayCapsuleLabel(status: status)
                 
                 Spacer()
             }
