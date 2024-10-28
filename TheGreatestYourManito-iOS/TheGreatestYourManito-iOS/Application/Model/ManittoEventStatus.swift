@@ -15,15 +15,15 @@ enum ManittoEventStatus {
     
     var foregroundColor: Color {
         switch self {
-        case .ongoing: return .gray1
-        case .ended: return .gray1
+        case .ongoing: return .sub2
+        case .ended: return .gray3
         }
     }
     
     var backgroundColor: Color {
         switch self {
-        case .ongoing: return .sub2
-        case .ended: return .gray3
+        case .ongoing: return .gray1
+        case .ended: return .gray1
         }
     }
     
