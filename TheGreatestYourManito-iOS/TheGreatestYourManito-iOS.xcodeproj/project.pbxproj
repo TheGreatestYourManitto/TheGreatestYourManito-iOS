@@ -228,16 +228,8 @@
 			isa = PBXGroup;
 			children = (
 				9EB811D72CCFBD64003C104D /* CreateRoomView_AfterWrite.swift */,
-				9EB811D22CCFBCDD003C104D /* Views */,
 			);
 			path = "CreateRoom(After-Write)";
-			sourceTree = "<group>";
-		};
-		9EB811D22CCFBCDD003C104D /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		ED831DEC2CC8E0AC00486C5A /* Views */ = {
