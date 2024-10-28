@@ -26,6 +26,7 @@
 		9EB811D02CCFB4BC003C104D /* YMJoinCodeStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811CF2CCFB4BC003C104D /* YMJoinCodeStackView.swift */; };
 		9EB811D82CCFBD64003C104D /* CreateRoomView_AfterWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811D72CCFBD64003C104D /* CreateRoomView_AfterWrite.swift */; };
 		9EB811DD2CCFC407003C104D /* CreateRoom_AfterWriteTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811DC2CCFC407003C104D /* CreateRoom_AfterWriteTitleView.swift */; };
+		9EB811DF2CCFC497003C104D /* CreateRoom_AfterWriteBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811DE2CCFC497003C104D /* CreateRoom_AfterWriteBottomView.swift */; };
 		ED6669EC2CC8CA680005D599 /* YMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6669EB2CC8CA680005D599 /* YMButton.swift */; };
 		ED6669EE2CC8CE950005D599 /* YMTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6669ED2CC8CE950005D599 /* YMTextField.swift */; };
 		ED831DEF2CC8E1A100486C5A /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED831DEE2CC8E1A100486C5A /* SignUpView.swift */; };
@@ -52,6 +53,7 @@
 		9EB811CF2CCFB4BC003C104D /* YMJoinCodeStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMJoinCodeStackView.swift; sourceTree = "<group>"; };
 		9EB811D72CCFBD64003C104D /* CreateRoomView_AfterWrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomView_AfterWrite.swift; sourceTree = "<group>"; };
 		9EB811DC2CCFC407003C104D /* CreateRoom_AfterWriteTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoom_AfterWriteTitleView.swift; sourceTree = "<group>"; };
+		9EB811DE2CCFC497003C104D /* CreateRoom_AfterWriteBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoom_AfterWriteBottomView.swift; sourceTree = "<group>"; };
 		ED6669EB2CC8CA680005D599 /* YMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMButton.swift; sourceTree = "<group>"; };
 		ED6669ED2CC8CE950005D599 /* YMTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMTextField.swift; sourceTree = "<group>"; };
 		ED831DEE2CC8E1A100486C5A /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				9EB811DC2CCFC407003C104D /* CreateRoom_AfterWriteTitleView.swift */,
+				9EB811DE2CCFC497003C104D /* CreateRoom_AfterWriteBottomView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED831DF22CC8E1EE00486C5A /* IntroView.swift in Sources */,
+				9EB811DF2CCFC497003C104D /* CreateRoom_AfterWriteBottomView.swift in Sources */,
 				9EB811DD2CCFC407003C104D /* CreateRoom_AfterWriteTitleView.swift in Sources */,
 				9E4F30722CC7CE5F009C59A4 /* ContentView.swift in Sources */,
 				9EB811D82CCFBD64003C104D /* CreateRoomView_AfterWrite.swift in Sources */,
