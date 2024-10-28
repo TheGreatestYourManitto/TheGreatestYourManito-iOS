@@ -11,11 +11,12 @@ import SwiftUI
 struct PlayManittoView: View {
     var body: some View {
         // Name Tag Comp
+        NameTagView(name: "꾸까?")
         // Bottom Sheet
         Text("Temp")
     }
 }
 
 #Preview {
-    
+    PlayManittoView()
 }
