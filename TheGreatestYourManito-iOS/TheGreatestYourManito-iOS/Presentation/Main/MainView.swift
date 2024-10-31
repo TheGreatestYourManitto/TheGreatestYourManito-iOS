@@ -27,14 +27,24 @@ struct MainView: View {
             }
             .padding(.top, 32)
             
-            List {
-                RoomCardView(title: "Test", subtitle: "test", endDate: Date())
-                    .listRowInsets(EdgeInsets())
-                RoomCardView(title: "Test", subtitle: "test", endDate: Calendar.current.date(from: DateComponents(year: 2024, month: 10, day: 25))!)
-                    .listRowInsets(EdgeInsets())
+            ScrollView {
+                VStack {
+                    RoomCardView(title: "Test", subtitle: "test", endDate: Date())
+                
+                    RoomCardView(title: "Test", subtitle: "test", endDate: Date())
+
+                }
+                .padding(.top, 30)
             }
-            .scrollContentBackground(.hidden)
-            .listRowSpacing(16)
+            
+//            List {
+//                RoomCardView(title: "Test", subtitle: "test", endDate: Date())
+//                    .listRowInsets(EdgeInsets())
+//                RoomCardView(title: "Test", subtitle: "test", endDate: Calendar.current.date(from: DateComponents(year: 2024, month: 10, day: 25 ))!)
+//                    .listRowInsets(EdgeInsets())
+//            }
+//            .scrollContentBackground(.hidden)
+//            .listRowSpacing(16)
             
         }
         .padding(.horizontal, 16)
