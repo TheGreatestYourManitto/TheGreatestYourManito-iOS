@@ -57,9 +57,10 @@ struct RoomCardView: View {
             Image(.icnRightarrow)
         }
         .padding(24)
+        .background(.ymWhite)
         .clipShape(.rect(cornerRadius: 10))
         .frame(height: 96)
-        .background(.ymWhite)
+        
     }
 }
 
