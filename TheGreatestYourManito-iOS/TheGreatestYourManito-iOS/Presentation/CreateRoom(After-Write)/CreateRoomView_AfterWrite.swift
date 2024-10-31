@@ -8,39 +8,43 @@
 import SwiftUI
 
 struct CreateRoomView_AfterWrite: View {
+    @Environment(\.dismiss) private var dismiss
     @State var text: String
     @State var roomName: String
     @State var joinCode: String
+    @State var memberCount: Int
+    @State var memberListModel: [JoinMemberModel]
     
     var body: some View {
+        
         VStack(spacing: 21) {
-            HStack {
-                CreateRoom_AfterWriteTitleView(roomName: $roomName)
+            VStack {
+                HStack {
+                    CreateRoom_AfterWriteTitleLabelView(roomName: $roomName)
+                    Spacer()
+                }.padding(.horizontal, -2)
+                
+                YMJoinCodeStackView(joinCode: $joinCode)
+                
                 Spacer()
-            }.padding(.horizontal, -2)
+            }.padding(.horizontal, 20)
             
-            YMJoinCodeStackView(joinCode: $joinCode)
-            
-            
-            Spacer()
-            
-            
-            CreateRoom_AfterWriteBottomView(text: $text)
+            CreateRoom_AfterWriteBottomView(memberCount: $memberCount, memberListModel: $memberListModel)
                 .frame(height: 529)
-            //                .cornerRadius(20, corners: [.topLeft, .topRight])
-                .shadow(radius: 10)
+                .cornerRadius(40, corners: [.topLeft, .topRight])
+                .shadow(radius: 2)
                 .padding(.top, 7)
             
         }
         .padding(.top, 40)
-        .padding(.horizontal, 20)
         .background(.gray4)
         
-        
-        
+        .ymNavBar(left: {
+            Button(action: {
+                dismiss()
+            }) {
+                Image(.icnLeftnarrow)
+            }
+        })
     }
-}
-
-#Preview {
-    CreateRoomView_AfterWrite(text: "tqeqwx", roomName: "ㄴㄴㄴ", joinCode: "~~~~~~~~~")
 }
