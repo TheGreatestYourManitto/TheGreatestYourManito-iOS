@@ -9,8 +9,8 @@ import SwiftUI
 
 class PlayManittoViewModel: ObservableObject {
     
-    @Published var cheerType: CheerType?
-    @Published var cheerText: String = ""
+    @Published private(set) var cheerType: CheerType?
+    @Published private(set) var cheerText: String = ""
     
     let receiverUserName: String
     let receiverUserId: Int
