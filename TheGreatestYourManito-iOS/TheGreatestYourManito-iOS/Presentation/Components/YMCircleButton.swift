@@ -10,6 +10,7 @@ import SwiftUI
 enum YMCircleButtonType {
     case copy
     case share
+    case cancel
 }
 
 struct YMCircleButton: View {
@@ -21,11 +22,21 @@ struct YMCircleButton: View {
             Button(action: {
                 action()
             }) {
-                Image(uiImage: image)
-                    .frame(width: 48, height: 48, alignment: .center)
-                    .foregroundColor(.gray1)
-                    .background(.gray3)
-                    .clipShape(Circle())
+                switch circleBtnType {
+                case .copy, .share:
+                    Image(uiImage: image)
+                        .frame(width: 48, height: 48, alignment: .center)
+                        .foregroundColor(.gray1)
+                        .background(.gray3)
+                        .clipShape(Circle())
+                case .cancel:
+                    Image(uiImage: image)
+                        .frame(width: 20, height: 20, alignment: .center)
+                        .foregroundColor(.gray1)
+                        .background(.gray3)
+                        .clipShape(Circle())
+                }
+                
             }
         }
     }
@@ -36,10 +47,12 @@ struct YMCircleButton: View {
             return .icnCopy
         case .share:
             return .icnShare
+        case .cancel:
+            return .icnCancel
         }
     }
 }
 
 #Preview {
-    YMCircleButton(circleBtnType: .copy, action: {})
+    YMCircleButton(circleBtnType: .cancel, action: {})
 }
