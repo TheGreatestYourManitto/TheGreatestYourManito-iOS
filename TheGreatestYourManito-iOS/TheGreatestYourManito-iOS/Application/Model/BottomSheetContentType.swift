@@ -54,5 +54,31 @@ enum BottomSheetContentType: CaseIterable {
                 .foregroundStyle(.gray1)
         }
     }
+    
+    var leftBtnText: Text {
+        switch self {
+        case .delete:
+            return Text(StringLiterals.CreateRoomView_AfterWrite.deleteBottomSheetLeftBtnLabel)
+                .font(.pretendardFont(for: .heading4))
+                .foregroundStyle(.gray1)
+        case .confirm:
+            return Text(StringLiterals.CreateRoomView_AfterWrite.confirmBottomSheetLeftBtnLabel)
+                .font(.pretendardFont(for: .heading4))
+                .foregroundStyle(.gray1)
+        }
+    }
+    
+    var rightBtnText: Text {
+        switch self {
+        case .delete:
+            return Text(StringLiterals.CreateRoomView_AfterWrite.deleteBottomSheetRightBtnLabel)
+                .font(.pretendardFont(for: .heading4))
+                .foregroundStyle(.ymWhite)
+        case .confirm:
+            return Text(StringLiterals.CreateRoomView_AfterWrite.confirmBottomSheetRightBtnLabel)
+                .font(.pretendardFont(for: .heading4))
+                .foregroundStyle(.ymWhite)
+        }
+    }
 }
 
