@@ -15,10 +15,10 @@ struct PlayManittoBottomView: View {
         VStack {
             VStack(alignment: .leading, spacing: 24) {
                 cheerLabelView()
-                buttonStack(cheerType: Binding(get: { viewModel.cheerType }, set: { viewModel.performAction(.tapCheerItem($0))}))
+                buttonStack(cheerType: $viewModel.cheerType)
                 YMTextField(
                     placeholder: "응원메세지 입력",
-                    text: Binding(get: { viewModel.cheerText }, set: { viewModel.performAction(.typeCheerText($0))})
+                    text: $viewModel.cheerText
                 )
             }
            
@@ -27,7 +27,7 @@ struct PlayManittoBottomView: View {
             VStack(spacing: 20) {
                 OpenLabelView(status: .ongoing(dDay: 7))
                 YMButton(title: "보내기", buttonType: .confirm, action: {
-                    viewModel.performAction(.tapSendButton)
+                    print("보내기")
                 })
             }
         }
