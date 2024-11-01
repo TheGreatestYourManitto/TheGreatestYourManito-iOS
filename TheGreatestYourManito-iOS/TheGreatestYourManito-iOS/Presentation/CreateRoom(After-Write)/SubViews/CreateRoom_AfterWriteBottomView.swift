@@ -15,8 +15,7 @@ struct CreateRoom_AfterWriteBottomView: View {
     
     var body: some View {
         VStack {
-            
-            VStack(alignment: .leading, spacing: 18) {
+            VStack(spacing: 18) {
                 HStack {
                     MemberCountLabelView(memberCount: $memberCount)
                     Spacer()
@@ -35,8 +34,10 @@ struct CreateRoom_AfterWriteBottomView: View {
                     showSheet.toggle()
                 }).modifier(YMBottomSheetModifier(contentView: {
                     bottomSheetContentView(showSheet: $showSheet, bottomSheetContentType: .confirm)
+                        .background(.ymWhite)
                 }, showSheet: $showSheet, sheetHeight: 310, bottomSheetType: .nonDragBar))
             }
+            .background(.ymWhite)
         }
         .padding(.horizontal, 16)
         .padding(.top, 48)
@@ -94,6 +95,8 @@ extension CreateRoom_AfterWriteBottomView {
                                 showDeleteSheet.toggle()
                             }).modifier(YMBottomSheetModifier(contentView: {
                                 bottomSheetContentView(showSheet: $showDeleteSheet, bottomSheetContentType: .delete)
+                                    .background(.ymWhite)
+                                    //여기도 .delete 버전에서 양 끝 white 잘리는거 해결됨.
                             }, showSheet: $showDeleteSheet, sheetHeight: 310, bottomSheetType: .nonDragBar))
                         }
                         .padding(.horizontal, 20)
@@ -121,6 +124,10 @@ extension CreateRoom_AfterWriteBottomView {
                 bottomSheetContentButton(bottomType: bottomSheetContentType)
                     .padding(.bottom, 20)
             }
+            .background(.ymWhite)
+            .padding(.horizontal, 10)
+            // 이걸 주고 .confirm 양 옆 화면 색 잘림이 해결됨.
+            
         }
         
         private func bottomSheetContentImage(bottomType: BottomSheetContentType) -> some View {
@@ -182,4 +189,3 @@ extension CreateRoom_AfterWriteBottomView {
 #Preview {
     CreateRoomView_AfterWrite(text: "tqeqwx", roomName: "ㄴㄴㄴ", joinCode: "~~~~~~~~~", memberCount: 1, memberListModel: [JoinMemberModel(memberName: "하세요2"), JoinMemberModel(memberName: "하세요1"), JoinMemberModel(memberName: "하세요"), JoinMemberModel(memberName: "하세요"),JoinMemberModel(memberName: "하세요4")])
 }
-
