@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct YMJoinCodeStackView: View {
-    @Binding var joinCode: String
+    let joinCode: String
     
     var body: some View {
         VStack {
             HStack(spacing: 16) {
-                JoinCodeView(joinCode: $joinCode)
+                JoinCodeView(joinCode: joinCode)
                 
                 HStack(spacing: 10) {
                     YMCircleButton(circleBtnType: .copy, action: {})
@@ -27,7 +27,7 @@ struct YMJoinCodeStackView: View {
 extension YMJoinCodeStackView {
     
     struct JoinCodeView: View {
-        @Binding var joinCode: String
+        let joinCode: String
         
         var body: some View {
             HStack {

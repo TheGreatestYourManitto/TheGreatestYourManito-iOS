@@ -24,7 +24,7 @@ struct CreateRoomView_AfterWrite: View {
                     Spacer()
                 }.padding(.horizontal, -2)
                 
-                YMJoinCodeStackView(joinCode: $joinCode)
+                YMJoinCodeStackView(joinCode: joinCode)
                 
                 Spacer()
             }.padding(.horizontal, 20)
