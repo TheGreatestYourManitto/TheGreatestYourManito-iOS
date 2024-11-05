@@ -21,4 +21,20 @@ enum StringLiterals {
         static let confirmBottomSheetRightBtnLabel = "확정"
     }
     
+    enum JoinRoom_After {
+        static let noticeWordLabel = "참여자를 기다리고있어요~"
+    }
+    
+    enum JoinRoom_Before {
+        static let titleLabel = "방 입장하기"
+        static let subTitleLabel = "두근두근\n나만의 마니또를 만나러 - !"
+        static let bottomSheetTitleLabel = "방 참여코드"
+        static let bottomSheetSubTitleLabel = "방장에게 받은 참여 코드를 입력해주세요"
+        static let bottomSheetPlaceholder = "참여 코드"
+    }
+    
+    enum JoinRoom_Loading {
+        static let titleLabel = "방 만드는 중 .."
+    }
+    
 }
