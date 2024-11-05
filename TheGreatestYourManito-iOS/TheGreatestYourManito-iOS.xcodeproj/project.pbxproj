@@ -45,6 +45,8 @@
 		ED6669EE2CC8CE950005D599 /* YMTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6669ED2CC8CE950005D599 /* YMTextField.swift */; };
 		ED831DEF2CC8E1A100486C5A /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED831DEE2CC8E1A100486C5A /* SignUpView.swift */; };
 		ED831DF22CC8E1EE00486C5A /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED831DF12CC8E1EE00486C5A /* IntroView.swift */; };
+		ED831DF52CCD4A7600486C5A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED831DF42CCD4A7600486C5A /* MainView.swift */; };
+		ED831DF72CCD506600486C5A /* RoomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED831DF62CCD506600486C5A /* RoomCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +88,8 @@
 		ED6669ED2CC8CE950005D599 /* YMTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMTextField.swift; sourceTree = "<group>"; };
 		ED831DEE2CC8E1A100486C5A /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		ED831DF12CC8E1EE00486C5A /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
+		ED831DF42CCD4A7600486C5A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		ED831DF62CCD506600486C5A /* RoomCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,8 +266,14 @@
 		9E4F30872CC7D0A2009C59A4 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+
+				ED831DF32CCD4A6900486C5A /* Main */,
 				88A356472CCF723C005E2893 /* Participate */,
+
+
+
 				9EB811D12CCFBC73003C104D /* CreateRoom(After-Write) */,
+
 				ED831DF02CC8E1D700486C5A /* Intro */,
 				ED831DED2CC8E18500486C5A /* SignUp */,
 				9E4F30882CC7D0C4009C59A4 /* Components */,
@@ -276,11 +286,18 @@
 			children = (
 				ED6669EB2CC8CA680005D599 /* YMButton.swift */,
 				ED6669ED2CC8CE950005D599 /* YMTextField.swift */,
+
+				ED831DF62CCD506600486C5A /* RoomCardView.swift */,
+
 				88A3565A2CCFB648005E2893 /* YMCapsuleLabel.swift */,
 				88A3565C2CCFB7CD005E2893 /* YMNavigationBar.swift */,
+
+
+
 				9EB811CD2CCFB25E003C104D /* YMCircleButton.swift */,
 				9EB811CF2CCFB4BC003C104D /* YMJoinCodeStackView.swift */,
 				9E6699742CD368A50053960A /* YMBottomSheet.swift */,
+
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -342,6 +359,14 @@
 				ED831DF12CC8E1EE00486C5A /* IntroView.swift */,
 			);
 			path = Intro;
+			sourceTree = "<group>";
+		};
+		ED831DF32CCD4A6900486C5A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				ED831DF42CCD4A7600486C5A /* MainView.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -431,8 +456,15 @@
 			files = (
 				9E6699792CD3EE7D0053960A /* BottomSheetContentType.swift in Sources */,
 				ED831DF22CC8E1EE00486C5A /* IntroView.swift in Sources */,
+
+
+				ED831DF52CCD4A7600486C5A /* MainView.swift in Sources */,
+
+
 				9E6699772CD3CF4D0053960A /* StringLiterals.swift in Sources */,
+
 				88A356542CCFB24E005E2893 /* ManittoEventStatus.swift in Sources */,
+
 				9E4F30722CC7CE5F009C59A4 /* ContentView.swift in Sources */,
 				88A3565B2CCFB648005E2893 /* YMCapsuleLabel.swift in Sources */,
 				9EB811DF2CCFC497003C104D /* CreateRoom_AfterWriteBottomView.swift in Sources */,
@@ -454,7 +486,11 @@
 				ED831DEF2CC8E1A100486C5A /* SignUpView.swift in Sources */,
 				88A356592CCFB57E005E2893 /* roundCorner.swift in Sources */,
 				ED6669EE2CC8CE950005D599 /* YMTextField.swift in Sources */,
+
+				ED831DF72CCD506600486C5A /* RoomCardView.swift in Sources */,
+
 				88A3564D2CCF73FA005E2893 /* NameTagView.swift in Sources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
