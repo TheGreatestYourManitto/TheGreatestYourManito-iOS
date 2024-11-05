@@ -31,7 +31,16 @@
 		9E4F309B2CC7D686009C59A4 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F30912CC7D686009C59A4 /* Pretendard-Regular.otf */; };
 		9E4F309C2CC7D686009C59A4 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F30922CC7D686009C59A4 /* Pretendard-SemiBold.otf */; };
 		9E4F309D2CC7D686009C59A4 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F30932CC7D686009C59A4 /* Pretendard-Thin.otf */; };
+		9E6699752CD368A50053960A /* YMBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699742CD368A50053960A /* YMBottomSheet.swift */; };
+		9E6699772CD3CF4D0053960A /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699762CD3CF4D0053960A /* StringLiterals.swift */; };
+		9E6699792CD3EE7D0053960A /* BottomSheetContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */; };
 		9EB811CA2CCE1FFC003C104D /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 9EB811C92CCE1FFC003C104D /* Moya */; };
+		9EB811CE2CCFB25E003C104D /* YMCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811CD2CCFB25E003C104D /* YMCircleButton.swift */; };
+		9EB811D02CCFB4BC003C104D /* YMJoinCodeStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811CF2CCFB4BC003C104D /* YMJoinCodeStackView.swift */; };
+		9EB811D82CCFBD64003C104D /* CreateRoomView_AfterWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811D72CCFBD64003C104D /* CreateRoomView_AfterWrite.swift */; };
+		9EB811DD2CCFC407003C104D /* CreateRoom_AfterWriteTitleLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811DC2CCFC407003C104D /* CreateRoom_AfterWriteTitleLabelView.swift */; };
+		9EB811DF2CCFC497003C104D /* CreateRoom_AfterWriteBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811DE2CCFC497003C104D /* CreateRoom_AfterWriteBottomView.swift */; };
+		9EB811E12CD0CA31003C104D /* CreateRoom_AfterWriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811E02CD0CA31003C104D /* CreateRoom_AfterWriteViewModel.swift */; };
 		ED6669EC2CC8CA680005D599 /* YMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6669EB2CC8CA680005D599 /* YMButton.swift */; };
 		ED6669EE2CC8CE950005D599 /* YMTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6669ED2CC8CE950005D599 /* YMTextField.swift */; };
 		ED831DEF2CC8E1A100486C5A /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED831DEE2CC8E1A100486C5A /* SignUpView.swift */; };
@@ -66,6 +75,15 @@
 		9E4F30912CC7D686009C59A4 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		9E4F30922CC7D686009C59A4 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		9E4F30932CC7D686009C59A4 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
+		9E6699742CD368A50053960A /* YMBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMBottomSheet.swift; sourceTree = "<group>"; };
+		9E6699762CD3CF4D0053960A /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
+		9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetContentType.swift; sourceTree = "<group>"; };
+		9EB811CD2CCFB25E003C104D /* YMCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMCircleButton.swift; sourceTree = "<group>"; };
+		9EB811CF2CCFB4BC003C104D /* YMJoinCodeStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMJoinCodeStackView.swift; sourceTree = "<group>"; };
+		9EB811D72CCFBD64003C104D /* CreateRoomView_AfterWrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomView_AfterWrite.swift; sourceTree = "<group>"; };
+		9EB811DC2CCFC407003C104D /* CreateRoom_AfterWriteTitleLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoom_AfterWriteTitleLabelView.swift; sourceTree = "<group>"; };
+		9EB811DE2CCFC497003C104D /* CreateRoom_AfterWriteBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoom_AfterWriteBottomView.swift; sourceTree = "<group>"; };
+		9EB811E02CD0CA31003C104D /* CreateRoom_AfterWriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoom_AfterWriteViewModel.swift; sourceTree = "<group>"; };
 		ED6669EB2CC8CA680005D599 /* YMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMButton.swift; sourceTree = "<group>"; };
 		ED6669ED2CC8CE950005D599 /* YMTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMTextField.swift; sourceTree = "<group>"; };
 		ED831DEE2CC8E1A100486C5A /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -118,6 +136,7 @@
 			children = (
 				88A356512CCFB062005E2893 /* CheerType.swift */,
 				88A356532CCFB24E005E2893 /* ManittoEventStatus.swift */,
+				9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -230,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				9E4F30942CC7D686009C59A4 /* Font */,
+				9E6699762CD3CF4D0053960A /* StringLiterals.swift */,
 			);
 			path = Literal;
 			sourceTree = "<group>";
@@ -250,6 +270,10 @@
 				ED831DF32CCD4A6900486C5A /* Main */,
 				88A356472CCF723C005E2893 /* Participate */,
 
+
+
+				9EB811D12CCFBC73003C104D /* CreateRoom(After-Write) */,
+
 				ED831DF02CC8E1D700486C5A /* Intro */,
 				ED831DED2CC8E18500486C5A /* SignUp */,
 				9E4F30882CC7D0C4009C59A4 /* Components */,
@@ -267,6 +291,12 @@
 
 				88A3565A2CCFB648005E2893 /* YMCapsuleLabel.swift */,
 				88A3565C2CCFB7CD005E2893 /* YMNavigationBar.swift */,
+
+
+
+				9EB811CD2CCFB25E003C104D /* YMCircleButton.swift */,
+				9EB811CF2CCFB4BC003C104D /* YMJoinCodeStackView.swift */,
+				9E6699742CD368A50053960A /* YMBottomSheet.swift */,
 
 			);
 			path = Components;
@@ -286,6 +316,25 @@
 				9E4F30932CC7D686009C59A4 /* Pretendard-Thin.otf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		9EB811D12CCFBC73003C104D /* CreateRoom(After-Write) */ = {
+			isa = PBXGroup;
+			children = (
+				9EB811D72CCFBD64003C104D /* CreateRoomView_AfterWrite.swift */,
+				9EB811E02CD0CA31003C104D /* CreateRoom_AfterWriteViewModel.swift */,
+				9EB811D92CCFC3BE003C104D /* SubViews */,
+			);
+			path = "CreateRoom(After-Write)";
+			sourceTree = "<group>";
+		};
+		9EB811D92CCFC3BE003C104D /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				9EB811DC2CCFC407003C104D /* CreateRoom_AfterWriteTitleLabelView.swift */,
+				9EB811DE2CCFC497003C104D /* CreateRoom_AfterWriteBottomView.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 		ED831DEC2CC8E0AC00486C5A /* Views */ = {
@@ -405,15 +454,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E6699792CD3EE7D0053960A /* BottomSheetContentType.swift in Sources */,
 				ED831DF22CC8E1EE00486C5A /* IntroView.swift in Sources */,
 
+
 				ED831DF52CCD4A7600486C5A /* MainView.swift in Sources */,
+
+
+				9E6699772CD3CF4D0053960A /* StringLiterals.swift in Sources */,
 
 				88A356542CCFB24E005E2893 /* ManittoEventStatus.swift in Sources */,
 
 				9E4F30722CC7CE5F009C59A4 /* ContentView.swift in Sources */,
 				88A3565B2CCFB648005E2893 /* YMCapsuleLabel.swift in Sources */,
+				9EB811DF2CCFC497003C104D /* CreateRoom_AfterWriteBottomView.swift in Sources */,
+				9EB811DD2CCFC407003C104D /* CreateRoom_AfterWriteTitleLabelView.swift in Sources */,
+				9EB811D82CCFBD64003C104D /* CreateRoomView_AfterWrite.swift in Sources */,
+				9EB811D02CCFB4BC003C104D /* YMJoinCodeStackView.swift in Sources */,
+				9EB811E12CD0CA31003C104D /* CreateRoom_AfterWriteViewModel.swift in Sources */,
 				ED6669EC2CC8CA680005D599 /* YMButton.swift in Sources */,
+				9EB811CE2CCFB25E003C104D /* YMCircleButton.swift in Sources */,
 				9E4F308A2CC7D484009C59A4 /* Font+.swift in Sources */,
 				88A3565F2CCFC005005E2893 /* PlayManittoViewModel.swift in Sources */,
 				9E4F30702CC7CE5F009C59A4 /* TheGreatestYourManito_iOSApp.swift in Sources */,
@@ -422,6 +482,7 @@
 				88A3565D2CCFB7CD005E2893 /* YMNavigationBar.swift in Sources */,
 				88A356562CCFB54F005E2893 /* View+.swift in Sources */,
 				88A356522CCFB062005E2893 /* CheerType.swift in Sources */,
+				9E6699752CD368A50053960A /* YMBottomSheet.swift in Sources */,
 				ED831DEF2CC8E1A100486C5A /* SignUpView.swift in Sources */,
 				88A356592CCFB57E005E2893 /* roundCorner.swift in Sources */,
 				ED6669EE2CC8CE950005D599 /* YMTextField.swift in Sources */,
