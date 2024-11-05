@@ -26,14 +26,14 @@ public struct YMNavigationBarModifier<C, L, R>: ViewModifier where C: View, L: V
     }
     
     public func body(content: Content) -> some View {
-        VStack {
+        VStack(spacing: 0) {
             ZStack {
                 HStack(spacing: 0) {
                     left?()
                     Spacer()
                     right?()
                 }
-                .padding(.horizontal, 20)
+                .padding(.horizontal, 12)
                 .frame(maxWidth: .infinity)
                 
                 HStack {
@@ -43,6 +43,7 @@ public struct YMNavigationBarModifier<C, L, R>: ViewModifier where C: View, L: V
                 }
             }
             .frame(height: 100)
+            .background(.gray4)
             
             Spacer(minLength: 0)
             
@@ -50,7 +51,9 @@ public struct YMNavigationBarModifier<C, L, R>: ViewModifier where C: View, L: V
             
             Spacer(minLength: 0)
         }
-        .background(backgroundColor.ignoresSafeArea(edges: [.top, .bottom]))
+        .padding(.top, 26)
+        .background(backgroundColor.ignoresSafeArea(edges: [.top]))
+        .background(Color(.ymWhite).ignoresSafeArea(edges: [.bottom]))
         .navigationBarHidden(true)
     }
 }
@@ -70,7 +73,7 @@ public extension View {
     ) -> some View where C: View, R: View {
         modifier(YMNavigationBarModifier(center: center, right: right))
     }
-
+    
     func ymNavBar<C, L> (
         center: @escaping (() -> C),
         left: @escaping (() -> L)
