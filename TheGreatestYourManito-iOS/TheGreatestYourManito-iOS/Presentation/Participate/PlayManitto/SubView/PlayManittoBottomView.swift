@@ -25,7 +25,7 @@ struct PlayManittoBottomView: View {
             Spacer(minLength: 100)
             
             VStack(spacing: 20) {
-                OpenLabelView(status: .ongoing(dDay: 7))
+                OpenLabelView(status: ManittoEventStatus.getStatus(from: viewModel.manittoEndDate))
                 YMButton(title: "보내기", buttonType: .confirm, action: {
                     print("보내기")
                 })
@@ -54,11 +54,12 @@ extension PlayManittoBottomView {
 extension PlayManittoBottomView {
     struct buttonStack: View {
         @Binding var cheerType: CheerType?
+        @EnvironmentObject var viewModel: PlayManittoViewModel
         
         var body: some View {
             HStack(spacing: 16) {
                 ForEach(CheerType.allCases, id: \.name) { cheerType in
-                    Button(action: { self.cheerType = cheerType }) {
+                    Button(action: { viewModel.selectCheerType(cheerType) }) {
                         Image(self.cheerType == cheerType ? cheerType.clickedImage: cheerType.defaultImage)
                     }
                 }

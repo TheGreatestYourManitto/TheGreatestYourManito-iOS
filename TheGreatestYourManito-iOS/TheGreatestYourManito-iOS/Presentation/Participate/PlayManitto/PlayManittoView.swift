@@ -25,7 +25,7 @@ struct PlayManittoView: View {
         .environmentObject(viewModel)
         .background(.gray4)
         .ymNavBar(center: {
-            Text("이게 도대체 뭔데")
+            Text(viewModel.manittoRoomName)
                 .font(.pretendardFont(for: .heading5))
         }, left: {
             Button(action: {
