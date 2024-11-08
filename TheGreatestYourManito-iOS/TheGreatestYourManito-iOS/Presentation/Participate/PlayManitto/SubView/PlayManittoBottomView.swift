@@ -27,7 +27,7 @@ struct PlayManittoBottomView: View {
             VStack(spacing: 20) {
                 OpenLabelView(status: ManittoEventStatus.getStatus(from: viewModel.manittoEndDate))
                 YMButton(title: "보내기", buttonType: .confirm, action: {
-                    print("보내기")
+                    viewModel.tapSendButton()
                 })
             }
         }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PlayManittoResultView: View {
     
-    let todaysCheeringCount = 2
+    let todaysCheeringCount: Int
     
     var body: some View {
         VStack {
@@ -41,8 +41,4 @@ struct PlayManittoResultView: View {
             .padding(.bottom, 24)
         }
     }
-}
-
-#Preview {
-    PlayManittoResultView()
 }

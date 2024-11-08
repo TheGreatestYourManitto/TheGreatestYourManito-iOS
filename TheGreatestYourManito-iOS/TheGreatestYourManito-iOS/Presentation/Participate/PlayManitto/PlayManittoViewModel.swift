@@ -11,11 +11,13 @@ final class PlayManittoViewModel: ObservableObject {
     
     @Published var cheerType: CheerType?
     @Published var cheerText: String = ""
+    @Published var isNextScreenActive: Bool = false
     
     let receiverUserName: String
     let receiverUserId: Int
     let manittoRoomName: String
     let manittoEndDate: Date
+    var todaysCheeringCount: Int = 0
     
     init(receiverUserName: String, receiverUserId: Int, manittoRoomName: String, manittoEndDate: Date) {
         self.receiverUserName = receiverUserName
@@ -33,7 +35,7 @@ final class PlayManittoViewModel: ObservableObject {
     func tapSendButton() {
         guard let cheerType else { return }
         let result = postCheer(with: cheerType, text: cheerText)
-        if result { print("결과 화면 이동") }
+        if result { isNextScreenActive = true }
     }
 }
 
