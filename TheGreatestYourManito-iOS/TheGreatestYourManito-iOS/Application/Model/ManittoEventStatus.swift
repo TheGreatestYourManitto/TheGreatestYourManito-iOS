@@ -36,4 +36,21 @@ enum ManittoEventStatus {
             return "종료"
         }
     }
+    
+    /// 날짜를 비교하여 EventStatus 반환
+    static func getStatus(from eventDate: Date) -> Self {
+        let calendar = Calendar.current
+        let today = calendar.startOfDay(for: Date())
+        let eventDay = calendar.startOfDay(for: eventDate)
+        
+        if let dDay = calendar.dateComponents([.day], from: today, to: eventDay).day {
+            if dDay < 0 {
+                return .ended
+            } else {
+                return .ongoing(dDay: dDay)
+            }
+        }
+        
+        return .ended
+    }
 }
