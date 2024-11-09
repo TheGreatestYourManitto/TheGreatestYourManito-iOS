@@ -16,7 +16,7 @@ struct PlayManittoResultView: View {
             
             Spacer()
             
-            Text("전송 완료!")
+            Text("전송 완료!") // TODO: Literal 파일 추가시 이동
                 .font(.pretendardFont(for: .heading1))
                 .foregroundStyle(.ymBlack)
                 .padding(.top, 100)
@@ -24,10 +24,10 @@ struct PlayManittoResultView: View {
             Spacer(minLength: 240)
             
             VStack {
-                Text("오늘 보낸 응원")
+                Text("오늘 보낸 응원") // TODO: Literal 파일 추가시 이동
                     .font(.pretendardFont(for: .heading6))
                     .foregroundStyle(.ymBlack)
-                Text("\(todaysCheeringCount)회")
+                Text("\(todaysCheeringCount)회") // TODO: Literal 파일 추가시 이동
                     .font(.pretendardFont(for: .heading2))
                     .foregroundStyle(.ymBlack)
             }
