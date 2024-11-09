@@ -23,7 +23,7 @@ struct PlayManittoView: View {
             Spacer()
             PlayManittoBottomView()
                 .frame(height: 557)
-                .cornerRadius(20, corners: [.topLeft, .topRight])
+                .cornerRadius(40, corners: [.topLeft, .topRight])
                 .shadow(radius: 10)
         }
         .environmentObject(viewModel)

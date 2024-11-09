@@ -10,6 +10,7 @@
 		8832C36E2CDF195400B8DFAB /* ManittoResultBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8832C36D2CDF195400B8DFAB /* ManittoResultBoardView.swift */; };
 		8832C3702CDF232300B8DFAB /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8832C36F2CDF232300B8DFAB /* Color+.swift */; };
 		8832C3722CDF28CB00B8DFAB /* ManiitoRank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8832C3712CDF28CB00B8DFAB /* ManiitoRank.swift */; };
+		8832C3752CDF292100B8DFAB /* ManittoResultBoardBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8832C3742CDF292100B8DFAB /* ManittoResultBoardBottomView.swift */; };
 		88A3564A2CCF728A005E2893 /* PlayManittoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A356492CCF728A005E2893 /* PlayManittoView.swift */; };
 		88A3564D2CCF73FA005E2893 /* YMHeaderTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3564C2CCF73FA005E2893 /* YMHeaderTagView.swift */; };
 		88A3564F2CCF9E1E005E2893 /* PlayManittoBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3564E2CCF9E1E005E2893 /* PlayManittoBottomView.swift */; };
@@ -46,6 +47,7 @@
 		8832C36D2CDF195400B8DFAB /* ManittoResultBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManittoResultBoardView.swift; sourceTree = "<group>"; };
 		8832C36F2CDF232300B8DFAB /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		8832C3712CDF28CB00B8DFAB /* ManiitoRank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManiitoRank.swift; sourceTree = "<group>"; };
+		8832C3742CDF292100B8DFAB /* ManittoResultBoardBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManittoResultBoardBottomView.swift; sourceTree = "<group>"; };
 		88A356492CCF728A005E2893 /* PlayManittoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayManittoView.swift; sourceTree = "<group>"; };
 		88A3564C2CCF73FA005E2893 /* YMHeaderTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMHeaderTagView.swift; sourceTree = "<group>"; };
 		88A3564E2CCF9E1E005E2893 /* PlayManittoBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayManittoBottomView.swift; sourceTree = "<group>"; };
@@ -93,9 +95,18 @@
 		8832C36C2CDF193A00B8DFAB /* ManittoResultBoard */ = {
 			isa = PBXGroup;
 			children = (
+				8832C3732CDF290F00B8DFAB /* SubView */,
 				8832C36D2CDF195400B8DFAB /* ManittoResultBoardView.swift */,
 			);
 			path = ManittoResultBoard;
+			sourceTree = "<group>";
+		};
+		8832C3732CDF290F00B8DFAB /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				8832C3742CDF292100B8DFAB /* ManittoResultBoardBottomView.swift */,
+			);
+			path = SubView;
 			sourceTree = "<group>";
 		};
 		88A356472CCF723C005E2893 /* Participate */ = {
@@ -412,6 +423,7 @@
 				9E4F30722CC7CE5F009C59A4 /* ContentView.swift in Sources */,
 				88A3565B2CCFB648005E2893 /* YMCapsuleLabel.swift in Sources */,
 				ED6669EC2CC8CA680005D599 /* YMButton.swift in Sources */,
+				8832C3752CDF292100B8DFAB /* ManittoResultBoardBottomView.swift in Sources */,
 				9E4F308A2CC7D484009C59A4 /* Font+.swift in Sources */,
 				88A3565F2CCFC005005E2893 /* PlayManittoViewModel.swift in Sources */,
 				9E4F30702CC7CE5F009C59A4 /* TheGreatestYourManito_iOSApp.swift in Sources */,
