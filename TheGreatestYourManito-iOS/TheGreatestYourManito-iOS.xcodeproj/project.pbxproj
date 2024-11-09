@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8832C36E2CDF195400B8DFAB /* ManittoResultBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8832C36D2CDF195400B8DFAB /* ManittoResultBoardView.swift */; };
+		8832C3702CDF232300B8DFAB /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8832C36F2CDF232300B8DFAB /* Color+.swift */; };
 		88A3564A2CCF728A005E2893 /* PlayManittoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A356492CCF728A005E2893 /* PlayManittoView.swift */; };
 		88A3564D2CCF73FA005E2893 /* YMHeaderTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3564C2CCF73FA005E2893 /* YMHeaderTagView.swift */; };
 		88A3564F2CCF9E1E005E2893 /* PlayManittoBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3564E2CCF9E1E005E2893 /* PlayManittoBottomView.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		8832C36D2CDF195400B8DFAB /* ManittoResultBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManittoResultBoardView.swift; sourceTree = "<group>"; };
+		8832C36F2CDF232300B8DFAB /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		88A356492CCF728A005E2893 /* PlayManittoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayManittoView.swift; sourceTree = "<group>"; };
 		88A3564C2CCF73FA005E2893 /* YMHeaderTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMHeaderTagView.swift; sourceTree = "<group>"; };
 		88A3564E2CCF9E1E005E2893 /* PlayManittoBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayManittoBottomView.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 			children = (
 				9E4F30892CC7D484009C59A4 /* Font+.swift */,
 				88A356552CCFB54F005E2893 /* View+.swift */,
+				8832C36F2CDF232300B8DFAB /* Color+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED831DF22CC8E1EE00486C5A /* IntroView.swift in Sources */,
+				8832C3702CDF232300B8DFAB /* Color+.swift in Sources */,
 				88A356542CCFB24E005E2893 /* ManittoEventStatus.swift in Sources */,
 				9E4F30722CC7CE5F009C59A4 /* ContentView.swift in Sources */,
 				88A3565B2CCFB648005E2893 /* YMCapsuleLabel.swift in Sources */,
