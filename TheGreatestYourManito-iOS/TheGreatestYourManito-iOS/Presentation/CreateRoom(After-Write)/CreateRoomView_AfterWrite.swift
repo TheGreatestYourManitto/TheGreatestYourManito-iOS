@@ -7,7 +7,10 @@
 
 import SwiftUI
 
-
+enum RoomType {
+    case owner
+    case notOwner
+}
 
 struct CreateRoomView_AfterWrite: View {
     @Environment(\.dismiss) private var dismiss
@@ -15,6 +18,7 @@ struct CreateRoomView_AfterWrite: View {
     @State var joinCode: String
     @State var memberCount: Int
     @State var memberListModel: [JoinMemberModel]
+    let roomType: RoomType
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -27,7 +31,6 @@ struct CreateRoomView_AfterWrite: View {
                 { Image(.icnLeftnarrow)} } )
         }
         .padding(.bottom, 20)
-        
     }
     
     private var headerView: some View {
@@ -45,9 +48,9 @@ struct CreateRoomView_AfterWrite: View {
     }
     
     private var bottomView: some View {
-        CreateRoom_AfterWriteBottomView(memberCount: $memberCount, memberListModel: $memberListModel)
-                        .cornerRadius(40, corners: [.topLeft, .topRight])
-                        .shadow(radius: 2)
+        CreateRoom_AfterWriteBottomView(memberCount: $memberCount, memberListModel: $memberListModel, roomType: roomType)
+            .cornerRadius(40, corners: [.topLeft, .topRight])
+            .shadow(radius: 2)
     }
     
     private var navigationButton: some View {

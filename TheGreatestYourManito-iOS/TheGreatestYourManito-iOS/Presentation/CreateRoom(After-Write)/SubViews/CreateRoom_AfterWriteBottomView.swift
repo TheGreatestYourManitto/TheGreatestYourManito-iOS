@@ -12,6 +12,7 @@ struct CreateRoom_AfterWriteBottomView: View {
     @Binding var memberListModel: [JoinMemberModel]
     @State private var showDeleteSheet = false
     @State private var showSheet = false
+    let roomType: RoomType
     
     var body: some View {
         VStack(spacing: 0) {
@@ -22,8 +23,11 @@ struct CreateRoom_AfterWriteBottomView: View {
             .padding(.top, 40)
             
             VStack(spacing: 18) {
-                MemberListScrollView(memberListModel: $memberListModel, showDeleteSheet: $showDeleteSheet)
-                confirmButton()
+                MemberListScrollView(memberListModel: $memberListModel, showDeleteSheet: $showDeleteSheet, roomType: roomType)
+                if case .owner = roomType {
+                    Spacer(minLength: 20)
+                    confirmButton()
+                }
             }
             .padding(.top, 18)
         }
@@ -66,28 +70,27 @@ struct MemberCountLabelView: View {
 }
 
 struct MemberListScrollView: View {
-    
     @Binding var memberListModel: [JoinMemberModel]
     @Binding var showDeleteSheet: Bool
+    let roomType: RoomType
     
     var body: some View {
         ScrollView {
             VStack(spacing: 16) {
                 ForEach(memberListModel, id: \.memberName) { member in
-                    MemberListItemView(member: member, showDeleteSheet: $showDeleteSheet)
+                    MemberListItemView(member: member, showDeleteSheet: $showDeleteSheet, roomType: roomType)
                 }
             }
             .padding(.horizontal, 24)
         }
         .frame(maxHeight: 280)
     }
-    
 }
 
 struct MemberListItemView: View {
-    
     let member: JoinMemberModel
     @Binding var showDeleteSheet: Bool
+    let roomType: RoomType
     
     var body: some View {
         ZStack {
@@ -101,20 +104,26 @@ struct MemberListItemView: View {
                     .font(.pretendardFont(for: .heading5))
                     .foregroundStyle(.ymBlack)
                 Spacer()
-                YMCircleButton(circleBtnType: .cancel) {
-                    showDeleteSheet.toggle()
+                if case .owner = roomType {
+                    ymCircleDeleteButton()
                 }
-                .modifier(YMBottomSheetModifier(
-                    contentView: { BottomSheetContentView(showSheet: $showDeleteSheet, contentType: .delete) },
-                    showSheet: $showDeleteSheet,
-                    sheetHeight: 310,
-                    bottomSheetType: .nonDragBar
-                ))
             }
             .padding(.horizontal, 20)
         }
     }
     
+    @ViewBuilder
+    private func ymCircleDeleteButton() -> some View {
+        YMCircleButton(circleBtnType: .cancel) {
+            showDeleteSheet.toggle()
+        }
+        .modifier(YMBottomSheetModifier(
+            contentView: { BottomSheetContentView(showSheet: $showDeleteSheet, contentType: .delete) },
+            showSheet: $showDeleteSheet,
+            sheetHeight: 310,
+            bottomSheetType: .nonDragBar
+        ))
+    }
 }
 
 struct BottomSheetContentView: View {
@@ -130,7 +139,6 @@ struct BottomSheetContentView: View {
                 .padding(.top, 24)
             bottomSheetContentButton
                 .padding(.top, 46)
-                .padding(.bottom, 20)
         }
         .background(.ymWhite)
     }
@@ -183,5 +191,5 @@ struct BottomSheetContentView: View {
 }
 
 #Preview {
-    CreateRoomView_AfterWrite(roomName: "ㄴㄴㄴ", joinCode: "~~~~~~~~~", memberCount: 1, memberListModel: [JoinMemberModel(memberName: "하세요2"), JoinMemberModel(memberName: "하세요1"), JoinMemberModel(memberName: "하세요"), JoinMemberModel(memberName: "하세요"),JoinMemberModel(memberName: "하세요4")])
+    CreateRoomView_AfterWrite(roomName: "ㄴㄴㄴ", joinCode: "~~~~~~~~~", memberCount: 1, memberListModel: [JoinMemberModel(memberName: "하세요2"), JoinMemberModel(memberName: "하세요1"), JoinMemberModel(memberName: "하세요"), JoinMemberModel(memberName: "하세요"),JoinMemberModel(memberName: "하세요4")], roomType: .owner)
 }
