@@ -275,7 +275,7 @@
 		9E4F30872CC7D0A2009C59A4 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				9E6FCAFB2CDA7E4E00D2A816 /* JoinRoom */,
+				9E6FCAFB2CDA7E4E00D2A816 /* BeforeJoinRoom */,
 				ED831DF32CCD4A6900486C5A /* Main */,
 				88A356472CCF723C005E2893 /* Participate */,
 				9EB811D12CCFBC73003C104D /* CreateRoom(After-Write) */,
@@ -317,13 +317,13 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
-		9E6FCAFB2CDA7E4E00D2A816 /* JoinRoom */ = {
+		9E6FCAFB2CDA7E4E00D2A816 /* BeforeJoinRoom */ = {
 			isa = PBXGroup;
 			children = (
-				9E6FCB032CDABCEF00D2A816 /* JoinRoom(BeforeView) */,
+				9E6FCB042CDABD3500D2A816 /* JoinRoom_Before.swift */,
 				9E6FCAFE2CDA87EE00D2A816 /* JoinRoom(AfterView) */,
 			);
-			path = JoinRoom;
+			path = BeforeJoinRoom;
 			sourceTree = "<group>";
 		};
 		9E6FCAFE2CDA87EE00D2A816 /* JoinRoom(AfterView) */ = {
@@ -334,14 +334,6 @@
 				9E6FCB012CDA897400D2A816 /* JoinRoom_AfterBottomView.swift */,
 			);
 			path = "JoinRoom(AfterView)";
-			sourceTree = "<group>";
-		};
-		9E6FCB032CDABCEF00D2A816 /* JoinRoom(BeforeView) */ = {
-			isa = PBXGroup;
-			children = (
-				9E6FCB042CDABD3500D2A816 /* JoinRoom_Before.swift */,
-			);
-			path = "JoinRoom(BeforeView)";
 			sourceTree = "<group>";
 		};
 		9EB811D12CCFBC73003C104D /* CreateRoom(After-Write) */ = {
