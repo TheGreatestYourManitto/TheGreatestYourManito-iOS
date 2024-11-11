@@ -28,7 +28,7 @@ struct BeforeJoinRoomView: View {
                 Spacer()
             }.padding(.horizontal, 20)
             
-//            CreateRoom_AfterWriteBottomView(memberCount: $memberCount, memberListModel: $memberListModel)
+//            AfterJoinRoomBottomView(memberCount: $memberCount, memberListModel: $memberListModel)
 //                .frame(height: 529)
 //                .cornerRadius(40, corners: [.topLeft, .topRight])
 //                .shadow(radius: 2)

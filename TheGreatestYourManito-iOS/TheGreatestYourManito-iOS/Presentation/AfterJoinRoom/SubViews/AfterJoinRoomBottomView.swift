@@ -1,5 +1,5 @@
 //
-//  CreateRoom_AfterWriteBottomView.swift
+//  AfterJoinRoomBottomView.swift
 //  TheGreatestYourManito-iOS
 //
 //  Created by 박신영 on 10/28/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CreateRoom_AfterWriteBottomView: View {
+struct AfterJoinRoomBottomView: View {
     @Binding var memberCount: Int
     @Binding var memberListModel: [JoinMemberModel]
     @State private var showDeleteSheet = false
@@ -191,5 +191,5 @@ struct BottomSheetContentView: View {
 }
 
 #Preview {
-    CreateRoomView_AfterWrite(roomName: "ㄴㄴㄴ", joinCode: "~~~~~~~~~", memberCount: 1, memberListModel: [JoinMemberModel(memberName: "하세요2"), JoinMemberModel(memberName: "하세요1"), JoinMemberModel(memberName: "하세요"), JoinMemberModel(memberName: "하세요"),JoinMemberModel(memberName: "하세요4")], roomType: .owner)
+    AfterJoinRoomView(roomName: "ㄴㄴㄴ", joinCode: "~~~~~~~~~", memberCount: 1, memberListModel: [JoinMemberModel(memberName: "하세요2"), JoinMemberModel(memberName: "하세요1"), JoinMemberModel(memberName: "하세요"), JoinMemberModel(memberName: "하세요"),JoinMemberModel(memberName: "하세요4")], roomType: .owner)
 }

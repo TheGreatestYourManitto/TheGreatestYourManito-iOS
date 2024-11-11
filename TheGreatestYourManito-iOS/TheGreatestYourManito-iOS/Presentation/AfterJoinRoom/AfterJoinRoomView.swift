@@ -1,5 +1,5 @@
 //
-//  CreateRoomView_AfterWrite.swift
+//  AfterJoinRoomView.swift
 //  TheGreatestYourManito-iOS
 //
 //  Created by 박신영 on 10/28/24.
@@ -12,7 +12,7 @@ enum RoomType {
     case notOwner
 }
 
-struct CreateRoomView_AfterWrite: View {
+struct AfterJoinRoomView: View {
     @Environment(\.dismiss) private var dismiss
     @State var roomName: String
     @State var joinCode: String
@@ -48,7 +48,7 @@ struct CreateRoomView_AfterWrite: View {
     }
     
     private var bottomView: some View {
-        CreateRoom_AfterWriteBottomView(memberCount: $memberCount, memberListModel: $memberListModel, roomType: roomType)
+        AfterJoinRoomBottomView(memberCount: $memberCount, memberListModel: $memberListModel, roomType: roomType)
             .cornerRadius(40, corners: [.topLeft, .topRight])
             .shadow(radius: 2)
     }
