@@ -37,11 +37,11 @@
 		9E6FCAFD2CDA7F1300D2A816 /* JoinRoom_After.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6FCAFC2CDA7F1300D2A816 /* JoinRoom_After.swift */; };
 		9E6FCB002CDA889D00D2A816 /* JoinRoom_AfterTitleLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6FCAFF2CDA889D00D2A816 /* JoinRoom_AfterTitleLabelView.swift */; };
 		9E6FCB022CDA897400D2A816 /* JoinRoom_AfterBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6FCB012CDA897400D2A816 /* JoinRoom_AfterBottomView.swift */; };
+		9E6FCB052CDABD3500D2A816 /* JoinRoom_Before.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6FCB042CDABD3500D2A816 /* JoinRoom_Before.swift */; };
 		9EB811CA2CCE1FFC003C104D /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 9EB811C92CCE1FFC003C104D /* Moya */; };
 		9EB811CE2CCFB25E003C104D /* YMCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811CD2CCFB25E003C104D /* YMCircleButton.swift */; };
 		9EB811D02CCFB4BC003C104D /* YMJoinCodeStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811CF2CCFB4BC003C104D /* YMJoinCodeStackView.swift */; };
 		9EB811D82CCFBD64003C104D /* CreateRoomView_AfterWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811D72CCFBD64003C104D /* CreateRoomView_AfterWrite.swift */; };
-		9EB811DD2CCFC407003C104D /* CreateRoom_AfterWriteTitleLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811DC2CCFC407003C104D /* CreateRoom_AfterWriteTitleLabelView.swift */; };
 		9EB811DF2CCFC497003C104D /* CreateRoom_AfterWriteBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811DE2CCFC497003C104D /* CreateRoom_AfterWriteBottomView.swift */; };
 		9EB811E12CD0CA31003C104D /* CreateRoom_AfterWriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811E02CD0CA31003C104D /* CreateRoom_AfterWriteViewModel.swift */; };
 		ED6669EC2CC8CA680005D599 /* YMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6669EB2CC8CA680005D599 /* YMButton.swift */; };
@@ -84,10 +84,10 @@
 		9E6FCAFC2CDA7F1300D2A816 /* JoinRoom_After.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRoom_After.swift; sourceTree = "<group>"; };
 		9E6FCAFF2CDA889D00D2A816 /* JoinRoom_AfterTitleLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRoom_AfterTitleLabelView.swift; sourceTree = "<group>"; };
 		9E6FCB012CDA897400D2A816 /* JoinRoom_AfterBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRoom_AfterBottomView.swift; sourceTree = "<group>"; };
+		9E6FCB042CDABD3500D2A816 /* JoinRoom_Before.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRoom_Before.swift; sourceTree = "<group>"; };
 		9EB811CD2CCFB25E003C104D /* YMCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMCircleButton.swift; sourceTree = "<group>"; };
 		9EB811CF2CCFB4BC003C104D /* YMJoinCodeStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMJoinCodeStackView.swift; sourceTree = "<group>"; };
 		9EB811D72CCFBD64003C104D /* CreateRoomView_AfterWrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomView_AfterWrite.swift; sourceTree = "<group>"; };
-		9EB811DC2CCFC407003C104D /* CreateRoom_AfterWriteTitleLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoom_AfterWriteTitleLabelView.swift; sourceTree = "<group>"; };
 		9EB811DE2CCFC497003C104D /* CreateRoom_AfterWriteBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoom_AfterWriteBottomView.swift; sourceTree = "<group>"; };
 		9EB811E02CD0CA31003C104D /* CreateRoom_AfterWriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoom_AfterWriteViewModel.swift; sourceTree = "<group>"; };
 		ED6669EB2CC8CA680005D599 /* YMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMButton.swift; sourceTree = "<group>"; };
@@ -317,6 +317,7 @@
 		9E6FCAFB2CDA7E4E00D2A816 /* JoinRoom */ = {
 			isa = PBXGroup;
 			children = (
+				9E6FCB032CDABCEF00D2A816 /* JoinRoom(BeforeView) */,
 				9E6FCAFE2CDA87EE00D2A816 /* JoinRoom(AfterView) */,
 			);
 			path = JoinRoom;
@@ -332,6 +333,14 @@
 			path = "JoinRoom(AfterView)";
 			sourceTree = "<group>";
 		};
+		9E6FCB032CDABCEF00D2A816 /* JoinRoom(BeforeView) */ = {
+			isa = PBXGroup;
+			children = (
+				9E6FCB042CDABD3500D2A816 /* JoinRoom_Before.swift */,
+			);
+			path = "JoinRoom(BeforeView)";
+			sourceTree = "<group>";
+		};
 		9EB811D12CCFBC73003C104D /* CreateRoom(After-Write) */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,7 +354,6 @@
 		9EB811D92CCFC3BE003C104D /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
-				9EB811DC2CCFC407003C104D /* CreateRoom_AfterWriteTitleLabelView.swift */,
 				9EB811DE2CCFC497003C104D /* CreateRoom_AfterWriteBottomView.swift */,
 			);
 			path = SubViews;
@@ -476,13 +484,13 @@
 				9E4F30722CC7CE5F009C59A4 /* ContentView.swift in Sources */,
 				88A3565B2CCFB648005E2893 /* YMCapsuleLabel.swift in Sources */,
 				9EB811DF2CCFC497003C104D /* CreateRoom_AfterWriteBottomView.swift in Sources */,
-				9EB811DD2CCFC407003C104D /* CreateRoom_AfterWriteTitleLabelView.swift in Sources */,
 				9EB811D82CCFBD64003C104D /* CreateRoomView_AfterWrite.swift in Sources */,
 				9EB811D02CCFB4BC003C104D /* YMJoinCodeStackView.swift in Sources */,
 				9EB811E12CD0CA31003C104D /* CreateRoom_AfterWriteViewModel.swift in Sources */,
 				ED6669EC2CC8CA680005D599 /* YMButton.swift in Sources */,
 				9EB811CE2CCFB25E003C104D /* YMCircleButton.swift in Sources */,
 				9E4F308A2CC7D484009C59A4 /* Font+.swift in Sources */,
+				9E6FCB052CDABD3500D2A816 /* JoinRoom_Before.swift in Sources */,
 				88A3565F2CCFC005005E2893 /* PlayManittoViewModel.swift in Sources */,
 				9E4F30702CC7CE5F009C59A4 /* TheGreatestYourManito_iOSApp.swift in Sources */,
 				9E6FCAFD2CDA7F1300D2A816 /* JoinRoom_After.swift in Sources */,
