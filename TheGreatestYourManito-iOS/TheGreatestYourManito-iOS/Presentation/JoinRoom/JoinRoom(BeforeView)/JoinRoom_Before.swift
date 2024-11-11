@@ -28,11 +28,11 @@ struct JoinRoom_Before: View {
                 Spacer()
             }.padding(.horizontal, 20)
             
-            CreateRoom_AfterWriteBottomView(memberCount: $memberCount, memberListModel: $memberListModel)
-                .frame(height: 529)
-                .cornerRadius(40, corners: [.topLeft, .topRight])
-                .shadow(radius: 2)
-                .padding(.top, 7)
+//            CreateRoom_AfterWriteBottomView(memberCount: $memberCount, memberListModel: $memberListModel)
+//                .frame(height: 529)
+//                .cornerRadius(40, corners: [.topLeft, .topRight])
+//                .shadow(radius: 2)
+//                .padding(.top, 7)
             
         }
         .padding(.top, 40)
@@ -46,8 +46,4 @@ struct JoinRoom_Before: View {
             }
         })
     }
-}
-
-#Preview {
-    JoinRoom_Before(roomName: "조교 신영과 훈이들", joinCode: "1asfjqr45", memberCount: 3, memberListModel: [JoinMemberModel(memberName: "신영"), JoinMemberModel(memberName: "민서"), JoinMemberModel(memberName: "여경")])
 }
