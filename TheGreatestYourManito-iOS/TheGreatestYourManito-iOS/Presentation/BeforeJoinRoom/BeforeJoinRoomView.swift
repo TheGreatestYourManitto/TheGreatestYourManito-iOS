@@ -1,5 +1,5 @@
 //
-//  JoinRoom_Before.swift
+//  BeforeJoinRoomView.swift
 //  TheGreatestYourManito-iOS
 //
 //  Created by 박신영 on 11/6/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct JoinRoom_Before: View {
+struct BeforeJoinRoomView: View {
     @Environment(\.dismiss) private var dismiss
     @State var roomName: String
     @State var joinCode: String

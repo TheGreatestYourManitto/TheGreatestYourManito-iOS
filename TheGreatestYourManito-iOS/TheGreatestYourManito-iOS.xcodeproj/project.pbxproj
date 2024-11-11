@@ -38,7 +38,7 @@
 		9E6FCAFD2CDA7F1300D2A816 /* JoinRoom_After.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6FCAFC2CDA7F1300D2A816 /* JoinRoom_After.swift */; };
 		9E6FCB002CDA889D00D2A816 /* JoinRoom_AfterTitleLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6FCAFF2CDA889D00D2A816 /* JoinRoom_AfterTitleLabelView.swift */; };
 		9E6FCB022CDA897400D2A816 /* JoinRoom_AfterBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6FCB012CDA897400D2A816 /* JoinRoom_AfterBottomView.swift */; };
-		9E6FCB052CDABD3500D2A816 /* JoinRoom_Before.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6FCB042CDABD3500D2A816 /* JoinRoom_Before.swift */; };
+		9E6FCB052CDABD3500D2A816 /* BeforeJoinRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6FCB042CDABD3500D2A816 /* BeforeJoinRoomView.swift */; };
 		9EB811CA2CCE1FFC003C104D /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 9EB811C92CCE1FFC003C104D /* Moya */; };
 		9EB811CE2CCFB25E003C104D /* YMCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811CD2CCFB25E003C104D /* YMCircleButton.swift */; };
 		9EB811D02CCFB4BC003C104D /* YMJoinCodeStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811CF2CCFB4BC003C104D /* YMJoinCodeStackView.swift */; };
@@ -86,7 +86,7 @@
 		9E6FCAFC2CDA7F1300D2A816 /* JoinRoom_After.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRoom_After.swift; sourceTree = "<group>"; };
 		9E6FCAFF2CDA889D00D2A816 /* JoinRoom_AfterTitleLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRoom_AfterTitleLabelView.swift; sourceTree = "<group>"; };
 		9E6FCB012CDA897400D2A816 /* JoinRoom_AfterBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRoom_AfterBottomView.swift; sourceTree = "<group>"; };
-		9E6FCB042CDABD3500D2A816 /* JoinRoom_Before.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRoom_Before.swift; sourceTree = "<group>"; };
+		9E6FCB042CDABD3500D2A816 /* BeforeJoinRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeJoinRoomView.swift; sourceTree = "<group>"; };
 		9EB811CD2CCFB25E003C104D /* YMCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMCircleButton.swift; sourceTree = "<group>"; };
 		9EB811CF2CCFB4BC003C104D /* YMJoinCodeStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMJoinCodeStackView.swift; sourceTree = "<group>"; };
 		9EB811D72CCFBD64003C104D /* CreateRoomView_AfterWrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomView_AfterWrite.swift; sourceTree = "<group>"; };
@@ -320,7 +320,7 @@
 		9E6FCAFB2CDA7E4E00D2A816 /* BeforeJoinRoom */ = {
 			isa = PBXGroup;
 			children = (
-				9E6FCB042CDABD3500D2A816 /* JoinRoom_Before.swift */,
+				9E6FCB042CDABD3500D2A816 /* BeforeJoinRoomView.swift */,
 				9E6FCAFE2CDA87EE00D2A816 /* JoinRoom(AfterView) */,
 			);
 			path = BeforeJoinRoom;
@@ -485,7 +485,7 @@
 				ED6669EC2CC8CA680005D599 /* YMButton.swift in Sources */,
 				9EB811CE2CCFB25E003C104D /* YMCircleButton.swift in Sources */,
 				9E4F308A2CC7D484009C59A4 /* Font+.swift in Sources */,
-				9E6FCB052CDABD3500D2A816 /* JoinRoom_Before.swift in Sources */,
+				9E6FCB052CDABD3500D2A816 /* BeforeJoinRoomView.swift in Sources */,
 				88A3565F2CCFC005005E2893 /* PlayManittoViewModel.swift in Sources */,
 				9E4F30702CC7CE5F009C59A4 /* TheGreatestYourManito_iOSApp.swift in Sources */,
 				88FEBFFC2CD3BA630013B9E1 /* PlayManittoResultView.swift in Sources */,
