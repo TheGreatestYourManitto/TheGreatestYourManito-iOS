@@ -270,9 +270,9 @@
 			isa = PBXGroup;
 			children = (
 				9E6FCAFB2CDA7E4E00D2A816 /* BeforeJoinRoom */,
+				9EB811D12CCFBC73003C104D /* AfterJoinRoom */,
 				ED831DF32CCD4A6900486C5A /* Main */,
 				88A356472CCF723C005E2893 /* Participate */,
-				9EB811D12CCFBC73003C104D /* CreateRoom(After-Write) */,
 				ED831DF02CC8E1D700486C5A /* Intro */,
 				ED831DED2CC8E18500486C5A /* SignUp */,
 				9E4F30882CC7D0C4009C59A4 /* Components */,
@@ -319,14 +319,14 @@
 			path = BeforeJoinRoom;
 			sourceTree = "<group>";
 		};
-		9EB811D12CCFBC73003C104D /* CreateRoom(After-Write) */ = {
+		9EB811D12CCFBC73003C104D /* AfterJoinRoom */ = {
 			isa = PBXGroup;
 			children = (
 				9EB811D72CCFBD64003C104D /* CreateRoomView_AfterWrite.swift */,
 				9EB811E02CD0CA31003C104D /* CreateRoom_AfterWriteViewModel.swift */,
 				9EB811D92CCFC3BE003C104D /* SubViews */,
 			);
-			path = "CreateRoom(After-Write)";
+			path = AfterJoinRoom;
 			sourceTree = "<group>";
 		};
 		9EB811D92CCFC3BE003C104D /* SubViews */ = {
