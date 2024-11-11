@@ -15,14 +15,14 @@ enum ManittoEventStatus {
     
     var foregroundColor: Color {
         switch self {
-        case .ongoing: return .sub2
+        case .ongoing: return .ymPrimary
         case .ended: return .gray3
         }
     }
     
     var backgroundColor: Color {
         switch self {
-        case .ongoing: return .gray1
+        case .ongoing: return .sub2
         case .ended: return .gray1
         }
     }
@@ -35,5 +35,22 @@ enum ManittoEventStatus {
         case .ended:
             return "종료"
         }
+    }
+    
+    /// 날짜를 비교하여 EventStatus 반환
+    static func getStatus(from eventDate: Date) -> Self {
+        let calendar = Calendar.current
+        let today = calendar.startOfDay(for: Date())
+        let eventDay = calendar.startOfDay(for: eventDate)
+        
+        if let dDay = calendar.dateComponents([.day], from: today, to: eventDay).day {
+            if dDay < 0 {
+                return .ended
+            } else {
+                return .ongoing(dDay: dDay)
+            }
+        }
+        
+        return .ended
     }
 }

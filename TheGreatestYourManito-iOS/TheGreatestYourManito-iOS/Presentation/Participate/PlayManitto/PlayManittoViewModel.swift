@@ -7,34 +7,46 @@
 
 import SwiftUI
 
-class PlayManittoViewModel: ObservableObject {
+final class PlayManittoViewModel: ObservableObject {
     
     @Published var cheerType: CheerType?
     @Published var cheerText: String = ""
+    @Published var isNextScreenActive: Bool = false
     
     let receiverUserName: String
     let receiverUserId: Int
+    let manittoRoomName: String
+    let manittoEndDate: Date
+    var todaysCheeringCount: Int = 0
     
-    init(receiverUserName: String, receiverUserId: Int) {
+    init(receiverUserName: String, receiverUserId: Int, manittoRoomName: String, manittoEndDate: Date) {
         self.receiverUserName = receiverUserName
         self.receiverUserId = receiverUserId
+        self.manittoRoomName = manittoRoomName
+        self.manittoEndDate = manittoEndDate
     }
     
-    enum Action {
-        case tapCheerItem(CheerType?)
-        case typeCheerText(String)
-        case tapSendButton
+    func selectCheerType(_ cheerType: CheerType) {
+        self.cheerType = cheerType
+        let result = getCheerText(with: cheerType)
+        self.cheerText = result
     }
     
-    func performAction(_ action: Action) {
-        switch action {
-        case .tapCheerItem(let item):
-            print("api 결과 get")
-            cheerText = "thisistest item : \(item!.name)"
-        case .typeCheerText(let text):
-            cheerText = text
-        case .tapSendButton:
-            print("보내기")
-        }
+    func tapSendButton() {
+        guard let cheerType else { return }
+        let result = postCheer(with: cheerType, text: cheerText)
+        if result { isNextScreenActive = true }
+    }
+}
+
+// MARK: API
+private extension PlayManittoViewModel {
+    func getCheerText(with type: CheerType) -> String {
+        return "\(type.name) API 결과 데이터"
+    }
+    
+    func postCheer(with type: CheerType, text: String) -> Bool {
+        print("type: \(type) + text: \(text) 전송 API 요청")
+        return true
     }
 }
