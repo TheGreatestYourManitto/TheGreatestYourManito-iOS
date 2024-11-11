@@ -35,9 +35,6 @@
 		9E6699752CD368A50053960A /* YMBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699742CD368A50053960A /* YMBottomSheet.swift */; };
 		9E6699772CD3CF4D0053960A /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699762CD3CF4D0053960A /* StringLiterals.swift */; };
 		9E6699792CD3EE7D0053960A /* BottomSheetContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */; };
-		9E6FCAFD2CDA7F1300D2A816 /* JoinRoom_After.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6FCAFC2CDA7F1300D2A816 /* JoinRoom_After.swift */; };
-		9E6FCB002CDA889D00D2A816 /* JoinRoom_AfterTitleLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6FCAFF2CDA889D00D2A816 /* JoinRoom_AfterTitleLabelView.swift */; };
-		9E6FCB022CDA897400D2A816 /* JoinRoom_AfterBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6FCB012CDA897400D2A816 /* JoinRoom_AfterBottomView.swift */; };
 		9E6FCB052CDABD3500D2A816 /* BeforeJoinRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6FCB042CDABD3500D2A816 /* BeforeJoinRoomView.swift */; };
 		9EB811CA2CCE1FFC003C104D /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 9EB811C92CCE1FFC003C104D /* Moya */; };
 		9EB811CE2CCFB25E003C104D /* YMCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811CD2CCFB25E003C104D /* YMCircleButton.swift */; };
@@ -83,9 +80,6 @@
 		9E6699742CD368A50053960A /* YMBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMBottomSheet.swift; sourceTree = "<group>"; };
 		9E6699762CD3CF4D0053960A /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
 		9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetContentType.swift; sourceTree = "<group>"; };
-		9E6FCAFC2CDA7F1300D2A816 /* JoinRoom_After.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRoom_After.swift; sourceTree = "<group>"; };
-		9E6FCAFF2CDA889D00D2A816 /* JoinRoom_AfterTitleLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRoom_AfterTitleLabelView.swift; sourceTree = "<group>"; };
-		9E6FCB012CDA897400D2A816 /* JoinRoom_AfterBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRoom_AfterBottomView.swift; sourceTree = "<group>"; };
 		9E6FCB042CDABD3500D2A816 /* BeforeJoinRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeJoinRoomView.swift; sourceTree = "<group>"; };
 		9EB811CD2CCFB25E003C104D /* YMCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMCircleButton.swift; sourceTree = "<group>"; };
 		9EB811CF2CCFB4BC003C104D /* YMJoinCodeStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMJoinCodeStackView.swift; sourceTree = "<group>"; };
@@ -321,19 +315,8 @@
 			isa = PBXGroup;
 			children = (
 				9E6FCB042CDABD3500D2A816 /* BeforeJoinRoomView.swift */,
-				9E6FCAFE2CDA87EE00D2A816 /* JoinRoom(AfterView) */,
 			);
 			path = BeforeJoinRoom;
-			sourceTree = "<group>";
-		};
-		9E6FCAFE2CDA87EE00D2A816 /* JoinRoom(AfterView) */ = {
-			isa = PBXGroup;
-			children = (
-				9E6FCAFC2CDA7F1300D2A816 /* JoinRoom_After.swift */,
-				9E6FCAFF2CDA889D00D2A816 /* JoinRoom_AfterTitleLabelView.swift */,
-				9E6FCB012CDA897400D2A816 /* JoinRoom_AfterBottomView.swift */,
-			);
-			path = "JoinRoom(AfterView)";
 			sourceTree = "<group>";
 		};
 		9EB811D12CCFBC73003C104D /* CreateRoom(After-Write) */ = {
@@ -489,16 +472,13 @@
 				88A3565F2CCFC005005E2893 /* PlayManittoViewModel.swift in Sources */,
 				9E4F30702CC7CE5F009C59A4 /* TheGreatestYourManito_iOSApp.swift in Sources */,
 				88FEBFFC2CD3BA630013B9E1 /* PlayManittoResultView.swift in Sources */,
-				9E6FCAFD2CDA7F1300D2A816 /* JoinRoom_After.swift in Sources */,
 				88A3564A2CCF728A005E2893 /* PlayManittoView.swift in Sources */,
 				88A3564F2CCF9E1E005E2893 /* PlayManittoBottomView.swift in Sources */,
 				88A3565D2CCFB7CD005E2893 /* YMNavigationBar.swift in Sources */,
 				88A356562CCFB54F005E2893 /* View+.swift in Sources */,
-				9E6FCB022CDA897400D2A816 /* JoinRoom_AfterBottomView.swift in Sources */,
 				88A356522CCFB062005E2893 /* CheerType.swift in Sources */,
 				9E6699752CD368A50053960A /* YMBottomSheet.swift in Sources */,
 				ED831DEF2CC8E1A100486C5A /* SignUpView.swift in Sources */,
-				9E6FCB002CDA889D00D2A816 /* JoinRoom_AfterTitleLabelView.swift in Sources */,
 				88A356592CCFB57E005E2893 /* roundCorner.swift in Sources */,
 				ED6669EE2CC8CE950005D599 /* YMTextField.swift in Sources */,
 				ED831DF72CCD506600486C5A /* RoomCardView.swift in Sources */,
