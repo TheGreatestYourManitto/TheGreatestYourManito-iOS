@@ -7,44 +7,66 @@
 
 import SwiftUI
 
+
+
 struct CreateRoomView_AfterWrite: View {
     @Environment(\.dismiss) private var dismiss
-    @State var text: String
     @State var roomName: String
     @State var joinCode: String
     @State var memberCount: Int
     @State var memberListModel: [JoinMemberModel]
     
     var body: some View {
+        ZStack(alignment: .top) {
+            VStack(spacing: 28) {
+                headerView
+                bottomView
+            }
+            .ymNavBar(left: {
+                Button(action: { dismiss() })
+                { Image(.icnLeftnarrow)} } )
+        }
+        .padding(.bottom, 20)
         
+    }
+    
+    private var headerView: some View {
         VStack(spacing: 21) {
             VStack {
                 HStack {
                     CreateRoom_AfterWriteTitleLabelView(roomName: $roomName)
                     Spacer()
-                }.padding(.horizontal, -2)
-                
+                }
                 YMJoinCodeStackView(joinCode: joinCode)
-                
-                Spacer()
-            }.padding(.horizontal, 20)
-            
-            CreateRoom_AfterWriteBottomView(memberCount: $memberCount, memberListModel: $memberListModel)
-                .frame(height: 529)
-                .cornerRadius(40, corners: [.topLeft, .topRight])
-                .shadow(radius: 2)
-                .padding(.top, 7)
+            }
+            .padding(.horizontal, 20)
             
         }
-        .padding(.top, 40)
-        .background(.gray4)
-        
-        .ymNavBar(left: {
-            Button(action: {
-                dismiss()
-            }) {
-                Image(.icnLeftnarrow)
-            }
-        })
+    }
+    
+    private var bottomView: some View {
+        CreateRoom_AfterWriteBottomView(memberCount: $memberCount, memberListModel: $memberListModel)
+                        .cornerRadius(40, corners: [.topLeft, .topRight])
+                        .shadow(radius: 2)
+    }
+    
+    private var navigationButton: some View {
+        Button(action: { dismiss() }) {
+            Image(.icnLeftnarrow)
+        }
     }
 }
+
+struct CreateRoom_AfterWriteTitleLabelView: View {
+    @Binding var roomName: String
+    
+    var body: some View {
+        Text(roomName)
+            .font(.pretendardFont(for: .heading2))
+            .foregroundColor(.ymBlack)
+    }
+}
+
+
+
+

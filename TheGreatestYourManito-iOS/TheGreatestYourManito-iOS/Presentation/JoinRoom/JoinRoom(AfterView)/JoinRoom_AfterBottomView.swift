@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct JoinRoom_AfterBottomView: View {
+    
     @Binding var memberCount: Int
     @Binding var memberListModel: [JoinMemberModel]
     @State private var showDeleteSheet = false
@@ -24,19 +25,19 @@ struct JoinRoom_AfterBottomView: View {
                     MemberListView(memberListModel: $memberListModel, showDeleteSheet: $showDeleteSheet)
                 }
                 .frame(maxHeight: 300)
-                
             }
             Spacer(minLength: 18)
         }
         .frame(height: 529)
         .padding(.top, 40)
         .background(.ymWhite)
-        
     }
+    
 }
 
 extension JoinRoom_AfterBottomView {
     struct MemberCountLabelView: View {
+        
         @Binding var memberCount: Int
         
         var body: some View {
@@ -52,6 +53,7 @@ extension JoinRoom_AfterBottomView {
             .padding(.horizontal, 32)
         }
     }
+    
 }
 
 extension JoinRoom_AfterBottomView {
@@ -65,11 +67,9 @@ extension JoinRoom_AfterBottomView {
                     ZStack {
                         Rectangle()
                             .frame(height: 68, alignment: .center)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 16)
-                                    .stroke(.gray3, lineWidth: 1)
-                                    .background(.ymWhite)
-                            )
+                            .overlay(RoundedRectangle(cornerRadius: 16)
+                                        .stroke(.gray3, lineWidth: 1)
+                                        .background(.ymWhite))
                         
                         HStack {
                             Text("\(memberListModel.memberName)")

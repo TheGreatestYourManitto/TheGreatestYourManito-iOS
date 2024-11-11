@@ -26,6 +26,7 @@ struct JoinRoom_After: View {
                         YMJoinCodeStackView(joinCode: joinCode)
                         Spacer()
                     }
+                    //TODO: -  이게 원래 40인데 네비바도 같이 움직여서 일단 20으로 줌
                     .padding(.top, 20)
                     .padding(.horizontal, 20)
                 }
@@ -50,6 +51,6 @@ struct JoinRoom_After: View {
     }
 }
 
-#Preview {
-    JoinRoom_After(roomName: "조교 신영과 훈이들", joinCode: "1asfjqr45", memberCount: 3, memberListModel: [JoinMemberModel(memberName: "신영"), JoinMemberModel(memberName: "민서"), JoinMemberModel(memberName: "여경")])
-}
+//#Preview {
+//    JoinRoom_After(roomName: "조교 신영과 훈이들", joinCode: "1asfjqr45", memberCount: 3, memberListModel: [JoinMemberModel(memberName: "신영"), JoinMemberModel(memberName: "민서"), JoinMemberModel(memberName: "여경")])
+//}
