@@ -30,9 +30,9 @@ struct BeforeJoinRoomBottomView: View {
                 Spacer(minLength: 20)
                 
                 // 버튼 클릭 시 navigateToAfterJoinRoom 상태 변경
+                
                 confirmButton()
                     .padding(.horizontal, 16)
-                
             }
             .padding(.top, 16)
         }
@@ -59,10 +59,10 @@ struct BeforeJoinRoomBottomView: View {
     
     private var BeforeJoinRoomBottomSheetTitleView: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text(StringLiterals.JoinRoom_Before.bottomSheetTitleLabel)
+            Text(StringLiterals.BeforeJoinRoom.bottomSheetTitleLabel)
                 .font(.pretendardFont(for: .heading4))
                 .foregroundStyle(.ymBlack)
-            Text(StringLiterals.JoinRoom_Before.bottomSheetSubTitleLabel)
+            Text(StringLiterals.BeforeJoinRoom.bottomSheetSubTitleLabel)
                 .font(.pretendardFont(for: .subtitle1))
                 .foregroundStyle(.gray1)
         }
@@ -81,6 +81,7 @@ struct BeforeJoinRoomBottomView: View {
             }
         }
     }
+    
 }
 
 // 커스텀 로딩뷰

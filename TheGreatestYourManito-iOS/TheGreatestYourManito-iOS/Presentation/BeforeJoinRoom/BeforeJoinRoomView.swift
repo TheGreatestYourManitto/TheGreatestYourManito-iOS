@@ -47,17 +47,17 @@ struct BeforeJoinRoomView: View {
         VStack(spacing: 21) {
             VStack(spacing: 16) {
                 HStack {
-                    Text(StringLiterals.JoinRoom_Before.titleLabel)
+                    Text(StringLiterals.BeforeJoinRoom.titleLabel)
                         .font(.pretendardFont(for: .heading2))
                         .foregroundColor(.ymBlack)
                     Spacer()
                 }
                 HStack {
                     VStack(alignment: .leading, spacing: 0) {
-                        Text(StringLiterals.JoinRoom_Before.subTitleLabel1)
+                        Text(StringLiterals.BeforeJoinRoom.subTitleLabel1)
                             .font(.pretendardFont(for: .heading6))
                             .foregroundColor(.gray1)
-                        Text(StringLiterals.JoinRoom_Before.subTitleLabel2)
+                        Text(StringLiterals.BeforeJoinRoom.subTitleLabel2)
                             .font(.pretendardFont(for: .heading6))
                             .foregroundColor(.gray1)
                     }
