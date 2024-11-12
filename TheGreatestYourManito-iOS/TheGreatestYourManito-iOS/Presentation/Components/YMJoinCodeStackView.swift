@@ -10,6 +10,7 @@ import SwiftUI
 struct YMJoinCodeStackView: View {
     let joinCode: String
     @Binding var isCopyOnClipBoard: Bool
+    @Binding var isShowingShareSheet: Bool
     
     var body: some View {
         VStack {
@@ -24,11 +25,12 @@ struct YMJoinCodeStackView: View {
                             isCopyOnClipBoard = false
                         }
                     })
-                    YMCircleButton(circleBtnType: .share, action: {
-                        if let theString = UIPasteboard.general.string {
-                            print("문자 복사 성공! \(theString)")
-                        }
-                    })
+                    YMCircleButton(circleBtnType: .share) {
+                        isShowingShareSheet = true
+                    }
+                    .sheet(isPresented: $isShowingShareSheet) {
+                        ActivityViewController(activityItems: [joinCode])
+                    }
                 }
             }
         }
