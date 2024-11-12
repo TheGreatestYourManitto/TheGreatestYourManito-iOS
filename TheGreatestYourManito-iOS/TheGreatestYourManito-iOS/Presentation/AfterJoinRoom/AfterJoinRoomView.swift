@@ -24,52 +24,48 @@ struct AfterJoinRoomView: View {
         ZStack(alignment: .top) {
             VStack(spacing: 28) {
                 headerView
-                bottomView
+                Spacer()
             }
             .ymNavBar(left: {
-                Button(action: { dismiss() })
-                { Image(.icnLeftnarrow)} } )
+                Button(action: { dismiss() }) {
+                    Image(.icnLeftnarrow)
+                }
+            })
         }
-        .padding(.bottom, 20)
+        .safeAreaInset(edge: .bottom) {
+            bottomView
+                .frame(height: 495)
+                .background(.ymWhite)
+                .cornerRadius(40, corners: [.topLeft, .topRight])
+                .shadow(radius: 2)
+        }
+        .edgesIgnoringSafeArea(.bottom)
     }
     
     private var headerView: some View {
         VStack(spacing: 21) {
             VStack {
                 HStack {
-                    CreateRoom_AfterWriteTitleLabelView(roomName: $roomName)
+                    Text(roomName)
+                        .font(.pretendardFont(for: .heading2))
+                        .foregroundColor(.ymBlack)
                     Spacer()
                 }
                 YMJoinCodeStackView(joinCode: joinCode)
             }
             .padding(.horizontal, 20)
-            
         }
     }
     
     private var bottomView: some View {
         AfterJoinRoomBottomView(memberCount: $memberCount, memberListModel: $memberListModel, roomType: roomType)
-            .cornerRadius(40, corners: [.topLeft, .topRight])
-            .shadow(radius: 2)
-    }
-    
-    private var navigationButton: some View {
-        Button(action: { dismiss() }) {
-            Image(.icnLeftnarrow)
-        }
     }
 }
 
-struct CreateRoom_AfterWriteTitleLabelView: View {
-    @Binding var roomName: String
-    
-    var body: some View {
-        Text(roomName)
-            .font(.pretendardFont(for: .heading2))
-            .foregroundColor(.ymBlack)
-    }
-}
 
+#Preview {
+    AfterJoinRoomView(roomName: "ㄴㄴㄴ", joinCode: "~~~~~~~~~", memberCount: 1, memberListModel: [JoinMemberModel(memberName: "하세요2"), JoinMemberModel(memberName: "하세요1"), JoinMemberModel(memberName: "하세요"), JoinMemberModel(memberName: "하세요"),JoinMemberModel(memberName: "하세요4")], roomType: .owner)
+}
 
 
 
