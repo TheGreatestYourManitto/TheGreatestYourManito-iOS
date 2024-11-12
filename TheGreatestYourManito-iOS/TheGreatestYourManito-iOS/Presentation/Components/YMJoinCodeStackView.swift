@@ -26,7 +26,7 @@ struct YMJoinCodeStackView: View {
                     })
                     YMCircleButton(circleBtnType: .share, action: {
                         if let theString = UIPasteboard.general.string {
-                            print("문자 복사 성공!!! \(theString)")
+                            print("문자 복사 성공!! \(theString)")
                         }
                     })
                 }
