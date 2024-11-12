@@ -10,6 +10,7 @@ import SwiftUI
 struct AfterJoinRoomBottomView: View {
     @Binding var memberCount: Int
     @Binding var memberListModel: [JoinMemberModel]
+    @Binding var isCopyOnClipBoard: Bool
     @State private var showDeleteSheet = false
     @State private var showSheet = false
     let roomType: RoomType
@@ -28,13 +29,29 @@ struct AfterJoinRoomBottomView: View {
                     Spacer(minLength: 20)
                     confirmButton()
                 }
+                
             }
             .padding(.top, 18)
+            .overlay(
+                Group {
+                    if isCopyOnClipBoard {
+                        VStack {
+                            Spacer()
+                            CopyToastView()
+                                .padding(.bottom, 90)
+                                .padding(.horizontal, 16)
+                                .transition(.move(edge: .bottom).combined(with: .opacity))
+                        }
+                    }
+                }
+            )
+            .animation(.easeOut(duration: 0.3), value: isCopyOnClipBoard)
             Spacer(minLength: 20)
         }
         .frame(height: 495)
         .background(.ymWhite)
         .padding(.bottom, 25)
+        
     }
     
     @ViewBuilder
@@ -50,6 +67,7 @@ struct AfterJoinRoomBottomView: View {
             bottomSheetType: .nonDragBar
         ))
     }
+    
 }
 
 struct MemberCountLabelView: View {

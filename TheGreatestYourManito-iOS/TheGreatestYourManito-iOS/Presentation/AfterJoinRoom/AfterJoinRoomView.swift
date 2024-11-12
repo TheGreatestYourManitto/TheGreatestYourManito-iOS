@@ -18,6 +18,7 @@ struct AfterJoinRoomView: View {
     @State var roomName: String
     @State var memberCount: Int
     @State var memberListModel: [JoinMemberModel]
+    @State private var isCopyOnClipBoard: Bool = false
     @Binding var joinCode: String
     let roomType: RoomType
     
@@ -52,14 +53,14 @@ struct AfterJoinRoomView: View {
                         .foregroundColor(.ymBlack)
                     Spacer()
                 }
-                YMJoinCodeStackView(joinCode: joinCode)
+                YMJoinCodeStackView(joinCode: joinCode, isCopyOnClipBoard: $isCopyOnClipBoard)
             }
             .padding(.horizontal, 20)
         }
     }
     
     private var bottomView: some View {
-        AfterJoinRoomBottomView(memberCount: $memberCount, memberListModel: $memberListModel, roomType: roomType)
+        AfterJoinRoomBottomView(memberCount: $memberCount, memberListModel: $memberListModel, isCopyOnClipBoard: $isCopyOnClipBoard, roomType: roomType)
     }
     
 }

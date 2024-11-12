@@ -9,6 +9,7 @@ import SwiftUI
 
 struct YMJoinCodeStackView: View {
     let joinCode: String
+    @Binding var isCopyOnClipBoard: Bool
     
     var body: some View {
         VStack {
@@ -16,8 +17,18 @@ struct YMJoinCodeStackView: View {
                 JoinCodeView(joinCode: joinCode)
                 
                 HStack(spacing: 10) {
-                    YMCircleButton(circleBtnType: .copy, action: {})
-                    YMCircleButton(circleBtnType: .share, action: {})
+                    YMCircleButton(circleBtnType: .copy, action: {
+                        isCopyOnClipBoard = true
+                        UIPasteboard.general.string = joinCode
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                            isCopyOnClipBoard = false
+                        }
+                    })
+                    YMCircleButton(circleBtnType: .share, action: {
+                        if let theString = UIPasteboard.general.string {
+                            print("문자 복사 성공!!! \(theString)")
+                        }
+                    })
                 }
             }
         }
@@ -43,6 +54,24 @@ extension YMJoinCodeStackView {
             .background(.ymWhite)
             .clipShape(.rect(cornerRadius: 16))
         }
+    }
+    
+}
+
+struct CopyToastView: View {
+
+    var body: some View {
+        VStack {
+            Text(StringLiterals.JoinRoomPublic.copyComent)
+                .font(.pretendardFont(for: .heading6))
+                .foregroundStyle(.gray1)
+                .background(.gray3)
+        }
+        .frame(height: 45)
+        .frame(maxWidth: .infinity)
+        .background(.gray3)
+        .clipShape(.rect(cornerRadius: 16))
+        
     }
     
 }
