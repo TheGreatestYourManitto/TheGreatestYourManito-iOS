@@ -41,7 +41,7 @@
 		9EB811D02CCFB4BC003C104D /* YMJoinCodeStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811CF2CCFB4BC003C104D /* YMJoinCodeStackView.swift */; };
 		9EB811D82CCFBD64003C104D /* AfterJoinRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811D72CCFBD64003C104D /* AfterJoinRoomView.swift */; };
 		9EB811DF2CCFC497003C104D /* AfterJoinRoomBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811DE2CCFC497003C104D /* AfterJoinRoomBottomView.swift */; };
-		9EB811E12CD0CA31003C104D /* CreateRoom_AfterWriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811E02CD0CA31003C104D /* CreateRoom_AfterWriteViewModel.swift */; };
+		9EB811E12CD0CA31003C104D /* JoinMemberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811E02CD0CA31003C104D /* JoinMemberModel.swift */; };
 		ED6669EC2CC8CA680005D599 /* YMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6669EB2CC8CA680005D599 /* YMButton.swift */; };
 		ED6669EE2CC8CE950005D599 /* YMTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6669ED2CC8CE950005D599 /* YMTextField.swift */; };
 		ED831DEF2CC8E1A100486C5A /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED831DEE2CC8E1A100486C5A /* SignUpView.swift */; };
@@ -85,7 +85,7 @@
 		9EB811CF2CCFB4BC003C104D /* YMJoinCodeStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMJoinCodeStackView.swift; sourceTree = "<group>"; };
 		9EB811D72CCFBD64003C104D /* AfterJoinRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterJoinRoomView.swift; sourceTree = "<group>"; };
 		9EB811DE2CCFC497003C104D /* AfterJoinRoomBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterJoinRoomBottomView.swift; sourceTree = "<group>"; };
-		9EB811E02CD0CA31003C104D /* CreateRoom_AfterWriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoom_AfterWriteViewModel.swift; sourceTree = "<group>"; };
+		9EB811E02CD0CA31003C104D /* JoinMemberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinMemberModel.swift; sourceTree = "<group>"; };
 		ED6669EB2CC8CA680005D599 /* YMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMButton.swift; sourceTree = "<group>"; };
 		ED6669ED2CC8CE950005D599 /* YMTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMTextField.swift; sourceTree = "<group>"; };
 		ED831DEE2CC8E1A100486C5A /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -323,7 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				9EB811D72CCFBD64003C104D /* AfterJoinRoomView.swift */,
-				9EB811E02CD0CA31003C104D /* CreateRoom_AfterWriteViewModel.swift */,
+				9EB811E02CD0CA31003C104D /* JoinMemberModel.swift */,
 				9EB811D92CCFC3BE003C104D /* SubViews */,
 			);
 			path = AfterJoinRoom;
@@ -464,7 +464,7 @@
 				9EB811DF2CCFC497003C104D /* AfterJoinRoomBottomView.swift in Sources */,
 				9EB811D82CCFBD64003C104D /* AfterJoinRoomView.swift in Sources */,
 				9EB811D02CCFB4BC003C104D /* YMJoinCodeStackView.swift in Sources */,
-				9EB811E12CD0CA31003C104D /* CreateRoom_AfterWriteViewModel.swift in Sources */,
+				9EB811E12CD0CA31003C104D /* JoinMemberModel.swift in Sources */,
 				ED6669EC2CC8CA680005D599 /* YMButton.swift in Sources */,
 				9EB811CE2CCFB25E003C104D /* YMCircleButton.swift in Sources */,
 				9E4F308A2CC7D484009C59A4 /* Font+.swift in Sources */,
