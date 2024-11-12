@@ -13,37 +13,68 @@ struct BeforeJoinRoomView: View {
     @State var joinCode: String
     @State var memberCount: Int
     @State var memberListModel: [JoinMemberModel]
+    @State var isLoading: Bool = false
     
     var body: some View {
-        
-        VStack(spacing: 21) {
-            VStack {
-                HStack {
-                    CreateRoom_AfterWriteTitleLabelView(roomName: $roomName)
-                    Spacer()
-                }.padding(.horizontal, -2)
+        NavigationStack {
+            ZStack(alignment: .top) {
+                VStack(spacing: 32) {
+                    headerView
+                    bottomView
+                        .frame(height: 495)
+                        .background(.ymWhite)
+                        .cornerRadius(40, corners: [.topLeft, .topRight])
+                        .shadow(radius: 2)
+                }
+                .ymNavBar(left: {
+                    Button(action: { dismiss() }) {
+                        Image(.icnLeftnarrow)
+                    }
+                })
                 
-                YMJoinCodeStackView(joinCode: joinCode)
-                
-                Spacer()
-            }.padding(.horizontal, 20)
-            
-//            AfterJoinRoomBottomView(memberCount: $memberCount, memberListModel: $memberListModel)
-//                .frame(height: 529)
-//                .cornerRadius(40, corners: [.topLeft, .topRight])
-//                .shadow(radius: 2)
-//                .padding(.top, 7)
-            
+            }.edgesIgnoringSafeArea(.bottom)
         }
-        .padding(.top, 40)
-        .background(.gray4)
-        
-        .ymNavBar(left: {
-            Button(action: {
-                dismiss()
-            }) {
-                Image(.icnLeftnarrow)
+        .overlay(
+            Group {
+                if isLoading {
+                    LoadingView()
+                }
             }
-        })
+        )
+    }
+    
+    private var headerView: some View {
+        VStack(spacing: 21) {
+            VStack(spacing: 16) {
+                HStack {
+                    Text(StringLiterals.JoinRoom_Before.titleLabel)
+                        .font(.pretendardFont(for: .heading2))
+                        .foregroundColor(.ymBlack)
+                    Spacer()
+                }
+                HStack {
+                    VStack(alignment: .leading, spacing: 0) {
+                        Text(StringLiterals.JoinRoom_Before.subTitleLabel1)
+                            .font(.pretendardFont(for: .heading6))
+                            .foregroundColor(.gray1)
+                        Text(StringLiterals.JoinRoom_Before.subTitleLabel2)
+                            .font(.pretendardFont(for: .heading6))
+                            .foregroundColor(.gray1)
+                    }
+                    
+                    Spacer()
+                }
+            }
+            .padding(.horizontal, 20)
+        }
+    }
+    
+    private var bottomView: some View {
+        BeforeJoinRoomBottomView(memberCount: $memberCount, memberListModel: $memberListModel, isLoading: $isLoading)
     }
 }
+
+#Preview {
+    BeforeJoinRoomView(roomName: "ㄴㄴㄴ", joinCode: "~~~~~~~~~", memberCount: 1, memberListModel: [JoinMemberModel(memberName: "하세요2"), JoinMemberModel(memberName: "하세요1"), JoinMemberModel(memberName: "하세요"), JoinMemberModel(memberName: "하세요"),JoinMemberModel(memberName: "하세요4")])
+}
+

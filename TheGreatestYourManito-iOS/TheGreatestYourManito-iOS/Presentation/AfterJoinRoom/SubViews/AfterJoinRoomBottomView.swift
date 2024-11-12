@@ -17,7 +17,7 @@ struct AfterJoinRoomBottomView: View {
     var body: some View {
         VStack(spacing: 0) {
             HStack {
-                MemberCountLabelView(memberCount: $memberCount)
+                MemberCountLabelView(memberCount: $memberCount, roomType: roomType)
                 Spacer()
             }
             .padding(.top, 40)
@@ -30,6 +30,7 @@ struct AfterJoinRoomBottomView: View {
                 }
             }
             .padding(.top, 18)
+            Spacer(minLength: 20)
         }
         .frame(height: 495)
         .background(.ymWhite)
@@ -54,15 +55,22 @@ struct AfterJoinRoomBottomView: View {
 struct MemberCountLabelView: View {
     
     @Binding var memberCount: Int
+    let roomType: RoomType
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("총 \(memberCount)명")
                 .font(.pretendardFont(for: .heading4))
                 .foregroundStyle(.ymBlack)
-            Text(StringLiterals.CreateRoomView_AfterWrite.noticeWordLabel)
-                .font(.pretendardFont(for: .subtitle1))
-                .foregroundStyle(.gray1)
+            if case .owner = roomType {
+                Text(StringLiterals.AfterJoinRoom.ownerNoticeWordLabel)
+                    .font(.pretendardFont(for: .subtitle1))
+                    .foregroundStyle(.gray1)
+            } else {
+                Text(StringLiterals.AfterJoinRoom.notOwnerNoticeWordLabel)
+                    .font(.pretendardFont(for: .subtitle1))
+                    .foregroundStyle(.gray1)
+            }
         }
         .padding(.leading, 32)
     }
@@ -190,6 +198,6 @@ struct BottomSheetContentView: View {
     
 }
 
-#Preview {
-    AfterJoinRoomView(roomName: "ㄴㄴㄴ", joinCode: "~~~~~~~~~", memberCount: 1, memberListModel: [JoinMemberModel(memberName: "하세요2"), JoinMemberModel(memberName: "하세요1"), JoinMemberModel(memberName: "하세요"), JoinMemberModel(memberName: "하세요"),JoinMemberModel(memberName: "하세요4")], roomType: .owner)
-}
+//#Preview {
+//    AfterJoinRoomView(roomName: "ㄴㄴㄴ", joinCode: "~~~~~~~~~", memberCount: 1, memberListModel: [JoinMemberModel(memberName: "하세요2"), JoinMemberModel(memberName: "하세요1"), JoinMemberModel(memberName: "하세요"), JoinMemberModel(memberName: "하세요"),JoinMemberModel(memberName: "하세요4")], roomType: .owner)
+//}

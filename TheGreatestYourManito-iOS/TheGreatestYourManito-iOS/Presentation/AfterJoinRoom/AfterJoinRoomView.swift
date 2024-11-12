@@ -13,11 +13,12 @@ enum RoomType {
 }
 
 struct AfterJoinRoomView: View {
+    
     @Environment(\.dismiss) private var dismiss
     @State var roomName: String
-    @State var joinCode: String
     @State var memberCount: Int
     @State var memberListModel: [JoinMemberModel]
+    @Binding var joinCode: String
     let roomType: RoomType
     
     var body: some View {
@@ -60,12 +61,13 @@ struct AfterJoinRoomView: View {
     private var bottomView: some View {
         AfterJoinRoomBottomView(memberCount: $memberCount, memberListModel: $memberListModel, roomType: roomType)
     }
+    
 }
 
 
-#Preview {
-    AfterJoinRoomView(roomName: "ㄴㄴㄴ", joinCode: "~~~~~~~~~", memberCount: 1, memberListModel: [JoinMemberModel(memberName: "하세요2"), JoinMemberModel(memberName: "하세요1"), JoinMemberModel(memberName: "하세요"), JoinMemberModel(memberName: "하세요"),JoinMemberModel(memberName: "하세요4")], roomType: .owner)
-}
+//#Preview {
+//    AfterJoinRoomView(roomName: "ㄴㄴㄴ", joinCode: "~~~~~~~~~", memberCount: 1, memberListModel: [JoinMemberModel(memberName: "하세요2"), JoinMemberModel(memberName: "하세요1"), JoinMemberModel(memberName: "하세요"), JoinMemberModel(memberName: "하세요"),JoinMemberModel(memberName: "하세요4")], roomType: .owner)
+//}
 
 
 
