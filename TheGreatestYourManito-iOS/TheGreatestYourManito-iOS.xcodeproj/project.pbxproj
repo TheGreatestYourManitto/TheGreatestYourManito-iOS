@@ -36,6 +36,7 @@
 		9E6699772CD3CF4D0053960A /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699762CD3CF4D0053960A /* StringLiterals.swift */; };
 		9E6699792CD3EE7D0053960A /* BottomSheetContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */; };
 		9E6FCB052CDABD3500D2A816 /* BeforeJoinRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6FCB042CDABD3500D2A816 /* BeforeJoinRoomView.swift */; };
+		9EB642562CE3853500F7F156 /* BeforeJoinRoomBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB642552CE3853500F7F156 /* BeforeJoinRoomBottomView.swift */; };
 		9EB811CA2CCE1FFC003C104D /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 9EB811C92CCE1FFC003C104D /* Moya */; };
 		9EB811CE2CCFB25E003C104D /* YMCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811CD2CCFB25E003C104D /* YMCircleButton.swift */; };
 		9EB811D02CCFB4BC003C104D /* YMJoinCodeStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811CF2CCFB4BC003C104D /* YMJoinCodeStackView.swift */; };
@@ -81,6 +82,7 @@
 		9E6699762CD3CF4D0053960A /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
 		9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetContentType.swift; sourceTree = "<group>"; };
 		9E6FCB042CDABD3500D2A816 /* BeforeJoinRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeJoinRoomView.swift; sourceTree = "<group>"; };
+		9EB642552CE3853500F7F156 /* BeforeJoinRoomBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeJoinRoomBottomView.swift; sourceTree = "<group>"; };
 		9EB811CD2CCFB25E003C104D /* YMCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMCircleButton.swift; sourceTree = "<group>"; };
 		9EB811CF2CCFB4BC003C104D /* YMJoinCodeStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMJoinCodeStackView.swift; sourceTree = "<group>"; };
 		9EB811D72CCFBD64003C104D /* AfterJoinRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterJoinRoomView.swift; sourceTree = "<group>"; };
@@ -315,8 +317,17 @@
 			isa = PBXGroup;
 			children = (
 				9E6FCB042CDABD3500D2A816 /* BeforeJoinRoomView.swift */,
+				9EB642542CE3850D00F7F156 /* SubViews */,
 			);
 			path = BeforeJoinRoom;
+			sourceTree = "<group>";
+		};
+		9EB642542CE3850D00F7F156 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				9EB642552CE3853500F7F156 /* BeforeJoinRoomBottomView.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 		9EB811D12CCFBC73003C104D /* AfterJoinRoom */ = {
@@ -483,6 +494,7 @@
 				ED6669EE2CC8CE950005D599 /* YMTextField.swift in Sources */,
 				ED831DF72CCD506600486C5A /* RoomCardView.swift in Sources */,
 				88A3564D2CCF73FA005E2893 /* NameTagView.swift in Sources */,
+				9EB642562CE3853500F7F156 /* BeforeJoinRoomBottomView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
