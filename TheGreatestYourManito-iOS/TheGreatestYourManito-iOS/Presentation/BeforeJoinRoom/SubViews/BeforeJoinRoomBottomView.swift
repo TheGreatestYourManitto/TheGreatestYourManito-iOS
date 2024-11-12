@@ -83,26 +83,3 @@ struct BeforeJoinRoomBottomView: View {
     }
     
 }
-
-// 커스텀 로딩뷰
-struct LoadingView: View {
-    var body: some View {
-        ZStack {
-            Color.black.opacity(0.5)
-                .ignoresSafeArea()
-            
-            VStack {
-                ProgressView() // 기본 로딩 인디케이터
-                    .progressViewStyle(CircularProgressViewStyle(tint: .white))
-                    .scaleEffect(1.5)
-                Text("로딩 중...")
-                    .foregroundColor(.white)
-                    .font(.headline)
-                    .padding(.top, 8)
-            }
-            .padding(20)
-            .background(Color.gray.opacity(0.8))
-            .cornerRadius(12)
-        }
-    }
-}

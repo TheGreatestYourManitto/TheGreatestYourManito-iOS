@@ -37,7 +37,7 @@ struct BeforeJoinRoomView: View {
         .overlay(
             Group {
                 if isLoading {
-                    LoadingView()
+                    YMLoadingView(titleText: "방 만드는 중..")
                 }
             }
         )
