@@ -114,6 +114,7 @@ xcuserdata
 !*.xcodeproj/xcshareddata/
 !*.xcodeproj/project.xcworkspace/
 !*.xcworkspace/contents.xcworkspacedata
+*.xcconfig
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
 
