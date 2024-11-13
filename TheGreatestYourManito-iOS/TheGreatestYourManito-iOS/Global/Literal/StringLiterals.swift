@@ -35,4 +35,12 @@ enum StringLiterals {
         static let copyComent = "코드 복사 완료!"
     }
     
+    enum OpenManito {
+        static let notOpenTitleLabel1 = "내가 N일동안 응원보낼"
+        static let notOpenTitleLabel2 = "마니또는 누구일까요?"
+        static let openTitleLabel = "나의 마니또는"
+        static let notOpenButtonStr = "내 마니또 보기"
+        static let openButtonStr = "바로 응원 보내기"
+    }
+    
 }
