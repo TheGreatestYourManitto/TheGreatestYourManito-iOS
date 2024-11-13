@@ -32,11 +32,11 @@ enum BottomSheetContentType: CaseIterable {
     var titleText: Text {
         switch self {
         case .delete:
-            return Text(StringLiterals.CreateRoomView_AfterWrite.removeMemberLabel)
+            return Text(StringLiterals.AfterJoinRoom.removeMemberLabel)
                 .font(.pretendardFont(for: .heading3))
                 .foregroundStyle(.ymBlack)
         case .confirm:
-            return Text(StringLiterals.CreateRoomView_AfterWrite.confirmRoomLabel)
+            return Text(StringLiterals.AfterJoinRoom.confirmRoomLabel)
                 .font(.pretendardFont(for: .heading3))
                 .foregroundStyle(.ymBlack)
         }
@@ -45,11 +45,11 @@ enum BottomSheetContentType: CaseIterable {
     var subText: Text {
         switch self {
         case .delete:
-            return Text(StringLiterals.CreateRoomView_AfterWrite.removeMemberSubLabel)
+            return Text(StringLiterals.AfterJoinRoom.removeMemberSubLabel)
                 .font(.pretendardFont(for: .heading6))
                 .foregroundStyle(.gray1)
         case .confirm:
-            return Text(StringLiterals.CreateRoomView_AfterWrite.confirmRoomSubLabel)
+            return Text(StringLiterals.AfterJoinRoom.confirmRoomSubLabel)
                 .font(.pretendardFont(for: .heading6))
                 .foregroundStyle(.gray1)
         }
@@ -58,11 +58,11 @@ enum BottomSheetContentType: CaseIterable {
     var leftBtnText: Text {
         switch self {
         case .delete:
-            return Text(StringLiterals.CreateRoomView_AfterWrite.deleteBottomSheetLeftBtnLabel)
+            return Text(StringLiterals.AfterJoinRoom.deleteBottomSheetLeftBtnLabel)
                 .font(.pretendardFont(for: .heading4))
                 .foregroundStyle(.gray1)
         case .confirm:
-            return Text(StringLiterals.CreateRoomView_AfterWrite.confirmBottomSheetLeftBtnLabel)
+            return Text(StringLiterals.AfterJoinRoom.confirmBottomSheetLeftBtnLabel)
                 .font(.pretendardFont(for: .heading4))
                 .foregroundStyle(.gray1)
         }
@@ -71,11 +71,11 @@ enum BottomSheetContentType: CaseIterable {
     var rightBtnText: Text {
         switch self {
         case .delete:
-            return Text(StringLiterals.CreateRoomView_AfterWrite.deleteBottomSheetRightBtnLabel)
+            return Text(StringLiterals.AfterJoinRoom.deleteBottomSheetRightBtnLabel)
                 .font(.pretendardFont(for: .heading4))
                 .foregroundStyle(.ymWhite)
         case .confirm:
-            return Text(StringLiterals.CreateRoomView_AfterWrite.confirmBottomSheetRightBtnLabel)
+            return Text(StringLiterals.AfterJoinRoom.confirmBottomSheetRightBtnLabel)
                 .font(.pretendardFont(for: .heading4))
                 .foregroundStyle(.ymWhite)
         }

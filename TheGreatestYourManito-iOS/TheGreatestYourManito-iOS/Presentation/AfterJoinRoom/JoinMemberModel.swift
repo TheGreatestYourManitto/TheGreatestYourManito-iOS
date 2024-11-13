@@ -1,5 +1,5 @@
 //
-//  CreateRoom_AfterWriteViewModel.swift
+//  JoinMemberModel.swift
 //  TheGreatestYourManito-iOS
 //
 //  Created by 박신영 on 10/29/24.
