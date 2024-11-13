@@ -40,6 +40,7 @@
 		9EB642582CE3C03C00F7F156 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB642572CE3C03C00F7F156 /* ActivityViewController.swift */; };
 		9EB6425A2CE3E77D00F7F156 /* YMLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB642592CE3E77D00F7F156 /* YMLoadingView.swift */; };
 		9EB6425D2CE4295C00F7F156 /* OpenManitoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB6425C2CE4295C00F7F156 /* OpenManitoView.swift */; };
+		9EB6425F2CE5421200F7F156 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB6425E2CE5421200F7F156 /* BaseService.swift */; };
 		9EB811CA2CCE1FFC003C104D /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 9EB811C92CCE1FFC003C104D /* Moya */; };
 		9EB811CE2CCFB25E003C104D /* YMCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811CD2CCFB25E003C104D /* YMCircleButton.swift */; };
 		9EB811D02CCFB4BC003C104D /* YMJoinCodeStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811CF2CCFB4BC003C104D /* YMJoinCodeStackView.swift */; };
@@ -89,6 +90,7 @@
 		9EB642572CE3C03C00F7F156 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		9EB642592CE3E77D00F7F156 /* YMLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMLoadingView.swift; sourceTree = "<group>"; };
 		9EB6425C2CE4295C00F7F156 /* OpenManitoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenManitoView.swift; sourceTree = "<group>"; };
+		9EB6425E2CE5421200F7F156 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		9EB811CD2CCFB25E003C104D /* YMCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMCircleButton.swift; sourceTree = "<group>"; };
 		9EB811CF2CCFB4BC003C104D /* YMJoinCodeStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMJoinCodeStackView.swift; sourceTree = "<group>"; };
 		9EB811D72CCFBD64003C104D /* AfterJoinRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterJoinRoomView.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 		9E4F30802CC7CFE8009C59A4 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				9EB6425E2CE5421200F7F156 /* BaseService.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				9EB811D02CCFB4BC003C104D /* YMJoinCodeStackView.swift in Sources */,
 				9EB811E12CD0CA31003C104D /* JoinMemberModel.swift in Sources */,
 				ED6669EC2CC8CA680005D599 /* YMButton.swift in Sources */,
+				9EB6425F2CE5421200F7F156 /* BaseService.swift in Sources */,
 				9EB811CE2CCFB25E003C104D /* YMCircleButton.swift in Sources */,
 				9EB6425A2CE3E77D00F7F156 /* YMLoadingView.swift in Sources */,
 				9E4F308A2CC7D484009C59A4 /* Font+.swift in Sources */,
