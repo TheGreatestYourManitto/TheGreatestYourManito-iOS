@@ -75,7 +75,7 @@ struct BeforeJoinRoomBottomView: View {
             isLoading = true // 로딩 상태 활성화
             
             // 5초 후에 로딩 해제 및 화면 전환 수행
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
                 isLoading = false
                 navigateToAfterJoinRoom = true
             }
