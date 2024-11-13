@@ -45,6 +45,7 @@
 		9EB642632CE5428700F7F156 /* MoyaLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB642622CE5428700F7F156 /* MoyaLoggingPlugin.swift */; };
 		9EB642652CE542B600F7F156 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB642642CE542B600F7F156 /* NetworkResult.swift */; };
 		9EB642672CE542DE00F7F156 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB642662CE542DE00F7F156 /* NetworkService.swift */; };
+		9EB6426A2CE5437300F7F156 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB642692CE5437300F7F156 /* Config.swift */; };
 		9EB811CA2CCE1FFC003C104D /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 9EB811C92CCE1FFC003C104D /* Moya */; };
 		9EB811CE2CCFB25E003C104D /* YMCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811CD2CCFB25E003C104D /* YMCircleButton.swift */; };
 		9EB811D02CCFB4BC003C104D /* YMJoinCodeStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811CF2CCFB4BC003C104D /* YMJoinCodeStackView.swift */; };
@@ -99,6 +100,7 @@
 		9EB642622CE5428700F7F156 /* MoyaLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggingPlugin.swift; sourceTree = "<group>"; };
 		9EB642642CE542B600F7F156 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		9EB642662CE542DE00F7F156 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		9EB642692CE5437300F7F156 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		9EB811CD2CCFB25E003C104D /* YMCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMCircleButton.swift; sourceTree = "<group>"; };
 		9EB811CF2CCFB4BC003C104D /* YMJoinCodeStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMJoinCodeStackView.swift; sourceTree = "<group>"; };
 		9EB811D72CCFBD64003C104D /* AfterJoinRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterJoinRoomView.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				9E4F30802CC7CFE8009C59A4 /* Base */,
 				9E4F30812CC7CFF8009C59A4 /* DTO */,
 				9E4F30822CC7D005009C59A4 /* Router */,
+				9EB642682CE5434400F7F156 /* Config */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -360,6 +363,14 @@
 				9EB6425C2CE4295C00F7F156 /* OpenManitoView.swift */,
 			);
 			path = OpenManito;
+			sourceTree = "<group>";
+		};
+		9EB642682CE5434400F7F156 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				9EB642692CE5437300F7F156 /* Config.swift */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 		9EB811D12CCFBC73003C104D /* AfterJoinRoom */ = {
@@ -529,6 +540,7 @@
 				88A356522CCFB062005E2893 /* CheerType.swift in Sources */,
 				9E6699752CD368A50053960A /* YMBottomSheet.swift in Sources */,
 				ED831DEF2CC8E1A100486C5A /* SignUpView.swift in Sources */,
+				9EB6426A2CE5437300F7F156 /* Config.swift in Sources */,
 				88A356592CCFB57E005E2893 /* roundCorner.swift in Sources */,
 				ED6669EE2CC8CE950005D599 /* YMTextField.swift in Sources */,
 				9EB642672CE542DE00F7F156 /* NetworkService.swift in Sources */,
