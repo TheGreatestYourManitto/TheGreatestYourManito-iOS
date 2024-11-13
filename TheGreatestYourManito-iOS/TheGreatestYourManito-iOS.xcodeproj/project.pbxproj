@@ -46,6 +46,7 @@
 		9EB642652CE542B600F7F156 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB642642CE542B600F7F156 /* NetworkResult.swift */; };
 		9EB642672CE542DE00F7F156 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB642662CE542DE00F7F156 /* NetworkService.swift */; };
 		9EB6426A2CE5437300F7F156 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB642692CE5437300F7F156 /* Config.swift */; };
+		9EB6426E2CE5473500F7F156 /* Development.xcconfig in Sources */ = {isa = PBXBuildFile; fileRef = 9EB6426D2CE5473500F7F156 /* Development.xcconfig */; };
 		9EB811CA2CCE1FFC003C104D /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 9EB811C92CCE1FFC003C104D /* Moya */; };
 		9EB811CE2CCFB25E003C104D /* YMCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811CD2CCFB25E003C104D /* YMCircleButton.swift */; };
 		9EB811D02CCFB4BC003C104D /* YMJoinCodeStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811CF2CCFB4BC003C104D /* YMJoinCodeStackView.swift */; };
@@ -101,6 +102,7 @@
 		9EB642642CE542B600F7F156 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		9EB642662CE542DE00F7F156 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		9EB642692CE5437300F7F156 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		9EB6426D2CE5473500F7F156 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		9EB811CD2CCFB25E003C104D /* YMCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMCircleButton.swift; sourceTree = "<group>"; };
 		9EB811CF2CCFB4BC003C104D /* YMJoinCodeStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMJoinCodeStackView.swift; sourceTree = "<group>"; };
 		9EB811D72CCFBD64003C104D /* AfterJoinRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterJoinRoomView.swift; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 			isa = PBXGroup;
 			children = (
 				9EB642692CE5437300F7F156 /* Config.swift */,
+				9EB6426D2CE5473500F7F156 /* Development.xcconfig */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 				ED831DF72CCD506600486C5A /* RoomCardView.swift in Sources */,
 				88A3564D2CCF73FA005E2893 /* NameTagView.swift in Sources */,
 				9EB642562CE3853500F7F156 /* BeforeJoinRoomBottomView.swift in Sources */,
+				9EB6426E2CE5473500F7F156 /* Development.xcconfig in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
