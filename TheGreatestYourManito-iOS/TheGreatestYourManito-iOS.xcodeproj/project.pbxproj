@@ -40,6 +40,13 @@
 		9EB642582CE3C03C00F7F156 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB642572CE3C03C00F7F156 /* ActivityViewController.swift */; };
 		9EB6425A2CE3E77D00F7F156 /* YMLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB642592CE3E77D00F7F156 /* YMLoadingView.swift */; };
 		9EB6425D2CE4295C00F7F156 /* OpenManitoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB6425C2CE4295C00F7F156 /* OpenManitoView.swift */; };
+		9EB6425F2CE5421200F7F156 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB6425E2CE5421200F7F156 /* BaseService.swift */; };
+		9EB642612CE5424E00F7F156 /* BaseTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB642602CE5424E00F7F156 /* BaseTargetType.swift */; };
+		9EB642632CE5428700F7F156 /* MoyaLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB642622CE5428700F7F156 /* MoyaLoggingPlugin.swift */; };
+		9EB642652CE542B600F7F156 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB642642CE542B600F7F156 /* NetworkResult.swift */; };
+		9EB642672CE542DE00F7F156 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB642662CE542DE00F7F156 /* NetworkService.swift */; };
+		9EB6426A2CE5437300F7F156 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB642692CE5437300F7F156 /* Config.swift */; };
+		9EB6426E2CE5473500F7F156 /* Development.xcconfig in Sources */ = {isa = PBXBuildFile; fileRef = 9EB6426D2CE5473500F7F156 /* Development.xcconfig */; };
 		9EB811CA2CCE1FFC003C104D /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 9EB811C92CCE1FFC003C104D /* Moya */; };
 		9EB811CE2CCFB25E003C104D /* YMCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811CD2CCFB25E003C104D /* YMCircleButton.swift */; };
 		9EB811D02CCFB4BC003C104D /* YMJoinCodeStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811CF2CCFB4BC003C104D /* YMJoinCodeStackView.swift */; };
@@ -89,6 +96,13 @@
 		9EB642572CE3C03C00F7F156 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		9EB642592CE3E77D00F7F156 /* YMLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMLoadingView.swift; sourceTree = "<group>"; };
 		9EB6425C2CE4295C00F7F156 /* OpenManitoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenManitoView.swift; sourceTree = "<group>"; };
+		9EB6425E2CE5421200F7F156 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		9EB642602CE5424E00F7F156 /* BaseTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTargetType.swift; sourceTree = "<group>"; };
+		9EB642622CE5428700F7F156 /* MoyaLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggingPlugin.swift; sourceTree = "<group>"; };
+		9EB642642CE542B600F7F156 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		9EB642662CE542DE00F7F156 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		9EB642692CE5437300F7F156 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		9EB6426D2CE5473500F7F156 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		9EB811CD2CCFB25E003C104D /* YMCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMCircleButton.swift; sourceTree = "<group>"; };
 		9EB811CF2CCFB4BC003C104D /* YMJoinCodeStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMJoinCodeStackView.swift; sourceTree = "<group>"; };
 		9EB811D72CCFBD64003C104D /* AfterJoinRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterJoinRoomView.swift; sourceTree = "<group>"; };
@@ -215,6 +229,7 @@
 				9E4F30802CC7CFE8009C59A4 /* Base */,
 				9E4F30812CC7CFF8009C59A4 /* DTO */,
 				9E4F30822CC7D005009C59A4 /* Router */,
+				9EB642682CE5434400F7F156 /* Config */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -222,6 +237,11 @@
 		9E4F30802CC7CFE8009C59A4 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				9EB6425E2CE5421200F7F156 /* BaseService.swift */,
+				9EB642602CE5424E00F7F156 /* BaseTargetType.swift */,
+				9EB642622CE5428700F7F156 /* MoyaLoggingPlugin.swift */,
+				9EB642642CE542B600F7F156 /* NetworkResult.swift */,
+				9EB642662CE542DE00F7F156 /* NetworkService.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -345,6 +365,15 @@
 				9EB6425C2CE4295C00F7F156 /* OpenManitoView.swift */,
 			);
 			path = OpenManito;
+			sourceTree = "<group>";
+		};
+		9EB642682CE5434400F7F156 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				9EB642692CE5437300F7F156 /* Config.swift */,
+				9EB6426D2CE5473500F7F156 /* Development.xcconfig */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 		9EB811D12CCFBC73003C104D /* AfterJoinRoom */ = {
@@ -492,13 +521,17 @@
 				9EB811DF2CCFC497003C104D /* AfterJoinRoomBottomView.swift in Sources */,
 				9EB811D82CCFBD64003C104D /* AfterJoinRoomView.swift in Sources */,
 				9EB811D02CCFB4BC003C104D /* YMJoinCodeStackView.swift in Sources */,
+				9EB642612CE5424E00F7F156 /* BaseTargetType.swift in Sources */,
 				9EB811E12CD0CA31003C104D /* JoinMemberModel.swift in Sources */,
 				ED6669EC2CC8CA680005D599 /* YMButton.swift in Sources */,
+				9EB6425F2CE5421200F7F156 /* BaseService.swift in Sources */,
 				9EB811CE2CCFB25E003C104D /* YMCircleButton.swift in Sources */,
 				9EB6425A2CE3E77D00F7F156 /* YMLoadingView.swift in Sources */,
 				9E4F308A2CC7D484009C59A4 /* Font+.swift in Sources */,
 				9E6FCB052CDABD3500D2A816 /* BeforeJoinRoomView.swift in Sources */,
+				9EB642632CE5428700F7F156 /* MoyaLoggingPlugin.swift in Sources */,
 				88A3565F2CCFC005005E2893 /* PlayManittoViewModel.swift in Sources */,
+				9EB642652CE542B600F7F156 /* NetworkResult.swift in Sources */,
 				9EB642582CE3C03C00F7F156 /* ActivityViewController.swift in Sources */,
 				9E4F30702CC7CE5F009C59A4 /* TheGreatestYourManito_iOSApp.swift in Sources */,
 				9EB6425D2CE4295C00F7F156 /* OpenManitoView.swift in Sources */,
@@ -510,11 +543,14 @@
 				88A356522CCFB062005E2893 /* CheerType.swift in Sources */,
 				9E6699752CD368A50053960A /* YMBottomSheet.swift in Sources */,
 				ED831DEF2CC8E1A100486C5A /* SignUpView.swift in Sources */,
+				9EB6426A2CE5437300F7F156 /* Config.swift in Sources */,
 				88A356592CCFB57E005E2893 /* roundCorner.swift in Sources */,
 				ED6669EE2CC8CE950005D599 /* YMTextField.swift in Sources */,
+				9EB642672CE542DE00F7F156 /* NetworkService.swift in Sources */,
 				ED831DF72CCD506600486C5A /* RoomCardView.swift in Sources */,
 				88A3564D2CCF73FA005E2893 /* NameTagView.swift in Sources */,
 				9EB642562CE3853500F7F156 /* BeforeJoinRoomBottomView.swift in Sources */,
+				9EB6426E2CE5473500F7F156 /* Development.xcconfig in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +559,7 @@
 /* Begin XCBuildConfiguration section */
 		9E4F30782CC7CE61009C59A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EB6426D2CE5473500F7F156 /* Development.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -586,6 +623,7 @@
 		};
 		9E4F30792CC7CE61009C59A4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EB6426D2CE5473500F7F156 /* Development.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -642,6 +680,7 @@
 		};
 		9E4F307B2CC7CE61009C59A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EB6426D2CE5473500F7F156 /* Development.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -680,6 +719,7 @@
 		};
 		9E4F307C2CC7CE61009C59A4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EB6426D2CE5473500F7F156 /* Development.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
