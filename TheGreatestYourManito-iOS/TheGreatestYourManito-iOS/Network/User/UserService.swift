@@ -13,7 +13,7 @@ protocol UserServiceProtocol {
     
     func postUserIdentify(requestBody: UserIdentifyRequestBody, completion: @escaping (NetworkResult<BaseResponseBody<emptyResponse>>) -> ())
     
-    func postMakeUser(requestBody: MakeUserRequestBody, completion: @escaping (NetworkResult<BaseResponseBody<userCodeResponse>>) -> ())
+    func postMakeUser(requestBody: MakeUserRequestBody, completion: @escaping (NetworkResult<BaseResponseBody<MakeUserResponse>>) -> ())
     
 }
 
@@ -37,11 +37,11 @@ final class UserService: BaseService, UserServiceProtocol {
         }
     }
     
-    func postMakeUser(requestBody: MakeUserRequestBody, completion: @escaping (NetworkResult<BaseResponseBody<userCodeResponse>>) -> ()) {
+    func postMakeUser(requestBody: MakeUserRequestBody, completion: @escaping (NetworkResult<BaseResponseBody<MakeUserResponse>>) -> ()) {
         provider.request(.postMakeUser(requestBody: requestBody)) { result in
             switch result {
             case .success(let response):
-                let networkResult: NetworkResult<BaseResponseBody<userCodeResponse>> = self.judgeStatus(statusCode: response.statusCode, data: response.data)
+                let networkResult: NetworkResult<BaseResponseBody<MakeUserResponse>> = self.judgeStatus(statusCode: response.statusCode, data: response.data)
                 completion(networkResult)
             case .failure(let err):
                 print(err)

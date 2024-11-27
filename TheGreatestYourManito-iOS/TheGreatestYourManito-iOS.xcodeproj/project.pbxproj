@@ -53,6 +53,10 @@
 		9E648DF32CF77583004875B2 /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DF22CF77583004875B2 /* IntroViewModel.swift */; };
 		9E648DF52CF779DB004875B2 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DF42CF779DB004875B2 /* SignUpViewModel.swift */; };
 		9E648DF82CF7881B004875B2 /* UserCodeResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DF72CF7881B004875B2 /* UserCodeResponseBody.swift */; };
+		9E648DFC2CF78D31004875B2 /* ParticipateRoomRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DFB2CF78D31004875B2 /* ParticipateRoomRequestBody.swift */; };
+		9E648DFE2CF7B3E9004875B2 /* ParticipateRoomResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DFD2CF7B3E9004875B2 /* ParticipateRoomResponseBody.swift */; };
+		9E648E002CF7B5C4004875B2 /* BaseHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DFF2CF7B5C4004875B2 /* BaseHeader.swift */; };
+		9E648E042CF7B77E004875B2 /* RoomInfoResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648E032CF7B77E004875B2 /* RoomInfoResponseBody.swift */; };
 		9E6699752CD368A50053960A /* YMBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699742CD368A50053960A /* YMBottomSheet.swift */; };
 		9E6699772CD3CF4D0053960A /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699762CD3CF4D0053960A /* StringLiterals.swift */; };
 		9E6699792CD3EE7D0053960A /* BottomSheetContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */; };
@@ -133,6 +137,10 @@
 		9E648DF22CF77583004875B2 /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
 		9E648DF42CF779DB004875B2 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		9E648DF72CF7881B004875B2 /* UserCodeResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCodeResponseBody.swift; sourceTree = "<group>"; };
+		9E648DFB2CF78D31004875B2 /* ParticipateRoomRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateRoomRequestBody.swift; sourceTree = "<group>"; };
+		9E648DFD2CF7B3E9004875B2 /* ParticipateRoomResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateRoomResponseBody.swift; sourceTree = "<group>"; };
+		9E648DFF2CF7B5C4004875B2 /* BaseHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeader.swift; sourceTree = "<group>"; };
+		9E648E032CF7B77E004875B2 /* RoomInfoResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfoResponseBody.swift; sourceTree = "<group>"; };
 		9E6699742CD368A50053960A /* YMBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMBottomSheet.swift; sourceTree = "<group>"; };
 		9E6699762CD3CF4D0053960A /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
 		9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetContentType.swift; sourceTree = "<group>"; };
@@ -315,6 +323,7 @@
 				9EB642642CE542B600F7F156 /* NetworkResult.swift */,
 				9EB642662CE542DE00F7F156 /* NetworkService.swift */,
 				9E648DEE2CF75868004875B2 /* BaseResponseBody.swift */,
+				9E648DFF2CF7B5C4004875B2 /* BaseHeader.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -434,6 +443,8 @@
 		9E648DDA2CF74F66004875B2 /* Room */ = {
 			isa = PBXGroup;
 			children = (
+				9E648DFA2CF78C05004875B2 /* RequestDTO */,
+				9E648DF92CF78BFB004875B2 /* ResponseDTO */,
 				9E648DDC2CF74F82004875B2 /* RoomTargetType.swift */,
 				9E648DDE2CF74F8D004875B2 /* RoomService.swift */,
 			);
@@ -464,6 +475,23 @@
 				9E648DF72CF7881B004875B2 /* UserCodeResponseBody.swift */,
 			);
 			path = ResponseDTO;
+			sourceTree = "<group>";
+		};
+		9E648DF92CF78BFB004875B2 /* ResponseDTO */ = {
+			isa = PBXGroup;
+			children = (
+				9E648DFD2CF7B3E9004875B2 /* ParticipateRoomResponseBody.swift */,
+				9E648E032CF7B77E004875B2 /* RoomInfoResponseBody.swift */,
+			);
+			path = ResponseDTO;
+			sourceTree = "<group>";
+		};
+		9E648DFA2CF78C05004875B2 /* RequestDTO */ = {
+			isa = PBXGroup;
+			children = (
+				9E648DFB2CF78D31004875B2 /* ParticipateRoomRequestBody.swift */,
+			);
+			path = RequestDTO;
 			sourceTree = "<group>";
 		};
 		9E6FCAFB2CDA7E4E00D2A816 /* BeforeJoinRoom */ = {
@@ -662,6 +690,7 @@
 				9E648DE92CF7507A004875B2 /* UserIdentifyRequestBody.swift in Sources */,
 				9EB811D02CCFB4BC003C104D /* YMJoinCodeStackView.swift in Sources */,
 				ED53F6D62CF7885D00E5BD1C /* AfterCreateRoomView.swift in Sources */,
+				9E648E042CF7B77E004875B2 /* RoomInfoResponseBody.swift in Sources */,
 				9EB642612CE5424E00F7F156 /* BaseTargetType.swift in Sources */,
 				9EB811E12CD0CA31003C104D /* JoinMemberModel.swift in Sources */,
 				ED6669EC2CC8CA680005D599 /* YMButton.swift in Sources */,
@@ -693,8 +722,10 @@
 				88A3564F2CCF9E1E005E2893 /* PlayManittoBottomView.swift in Sources */,
 				88A3565D2CCFB7CD005E2893 /* YMNavigationBar.swift in Sources */,
 				88A356562CCFB54F005E2893 /* View+.swift in Sources */,
+				9E648DFE2CF7B3E9004875B2 /* ParticipateRoomResponseBody.swift in Sources */,
 				88A356522CCFB062005E2893 /* CheerType.swift in Sources */,
 				9E648DF12CF75B82004875B2 /* Device.swift in Sources */,
+				9E648E002CF7B5C4004875B2 /* BaseHeader.swift in Sources */,
 				9E6699752CD368A50053960A /* YMBottomSheet.swift in Sources */,
 				ED831DEF2CC8E1A100486C5A /* SignUpView.swift in Sources */,
 				9EB6426A2CE5437300F7F156 /* Config.swift in Sources */,
@@ -703,6 +734,7 @@
 				ED6669EE2CC8CE950005D599 /* YMTextField.swift in Sources */,
 				88A3564D2CCF73FA005E2893 /* YMHeaderTagView.swift in Sources */,
 				8832C3722CDF28CB00B8DFAB /* ManiitoRank.swift in Sources */,
+				9E648DFC2CF78D31004875B2 /* ParticipateRoomRequestBody.swift in Sources */,
 				9EB642672CE542DE00F7F156 /* NetworkService.swift in Sources */,
 				ED53F6D22CF72BFF00E5BD1C /* CreateRoomView.swift in Sources */,
 				ED831DF72CCD506600486C5A /* RoomCardView.swift in Sources */,

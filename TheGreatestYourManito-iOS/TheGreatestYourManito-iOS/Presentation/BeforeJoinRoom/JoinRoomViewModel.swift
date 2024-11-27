@@ -14,6 +14,7 @@ final class JoinRoomViewModel: ObservableObject {
     @Published var memberCount: Int = 0
     @Published var memberListModel: [JoinMemberModel] = []
     @Published var isLoading: Bool = false
+    @Published var roomId: Int = 0
     
     init(roomType: RoomType) {
         self.roomType = roomType
@@ -25,6 +26,64 @@ final class JoinRoomViewModel: ObservableObject {
         self.memberCount = memberCount
         self.memberListModel = memberListModel
         self.isLoading = isLoading
+    }
+    
+    func postParticipateRoom(invitationCode: String) {
+        NetworkService.shared.roomService.postParticipateRoom(requestBody: ParticipateRoomRequestBody(invitationCode: invitationCode), completion: { result in
+            switch result {
+            case .success(let response):
+                print("Success: \(response)")
+                guard let roomId = response.result?.roomId else {return}
+                self.roomId = roomId
+                print("self.roomId : \(self.roomId)")
+            default:
+                print("Failed to another reason")
+                return
+            }
+        })
+    }
+    
+    func getRoomInfo(roomId: Int) {
+        NetworkService.shared.roomService.getRoomInfo(roomId: roomId, completion: { result in
+            switch result {
+            case .success(let response):
+                print("Success: \(response)")
+                guard let result = response.result else {return}
+                self.roomType = result.isAdmin ? .owner : .notOwner
+                self.memberListModel = result.member.map { member in
+                    JoinMemberModel(userId: member.userId, memberName: member.userName)
+                }
+                self.roomName = result.roomName
+                self.memberCount = self.memberListModel.count
+            default:
+                print("Failed to another reason")
+                return
+            }
+        })
+    }
+    
+    func deleteRoomMember(roomId: Int, userId: Int) {
+        NetworkService.shared.roomService.deleteRoomMember(roomId: roomId, userId: userId, completion: { result in
+            switch result {
+            case .success(let response):
+                print("Success: \(response)")
+            default:
+                print("Failed to another reason")
+                return
+            }
+        })
+    }
+    
+    func patchConfirmRoomStatus(roomId: Int) {
+        NetworkService.shared.roomService.patchConfirmRoomStatus(roomId: roomId, completion: { result in
+            switch result {
+            case .success(let response):
+                print("Success: \(response)")
+            default:
+                print("Failed to another reason")
+                return
+            }
+        })
     }
     
 }

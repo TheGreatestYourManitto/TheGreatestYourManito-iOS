@@ -34,6 +34,9 @@ struct AfterJoinRoomView: View {
                 .cornerRadius(40, corners: [.topLeft, .topRight])
                 .shadow(radius: 2)
         }
+        .onAppear {
+            viewModel.getRoomInfo(roomId: viewModel.roomId)
+        }
         .edgesIgnoringSafeArea(.bottom)
     }
     

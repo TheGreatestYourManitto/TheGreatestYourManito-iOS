@@ -62,7 +62,8 @@ struct BeforeJoinRoomBottomView: View {
     private func confirmButton() -> some View {
         YMButton(title: "확인", buttonType: .confirm) {
             viewModel.isLoading = true // 로딩 상태 활성화
-            
+            print("joinCode: \(joinCode)")
+            viewModel.postParticipateRoom(invitationCode: joinCode)
             // 5초 후에 로딩 해제 및 화면 전환 수행
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
                 viewModel.isLoading = false

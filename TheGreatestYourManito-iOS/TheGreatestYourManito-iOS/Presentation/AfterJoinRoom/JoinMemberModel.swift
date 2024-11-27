@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct JoinMemberModel {
+    var userId: Int
     var memberName: String
 }
 

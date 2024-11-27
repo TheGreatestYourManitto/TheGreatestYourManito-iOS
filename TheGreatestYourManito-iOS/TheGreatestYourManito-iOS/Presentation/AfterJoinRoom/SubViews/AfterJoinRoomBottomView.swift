@@ -56,6 +56,7 @@ struct AfterJoinRoomBottomView: View {
     @ViewBuilder
     private func confirmButton() -> some View {
         YMButton(title: "확인", buttonType: .confirm) {
+            viewModel.patchConfirmRoomStatus(roomId: viewModel.roomId)
             showSheet.toggle()
         }
         .padding(16)
@@ -132,7 +133,7 @@ struct MemberListItemView: View {
                     .foregroundStyle(.ymBlack)
                 Spacer()
                 if case .owner = viewModel.roomType {
-                    ymCircleDeleteButton()
+                    ymCircleDeleteButton(memberId: member.userId)
                 }
             }
             .padding(.horizontal, 20)
@@ -140,8 +141,9 @@ struct MemberListItemView: View {
     }
     
     @ViewBuilder
-    private func ymCircleDeleteButton() -> some View {
+    private func ymCircleDeleteButton(memberId: Int) -> some View {
         YMCircleButton(circleBtnType: .cancel) {
+            viewModel.deleteRoomMember(roomId: viewModel.roomId, userId: memberId)
             showDeleteSheet.toggle()
         }
         .modifier(YMBottomSheetModifier(
@@ -158,6 +160,7 @@ struct BottomSheetContentView: View {
     
     @Binding var showSheet: Bool
     let contentType: BottomSheetContentType
+    var userName: String = ""
     
     var body: some View {
         VStack(spacing: 0) {
@@ -185,7 +188,7 @@ struct BottomSheetContentView: View {
         VStack(alignment: .center, spacing: 8) {
             if contentType == .delete {
                 HStack(spacing: 0) {
-                    Text("박신영 짱")
+                    Text(userName)
                         .font(.pretendardFont(for: .heading3))
                         .foregroundStyle(.ymPrimary)
                     contentType.titleText
