@@ -8,5 +8,5 @@
 import Foundation
 
 struct ParticipateRoomResponseBody: Codable {
-    let invitationCode, endDate: String
+    let roomId: Int
 }

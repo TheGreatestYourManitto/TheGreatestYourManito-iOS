@@ -14,11 +14,6 @@ struct RoomInfoResponseBody: Codable {
 }
 
 struct Member: Codable {
-    let userID: Int
+    let userId: Int
     let userName: String
-
-    enum CodingKeys: String, CodingKey {
-        case userID = "userId"
-        case userName
-    }
 }
