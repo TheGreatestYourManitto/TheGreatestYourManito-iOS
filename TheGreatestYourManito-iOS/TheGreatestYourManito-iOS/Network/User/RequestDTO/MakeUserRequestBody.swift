@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MakeUserRequestBody: Codable {
+struct MakeUserRequestBody: Encodable {
     let nickname: String
     let deviceId: String
 }

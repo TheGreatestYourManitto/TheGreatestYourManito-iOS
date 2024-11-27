@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct UserIdentifyRequestBody: Codable {
+struct UserIdentifyRequestBody: Encodable {
     let deviceId: String
 }
