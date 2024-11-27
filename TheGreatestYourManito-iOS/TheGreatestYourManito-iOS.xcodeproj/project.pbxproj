@@ -51,6 +51,7 @@
 		9E648DEF2CF75868004875B2 /* BaseResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DEE2CF75868004875B2 /* BaseResponseBody.swift */; };
 		9E648DF12CF75B82004875B2 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DF02CF75B82004875B2 /* Device.swift */; };
 		9E648DF32CF77583004875B2 /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DF22CF77583004875B2 /* IntroViewModel.swift */; };
+		9E648DF52CF779DB004875B2 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DF42CF779DB004875B2 /* SignUpViewModel.swift */; };
 		9E6699752CD368A50053960A /* YMBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699742CD368A50053960A /* YMBottomSheet.swift */; };
 		9E6699772CD3CF4D0053960A /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699762CD3CF4D0053960A /* StringLiterals.swift */; };
 		9E6699792CD3EE7D0053960A /* BottomSheetContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */; };
@@ -126,6 +127,7 @@
 		9E648DEE2CF75868004875B2 /* BaseResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseBody.swift; sourceTree = "<group>"; };
 		9E648DF02CF75B82004875B2 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		9E648DF22CF77583004875B2 /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
+		9E648DF42CF779DB004875B2 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		9E6699742CD368A50053960A /* YMBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMBottomSheet.swift; sourceTree = "<group>"; };
 		9E6699762CD3CF4D0053960A /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
 		9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetContentType.swift; sourceTree = "<group>"; };
@@ -502,6 +504,7 @@
 			isa = PBXGroup;
 			children = (
 				ED831DEE2CC8E1A100486C5A /* SignUpView.swift */,
+				9E648DF42CF779DB004875B2 /* SignUpViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -638,6 +641,7 @@
 				9EB6425A2CE3E77D00F7F156 /* YMLoadingView.swift in Sources */,
 				9E4F308A2CC7D484009C59A4 /* Font+.swift in Sources */,
 				9E6FCB052CDABD3500D2A816 /* BeforeJoinRoomView.swift in Sources */,
+				9E648DF52CF779DB004875B2 /* SignUpViewModel.swift in Sources */,
 				9EB642632CE5428700F7F156 /* MoyaLoggingPlugin.swift in Sources */,
 				9E648DDD2CF74F82004875B2 /* RoomTargetType.swift in Sources */,
 				9E648DE32CF74F9E004875B2 /* CheerService.swift in Sources */,

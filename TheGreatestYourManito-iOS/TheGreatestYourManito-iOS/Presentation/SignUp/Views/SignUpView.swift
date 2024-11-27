@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SignUpView: View {
+    @StateObject var viewModel: SignUpViewModel
     @State private var nickname: String = ""
     var body: some View {
         VStack(alignment: .leading) {
@@ -24,8 +25,10 @@ struct SignUpView: View {
             .padding(.top, 56)
             
             Spacer()
-            YMButton(title: "확인", buttonType: .confirm, action: {print("닉네임: \(nickname)")})
-                .padding(.bottom, 20)
+            YMButton(title: "확인",
+                     buttonType: .confirm,
+                     action: {viewModel.postMakeUser(nickname: nickname)})
+                    .padding(.bottom, 20)
             
         }
 //        .padding(.horizontal, 16)
@@ -33,6 +36,6 @@ struct SignUpView: View {
     }
 }
 
-#Preview {
-    SignUpView()
-}
+//#Preview {
+//    SignUpView()
+//}
