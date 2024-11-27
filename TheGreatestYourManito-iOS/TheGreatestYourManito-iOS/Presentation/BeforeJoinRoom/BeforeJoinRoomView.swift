@@ -8,12 +8,9 @@
 import SwiftUI
 
 struct BeforeJoinRoomView: View {
+    
     @Environment(\.dismiss) private var dismiss
-    @State var roomName: String
-    @State var joinCode: String
-    @State var memberCount: Int
-    @State var memberListModel: [JoinMemberModel]
-    @State var isLoading: Bool = false
+    @StateObject var viewModel: JoinRoomViewModel
     
     var body: some View {
         NavigationStack {
@@ -36,7 +33,7 @@ struct BeforeJoinRoomView: View {
         }
         .overlay(
             Group {
-                if isLoading {
+                if viewModel.isLoading {
                     YMLoadingView(titleText: "방 만드는 중..")
                 }
             }
@@ -70,11 +67,8 @@ struct BeforeJoinRoomView: View {
     }
     
     private var bottomView: some View {
-        BeforeJoinRoomBottomView(memberCount: $memberCount, memberListModel: $memberListModel, isLoading: $isLoading)
+        BeforeJoinRoomBottomView()
+            .environmentObject(viewModel)
     }
+    
 }
-
-#Preview {
-    BeforeJoinRoomView(roomName: "ㄴㄴㄴ", joinCode: "~~~~~~~~~", memberCount: 1, memberListModel: [JoinMemberModel(memberName: "하세요2"), JoinMemberModel(memberName: "하세요1"), JoinMemberModel(memberName: "하세요"), JoinMemberModel(memberName: "하세요"),JoinMemberModel(memberName: "하세요4")])
-}
-

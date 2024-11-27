@@ -8,11 +8,12 @@
 import Foundation
 
 final class NetworkService {
-   
-   static let shared = NetworkService()
-   
-   private init() {}
-   
+    
+    static let shared = NetworkService()
+    
+    private init() {}
+    
+    let userService: UserServiceProtocol = UserService.shared
     // ex
     // let openManitoService: OpenManitoService = OpenManitoService()
     

@@ -7,21 +7,13 @@
 
 import SwiftUI
 
-enum RoomType {
-    case owner
-    case notOwner
-}
-
 struct AfterJoinRoomView: View {
     
     @Environment(\.dismiss) private var dismiss
-    @State var roomName: String
-    @State var memberCount: Int
-    @State var memberListModel: [JoinMemberModel]
+    @EnvironmentObject var viewModel: JoinRoomViewModel
     @State private var isCopyOnClipBoard: Bool = false
     @State private var isShowingShareSheet: Bool = false
     @Binding var joinCode: String
-    let roomType: RoomType
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -49,7 +41,7 @@ struct AfterJoinRoomView: View {
         VStack(spacing: 21) {
             VStack {
                 HStack {
-                    Text(roomName)
+                    Text(viewModel.roomName)
                         .font(.pretendardFont(for: .heading2))
                         .foregroundColor(.ymBlack)
                     Spacer()
@@ -61,15 +53,11 @@ struct AfterJoinRoomView: View {
     }
     
     private var bottomView: some View {
-        AfterJoinRoomBottomView(memberCount: $memberCount, memberListModel: $memberListModel, isCopyOnClipBoard: $isCopyOnClipBoard, roomType: roomType)
+        AfterJoinRoomBottomView(isCopyOnClipBoard: $isCopyOnClipBoard)
+            .environmentObject(viewModel)
     }
     
 }
-
-
-//#Preview {
-//    AfterJoinRoomView(roomName: "ㄴㄴㄴ", joinCode: "~~~~~~~~~", memberCount: 1, memberListModel: [JoinMemberModel(memberName: "하세요2"), JoinMemberModel(memberName: "하세요1"), JoinMemberModel(memberName: "하세요"), JoinMemberModel(memberName: "하세요"),JoinMemberModel(memberName: "하세요4")], roomType: .owner)
-//}
 
 
 
