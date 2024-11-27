@@ -10,13 +10,8 @@ import SwiftUI
 struct BeforeJoinRoomBottomView: View {
     
     @EnvironmentObject var viewModel: JoinRoomViewModel
-//    @Binding var memberCount: Int
-//    @Binding var memberListModel: [JoinMemberModel]
-//    @State private var showDeleteSheet = false
-//    @State private var showSheet = false
     @State private var joinCode: String = ""
-    @State private var navigateToAfterJoinRoom = false //유지
-//    @Binding var isLoading: Bool
+    @State private var navigateToAfterJoinRoom = false
     
     var body: some View {
         VStack(spacing: 0) {
@@ -27,13 +22,11 @@ struct BeforeJoinRoomBottomView: View {
             .padding(.top, 48)
             
             VStack {
-                //TODO: joinCode가 다음 뷰에서 Binding으로 받고있어서 이렇게 못 넘긴다.
                 YMTextField(placeholder: "참여코드", text: $joinCode)
                     .padding(.horizontal, 16)
                 Spacer(minLength: 20)
                 
                 // 버튼 클릭 시 navigateToAfterJoinRoom 상태 변경
-                
                 confirmButton()
                     .padding(.horizontal, 16)
             }

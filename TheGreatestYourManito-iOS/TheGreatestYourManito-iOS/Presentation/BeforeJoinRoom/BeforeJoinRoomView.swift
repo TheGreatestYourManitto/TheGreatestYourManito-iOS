@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct BeforeJoinRoomView: View {
+    
     @Environment(\.dismiss) private var dismiss
     @StateObject var viewModel: JoinRoomViewModel
     
@@ -65,14 +66,9 @@ struct BeforeJoinRoomView: View {
         }
     }
     
-    //TODO:
     private var bottomView: some View {
         BeforeJoinRoomBottomView()
             .environmentObject(viewModel)
     }
+    
 }
-
-//#Preview {
-//    BeforeJoinRoomView(roomName: "ㄴㄴㄴ", joinCode: "~~~~~~~~~", memberCount: 1, memberListModel: [JoinMemberModel(memberName: "하세요2"), JoinMemberModel(memberName: "하세요1"), JoinMemberModel(memberName: "하세요"), JoinMemberModel(memberName: "하세요"),JoinMemberModel(memberName: "하세요4")])
-//}
-

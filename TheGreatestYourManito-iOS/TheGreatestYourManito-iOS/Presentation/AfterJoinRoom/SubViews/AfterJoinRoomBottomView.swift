@@ -8,13 +8,11 @@
 import SwiftUI
 
 struct AfterJoinRoomBottomView: View {
-//    @Binding var memberCount: Int
-//    @Binding var memberListModel: [JoinMemberModel]
+    
     @EnvironmentObject var viewModel: JoinRoomViewModel
     @Binding var isCopyOnClipBoard: Bool
     @State private var showDeleteSheet = false
     @State private var showSheet = false
-//    let roomType: RoomType
     
     var body: some View {
         VStack(spacing: 0) {
@@ -30,7 +28,6 @@ struct AfterJoinRoomBottomView: View {
                     Spacer(minLength: 20)
                     confirmButton()
                 }
-                
             }
             .padding(.top, 18)
             .overlay(
@@ -73,9 +70,8 @@ struct AfterJoinRoomBottomView: View {
 }
 
 struct MemberCountLabelView: View {
+    
     @EnvironmentObject var viewModel: JoinRoomViewModel
-//    @Binding var memberCount: Int
-//    let roomType: RoomType
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -98,10 +94,9 @@ struct MemberCountLabelView: View {
 }
 
 struct MemberListScrollView: View {
+    
     @EnvironmentObject var viewModel: JoinRoomViewModel
-//    @Binding var memberListModel: [JoinMemberModel]
     @Binding var showDeleteSheet: Bool
-//    let roomType: RoomType
     
     var body: some View {
         ScrollView {
@@ -115,12 +110,13 @@ struct MemberListScrollView: View {
         }
         .frame(maxHeight: 280)
     }
+    
 }
 
 struct MemberListItemView: View {
+    
     let member: JoinMemberModel
     @Binding var showDeleteSheet: Bool
-//    let roomType: RoomType
     @EnvironmentObject var viewModel: JoinRoomViewModel
     
     var body: some View {
@@ -155,6 +151,7 @@ struct MemberListItemView: View {
             bottomSheetType: .nonDragBar
         ))
     }
+    
 }
 
 struct BottomSheetContentView: View {
@@ -220,7 +217,3 @@ struct BottomSheetContentView: View {
     }
     
 }
-
-//#Preview {
-//    AfterJoinRoomView(roomName: "ㄴㄴㄴ", joinCode: "~~~~~~~~~", memberCount: 1, memberListModel: [JoinMemberModel(memberName: "하세요2"), JoinMemberModel(memberName: "하세요1"), JoinMemberModel(memberName: "하세요"), JoinMemberModel(memberName: "하세요"),JoinMemberModel(memberName: "하세요4")], roomType: .owner)
-//}
