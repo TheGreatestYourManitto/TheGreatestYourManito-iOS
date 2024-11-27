@@ -63,8 +63,3 @@ struct ManittoRankItem {
     let toPerson: User
     let cheerCount: Int
 }
-
-struct User {
-    let id: Int
-    let name: String
-}
