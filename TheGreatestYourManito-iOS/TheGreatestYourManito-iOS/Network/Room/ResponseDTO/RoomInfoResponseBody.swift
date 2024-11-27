@@ -11,6 +11,7 @@ struct RoomInfoResponseBody: Codable {
     let isAdmin: Bool
     let invitationCode: String
     let member: [Member]
+    let roomName: String
 }
 
 struct Member: Codable {
