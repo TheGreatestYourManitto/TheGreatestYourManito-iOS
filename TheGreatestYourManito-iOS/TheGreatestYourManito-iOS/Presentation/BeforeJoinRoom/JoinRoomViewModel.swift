@@ -62,4 +62,16 @@ final class JoinRoomViewModel: ObservableObject {
         })
     }
     
+    func deleteRoomMember(roomId: Int, userId: Int) {
+        NetworkService.shared.roomService.deleteRoomMember(roomId: roomId, userId: userId, completion: { result in
+            switch result {
+            case .success(let response):
+                print("Success: \(response)")
+            default:
+                print("Failed to another reason")
+                return
+            }
+        })
+    }
+    
 }
