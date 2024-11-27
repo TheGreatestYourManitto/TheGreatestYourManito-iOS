@@ -14,6 +14,7 @@ final class JoinRoomViewModel: ObservableObject {
     @Published var memberCount: Int = 0
     @Published var memberListModel: [JoinMemberModel] = []
     @Published var isLoading: Bool = false
+    @Published var roomId: Int = 0
     
     init(roomType: RoomType) {
         self.roomType = roomType
@@ -32,6 +33,24 @@ final class JoinRoomViewModel: ObservableObject {
             switch result {
             case .success(let response):
                 print("Success: \(response)")
+                guard let roomId = response.result?.roomId else {return}
+                self.roomId = roomId
+            default:
+                print("Failed to another reason")
+                return
+            }
+        })
+    }
+    
+    func getRoomInfo(roomId: Int) {
+        NetworkService.shared.roomService.getRoomInfo(roomId: roomId, completion: { result in
+            switch result {
+            case .success(let response):
+                print("Success: \(response)")
+                guard let result = response.result else {return}
+                result.isAdmin ? (self.roomType = .owner) : (self.roomType = .notOwner)
+                re
+                
             default:
                 print("Failed to another reason")
                 return
