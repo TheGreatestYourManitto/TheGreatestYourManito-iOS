@@ -35,6 +35,7 @@ final class JoinRoomViewModel: ObservableObject {
                 print("Success: \(response)")
                 guard let roomId = response.result?.roomId else {return}
                 self.roomId = roomId
+                print("self.roomId : \(self.roomId)")
             default:
                 print("Failed to another reason")
                 return
@@ -48,9 +49,12 @@ final class JoinRoomViewModel: ObservableObject {
             case .success(let response):
                 print("Success: \(response)")
                 guard let result = response.result else {return}
-                result.isAdmin ? (self.roomType = .owner) : (self.roomType = .notOwner)
-                re
-                
+                self.roomType = result.isAdmin ? .owner : .notOwner
+                self.memberListModel = result.member.map { member in
+                    JoinMemberModel(userId: member.userId, memberName: member.userName)
+                }
+                self.roomName = result.roomName
+                self.memberCount = self.memberListModel.count
             default:
                 print("Failed to another reason")
                 return
