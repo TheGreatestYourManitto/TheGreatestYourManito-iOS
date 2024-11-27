@@ -34,6 +34,8 @@
 		9E4F309D2CC7D686009C59A4 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F30932CC7D686009C59A4 /* Pretendard-Thin.otf */; };
 		9E648DD22CF73291004875B2 /* JoinRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DD12CF73291004875B2 /* JoinRoomViewModel.swift */; };
 		9E648DD42CF73620004875B2 /* RoomType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DD32CF73620004875B2 /* RoomType.swift */; };
+		9E648DD72CF74EA0004875B2 /* UserTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DD62CF74EA0004875B2 /* UserTargetType.swift */; };
+		9E648DD92CF74F18004875B2 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DD82CF74F18004875B2 /* UserService.swift */; };
 		9E6699752CD368A50053960A /* YMBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699742CD368A50053960A /* YMBottomSheet.swift */; };
 		9E6699772CD3CF4D0053960A /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699762CD3CF4D0053960A /* StringLiterals.swift */; };
 		9E6699792CD3EE7D0053960A /* BottomSheetContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */; };
@@ -92,6 +94,8 @@
 		9E4F30932CC7D686009C59A4 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
 		9E648DD12CF73291004875B2 /* JoinRoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRoomViewModel.swift; sourceTree = "<group>"; };
 		9E648DD32CF73620004875B2 /* RoomType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomType.swift; sourceTree = "<group>"; };
+		9E648DD62CF74EA0004875B2 /* UserTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTargetType.swift; sourceTree = "<group>"; };
+		9E648DD82CF74F18004875B2 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		9E6699742CD368A50053960A /* YMBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMBottomSheet.swift; sourceTree = "<group>"; };
 		9E6699762CD3CF4D0053960A /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
 		9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetContentType.swift; sourceTree = "<group>"; };
@@ -231,6 +235,7 @@
 		9E4F307F2CC7CF5D009C59A4 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				9E648DD52CF74E8E004875B2 /* User */,
 				9E4F30802CC7CFE8009C59A4 /* Base */,
 				9E4F30812CC7CFF8009C59A4 /* DTO */,
 				9E4F30822CC7D005009C59A4 /* Router */,
@@ -345,6 +350,15 @@
 				9E4F30932CC7D686009C59A4 /* Pretendard-Thin.otf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		9E648DD52CF74E8E004875B2 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				9E648DD62CF74EA0004875B2 /* UserTargetType.swift */,
+				9E648DD82CF74F18004875B2 /* UserService.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		9E6FCAFB2CDA7E4E00D2A816 /* BeforeJoinRoom */ = {
@@ -545,6 +559,7 @@
 				9EB6425D2CE4295C00F7F156 /* OpenManitoView.swift in Sources */,
 				88FEBFFC2CD3BA630013B9E1 /* PlayManittoResultView.swift in Sources */,
 				88A3564A2CCF728A005E2893 /* PlayManittoView.swift in Sources */,
+				9E648DD92CF74F18004875B2 /* UserService.swift in Sources */,
 				88A3564F2CCF9E1E005E2893 /* PlayManittoBottomView.swift in Sources */,
 				88A3565D2CCFB7CD005E2893 /* YMNavigationBar.swift in Sources */,
 				88A356562CCFB54F005E2893 /* View+.swift in Sources */,
@@ -557,6 +572,7 @@
 				9EB642672CE542DE00F7F156 /* NetworkService.swift in Sources */,
 				ED831DF72CCD506600486C5A /* RoomCardView.swift in Sources */,
 				88A3564D2CCF73FA005E2893 /* NameTagView.swift in Sources */,
+				9E648DD72CF74EA0004875B2 /* UserTargetType.swift in Sources */,
 				9EB642562CE3853500F7F156 /* BeforeJoinRoomBottomView.swift in Sources */,
 				9EB6426E2CE5473500F7F156 /* Development.xcconfig in Sources */,
 			);
