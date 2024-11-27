@@ -19,6 +19,10 @@ protocol UserServiceProtocol {
 
 final class UserService: BaseService, UserServiceProtocol {
     
+    override private init() {}
+    
+    static let shared = UserService()
+    
     let provider = MoyaProvider<UserTargetType>(plugins: [MoyaLoggingPlugin()])
     
     func postUserIdentify(requestBody: UserIdentifyRequestBody, completion: @escaping (NetworkResult<BaseResponseBody>) -> ()) {
@@ -46,24 +50,3 @@ final class UserService: BaseService, UserServiceProtocol {
     }
     
 }
-
-//MARK: - PostMakeUser
-/// 1. postMakeUser 사용할 때에 아래 함수 해당 뷰 ViewModel에 추가
-/// 2. 위 ViewModel의 View에 .onappear 코드 사용
-
-/*
-//PostMakeUser
-
- 
-...
- 
-.onAppear(perform: {
-   (뷰 모델 변수명).postMakeUser()
-})
-*/
-
-
-//MARK: - PostUserIdentify
-/**
-
- */

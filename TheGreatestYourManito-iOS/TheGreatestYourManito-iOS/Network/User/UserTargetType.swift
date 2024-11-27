@@ -43,12 +43,4 @@ extension UserTargetType: BaseTargetType {
         }
     }
     
-    var headers: [String : String]? {
-        
-        switch self {
-        default:
-            return nil
-        }
-    }
-    
 }

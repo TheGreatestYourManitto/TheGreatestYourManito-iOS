@@ -13,7 +13,7 @@ final class NetworkService {
     
     private init() {}
     
-    let userService: UserService = UserService()
+    let userService: UserServiceProtocol = UserService.shared
     // ex
     // let openManitoService: OpenManitoService = OpenManitoService()
     
