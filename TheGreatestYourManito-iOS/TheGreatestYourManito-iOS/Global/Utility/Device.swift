@@ -10,7 +10,9 @@ import SwiftUI
 struct Device {
     
     func getDeviceUUID() -> String {
-        return UIDevice.current.identifierForVendor!.uuidString
+        let deviceId = UIDevice.current.identifierForVendor!.uuidString
+        UserDefaults.standard.set(deviceId, forKey: "deviceId")
+        return deviceId
     }
     
 }
