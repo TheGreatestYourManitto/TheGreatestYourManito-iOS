@@ -42,6 +42,7 @@
 		9E648DE32CF74F9E004875B2 /* CheerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DE22CF74F9E004875B2 /* CheerService.swift */; };
 		9E648DE92CF7507A004875B2 /* UserIdentifyRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DE82CF75050004875B2 /* UserIdentifyRequestBody.swift */; };
 		9E648DEB2CF754E5004875B2 /* MakeUserRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DEA2CF754E5004875B2 /* MakeUserRequestBody.swift */; };
+		9E648DEF2CF75868004875B2 /* BaseResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DEE2CF75868004875B2 /* BaseResponseBody.swift */; };
 		9E6699752CD368A50053960A /* YMBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699742CD368A50053960A /* YMBottomSheet.swift */; };
 		9E6699772CD3CF4D0053960A /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699762CD3CF4D0053960A /* StringLiterals.swift */; };
 		9E6699792CD3EE7D0053960A /* BottomSheetContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */; };
@@ -108,6 +109,7 @@
 		9E648DE22CF74F9E004875B2 /* CheerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheerService.swift; sourceTree = "<group>"; };
 		9E648DE82CF75050004875B2 /* UserIdentifyRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIdentifyRequestBody.swift; sourceTree = "<group>"; };
 		9E648DEA2CF754E5004875B2 /* MakeUserRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeUserRequestBody.swift; sourceTree = "<group>"; };
+		9E648DEE2CF75868004875B2 /* BaseResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseBody.swift; sourceTree = "<group>"; };
 		9E6699742CD368A50053960A /* YMBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMBottomSheet.swift; sourceTree = "<group>"; };
 		9E6699762CD3CF4D0053960A /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
 		9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetContentType.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				9EB642622CE5428700F7F156 /* MoyaLoggingPlugin.swift */,
 				9EB642642CE542B600F7F156 /* NetworkResult.swift */,
 				9EB642662CE542DE00F7F156 /* NetworkService.swift */,
+				9E648DEE2CF75868004875B2 /* BaseResponseBody.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -370,7 +373,6 @@
 			isa = PBXGroup;
 			children = (
 				9E648DE72CF75023004875B2 /* RequestDTO */,
-				9E648DE62CF7501B004875B2 /* ResponseDTO */,
 				9E648DD62CF74EA0004875B2 /* UserTargetType.swift */,
 				9E648DD82CF74F18004875B2 /* UserService.swift */,
 			);
@@ -393,13 +395,6 @@
 				9E648DE22CF74F9E004875B2 /* CheerService.swift */,
 			);
 			path = Cheer;
-			sourceTree = "<group>";
-		};
-		9E648DE62CF7501B004875B2 /* ResponseDTO */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ResponseDTO;
 			sourceTree = "<group>";
 		};
 		9E648DE72CF75023004875B2 /* RequestDTO */ = {
@@ -613,6 +608,7 @@
 				9EB6425D2CE4295C00F7F156 /* OpenManitoView.swift in Sources */,
 				88FEBFFC2CD3BA630013B9E1 /* PlayManittoResultView.swift in Sources */,
 				88A3564A2CCF728A005E2893 /* PlayManittoView.swift in Sources */,
+				9E648DEF2CF75868004875B2 /* BaseResponseBody.swift in Sources */,
 				9E648DEB2CF754E5004875B2 /* MakeUserRequestBody.swift in Sources */,
 				9E648DD92CF74F18004875B2 /* UserService.swift in Sources */,
 				88A3564F2CCF9E1E005E2893 /* PlayManittoBottomView.swift in Sources */,
