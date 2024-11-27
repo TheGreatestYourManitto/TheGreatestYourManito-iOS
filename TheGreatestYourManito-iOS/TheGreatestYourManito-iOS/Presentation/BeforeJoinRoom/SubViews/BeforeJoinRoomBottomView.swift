@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct BeforeJoinRoomBottomView: View {
-    @Binding var memberCount: Int
-    @Binding var memberListModel: [JoinMemberModel]
-    @State private var showDeleteSheet = false
-    @State private var showSheet = false
+    
+    @EnvironmentObject var viewModel: JoinRoomViewModel
+//    @Binding var memberCount: Int
+//    @Binding var memberListModel: [JoinMemberModel]
+//    @State private var showDeleteSheet = false
+//    @State private var showSheet = false
     @State private var joinCode: String = ""
-    @State private var navigateToAfterJoinRoom = false
-    @Binding var isLoading: Bool
+    @State private var navigateToAfterJoinRoom = false //유지
+//    @Binding var isLoading: Bool
     
     var body: some View {
         VStack(spacing: 0) {
@@ -25,7 +27,8 @@ struct BeforeJoinRoomBottomView: View {
             .padding(.top, 48)
             
             VStack {
-                YMTextField(placeholder: "방 코드를 입력하세요", text: $joinCode)
+                //TODO: joinCode가 다음 뷰에서 Binding으로 받고있어서 이렇게 못 넘긴다.
+                YMTextField(placeholder: "참여코드", text: $joinCode)
                     .padding(.horizontal, 16)
                 Spacer(minLength: 20)
                 
@@ -41,17 +44,10 @@ struct BeforeJoinRoomBottomView: View {
         .padding(.bottom, 25)
         .navigationDestination(isPresented: $navigateToAfterJoinRoom) {
             AfterJoinRoomView(
-                roomName: "api 통신 결과",
-                memberCount: 4,
-                memberListModel: [
-                    JoinMemberModel(memberName: "psy"),
-                    JoinMemberModel(memberName: "PSY"),
-                    JoinMemberModel(memberName: "박신영"),
-                    JoinMemberModel(memberName: "신영박")
-                ],
-                joinCode: $joinCode,
-                roomType: .owner
+                viewModel: _viewModel,
+                joinCode: $joinCode
             )
+            .environmentObject(viewModel)
         }
         
         
@@ -72,11 +68,11 @@ struct BeforeJoinRoomBottomView: View {
     @ViewBuilder
     private func confirmButton() -> some View {
         YMButton(title: "확인", buttonType: .confirm) {
-            isLoading = true // 로딩 상태 활성화
+            viewModel.isLoading = true // 로딩 상태 활성화
             
             // 5초 후에 로딩 해제 및 화면 전환 수행
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
-                isLoading = false
+                viewModel.isLoading = false
                 navigateToAfterJoinRoom = true
             }
         }

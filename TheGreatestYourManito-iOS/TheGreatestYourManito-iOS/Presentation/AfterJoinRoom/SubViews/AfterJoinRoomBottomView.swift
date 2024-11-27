@@ -8,24 +8,25 @@
 import SwiftUI
 
 struct AfterJoinRoomBottomView: View {
-    @Binding var memberCount: Int
-    @Binding var memberListModel: [JoinMemberModel]
+//    @Binding var memberCount: Int
+//    @Binding var memberListModel: [JoinMemberModel]
+    @EnvironmentObject var viewModel: JoinRoomViewModel
     @Binding var isCopyOnClipBoard: Bool
     @State private var showDeleteSheet = false
     @State private var showSheet = false
-    let roomType: RoomType
+//    let roomType: RoomType
     
     var body: some View {
         VStack(spacing: 0) {
             HStack {
-                MemberCountLabelView(memberCount: $memberCount, roomType: roomType)
+                MemberCountLabelView()
                 Spacer()
             }
             .padding(.top, 40)
             
             VStack(spacing: 18) {
-                MemberListScrollView(memberListModel: $memberListModel, showDeleteSheet: $showDeleteSheet, roomType: roomType)
-                if case .owner = roomType {
+                MemberListScrollView(showDeleteSheet: $showDeleteSheet)
+                if case .owner = viewModel.roomType {
                     Spacer(minLength: 20)
                     confirmButton()
                 }
@@ -48,6 +49,7 @@ struct AfterJoinRoomBottomView: View {
             .animation(.easeOut(duration: 0.3), value: isCopyOnClipBoard)
             Spacer(minLength: 20)
         }
+        .environmentObject(viewModel)
         .frame(height: 495)
         .background(.ymWhite)
         .padding(.bottom, 25)
@@ -71,16 +73,16 @@ struct AfterJoinRoomBottomView: View {
 }
 
 struct MemberCountLabelView: View {
-    
-    @Binding var memberCount: Int
-    let roomType: RoomType
+    @EnvironmentObject var viewModel: JoinRoomViewModel
+//    @Binding var memberCount: Int
+//    let roomType: RoomType
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("총 \(memberCount)명")
+            Text("총 \(viewModel.memberCount)명")
                 .font(.pretendardFont(for: .heading4))
                 .foregroundStyle(.ymBlack)
-            if case .owner = roomType {
+            if case .owner = viewModel.roomType {
                 Text(StringLiterals.AfterJoinRoom.ownerNoticeWordLabel)
                     .font(.pretendardFont(for: .subtitle1))
                     .foregroundStyle(.gray1)
@@ -96,15 +98,17 @@ struct MemberCountLabelView: View {
 }
 
 struct MemberListScrollView: View {
-    @Binding var memberListModel: [JoinMemberModel]
+    @EnvironmentObject var viewModel: JoinRoomViewModel
+//    @Binding var memberListModel: [JoinMemberModel]
     @Binding var showDeleteSheet: Bool
-    let roomType: RoomType
+//    let roomType: RoomType
     
     var body: some View {
         ScrollView {
             VStack(spacing: 16) {
-                ForEach(memberListModel, id: \.memberName) { member in
-                    MemberListItemView(member: member, showDeleteSheet: $showDeleteSheet, roomType: roomType)
+                ForEach(viewModel.memberListModel, id: \.memberName) { member in
+                    MemberListItemView(member: member, showDeleteSheet: $showDeleteSheet)
+                        .environmentObject(viewModel)
                 }
             }
             .padding(.horizontal, 24)
@@ -116,7 +120,8 @@ struct MemberListScrollView: View {
 struct MemberListItemView: View {
     let member: JoinMemberModel
     @Binding var showDeleteSheet: Bool
-    let roomType: RoomType
+//    let roomType: RoomType
+    @EnvironmentObject var viewModel: JoinRoomViewModel
     
     var body: some View {
         ZStack {
@@ -130,7 +135,7 @@ struct MemberListItemView: View {
                     .font(.pretendardFont(for: .heading5))
                     .foregroundStyle(.ymBlack)
                 Spacer()
-                if case .owner = roomType {
+                if case .owner = viewModel.roomType {
                     ymCircleDeleteButton()
                 }
             }

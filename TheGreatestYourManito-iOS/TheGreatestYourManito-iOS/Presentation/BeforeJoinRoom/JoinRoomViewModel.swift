@@ -13,10 +13,11 @@ final class JoinRoomViewModel: ObservableObject {
 //    @Published var cheerText: String = ""
 //    @Published var isNextScreenActive: Bool = false
     
-    @Published var roomName: String
-    @Published var joinCode: String
-    @Published var memberCount: Int
-    @Published var memberListModel: [JoinMemberModel]
+    @Published var roomType: RoomType
+    @Published var roomName: String = ""
+//    @Published var joinCode: String
+    @Published var memberCount: Int = 0
+    @Published var memberListModel: [JoinMemberModel] = []
     @Published var isLoading: Bool = false
     
 //    let receiverUserName: String
@@ -25,9 +26,13 @@ final class JoinRoomViewModel: ObservableObject {
 //    let manittoEndDate: Date
 //    var todaysCheeringCount: Int = 0
     
-    init(roomName: String, joinCode: String, memberCount: Int, memberListModel: [JoinMemberModel], isLoading: Bool) {
+    init(roomType: RoomType) {
+        self.roomType = roomType
+    }
+    
+    init(roomType: RoomType, roomName: String, memberCount: Int, memberListModel: [JoinMemberModel], isLoading: Bool) {
+        self.roomType = roomType
         self.roomName = roomName
-        self.joinCode = joinCode
         self.memberCount = memberCount
         self.memberListModel = memberListModel
         self.isLoading = isLoading
