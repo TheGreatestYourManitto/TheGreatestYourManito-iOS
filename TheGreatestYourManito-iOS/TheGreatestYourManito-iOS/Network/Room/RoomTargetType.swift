@@ -13,6 +13,7 @@ enum RoomTargetType {
     case postParticipateRoom(requestBody: ParticipateRoomRequestBody)
     case getRoomInfo(roomId: Int)
     case deleteRoomMember(roomId: Int, userId: Int)
+    case patchConfirmRoomStatus(roomId: Int)
 //    /room/:roomId/member/:userId
 }
 
@@ -26,6 +27,8 @@ extension RoomTargetType: BaseTargetType {
             return .get
         case .deleteRoomMember:
             return .delete
+        case .patchConfirmRoomStatus:
+            return .patch
         }
     }
     
@@ -33,7 +36,7 @@ extension RoomTargetType: BaseTargetType {
         switch self {
         case .postParticipateRoom:
             return "/room/participate"
-        case .getRoomInfo(let roomId):
+        case .getRoomInfo(let roomId), .patchConfirmRoomStatus(let roomId):
             return "/room/\(roomId)"
         case .deleteRoomMember(let roomId, let userId):
             return "/room/\(roomId)/member/\(userId)"
@@ -44,7 +47,7 @@ extension RoomTargetType: BaseTargetType {
         switch self {
         case .postParticipateRoom(let requestBody):
             return .requestJSONEncodable(requestBody)
-        case .getRoomInfo, .deleteRoomMember:
+        case .getRoomInfo, .deleteRoomMember, .patchConfirmRoomStatus:
             return .requestPlain
         }
     }

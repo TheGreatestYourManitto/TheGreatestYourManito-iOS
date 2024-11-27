@@ -74,4 +74,16 @@ final class JoinRoomViewModel: ObservableObject {
         })
     }
     
+    func patchConfirmRoomStatus(roomId: Int) {
+        NetworkService.shared.roomService.patchConfirmRoomStatus(roomId: roomId, completion: { result in
+            switch result {
+            case .success(let response):
+                print("Success: \(response)")
+            default:
+                print("Failed to another reason")
+                return
+            }
+        })
+    }
+    
 }

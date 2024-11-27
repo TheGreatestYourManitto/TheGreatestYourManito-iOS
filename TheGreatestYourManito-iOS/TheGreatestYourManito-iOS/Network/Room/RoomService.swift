@@ -17,6 +17,8 @@ protocol RoomServiceProtocol {
     
     func deleteRoomMember(roomId: Int, userId: Int, completion: @escaping (NetworkResult<BaseResponseBody<emptyResponse>>) -> ())
     
+    func patchConfirmRoomStatus(roomId: Int, completion: @escaping (NetworkResult<BaseResponseBody<emptyResponse>>) -> ())
+    
 }
 
 final class RoomService: BaseService, RoomServiceProtocol {
@@ -54,6 +56,18 @@ final class RoomService: BaseService, RoomServiceProtocol {
     
     func deleteRoomMember(roomId: Int, userId: Int, completion: @escaping (NetworkResult<BaseResponseBody<emptyResponse>>) -> ()) {
         provider.request(.deleteRoomMember(roomId: roomId, userId: userId)) { result in
+            switch result {
+            case .success(let response):
+                let networkResult: NetworkResult<BaseResponseBody<emptyResponse>> = self.judgeStatus(statusCode: response.statusCode, data: response.data)
+                completion(networkResult)
+            case .failure(let err):
+                print(err)
+            }
+        }
+    }
+    
+    func patchConfirmRoomStatus(roomId: Int, completion: @escaping (NetworkResult<BaseResponseBody<emptyResponse>>) -> ()) {
+        provider.request(.getRoomInfo(roomId: roomId)) { result in
             switch result {
             case .success(let response):
                 let networkResult: NetworkResult<BaseResponseBody<emptyResponse>> = self.judgeStatus(statusCode: response.statusCode, data: response.data)
