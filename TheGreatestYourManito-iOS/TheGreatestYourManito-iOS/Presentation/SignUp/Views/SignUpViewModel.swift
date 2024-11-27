@@ -8,6 +8,7 @@
 import SwiftUI
 
 final class SignUpViewModel: ObservableObject {
+    @Published var nickname: String = ""
     
     func postMakeUser(nickname: String) {
         guard let deviceId = UserDefaults.standard.string(forKey: "deviceId") else {return}
