@@ -52,6 +52,7 @@
 		9E648DF12CF75B82004875B2 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DF02CF75B82004875B2 /* Device.swift */; };
 		9E648DF32CF77583004875B2 /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DF22CF77583004875B2 /* IntroViewModel.swift */; };
 		9E648DF52CF779DB004875B2 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DF42CF779DB004875B2 /* SignUpViewModel.swift */; };
+		9E648DF82CF7881B004875B2 /* UserCodeResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DF72CF7881B004875B2 /* UserCodeResponseBody.swift */; };
 		9E6699752CD368A50053960A /* YMBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699742CD368A50053960A /* YMBottomSheet.swift */; };
 		9E6699772CD3CF4D0053960A /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699762CD3CF4D0053960A /* StringLiterals.swift */; };
 		9E6699792CD3EE7D0053960A /* BottomSheetContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */; };
@@ -128,6 +129,7 @@
 		9E648DF02CF75B82004875B2 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		9E648DF22CF77583004875B2 /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
 		9E648DF42CF779DB004875B2 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		9E648DF72CF7881B004875B2 /* UserCodeResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCodeResponseBody.swift; sourceTree = "<group>"; };
 		9E6699742CD368A50053960A /* YMBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMBottomSheet.swift; sourceTree = "<group>"; };
 		9E6699762CD3CF4D0053960A /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
 		9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetContentType.swift; sourceTree = "<group>"; };
@@ -414,6 +416,7 @@
 			isa = PBXGroup;
 			children = (
 				9E648DE72CF75023004875B2 /* RequestDTO */,
+				9E648DF62CF787E5004875B2 /* ResponseDTO */,
 				9E648DD62CF74EA0004875B2 /* UserTargetType.swift */,
 				9E648DD82CF74F18004875B2 /* UserService.swift */,
 			);
@@ -445,6 +448,14 @@
 				9E648DEA2CF754E5004875B2 /* MakeUserRequestBody.swift */,
 			);
 			path = RequestDTO;
+			sourceTree = "<group>";
+		};
+		9E648DF62CF787E5004875B2 /* ResponseDTO */ = {
+			isa = PBXGroup;
+			children = (
+				9E648DF72CF7881B004875B2 /* UserCodeResponseBody.swift */,
+			);
+			path = ResponseDTO;
 			sourceTree = "<group>";
 		};
 		9E6FCAFB2CDA7E4E00D2A816 /* BeforeJoinRoom */ = {
@@ -627,6 +638,7 @@
 				88A356542CCFB24E005E2893 /* ManittoEventStatus.swift in Sources */,
 				9E4F30722CC7CE5F009C59A4 /* ContentView.swift in Sources */,
 				88A3565B2CCFB648005E2893 /* YMCapsuleLabel.swift in Sources */,
+				9E648DF82CF7881B004875B2 /* UserCodeResponseBody.swift in Sources */,
 				9EB811DF2CCFC497003C104D /* AfterJoinRoomBottomView.swift in Sources */,
 				9E648DD42CF73620004875B2 /* RoomType.swift in Sources */,
 				9EB811D82CCFBD64003C104D /* AfterJoinRoomView.swift in Sources */,

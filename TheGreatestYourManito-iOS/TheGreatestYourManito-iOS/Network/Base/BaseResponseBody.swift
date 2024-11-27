@@ -16,6 +16,4 @@ struct BaseResponseBody<T: Decodable>: Decodable {
 
 struct emptyResponse: Decodable {}
 
-struct userCodeResponse: Decodable {
-    let userCode: String
-}
+
