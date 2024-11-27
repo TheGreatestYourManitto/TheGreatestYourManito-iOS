@@ -33,6 +33,7 @@
 		9E4F309C2CC7D686009C59A4 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F30922CC7D686009C59A4 /* Pretendard-SemiBold.otf */; };
 		9E4F309D2CC7D686009C59A4 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F30932CC7D686009C59A4 /* Pretendard-Thin.otf */; };
 		9E648DD22CF73291004875B2 /* BeforeJoinRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DD12CF73291004875B2 /* BeforeJoinRoomViewModel.swift */; };
+		9E648DD42CF73620004875B2 /* RoomType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DD32CF73620004875B2 /* RoomType.swift */; };
 		9E6699752CD368A50053960A /* YMBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699742CD368A50053960A /* YMBottomSheet.swift */; };
 		9E6699772CD3CF4D0053960A /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699762CD3CF4D0053960A /* StringLiterals.swift */; };
 		9E6699792CD3EE7D0053960A /* BottomSheetContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */; };
@@ -90,6 +91,7 @@
 		9E4F30922CC7D686009C59A4 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		9E4F30932CC7D686009C59A4 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
 		9E648DD12CF73291004875B2 /* BeforeJoinRoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeJoinRoomViewModel.swift; sourceTree = "<group>"; };
+		9E648DD32CF73620004875B2 /* RoomType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomType.swift; sourceTree = "<group>"; };
 		9E6699742CD368A50053960A /* YMBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMBottomSheet.swift; sourceTree = "<group>"; };
 		9E6699762CD3CF4D0053960A /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
 		9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetContentType.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				88A356512CCFB062005E2893 /* CheerType.swift */,
 				88A356532CCFB24E005E2893 /* ManittoEventStatus.swift */,
 				9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */,
+				9E648DD32CF73620004875B2 /* RoomType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 				9E4F30722CC7CE5F009C59A4 /* ContentView.swift in Sources */,
 				88A3565B2CCFB648005E2893 /* YMCapsuleLabel.swift in Sources */,
 				9EB811DF2CCFC497003C104D /* AfterJoinRoomBottomView.swift in Sources */,
+				9E648DD42CF73620004875B2 /* RoomType.swift in Sources */,
 				9EB811D82CCFBD64003C104D /* AfterJoinRoomView.swift in Sources */,
 				9EB811D02CCFB4BC003C104D /* YMJoinCodeStackView.swift in Sources */,
 				9EB642612CE5424E00F7F156 /* BaseTargetType.swift in Sources */,
