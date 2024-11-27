@@ -55,6 +55,7 @@
 		9E648DF82CF7881B004875B2 /* UserCodeResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DF72CF7881B004875B2 /* UserCodeResponseBody.swift */; };
 		9E648DFC2CF78D31004875B2 /* ParticipateRoomRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DFB2CF78D31004875B2 /* ParticipateRoomRequestBody.swift */; };
 		9E648DFE2CF7B3E9004875B2 /* ParticipateRoomResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DFD2CF7B3E9004875B2 /* ParticipateRoomResponseBody.swift */; };
+		9E648E002CF7B5C4004875B2 /* BaseHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DFF2CF7B5C4004875B2 /* BaseHeader.swift */; };
 		9E6699752CD368A50053960A /* YMBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699742CD368A50053960A /* YMBottomSheet.swift */; };
 		9E6699772CD3CF4D0053960A /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699762CD3CF4D0053960A /* StringLiterals.swift */; };
 		9E6699792CD3EE7D0053960A /* BottomSheetContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */; };
@@ -134,6 +135,7 @@
 		9E648DF72CF7881B004875B2 /* UserCodeResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCodeResponseBody.swift; sourceTree = "<group>"; };
 		9E648DFB2CF78D31004875B2 /* ParticipateRoomRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateRoomRequestBody.swift; sourceTree = "<group>"; };
 		9E648DFD2CF7B3E9004875B2 /* ParticipateRoomResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateRoomResponseBody.swift; sourceTree = "<group>"; };
+		9E648DFF2CF7B5C4004875B2 /* BaseHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeader.swift; sourceTree = "<group>"; };
 		9E6699742CD368A50053960A /* YMBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMBottomSheet.swift; sourceTree = "<group>"; };
 		9E6699762CD3CF4D0053960A /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
 		9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetContentType.swift; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 				9EB642642CE542B600F7F156 /* NetworkResult.swift */,
 				9EB642662CE542DE00F7F156 /* NetworkService.swift */,
 				9E648DEE2CF75868004875B2 /* BaseResponseBody.swift */,
+				9E648DFF2CF7B5C4004875B2 /* BaseHeader.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -699,6 +702,7 @@
 				9E648DFE2CF7B3E9004875B2 /* ParticipateRoomResponseBody.swift in Sources */,
 				88A356522CCFB062005E2893 /* CheerType.swift in Sources */,
 				9E648DF12CF75B82004875B2 /* Device.swift in Sources */,
+				9E648E002CF7B5C4004875B2 /* BaseHeader.swift in Sources */,
 				9E6699752CD368A50053960A /* YMBottomSheet.swift in Sources */,
 				ED831DEF2CC8E1A100486C5A /* SignUpView.swift in Sources */,
 				9EB6426A2CE5437300F7F156 /* Config.swift in Sources */,
