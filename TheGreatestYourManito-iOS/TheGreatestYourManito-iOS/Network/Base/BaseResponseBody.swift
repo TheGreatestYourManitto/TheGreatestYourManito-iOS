@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct BaseResponseBody: Decodable {
+struct BaseResponseBody: Codable {
     let isSuccess: Bool
     let code: Int
     let message: String
     let result: BaseResponseResult?
 }
 
-struct BaseResponseResult: Decodable {
+struct BaseResponseResult: Codable {
     let userCode: String
 }
