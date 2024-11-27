@@ -21,7 +21,7 @@ struct ManittoResultBoardBottomView: View {
             VStack {
                 Spacer()
                 YMButton(
-                    title: "목록에서 삭제하기",
+                    title: StringLiterals.PlayManittoResultBoard.bottomSheetDeleteButtonStr,
                     buttonType: .confirm,
                     action: { viewModel.tapDeleteButton() }
                 )
@@ -39,7 +39,7 @@ private extension ManittoResultBoardBottomView {
         VStack {
             
             YMCapsuleLabel(
-                text: "최고의 마니또 순위", // TODO: Literal
+                text: StringLiterals.PlayManittoResultBoard.bottomSheetRankLabel,
                 backgroundColor: .sub2,
                 foregroundColor: .ymPrimary
             )
@@ -67,7 +67,7 @@ private extension ManittoResultBoardBottomView {
                 ManittoRelationText(personFrom, personTo)
             }
             Spacer()
-            Text("\(cheerCount)번") // TODO: Literal
+            Text("\(cheerCount)\(StringLiterals.PlayManittoResultBoard.boardCountStr)") 
                 .font(.pretendardFont(for: .subtitle1))
                 .foregroundStyle(.gray1)
             Spacer()

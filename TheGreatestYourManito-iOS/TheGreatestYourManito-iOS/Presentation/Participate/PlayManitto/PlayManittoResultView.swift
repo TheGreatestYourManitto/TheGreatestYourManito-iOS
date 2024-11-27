@@ -16,7 +16,7 @@ struct PlayManittoResultView: View {
             
             Spacer()
             
-            Text("전송 완료!") // TODO: Literal 파일 추가시 이동
+            Text(StringLiterals.PlayManittoResult.sendCompleteTitleLabel) // TODO: Literal 파일 추가시 이동
                 .font(.pretendardFont(for: .heading1))
                 .foregroundStyle(.ymBlack)
                 .padding(.top, 100)
@@ -24,17 +24,17 @@ struct PlayManittoResultView: View {
             Spacer(minLength: 240)
             
             VStack {
-                Text("오늘 보낸 응원") // TODO: Literal 파일 추가시 이동
+                Text(StringLiterals.PlayManittoResult.todaySentCheerLabel) // TODO: Literal 파일 추가시 이동
                     .font(.pretendardFont(for: .heading6))
                     .foregroundStyle(.ymBlack)
-                Text("\(todaysCheeringCount)회") // TODO: Literal 파일 추가시 이동
+                Text("\(todaysCheeringCount)\(StringLiterals.PlayManittoResult.cheerCountStr)") // TODO: Literal 파일 추가시 이동
                     .font(.pretendardFont(for: .heading2))
                     .foregroundStyle(.ymBlack)
             }
             
             Spacer()
             
-            YMButton(title: "확인", buttonType: .confirm, action: {
+            YMButton(title: StringLiterals.PlayManittoResult.okayButtonStr, buttonType: .confirm, action: {
                 print("가라 집으로")
             })
             .padding(.horizontal, 16)

@@ -15,9 +15,9 @@ struct PlayManittoView: View {
         VStack(alignment: .leading) {
             Spacer()
             YMHeaderTagView(
-                topDesc: "나의 마니또", // TODO: Literal 파일 추가시 이동
+                topDesc: StringLiterals.PlayManitto.headerTopDescriptionLabel,
                 name: viewModel.receiverUserName,
-                afterNameText: "에게"
+                afterNameText: StringLiterals.PlayManitto.headerTopDescriptionLabelAfterNameStr
             )
                 .padding(.horizontal, 16)
             Spacer()

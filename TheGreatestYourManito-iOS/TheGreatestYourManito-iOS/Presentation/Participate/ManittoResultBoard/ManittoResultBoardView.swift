@@ -14,9 +14,9 @@ struct ManittoResultBoardView: View {
     var body: some View {
         VStack(alignment: .leading) {
             YMHeaderTagView(
-                topDesc: "나를 응원해 준 마니또는", // TODO: Literal
+                topDesc: StringLiterals.PlayManittoResultBoard.headerTopDescriptionLabel,
                 name: viewModel.manittoName,
-                afterNameText: "!"
+                afterNameText: StringLiterals.PlayManittoResultBoard.headerTopDescriptionLabelAfterNameStr
             )
             .padding(.horizontal, 20)
             
@@ -58,18 +58,18 @@ private extension ManittoResultBoardView {
     func BoardHeader(totalCount: Int) -> some View {
         HStack(spacing: 0) {
             HStack(spacing: 0) {
-                Text("총 ") // TODO: Literal 파일 추가시 이동
+                Text(StringLiterals.PlayManittoResultBoard.boardHeaderTotalStr) // TODO: Literal 파일 추가시 이동
                     .font(.pretendardFont(for: .heading5))
                     .foregroundStyle(.gray1)
-                Text("\(totalCount)번")
+                Text("\(totalCount)\(StringLiterals.PlayManittoResultBoard.boardCountStr)")
                     .font(.pretendardFont(for: .heading5))
-                Text("의 응원을 받았어요!")
+                Text(StringLiterals.PlayManittoResultBoard.boardAfterCountStr)
                     .font(.pretendardFont(for: .heading5))
                     .foregroundStyle(.gray1)
             }
             Spacer()
             Button(action: {}, label: {
-                Text("자세히 보기") // TODO: Literal 파일 추가시 이동
+                Text(StringLiterals.PlayManittoResultBoard.boardShowDetailStr)
                     .font(.pretendardFont(for: .heading6))
                     .foregroundStyle(.gray1)
                     .padding(.horizontal, 13)
@@ -90,7 +90,7 @@ private extension ManittoResultBoardView {
                         .resizable()
                         .frame(width: 36, height: 36)
                     
-                    Text("\(cheerCount[cheer] ?? 0)번") // TODO: Literal 추가
+                    Text("\(cheerCount[cheer] ?? 0)\(StringLiterals.PlayManittoResultBoard.boardCountStr)")
                         .font(.pretendardFont(for: .heading6))
                         .foregroundColor(.gray1)
                 }

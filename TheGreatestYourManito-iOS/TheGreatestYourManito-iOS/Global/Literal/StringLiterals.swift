@@ -43,4 +43,31 @@ enum StringLiterals {
         static let openButtonStr = "바로 응원 보내기"
     }
     
+    enum PlayManitto {
+        static let headerTopDescriptionLabel = "나의 마니또"
+        static let headerTopDescriptionLabelAfterNameStr = "에게"
+        static let bottomSheetTextFieldPlaceholder = "응원메세지 입력"
+        static let bottomSheetSendButtonStr = "보내기"
+        static let bottomSheetCheerLabel1 = "응원 보내기!"
+        static let bottomSheetCheerLabel2 = "아이콘을 선택하면 추천 멘트가 뜨고, 수정도 가능해요."
+        static let bottomSheetOpenLabel = "마니또 공개까지"
+    }
+    
+    enum PlayManittoResult {
+        static let sendCompleteTitleLabel = "전송 완료!"
+        static let todaySentCheerLabel = "오늘 보낸 응원"
+        static let cheerCountStr = "회"
+        static let okayButtonStr = "확인"
+    }
+    
+    enum PlayManittoResultBoard {
+        static let headerTopDescriptionLabel = "나를 응원해 준 마니또는"
+        static let headerTopDescriptionLabelAfterNameStr = "!"
+        static let boardHeaderTotalStr = "총 "
+        static let boardCountStr = "번"
+        static let boardAfterCountStr = "의 응원을 받았어요!"
+        static let boardShowDetailStr = "자세히 보기"
+        static let bottomSheetDeleteButtonStr = "목록에서 삭제하기"
+        static let bottomSheetRankLabel = "최고의 마니또 순위"
+    }
 }
