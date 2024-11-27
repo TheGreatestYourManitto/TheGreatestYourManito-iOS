@@ -12,6 +12,7 @@ import Moya
 enum UserTargetType {
     
     case postUserIdentify(requestBody: UserIdentifyRequestBody)
+    case postMakeUser(requestBody: MakeUserRequestBody)
     
 }
 
@@ -19,7 +20,7 @@ extension UserTargetType: BaseTargetType {
     
     var method: Moya.Method {
         switch self {
-        case .postUserIdentify:
+        case .postUserIdentify, .postMakeUser:
             return .post
         }
     }
@@ -28,12 +29,16 @@ extension UserTargetType: BaseTargetType {
         switch self {
         case .postUserIdentify:
             return "/user/identify"
+        case .postMakeUser:
+            return "/user"
         }
     }
     
     var task: Task {
         switch self {
         case .postUserIdentify(let requestBody):
+            return .requestJSONEncodable(requestBody)
+        case .postMakeUser(let requestBody):
             return .requestJSONEncodable(requestBody)
         }
     }
