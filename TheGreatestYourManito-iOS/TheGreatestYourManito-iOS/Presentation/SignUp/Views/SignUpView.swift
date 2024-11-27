@@ -31,11 +31,6 @@ struct SignUpView: View {
                     .padding(.bottom, 20)
             
         }
-//        .padding(.horizontal, 16)
         .navigationBarBackButtonHidden()
     }
 }
-
-//#Preview {
-//    SignUpView()
-//}

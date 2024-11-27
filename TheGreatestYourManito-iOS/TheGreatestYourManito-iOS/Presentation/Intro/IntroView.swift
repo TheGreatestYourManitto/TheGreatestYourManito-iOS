@@ -21,10 +21,14 @@ struct IntroView: View {
                 
                 Spacer()
                 
-                NavigationLink(destination:
-                                // isIdentified가 true면 이미 등록된 기기
-                               // 따라서 true인 곳에 CreateRoom 붙이면 됨!
-                               viewModel.isIdentified ?  SignUpView() : SignUpView(), tag: 1, selection: self.$tag) {
+                NavigationLink(
+                    destination:
+                        // isIdentified가 true면 이미 등록된 기기
+                    // 따라서 true인 곳에 CreateRoom 붙이면 됨!
+                    viewModel.isIdentified ?  SignUpView(viewModel: SignUpViewModel()) : SignUpView(viewModel: SignUpViewModel()),
+                    tag: 1,
+                    selection: self.$tag
+                ) {
                     YMButton(title: "시작하기", buttonType: .confirm, action: {self.tag = 1})
                         .padding(.bottom, 20)
                 }
@@ -35,9 +39,4 @@ struct IntroView: View {
         }
         .padding(.horizontal, 16)
     }
-}
-
-
-#Preview {
-//    IntroView()
 }

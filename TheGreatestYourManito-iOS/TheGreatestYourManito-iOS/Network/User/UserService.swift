@@ -53,20 +53,7 @@ final class UserService: BaseService, UserServiceProtocol {
 
 /*
 //PostMakeUser
-func postMakeUser() {
- guard let deviceId = UserDefaults.standard.string(forKey: "deviceId") else {return}
-    
-    let requestBody = MakeUserRequestBody(nickname: "psy", deviceId: udid)
-    NetworkService.shared.userService.postMakeUser(requestBody: requestBody, completion: { result in
-        switch result {
-        case .success(let response):
-            print("Success: \(response)")
-        default:
-            print("Failed to another reason")
-            return
-        }
-    })
-}
+
  
 ...
  
@@ -78,19 +65,5 @@ func postMakeUser() {
 
 //MARK: - PostUserIdentify
 /**
-func postUserIdentify() {
- let device = Device()
- let udid = device.getDeviceUUID()
- guard let userDefaults = UserDefaults.standard.string(forKey: "deviceId") else {return}
- let requestBody = UserIdentifyRequestBody(deviceId: userDefaults)
- NetworkService.shared.userService.postUserIdentify(requestBody: requestBody, completion: { result in
-     switch result {
-     case .success(let response):
-         print("Success: \(response)")
-     default:
-         print("Failed to another reason")
-         return
-     }
- })
-}
+
  */
