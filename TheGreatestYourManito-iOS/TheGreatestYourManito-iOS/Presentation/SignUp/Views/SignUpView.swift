@@ -25,10 +25,15 @@ struct SignUpView: View {
             .padding(.top, 56)
             
             Spacer()
-            YMButton(title: "확인",
-                     buttonType: .confirm,
-                     action: {viewModel.postMakeUser(nickname: nickname)})
-                    .padding(.bottom, 20)
+            YMButton(
+                title: "확인",
+                buttonType: .confirm,
+                action: {
+                    viewModel.postMakeUser(nickname: nickname)
+                    // 메인뷰로 화면 전환 좀
+                }
+            )
+            .padding(.bottom, 20)
             
         }
         .navigationBarBackButtonHidden()
