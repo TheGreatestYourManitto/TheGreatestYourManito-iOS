@@ -27,4 +27,16 @@ final class JoinRoomViewModel: ObservableObject {
         self.isLoading = isLoading
     }
     
+    func postParticipateRoom(invitationCode: String) {
+        NetworkService.shared.roomService.postParticipateRoom(requestBody: ParticipateRoomRequestBody(invitationCode: invitationCode), completion: { result in
+            switch result {
+            case .success(let response):
+                print("Success: \(response)")
+            default:
+                print("Failed to another reason")
+                return
+            }
+        })
+    }
+    
 }
