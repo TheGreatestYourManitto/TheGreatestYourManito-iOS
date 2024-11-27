@@ -40,9 +40,7 @@ extension RoomTargetType: BaseTargetType {
     }
     
     var headers: [String : String]? {
-        guard let userCode = UserDefaults.standard.string(forKey: "userCode") else {return nil}
-                
-        return ["userCode": userCode]
+        return BaseHeader.headerWithUserCode()
     }
     
 }
