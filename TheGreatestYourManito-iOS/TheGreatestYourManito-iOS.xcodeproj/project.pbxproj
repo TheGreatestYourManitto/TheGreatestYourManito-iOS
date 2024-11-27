@@ -32,7 +32,7 @@
 		9E4F309B2CC7D686009C59A4 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F30912CC7D686009C59A4 /* Pretendard-Regular.otf */; };
 		9E4F309C2CC7D686009C59A4 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F30922CC7D686009C59A4 /* Pretendard-SemiBold.otf */; };
 		9E4F309D2CC7D686009C59A4 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F30932CC7D686009C59A4 /* Pretendard-Thin.otf */; };
-		9E648DD22CF73291004875B2 /* BeforeJoinRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DD12CF73291004875B2 /* BeforeJoinRoomViewModel.swift */; };
+		9E648DD22CF73291004875B2 /* JoinRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DD12CF73291004875B2 /* JoinRoomViewModel.swift */; };
 		9E648DD42CF73620004875B2 /* RoomType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DD32CF73620004875B2 /* RoomType.swift */; };
 		9E6699752CD368A50053960A /* YMBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699742CD368A50053960A /* YMBottomSheet.swift */; };
 		9E6699772CD3CF4D0053960A /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699762CD3CF4D0053960A /* StringLiterals.swift */; };
@@ -90,7 +90,7 @@
 		9E4F30912CC7D686009C59A4 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		9E4F30922CC7D686009C59A4 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		9E4F30932CC7D686009C59A4 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
-		9E648DD12CF73291004875B2 /* BeforeJoinRoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeJoinRoomViewModel.swift; sourceTree = "<group>"; };
+		9E648DD12CF73291004875B2 /* JoinRoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRoomViewModel.swift; sourceTree = "<group>"; };
 		9E648DD32CF73620004875B2 /* RoomType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomType.swift; sourceTree = "<group>"; };
 		9E6699742CD368A50053960A /* YMBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMBottomSheet.swift; sourceTree = "<group>"; };
 		9E6699762CD3CF4D0053960A /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
@@ -351,7 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				9E6FCB042CDABD3500D2A816 /* BeforeJoinRoomView.swift */,
-				9E648DD12CF73291004875B2 /* BeforeJoinRoomViewModel.swift */,
+				9E648DD12CF73291004875B2 /* JoinRoomViewModel.swift */,
 				9EB642542CE3850D00F7F156 /* SubViews */,
 			);
 			path = BeforeJoinRoom;
@@ -541,7 +541,7 @@
 				9EB642652CE542B600F7F156 /* NetworkResult.swift in Sources */,
 				9EB642582CE3C03C00F7F156 /* ActivityViewController.swift in Sources */,
 				9E4F30702CC7CE5F009C59A4 /* TheGreatestYourManito_iOSApp.swift in Sources */,
-				9E648DD22CF73291004875B2 /* BeforeJoinRoomViewModel.swift in Sources */,
+				9E648DD22CF73291004875B2 /* JoinRoomViewModel.swift in Sources */,
 				9EB6425D2CE4295C00F7F156 /* OpenManitoView.swift in Sources */,
 				88FEBFFC2CD3BA630013B9E1 /* PlayManittoResultView.swift in Sources */,
 				88A3564A2CCF728A005E2893 /* PlayManittoView.swift in Sources */,
