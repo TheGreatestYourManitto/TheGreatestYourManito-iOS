@@ -54,3 +54,17 @@ extension ManiitoRank {
         }
     }
 }
+
+typealias ManittoRankList = [ManittoRankItem]
+
+struct ManittoRankItem {
+    let rank: ManiitoRank
+    let fromPerson: User
+    let toPerson: User
+    let cheerCount: Int
+}
+
+struct User {
+    let id: Int
+    let name: String
+}

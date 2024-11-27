@@ -9,31 +9,32 @@ import SwiftUI
 
 struct ManittoResultBoardView: View {
     @Environment(\.dismiss) private var dismiss
+    @StateObject var viewModel: ManittoResultBoardViewModel
     
     var body: some View {
         VStack(alignment: .leading) {
             YMHeaderTagView(
-                topDesc: "나를 응원해 준 마니또는",
-                name: "이자민",
+                topDesc: "나를 응원해 준 마니또는", // TODO: Literal
+                name: viewModel.manittoName,
                 afterNameText: "!"
             )
             .padding(.horizontal, 20)
             
             Spacer()
             
-            CheerCountBoard()
+            CheerCountBoard(viewModel)
                 .padding(.horizontal, 20)
             
             Spacer()
             
-            ManittoResultBoardBottomView()
+            ManittoResultBoardBottomView(viewModel)
                 .frame(height: 423)
                 .cornerRadius(40, corners: [.topLeft, .topRight])
                 .shadow(radius: 10)
         }
         .background(.gray4)
         .ymNavBar(center: {
-            Text("\(String.Type.self)")
+            Text("\(viewModel.manittoRoomName)")
                 .font(.pretendardFont(for: .heading5))
         }, left: {
             Button(action: {
@@ -47,20 +48,20 @@ struct ManittoResultBoardView: View {
 }
 
 private extension ManittoResultBoardView {
-    func CheerCountBoard() -> some View {
+    func CheerCountBoard(_ viewModel: ManittoResultBoardViewModel) -> some View {
         VStack(alignment: .leading, spacing: 8) {
-            BoardHeader()
-            CheerCountList(cheerCount: [ .fire: 10, .love: 20, .luck: 30, .gift: 40])
+            BoardHeader(totalCount: viewModel.totalCheerCount)
+            CheerCountList(cheerCount: viewModel.cheerCounts)
         }
     }
     
-    func BoardHeader() -> some View {
+    func BoardHeader(totalCount: Int) -> some View {
         HStack(spacing: 0) {
             HStack(spacing: 0) {
                 Text("총 ") // TODO: Literal 파일 추가시 이동
                     .font(.pretendardFont(for: .heading5))
                     .foregroundStyle(.gray1)
-                Text("\(Int.Type.self)번")
+                Text("\(totalCount)번")
                     .font(.pretendardFont(for: .heading5))
                 Text("의 응원을 받았어요!")
                     .font(.pretendardFont(for: .heading5))

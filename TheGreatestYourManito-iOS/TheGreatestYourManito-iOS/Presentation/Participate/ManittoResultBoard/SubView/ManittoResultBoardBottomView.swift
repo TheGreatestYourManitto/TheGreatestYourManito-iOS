@@ -8,16 +8,22 @@
 import SwiftUI
 
 struct ManittoResultBoardBottomView: View {
+    var viewModel: ManittoResultBoardViewModel
+    
+    init(_ viewModel: ManittoResultBoardViewModel) {
+        self.viewModel = viewModel
+    }
+    
     var body: some View {
         
         ZStack(alignment: .top) {
-            BottomView()
+            BottomView(manittoRankList: viewModel.manittoRankList)
             VStack {
                 Spacer()
                 YMButton(
                     title: "목록에서 삭제하기",
                     buttonType: .confirm,
-                    action: { print("뿅") }
+                    action: { viewModel.tapDeleteButton() }
                 )
                 .padding(.bottom, 24)
             }
@@ -29,7 +35,7 @@ struct ManittoResultBoardBottomView: View {
 }
 
 private extension ManittoResultBoardBottomView {
-    func BottomView() -> some View {
+    func BottomView(manittoRankList: ManittoRankList) -> some View {
         VStack {
             
             YMCapsuleLabel(
@@ -40,30 +46,14 @@ private extension ManittoResultBoardBottomView {
             .padding(.vertical, 20)
             
             VStack(spacing: 20) {
-                ManittoRankListItem(
-                    rank: .first,
-                    personFrom: "test",
-                    personTo: "test1",
-                    cheerCount: 0
-                )
-                ManittoRankListItem(
-                    rank: .second,
-                    personFrom: "test2",
-                    personTo: "test1",
-                    cheerCount: 0
-                )
-                ManittoRankListItem(
-                    rank: .third,
-                    personFrom: "test3",
-                    personTo: "test1",
-                    cheerCount: 0
-                )
-                ManittoRankListItem(
-                    rank: .other(num: 4),
-                    personFrom: "test4",
-                    personTo: "test1",
-                    cheerCount: 0
-                )
+                ForEach(Array(manittoRankList.enumerated()), id: \.offset) { (index, rank) in
+                    ManittoRankListItem(
+                        rank: rank.rank,
+                        personFrom: rank.fromPerson.name,
+                        personTo: rank.toPerson.name,
+                        cheerCount: rank.cheerCount
+                    )
+                }
             }
         }
     }
