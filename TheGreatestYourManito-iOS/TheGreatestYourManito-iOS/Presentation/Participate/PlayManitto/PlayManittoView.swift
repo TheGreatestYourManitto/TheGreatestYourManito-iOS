@@ -14,12 +14,16 @@ struct PlayManittoView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Spacer()
-            NameTagView(name: viewModel.receiverUserName)
+            YMHeaderTagView(
+                topDesc: StringLiterals.PlayManitto.headerTopDescriptionLabel,
+                name: viewModel.receiverUserName,
+                afterNameText: StringLiterals.PlayManitto.headerTopDescriptionLabelAfterNameStr
+            )
                 .padding(.horizontal, 16)
             Spacer()
             PlayManittoBottomView()
                 .frame(height: 557)
-                .cornerRadius(20, corners: [.topLeft, .topRight])
+                .cornerRadius(40, corners: [.topLeft, .topRight])
                 .shadow(radius: 10)
         }
         .environmentObject(viewModel)
