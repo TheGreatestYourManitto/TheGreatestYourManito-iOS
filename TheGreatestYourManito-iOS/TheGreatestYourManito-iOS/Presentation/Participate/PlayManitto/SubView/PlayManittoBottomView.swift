@@ -17,7 +17,7 @@ struct PlayManittoBottomView: View {
                 cheerLabelView()
                 buttonStack(cheerType: $viewModel.cheerType)
                 YMTextField(
-                    placeholder: "응원메세지 입력",
+                    placeholder: StringLiterals.PlayManitto.bottomSheetTextFieldPlaceholder,
                     text: $viewModel.cheerText
                 )
             }
@@ -26,7 +26,7 @@ struct PlayManittoBottomView: View {
             
             VStack(spacing: 20) {
                 OpenLabelView(status: ManittoEventStatus.getStatus(from: viewModel.manittoEndDate))
-                YMButton(title: "보내기", buttonType: .confirm, action: {
+                YMButton(title: StringLiterals.PlayManitto.bottomSheetSendButtonStr, buttonType: .confirm, action: {
                     viewModel.tapSendButton()
                 })
             }
@@ -42,9 +42,9 @@ extension PlayManittoBottomView {
     struct cheerLabelView: View {
         var body: some View {
             VStack(alignment: .leading, spacing: 8) {
-                Text("응원 보내기!")
+                Text(StringLiterals.PlayManitto.bottomSheetCheerLabel1)
                     .font(.pretendardFont(for: .heading4))
-                Text("아이콘을 선택하면 추천 멘트가 뜨고, 수정도 가능해요.")
+                Text(StringLiterals.PlayManitto.bottomSheetCheerLabel2)
                     .font(.pretendardFont(for: .subtitle1))
             }
         }
@@ -75,7 +75,7 @@ extension PlayManittoBottomView {
         var body: some View {
             HStack {
                 Spacer()
-                Text("마니또 공개까지")
+                Text(StringLiterals.PlayManitto.bottomSheetOpenLabel)
                     .font(.pretendardFont(for: .heading5))
                     .foregroundStyle(.gray1)
                 YMDDayLabel(status: status)
