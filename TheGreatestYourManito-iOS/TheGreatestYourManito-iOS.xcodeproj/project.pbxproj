@@ -56,6 +56,7 @@
 		9E648DFC2CF78D31004875B2 /* ParticipateRoomRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DFB2CF78D31004875B2 /* ParticipateRoomRequestBody.swift */; };
 		9E648DFE2CF7B3E9004875B2 /* ParticipateRoomResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DFD2CF7B3E9004875B2 /* ParticipateRoomResponseBody.swift */; };
 		9E648E002CF7B5C4004875B2 /* BaseHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DFF2CF7B5C4004875B2 /* BaseHeader.swift */; };
+		9E648E042CF7B77E004875B2 /* RoomInfoResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648E032CF7B77E004875B2 /* RoomInfoResponseBody.swift */; };
 		9E6699752CD368A50053960A /* YMBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699742CD368A50053960A /* YMBottomSheet.swift */; };
 		9E6699772CD3CF4D0053960A /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699762CD3CF4D0053960A /* StringLiterals.swift */; };
 		9E6699792CD3EE7D0053960A /* BottomSheetContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */; };
@@ -136,6 +137,7 @@
 		9E648DFB2CF78D31004875B2 /* ParticipateRoomRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateRoomRequestBody.swift; sourceTree = "<group>"; };
 		9E648DFD2CF7B3E9004875B2 /* ParticipateRoomResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateRoomResponseBody.swift; sourceTree = "<group>"; };
 		9E648DFF2CF7B5C4004875B2 /* BaseHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeader.swift; sourceTree = "<group>"; };
+		9E648E032CF7B77E004875B2 /* RoomInfoResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfoResponseBody.swift; sourceTree = "<group>"; };
 		9E6699742CD368A50053960A /* YMBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMBottomSheet.swift; sourceTree = "<group>"; };
 		9E6699762CD3CF4D0053960A /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
 		9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetContentType.swift; sourceTree = "<group>"; };
@@ -471,6 +473,7 @@
 			isa = PBXGroup;
 			children = (
 				9E648DFD2CF7B3E9004875B2 /* ParticipateRoomResponseBody.swift */,
+				9E648E032CF7B77E004875B2 /* RoomInfoResponseBody.swift */,
 			);
 			path = ResponseDTO;
 			sourceTree = "<group>";
@@ -669,6 +672,7 @@
 				9EB811D82CCFBD64003C104D /* AfterJoinRoomView.swift in Sources */,
 				9E648DE92CF7507A004875B2 /* UserIdentifyRequestBody.swift in Sources */,
 				9EB811D02CCFB4BC003C104D /* YMJoinCodeStackView.swift in Sources */,
+				9E648E042CF7B77E004875B2 /* RoomInfoResponseBody.swift in Sources */,
 				9EB642612CE5424E00F7F156 /* BaseTargetType.swift in Sources */,
 				9EB811E12CD0CA31003C104D /* JoinMemberModel.swift in Sources */,
 				ED6669EC2CC8CA680005D599 /* YMButton.swift in Sources */,
