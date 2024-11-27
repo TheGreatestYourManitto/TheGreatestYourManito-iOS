@@ -11,9 +11,9 @@ import Moya
 
 protocol UserServiceProtocol {
     
-    func postUserIdentify(requestBody: UserIdentifyRequestBody, completion: @escaping (NetworkResult<BaseResponseBody>) -> ())
+    func postUserIdentify(requestBody: UserIdentifyRequestBody, completion: @escaping (NetworkResult<BaseResponseBody<emptyResponse>>) -> ())
     
-    func postMakeUser(requestBody: MakeUserRequestBody, completion: @escaping (NetworkResult<BaseResponseBody>) -> ())
+    func postMakeUser(requestBody: MakeUserRequestBody, completion: @escaping (NetworkResult<BaseResponseBody<userCodeResponse>>) -> ())
     
 }
 
@@ -25,11 +25,11 @@ final class UserService: BaseService, UserServiceProtocol {
     
     let provider = MoyaProvider<UserTargetType>(plugins: [MoyaLoggingPlugin()])
     
-    func postUserIdentify(requestBody: UserIdentifyRequestBody, completion: @escaping (NetworkResult<BaseResponseBody>) -> ()) {
+    func postUserIdentify(requestBody: UserIdentifyRequestBody, completion: @escaping (NetworkResult<BaseResponseBody<emptyResponse>>) -> ()) {
         provider.request(.postUserIdentify(requestBody: requestBody)) { result in
             switch result {
             case .success(let response):
-                let networkResult: NetworkResult<BaseResponseBody> = self.judgeStatus(statusCode: response.statusCode, data: response.data)
+                let networkResult: NetworkResult<BaseResponseBody<emptyResponse>> = self.judgeStatus(statusCode: response.statusCode, data: response.data)
                 completion(networkResult)
             case .failure(let err):
                 print(err)
@@ -37,11 +37,11 @@ final class UserService: BaseService, UserServiceProtocol {
         }
     }
     
-    func postMakeUser(requestBody: MakeUserRequestBody, completion: @escaping (NetworkResult<BaseResponseBody>) -> ()) {
+    func postMakeUser(requestBody: MakeUserRequestBody, completion: @escaping (NetworkResult<BaseResponseBody<userCodeResponse>>) -> ()) {
         provider.request(.postMakeUser(requestBody: requestBody)) { result in
             switch result {
             case .success(let response):
-                let networkResult: NetworkResult<BaseResponseBody> = self.judgeStatus(statusCode: response.statusCode, data: response.data)
+                let networkResult: NetworkResult<BaseResponseBody<userCodeResponse>> = self.judgeStatus(statusCode: response.statusCode, data: response.data)
                 completion(networkResult)
             case .failure(let err):
                 print(err)
