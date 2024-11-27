@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct MakeUserRequestBody: Codable {
+    let nickname: String
+    let deviceId: String
+}
