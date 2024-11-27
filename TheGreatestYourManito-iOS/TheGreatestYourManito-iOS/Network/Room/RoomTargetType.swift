@@ -10,10 +10,8 @@ import Foundation
 import Moya
 
 enum RoomTargetType {
-    
     case postParticipateRoom(requestBody: ParticipateRoomRequestBody)
-//    case postMakeUser(requestBody: MakeUserRequestBody)
-    
+    case getRoomInfo(roomId: Int)
 }
 
 extension RoomTargetType: BaseTargetType {
@@ -22,6 +20,8 @@ extension RoomTargetType: BaseTargetType {
         switch self {
         case .postParticipateRoom:
             return .post
+        case .getRoomInfo:
+            return .get
         }
     }
     
@@ -29,6 +29,8 @@ extension RoomTargetType: BaseTargetType {
         switch self {
         case .postParticipateRoom:
             return "/room/participate"
+        case .getRoomInfo(let roomId):
+            return "/room/\(roomId)"
         }
     }
     
@@ -36,6 +38,8 @@ extension RoomTargetType: BaseTargetType {
         switch self {
         case .postParticipateRoom(let requestBody):
             return .requestJSONEncodable(requestBody)
+        case .getRoomInfo:
+            return .requestPlain
         }
     }
     

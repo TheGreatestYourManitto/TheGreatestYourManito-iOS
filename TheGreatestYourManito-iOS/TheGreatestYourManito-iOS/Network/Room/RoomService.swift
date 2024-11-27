@@ -13,7 +13,7 @@ protocol RoomServiceProtocol {
     
     func postParticipateRoom(requestBody: ParticipateRoomRequestBody, completion: @escaping (NetworkResult<BaseResponseBody<ParticipateRoomResponseBody>>) -> ())
     
-//    func postMakeUser(requestBody: MakeUserRequestBody, completion: @escaping (NetworkResult<BaseResponseBody<MakeUserResponse>>) -> ())
+    func getRoomInfo(roomId: Int, completion: @escaping (NetworkResult<BaseResponseBody<RoomInfoResponseBody>>) -> ())
     
 }
 
@@ -37,6 +37,18 @@ final class RoomService: BaseService, RoomServiceProtocol {
         }
     }
     
+    
+    func getRoomInfo(roomId: Int, completion: @escaping (NetworkResult<BaseResponseBody<RoomInfoResponseBody>>) -> ()) {
+        provider.request(.getRoomInfo(roomId: roomId)) { result in
+            switch result {
+            case .success(let response):
+                let networkResult: NetworkResult<BaseResponseBody<RoomInfoResponseBody>> = self.judgeStatus(statusCode: response.statusCode, data: response.data)
+                completion(networkResult)
+            case .failure(let err):
+                print(err)
+            }
+        }
+    }
     
 }
 
