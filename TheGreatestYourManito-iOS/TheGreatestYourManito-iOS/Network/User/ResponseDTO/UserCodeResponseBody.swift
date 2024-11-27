@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct userCodeResponse: Decodable {
+struct MakeUserResponse: Decodable {
     let userCode: String
 }
