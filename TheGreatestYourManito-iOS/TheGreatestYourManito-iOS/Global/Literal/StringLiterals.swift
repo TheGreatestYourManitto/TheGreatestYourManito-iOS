@@ -42,7 +42,7 @@ enum StringLiterals {
         static let notOpenButtonStr = "내 마니또 보기"
         static let openButtonStr = "바로 응원 보내기"
     }
-    
+
     enum PlayManitto {
         static let headerTopDescriptionLabel = "나의 마니또"
         static let headerTopDescriptionLabelAfterNameStr = "에게"
