@@ -31,6 +31,18 @@ enum StringLiterals {
         static let bottomSheetPlaceholder = "참여 코드"
     }
     
+    enum CreateRoom {
+        static let titleLabel = "방 만들기"
+        static let subTitleLabel1 = "두근두근"
+        static let subTitleLabel2 = "나만의 마니또를 만나러 - !"
+        static let RoomNameTitleLabel = "방 이름"
+        static let RoomNameSubTitleLabel = "최대 10자"
+        static let RoomNamePlaceholder = "방 이름을 입력해주세요"
+        static let EndDateTitleLabel = "종료일"
+        static let EndDateSubTitleLabel = "최대 99일"
+        static let EndDatePlaceholder = "종료 날짜"
+        static let EndTimePlaceholder = "종료 시간"
+    }
     enum JoinRoomPublic {
         static let copyComent = "코드 복사 완료!"
     }

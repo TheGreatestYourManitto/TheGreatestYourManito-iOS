@@ -74,6 +74,9 @@
 		9EB811D82CCFBD64003C104D /* AfterJoinRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811D72CCFBD64003C104D /* AfterJoinRoomView.swift */; };
 		9EB811DF2CCFC497003C104D /* AfterJoinRoomBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811DE2CCFC497003C104D /* AfterJoinRoomBottomView.swift */; };
 		9EB811E12CD0CA31003C104D /* JoinMemberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811E02CD0CA31003C104D /* JoinMemberModel.swift */; };
+		ED53F6D22CF72BFF00E5BD1C /* CreateRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53F6D12CF72BFF00E5BD1C /* CreateRoomView.swift */; };
+		ED53F6D42CF7417900E5BD1C /* YMSelectableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53F6D32CF7417900E5BD1C /* YMSelectableTextField.swift */; };
+		ED53F6D62CF7885D00E5BD1C /* AfterCreateRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53F6D52CF7885D00E5BD1C /* AfterCreateRoomView.swift */; };
 		ED6669EC2CC8CA680005D599 /* YMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6669EB2CC8CA680005D599 /* YMButton.swift */; };
 		ED6669EE2CC8CE950005D599 /* YMTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6669ED2CC8CE950005D599 /* YMTextField.swift */; };
 		ED831DEF2CC8E1A100486C5A /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED831DEE2CC8E1A100486C5A /* SignUpView.swift */; };
@@ -150,6 +153,9 @@
 		9EB811D72CCFBD64003C104D /* AfterJoinRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterJoinRoomView.swift; sourceTree = "<group>"; };
 		9EB811DE2CCFC497003C104D /* AfterJoinRoomBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterJoinRoomBottomView.swift; sourceTree = "<group>"; };
 		9EB811E02CD0CA31003C104D /* JoinMemberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinMemberModel.swift; sourceTree = "<group>"; };
+		ED53F6D12CF72BFF00E5BD1C /* CreateRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomView.swift; sourceTree = "<group>"; };
+		ED53F6D32CF7417900E5BD1C /* YMSelectableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMSelectableTextField.swift; sourceTree = "<group>"; };
+		ED53F6D52CF7885D00E5BD1C /* AfterCreateRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterCreateRoomView.swift; sourceTree = "<group>"; };
 		ED6669EB2CC8CA680005D599 /* YMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMButton.swift; sourceTree = "<group>"; };
 		ED6669ED2CC8CE950005D599 /* YMTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMTextField.swift; sourceTree = "<group>"; };
 		ED831DEE2CC8E1A100486C5A /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -366,6 +372,7 @@
 		9E4F30872CC7D0A2009C59A4 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				ED53F6D02CF72BE600E5BD1C /* CreateRoom */,
 				9EB6425B2CE4293F00F7F156 /* OpenManito */,
 				9E6FCAFB2CDA7E4E00D2A816 /* BeforeJoinRoom */,
 				9EB811D12CCFBC73003C104D /* AfterJoinRoom */,
@@ -392,6 +399,7 @@
 				9E6699742CD368A50053960A /* YMBottomSheet.swift */,
 				9EB642572CE3C03C00F7F156 /* ActivityViewController.swift */,
 				9EB642592CE3E77D00F7F156 /* YMLoadingView.swift */,
+				ED53F6D32CF7417900E5BD1C /* YMSelectableTextField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -509,6 +517,15 @@
 				9EB811DE2CCFC497003C104D /* AfterJoinRoomBottomView.swift */,
 			);
 			path = SubViews;
+			sourceTree = "<group>";
+		};
+		ED53F6D02CF72BE600E5BD1C /* CreateRoom */ = {
+			isa = PBXGroup;
+			children = (
+				ED53F6D12CF72BFF00E5BD1C /* CreateRoomView.swift */,
+				ED53F6D52CF7885D00E5BD1C /* AfterCreateRoomView.swift */,
+			);
+			path = CreateRoom;
 			sourceTree = "<group>";
 		};
 		ED831DEC2CC8E0AC00486C5A /* Views */ = {
@@ -644,6 +661,7 @@
 				9EB811D82CCFBD64003C104D /* AfterJoinRoomView.swift in Sources */,
 				9E648DE92CF7507A004875B2 /* UserIdentifyRequestBody.swift in Sources */,
 				9EB811D02CCFB4BC003C104D /* YMJoinCodeStackView.swift in Sources */,
+				ED53F6D62CF7885D00E5BD1C /* AfterCreateRoomView.swift in Sources */,
 				9EB642612CE5424E00F7F156 /* BaseTargetType.swift in Sources */,
 				9EB811E12CD0CA31003C104D /* JoinMemberModel.swift in Sources */,
 				ED6669EC2CC8CA680005D599 /* YMButton.swift in Sources */,
@@ -660,6 +678,7 @@
 				9E648DE12CF74F96004875B2 /* CheerTargetType.swift in Sources */,
 				88A3565F2CCFC005005E2893 /* PlayManittoViewModel.swift in Sources */,
 				9EB642652CE542B600F7F156 /* NetworkResult.swift in Sources */,
+				ED53F6D42CF7417900E5BD1C /* YMSelectableTextField.swift in Sources */,
 				9EB642582CE3C03C00F7F156 /* ActivityViewController.swift in Sources */,
 				9E4F30702CC7CE5F009C59A4 /* TheGreatestYourManito_iOSApp.swift in Sources */,
 				9E648DD22CF73291004875B2 /* JoinRoomViewModel.swift in Sources */,
@@ -685,6 +704,7 @@
 				88A3564D2CCF73FA005E2893 /* YMHeaderTagView.swift in Sources */,
 				8832C3722CDF28CB00B8DFAB /* ManiitoRank.swift in Sources */,
 				9EB642672CE542DE00F7F156 /* NetworkService.swift in Sources */,
+				ED53F6D22CF72BFF00E5BD1C /* CreateRoomView.swift in Sources */,
 				ED831DF72CCD506600486C5A /* RoomCardView.swift in Sources */,
 				9E648DF32CF77583004875B2 /* IntroViewModel.swift in Sources */,
 				9E648DD72CF74EA0004875B2 /* UserTargetType.swift in Sources */,
@@ -828,7 +848,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TheGreatestYourManito-iOS/Preview Content\"";
-				DEVELOPMENT_TEAM = A95XXD5WT7;
+				DEVELOPMENT_TEAM = WJKNV9KXF2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TheGreatestYourManito-iOS/Info.plist";
@@ -867,7 +887,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TheGreatestYourManito-iOS/Preview Content\"";
-				DEVELOPMENT_TEAM = A95XXD5WT7;
+				DEVELOPMENT_TEAM = WJKNV9KXF2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TheGreatestYourManito-iOS/Info.plist";
