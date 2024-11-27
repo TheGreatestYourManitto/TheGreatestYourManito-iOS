@@ -77,6 +77,8 @@
 		ED53F6D22CF72BFF00E5BD1C /* CreateRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53F6D12CF72BFF00E5BD1C /* CreateRoomView.swift */; };
 		ED53F6D42CF7417900E5BD1C /* YMSelectableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53F6D32CF7417900E5BD1C /* YMSelectableTextField.swift */; };
 		ED53F6D62CF7885D00E5BD1C /* AfterCreateRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53F6D52CF7885D00E5BD1C /* AfterCreateRoomView.swift */; };
+		ED53F6D82CF7BB1400E5BD1C /* CreateRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53F6D72CF7BB1400E5BD1C /* CreateRoomViewModel.swift */; };
+		ED53F6DA2CF7C2D900E5BD1C /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53F6D92CF7C2D900E5BD1C /* Date+.swift */; };
 		ED6669EC2CC8CA680005D599 /* YMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6669EB2CC8CA680005D599 /* YMButton.swift */; };
 		ED6669EE2CC8CE950005D599 /* YMTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6669ED2CC8CE950005D599 /* YMTextField.swift */; };
 		ED831DEF2CC8E1A100486C5A /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED831DEE2CC8E1A100486C5A /* SignUpView.swift */; };
@@ -156,6 +158,8 @@
 		ED53F6D12CF72BFF00E5BD1C /* CreateRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomView.swift; sourceTree = "<group>"; };
 		ED53F6D32CF7417900E5BD1C /* YMSelectableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMSelectableTextField.swift; sourceTree = "<group>"; };
 		ED53F6D52CF7885D00E5BD1C /* AfterCreateRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterCreateRoomView.swift; sourceTree = "<group>"; };
+		ED53F6D72CF7BB1400E5BD1C /* CreateRoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomViewModel.swift; sourceTree = "<group>"; };
+		ED53F6D92CF7C2D900E5BD1C /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		ED6669EB2CC8CA680005D599 /* YMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMButton.swift; sourceTree = "<group>"; };
 		ED6669ED2CC8CE950005D599 /* YMTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMTextField.swift; sourceTree = "<group>"; };
 		ED831DEE2CC8E1A100486C5A /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -365,6 +369,7 @@
 				9E4F30892CC7D484009C59A4 /* Font+.swift */,
 				88A356552CCFB54F005E2893 /* View+.swift */,
 				8832C36F2CDF232300B8DFAB /* Color+.swift */,
+				ED53F6D92CF7C2D900E5BD1C /* Date+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -524,6 +529,7 @@
 			children = (
 				ED53F6D12CF72BFF00E5BD1C /* CreateRoomView.swift */,
 				ED53F6D52CF7885D00E5BD1C /* AfterCreateRoomView.swift */,
+				ED53F6D72CF7BB1400E5BD1C /* CreateRoomViewModel.swift */,
 			);
 			path = CreateRoom;
 			sourceTree = "<group>";
@@ -680,6 +686,7 @@
 				9EB642652CE542B600F7F156 /* NetworkResult.swift in Sources */,
 				ED53F6D42CF7417900E5BD1C /* YMSelectableTextField.swift in Sources */,
 				9EB642582CE3C03C00F7F156 /* ActivityViewController.swift in Sources */,
+				ED53F6DA2CF7C2D900E5BD1C /* Date+.swift in Sources */,
 				9E4F30702CC7CE5F009C59A4 /* TheGreatestYourManito_iOSApp.swift in Sources */,
 				9E648DD22CF73291004875B2 /* JoinRoomViewModel.swift in Sources */,
 				9EB6425D2CE4295C00F7F156 /* OpenManitoView.swift in Sources */,
@@ -691,6 +698,7 @@
 				9E648DEB2CF754E5004875B2 /* MakeUserRequestBody.swift in Sources */,
 				9E648DD92CF74F18004875B2 /* UserService.swift in Sources */,
 				88A3564F2CCF9E1E005E2893 /* PlayManittoBottomView.swift in Sources */,
+				ED53F6D82CF7BB1400E5BD1C /* CreateRoomViewModel.swift in Sources */,
 				88A3565D2CCFB7CD005E2893 /* YMNavigationBar.swift in Sources */,
 				88A356562CCFB54F005E2893 /* View+.swift in Sources */,
 				88A356522CCFB062005E2893 /* CheerType.swift in Sources */,
