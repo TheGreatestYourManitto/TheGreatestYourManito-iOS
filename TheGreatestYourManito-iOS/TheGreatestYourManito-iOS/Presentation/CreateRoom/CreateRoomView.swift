@@ -10,18 +10,16 @@ import SwiftUI
 
 struct CreateRoomView: View {
     @Environment(\.dismiss) private var dismiss
-    @State private var roomName: String = ""
-    @State private var selectedDate: Date? = nil
-    @State private var selectedTime: Date? = nil
+    @StateObject var viewModel: CreateRoomViewModel
     @State private var isDatePickerPresented: Bool = false
     @State private var isTimePickerPresented: Bool = false
     @State private var toastMessage: String? = nil
-
+    
     var body: some View {
         NavigationStack {
             ZStack(alignment: .top) {
                 Color(.gray4)
-                            .edgesIgnoringSafeArea(.top)
+                    .edgesIgnoringSafeArea(.top)
                 VStack(spacing: 32) {
                     headerView
                     contentView
@@ -35,46 +33,46 @@ struct CreateRoomView: View {
                         Image(.icnLeftnarrow)
                     }
                 })
-                
-                    
             }
             .edgesIgnoringSafeArea(.bottom)
         }
         .sheet(isPresented: $isDatePickerPresented) {
-                    VStack {
-                        DatePicker(
-                            "종료 날짜 선택",
-                            selection: Binding(
-                                get: { selectedDate ?? Date() },
-                                set: { selectedDate = $0 }
-                            ),
-                            displayedComponents: .date
-                        )
-                        .datePickerStyle(GraphicalDatePickerStyle())
-
-                        
-                        YMButton(title: "확인", buttonType: .confirm, action: { isDatePickerPresented = false})
-                            .padding(.horizontal, 16)
-                    }
-                    .presentationDetents([.fraction(0.6)])
-                }
-                .sheet(isPresented: $isTimePickerPresented) {
-                    VStack {
-                        DatePicker(
-                            "",
-                            selection: Binding(
-                                get: { selectedTime ?? Date() },
-                                set: { selectedTime = $0 }
-                            ),
-                            displayedComponents: .hourAndMinute
-                        )
-                        .datePickerStyle(WheelDatePickerStyle())
-                        YMButton(title: "확인", buttonType: .confirm, action: { isTimePickerPresented = false})
-                            .padding(.horizontal, 16)
-                    }
-                    .presentationDetents([.fraction(0.4)])
-                }
+            VStack {
+                DatePicker(
+                    "종료 날짜 선택",
+                    selection: Binding(
+                        get: { viewModel.selectedDate ?? Date() },
+                        set: { viewModel.selectedDate = $0 }
+                    ),
+                    displayedComponents: .date
+                )
+                .datePickerStyle(GraphicalDatePickerStyle())
+                
+                
+                YMButton(title: "확인", buttonType: .confirm, action: { isDatePickerPresented = false
+                })
+                .padding(.horizontal, 16)
             }
+            .presentationDetents([.fraction(0.6)])
+        }
+        .sheet(isPresented: $isTimePickerPresented) {
+            VStack {
+                DatePicker(
+                    "",
+                    selection: Binding(
+                        get: { viewModel.selectedTime ?? Date() },
+                        set: { viewModel.selectedTime = $0 }
+                    ),
+                    displayedComponents: .hourAndMinute
+                )
+                .datePickerStyle(WheelDatePickerStyle())
+                YMButton(title: "확인", buttonType: .confirm, action: { isTimePickerPresented = false
+                })
+                .padding(.horizontal, 16)
+            }
+            .presentationDetents([.fraction(0.4)])
+        }
+    }
     
     private var headerView: some View {
         VStack(spacing: 16) {
@@ -114,7 +112,7 @@ struct CreateRoomView: View {
                         .foregroundColor(.gray1)
                     
                 }
-                YMTextField(placeholder: StringLiterals.CreateRoom.RoomNamePlaceholder, text: $roomName)
+                YMTextField(placeholder: StringLiterals.CreateRoom.RoomNamePlaceholder, text: $viewModel.roomName)
                 
             }
             
@@ -129,25 +127,26 @@ struct CreateRoomView: View {
                 }
                 HStack(spacing: 12) {
                     YMSelectableTextField(
-                                       placeholder: "종료 날짜",
-                                       text: selectedDate != nil ? formatDate(selectedDate!) : "",
-                                       action: {
-                                           print("종료 날짜 선택")
-                                           isDatePickerPresented = true
-                                       }
-                                   )
+                        placeholder: "종료 날짜",
+                        text: viewModel.selectedDate != nil ? formatDate(viewModel.selectedDate!) : "",
+                        action: {
+                            print("종료 날짜 선택")
+                            isDatePickerPresented = true
+                        }
+                    )
+                    
                     
                     YMSelectableTextField(
-                                        placeholder: "종료 시간",
-                                        text: selectedTime != nil ? formatTime(selectedTime!) : "",
-                                        action: {
-                                            print("종료 시간 선택")
-                                            isTimePickerPresented = true
-                                        }
-                                    )
+                        placeholder: "종료 시간",
+                        text: viewModel.selectedTime != nil ? formatTime(viewModel.selectedTime!) : "",
+                        action: {
+                            print("종료 시간 선택")
+                            isTimePickerPresented = true
+                        }
+                    )
                 }
                 Spacer()
-                YMButton(title: "확인", buttonType: .confirm, action: createRoom)
+                YMButton(title: "확인", buttonType: .confirm, action: viewModel.postRoomInfo)
             }
             Spacer()
         }
@@ -167,11 +166,4 @@ struct CreateRoomView: View {
         formatter.dateFormat = "HH:mm"
         return formatter.string(from: date)
     }
-    
-    private func createRoom() {
-    }
-}
-
-#Preview {
-    CreateRoomView()
 }
