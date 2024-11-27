@@ -54,6 +54,7 @@
 		9E648DF52CF779DB004875B2 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DF42CF779DB004875B2 /* SignUpViewModel.swift */; };
 		9E648DF82CF7881B004875B2 /* UserCodeResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DF72CF7881B004875B2 /* UserCodeResponseBody.swift */; };
 		9E648DFC2CF78D31004875B2 /* ParticipateRoomRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DFB2CF78D31004875B2 /* ParticipateRoomRequestBody.swift */; };
+		9E648DFE2CF7B3E9004875B2 /* ParticipateRoomResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DFD2CF7B3E9004875B2 /* ParticipateRoomResponseBody.swift */; };
 		9E6699752CD368A50053960A /* YMBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699742CD368A50053960A /* YMBottomSheet.swift */; };
 		9E6699772CD3CF4D0053960A /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699762CD3CF4D0053960A /* StringLiterals.swift */; };
 		9E6699792CD3EE7D0053960A /* BottomSheetContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */; };
@@ -132,6 +133,7 @@
 		9E648DF42CF779DB004875B2 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		9E648DF72CF7881B004875B2 /* UserCodeResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCodeResponseBody.swift; sourceTree = "<group>"; };
 		9E648DFB2CF78D31004875B2 /* ParticipateRoomRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateRoomRequestBody.swift; sourceTree = "<group>"; };
+		9E648DFD2CF7B3E9004875B2 /* ParticipateRoomResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateRoomResponseBody.swift; sourceTree = "<group>"; };
 		9E6699742CD368A50053960A /* YMBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMBottomSheet.swift; sourceTree = "<group>"; };
 		9E6699762CD3CF4D0053960A /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
 		9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetContentType.swift; sourceTree = "<group>"; };
@@ -465,6 +467,7 @@
 		9E648DF92CF78BFB004875B2 /* ResponseDTO */ = {
 			isa = PBXGroup;
 			children = (
+				9E648DFD2CF7B3E9004875B2 /* ParticipateRoomResponseBody.swift */,
 			);
 			path = ResponseDTO;
 			sourceTree = "<group>";
@@ -693,6 +696,7 @@
 				88A3564F2CCF9E1E005E2893 /* PlayManittoBottomView.swift in Sources */,
 				88A3565D2CCFB7CD005E2893 /* YMNavigationBar.swift in Sources */,
 				88A356562CCFB54F005E2893 /* View+.swift in Sources */,
+				9E648DFE2CF7B3E9004875B2 /* ParticipateRoomResponseBody.swift in Sources */,
 				88A356522CCFB062005E2893 /* CheerType.swift in Sources */,
 				9E648DF12CF75B82004875B2 /* Device.swift in Sources */,
 				9E6699752CD368A50053960A /* YMBottomSheet.swift in Sources */,
