@@ -7,10 +7,7 @@
 
 import SwiftUI
 
-enum RoomType {
-    case owner
-    case notOwner
-}
+
 
 struct AfterJoinRoomView: View {
     
