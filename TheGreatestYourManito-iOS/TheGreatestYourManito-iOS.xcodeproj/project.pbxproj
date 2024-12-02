@@ -58,6 +58,7 @@
 		9E648E002CF7B5C4004875B2 /* BaseHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DFF2CF7B5C4004875B2 /* BaseHeader.swift */; };
 		9E648E042CF7B77E004875B2 /* RoomInfoResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648E032CF7B77E004875B2 /* RoomInfoResponseBody.swift */; };
 		9E648E1A2CFE6505004875B2 /* CheerMessageResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648E192CFE6505004875B2 /* CheerMessageResponseBody.swift */; };
+		9E648E1C2CFE6715004875B2 /* SendCheerResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648E1B2CFE6715004875B2 /* SendCheerResponseBody.swift */; };
 		9E6699752CD368A50053960A /* YMBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699742CD368A50053960A /* YMBottomSheet.swift */; };
 		9E6699772CD3CF4D0053960A /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699762CD3CF4D0053960A /* StringLiterals.swift */; };
 		9E6699792CD3EE7D0053960A /* BottomSheetContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */; };
@@ -145,6 +146,7 @@
 		9E648DFF2CF7B5C4004875B2 /* BaseHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeader.swift; sourceTree = "<group>"; };
 		9E648E032CF7B77E004875B2 /* RoomInfoResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfoResponseBody.swift; sourceTree = "<group>"; };
 		9E648E192CFE6505004875B2 /* CheerMessageResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheerMessageResponseBody.swift; sourceTree = "<group>"; };
+		9E648E1B2CFE6715004875B2 /* SendCheerResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendCheerResponseBody.swift; sourceTree = "<group>"; };
 		9E6699742CD368A50053960A /* YMBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMBottomSheet.swift; sourceTree = "<group>"; };
 		9E6699762CD3CF4D0053960A /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
 		9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetContentType.swift; sourceTree = "<group>"; };
@@ -507,6 +509,7 @@
 			isa = PBXGroup;
 			children = (
 				9E648E192CFE6505004875B2 /* CheerMessageResponseBody.swift */,
+				9E648E1B2CFE6715004875B2 /* SendCheerResponseBody.swift */,
 			);
 			path = ResponseDTO;
 			sourceTree = "<group>";
@@ -704,6 +707,7 @@
 				ED831DF22CC8E1EE00486C5A /* IntroView.swift in Sources */,
 				8832C3702CDF232300B8DFAB /* Color+.swift in Sources */,
 				ED831DF52CCD4A7600486C5A /* MainView.swift in Sources */,
+				9E648E1C2CFE6715004875B2 /* SendCheerResponseBody.swift in Sources */,
 				9E6699772CD3CF4D0053960A /* StringLiterals.swift in Sources */,
 				88A356542CCFB24E005E2893 /* ManittoEventStatus.swift in Sources */,
 				9E4F30722CC7CE5F009C59A4 /* ContentView.swift in Sources */,
