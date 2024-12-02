@@ -59,6 +59,7 @@
 		9E648E042CF7B77E004875B2 /* RoomInfoResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648E032CF7B77E004875B2 /* RoomInfoResponseBody.swift */; };
 		9E648E062CFE2606004875B2 /* FindRoomListResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648E052CFE2606004875B2 /* FindRoomListResponseBody.swift */; };
 		9E648E082CFE2B82004875B2 /* MainViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648E072CFE2B82004875B2 /* MainViewmodel.swift */; };
+		9E648E0C2CFE2F8C004875B2 /* MakeRoomResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648E0B2CFE2F8C004875B2 /* MakeRoomResponseBody.swift */; };
 		9E6699752CD368A50053960A /* YMBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699742CD368A50053960A /* YMBottomSheet.swift */; };
 		9E6699772CD3CF4D0053960A /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699762CD3CF4D0053960A /* StringLiterals.swift */; };
 		9E6699792CD3EE7D0053960A /* BottomSheetContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */; };
@@ -147,6 +148,7 @@
 		9E648E032CF7B77E004875B2 /* RoomInfoResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfoResponseBody.swift; sourceTree = "<group>"; };
 		9E648E052CFE2606004875B2 /* FindRoomListResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindRoomListResponseBody.swift; sourceTree = "<group>"; };
 		9E648E072CFE2B82004875B2 /* MainViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewmodel.swift; sourceTree = "<group>"; };
+		9E648E0B2CFE2F8C004875B2 /* MakeRoomResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeRoomResponseBody.swift; sourceTree = "<group>"; };
 		9E6699742CD368A50053960A /* YMBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMBottomSheet.swift; sourceTree = "<group>"; };
 		9E6699762CD3CF4D0053960A /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
 		9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetContentType.swift; sourceTree = "<group>"; };
@@ -490,6 +492,7 @@
 			isa = PBXGroup;
 			children = (
 				9E648E052CFE2606004875B2 /* FindRoomListResponseBody.swift */,
+				9E648E0B2CFE2F8C004875B2 /* MakeRoomResponseBody.swift */,
 				9E648DFD2CF7B3E9004875B2 /* ParticipateRoomResponseBody.swift */,
 				9E648E032CF7B77E004875B2 /* RoomInfoResponseBody.swift */,
 			);
@@ -730,6 +733,7 @@
 				8832C3772CDF2CB700B8DFAB /* ManittoResultBoardViewModel.swift in Sources */,
 				8832C36E2CDF195400B8DFAB /* ManittoResultBoardView.swift in Sources */,
 				88A3564A2CCF728A005E2893 /* PlayManittoView.swift in Sources */,
+				9E648E0C2CFE2F8C004875B2 /* MakeRoomResponseBody.swift in Sources */,
 				9E648DEF2CF75868004875B2 /* BaseResponseBody.swift in Sources */,
 				9E648DEB2CF754E5004875B2 /* MakeUserRequestBody.swift in Sources */,
 				9E648DD92CF74F18004875B2 /* UserService.swift in Sources */,
