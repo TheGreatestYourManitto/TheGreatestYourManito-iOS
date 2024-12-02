@@ -59,6 +59,7 @@
 		9E648E042CF7B77E004875B2 /* RoomInfoResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648E032CF7B77E004875B2 /* RoomInfoResponseBody.swift */; };
 		9E648E1A2CFE6505004875B2 /* CheerMessageResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648E192CFE6505004875B2 /* CheerMessageResponseBody.swift */; };
 		9E648E1C2CFE6715004875B2 /* SendCheerResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648E1B2CFE6715004875B2 /* SendCheerResponseBody.swift */; };
+		9E648E1E2CFE675B004875B2 /* SendCheerRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648E1D2CFE675B004875B2 /* SendCheerRequestBody.swift */; };
 		9E6699752CD368A50053960A /* YMBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699742CD368A50053960A /* YMBottomSheet.swift */; };
 		9E6699772CD3CF4D0053960A /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699762CD3CF4D0053960A /* StringLiterals.swift */; };
 		9E6699792CD3EE7D0053960A /* BottomSheetContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */; };
@@ -147,6 +148,7 @@
 		9E648E032CF7B77E004875B2 /* RoomInfoResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfoResponseBody.swift; sourceTree = "<group>"; };
 		9E648E192CFE6505004875B2 /* CheerMessageResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheerMessageResponseBody.swift; sourceTree = "<group>"; };
 		9E648E1B2CFE6715004875B2 /* SendCheerResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendCheerResponseBody.swift; sourceTree = "<group>"; };
+		9E648E1D2CFE675B004875B2 /* SendCheerRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendCheerRequestBody.swift; sourceTree = "<group>"; };
 		9E6699742CD368A50053960A /* YMBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMBottomSheet.swift; sourceTree = "<group>"; };
 		9E6699762CD3CF4D0053960A /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
 		9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetContentType.swift; sourceTree = "<group>"; };
@@ -517,6 +519,7 @@
 		9E648E182CFE6499004875B2 /* RequestDTO */ = {
 			isa = PBXGroup;
 			children = (
+				9E648E1D2CFE675B004875B2 /* SendCheerRequestBody.swift */,
 			);
 			path = RequestDTO;
 			sourceTree = "<group>";
@@ -743,6 +746,7 @@
 				9E648DD22CF73291004875B2 /* JoinRoomViewModel.swift in Sources */,
 				9EB6425D2CE4295C00F7F156 /* OpenManitoView.swift in Sources */,
 				88FEBFFC2CD3BA630013B9E1 /* PlayManittoResultView.swift in Sources */,
+				9E648E1E2CFE675B004875B2 /* SendCheerRequestBody.swift in Sources */,
 				8832C3772CDF2CB700B8DFAB /* ManittoResultBoardViewModel.swift in Sources */,
 				8832C36E2CDF195400B8DFAB /* ManittoResultBoardView.swift in Sources */,
 				88A3564A2CCF728A005E2893 /* PlayManittoView.swift in Sources */,
