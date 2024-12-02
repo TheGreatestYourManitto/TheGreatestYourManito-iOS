@@ -5,7 +5,7 @@
 //  Created by 이자민 on 11/28/24.
 //
 
-//TODO: - d-day 세팅해야함
+//TODO: - 복사 기능 달아야함
 
 import SwiftUI
 
