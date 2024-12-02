@@ -16,4 +16,5 @@ struct FindRoomListResponseBody: Codable {
 struct Room: Codable {
     let roomId: Int
     let roomName, endDate: String
+    let isConfirmed: Int
 }
