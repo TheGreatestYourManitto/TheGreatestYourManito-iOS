@@ -17,6 +17,7 @@ enum RoomTargetType {
     case deleteRoomMember(roomId: Int, userId: Int)
     case patchConfirmRoomStatus(roomId: Int)
     case getManittoReceiver(roomId: Int)
+    case delRemoveRoomFromList(roomId: Int)
 //    /room/:roomId/member/:userId
 }
 
@@ -28,7 +29,7 @@ extension RoomTargetType: BaseTargetType {
             return .get
         case .postMakeRoom, .postParticipateRoom:
             return .post
-        case .deleteRoomMember:
+        case .deleteRoomMember, .delRemoveRoomFromList:
             return .delete
         case .patchConfirmRoomStatus:
             return .patch
@@ -47,6 +48,8 @@ extension RoomTargetType: BaseTargetType {
             return "/room/\(roomId)/member/\(userId)"
         case .getManittoReceiver(let roomId):
             return "/room/\(roomId)/receiver"
+        case .delRemoveRoomFromList(let roomId):
+            return "/room/\(roomId)/withdraw"
         }
     }
     
@@ -56,7 +59,8 @@ extension RoomTargetType: BaseTargetType {
             return .requestJSONEncodable(requestBody)
         case .postParticipateRoom(let requestBody):
             return .requestJSONEncodable(requestBody)
-        case .getFindRoomList, .getRoomInfo, .deleteRoomMember, .patchConfirmRoomStatus, .getManittoReceiver:
+        case .getFindRoomList, .getRoomInfo, .deleteRoomMember,
+                .patchConfirmRoomStatus, .getManittoReceiver, .delRemoveRoomFromList:
             return .requestPlain
         }
     }

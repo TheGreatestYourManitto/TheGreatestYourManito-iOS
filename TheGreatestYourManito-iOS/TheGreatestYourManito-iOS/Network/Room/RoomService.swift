@@ -25,6 +25,8 @@ protocol RoomServiceProtocol {
     
     func getManittoReceiver(roomId: Int, completion: @escaping (NetworkResult<BaseResponseBody<ManittoReceiverResponseBody>>) -> ())
     
+    func delRemoveRoomFromList(roomId: Int, completion: @escaping (NetworkResult<BaseResponseBody<emptyResponse>>) -> ())
+    
 }
 
 final class RoomService: BaseService, RoomServiceProtocol {
@@ -113,6 +115,18 @@ final class RoomService: BaseService, RoomServiceProtocol {
             switch result {
             case .success(let response):
                 let networkResult: NetworkResult<BaseResponseBody<ManittoReceiverResponseBody>> = self.judgeStatus(statusCode: response.statusCode, data: response.data)
+                completion(networkResult)
+            case .failure(let err):
+                print(err)
+            }
+        }
+    }
+    
+    func delRemoveRoomFromList(roomId: Int, completion: @escaping (NetworkResult<BaseResponseBody<emptyResponse>>) -> ()) {
+        provider.request(.delRemoveRoomFromList(roomId: roomId)) { result in
+            switch result {
+            case .success(let response):
+                let networkResult: NetworkResult<BaseResponseBody<emptyResponse>> = self.judgeStatus(statusCode: response.statusCode, data: response.data)
                 completion(networkResult)
             case .failure(let err):
                 print(err)
