@@ -12,6 +12,7 @@ final class CreateRoomViewModel: ObservableObject {
     @Published var selectedDate: Date? = nil
     @Published var selectedTime: Date? = nil
     @Published var endDateTime: Date? = nil
+    @Published var roomId: Int = 0
     
     func updateDateTime() {
         guard let date = selectedDate, let time = selectedTime else { return }
@@ -31,7 +32,7 @@ final class CreateRoomViewModel: ObservableObject {
 
 extension CreateRoomViewModel {
     
-    func postMakeRoom() {
+    func postMakeRoom(onCompletion: @escaping () -> Void) {
         updateDateTime()
         guard let endDateTime = endDateTime else { return print("endDateTime error")}
         print("roomName: \(roomName), endDateTime: \(endDateTime.toISO8601String()) 전송 API 요청")
@@ -40,6 +41,8 @@ extension CreateRoomViewModel {
             switch result {
             case .success(let response):
                 print("Success: \(response)")
+                self.roomId = 13
+                onCompletion()
             default:
                 print("Failed to another reason")
                 return

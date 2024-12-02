@@ -5,6 +5,8 @@
 //  Created by 이자민 on 11/28/24.
 //
 
+//TODO: - d-day, 참여코드 등 세팅해야함
+
 import SwiftUI
 
 struct AfterCreateRoomView: View {
