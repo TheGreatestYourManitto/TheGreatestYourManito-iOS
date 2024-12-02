@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+// MARK: - SendCheerResponseBody
+struct SendCheerResponseBody: Codable {
+    let todaysCheeringCount: Int
+}
+
