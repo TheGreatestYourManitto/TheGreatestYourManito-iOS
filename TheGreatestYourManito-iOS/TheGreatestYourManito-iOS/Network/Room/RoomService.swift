@@ -11,6 +11,8 @@ import Moya
 
 protocol RoomServiceProtocol {
     
+    func getFindRoomList(completion: @escaping (NetworkResult<BaseResponseBody<FindRoomListResponseBody>>) -> ())
+    
     func postParticipateRoom(requestBody: ParticipateRoomRequestBody, completion: @escaping (NetworkResult<BaseResponseBody<ParticipateRoomResponseBody>>) -> ())
     
     func getRoomInfo(roomId: Int, completion: @escaping (NetworkResult<BaseResponseBody<RoomInfoResponseBody>>) -> ())
@@ -28,6 +30,18 @@ final class RoomService: BaseService, RoomServiceProtocol {
     static let shared = RoomService()
     
     let provider = MoyaProvider<RoomTargetType>(plugins: [MoyaLoggingPlugin()])
+    
+    func getFindRoomList(completion: @escaping (NetworkResult<BaseResponseBody<FindRoomListResponseBody>>) -> ()) {
+        provider.request(.getFindRoomList)  { result in
+            switch result {
+            case .success(let response):
+                let networkResult: NetworkResult<BaseResponseBody<FindRoomListResponseBody>> = self.judgeStatus(statusCode: response.statusCode, data: response.data)
+                completion(networkResult)
+            case .failure(let err):
+                print(err)
+            }
+        }
+    }
     
     func postParticipateRoom(requestBody: ParticipateRoomRequestBody, completion: @escaping (NetworkResult<BaseResponseBody<ParticipateRoomResponseBody>>) -> ()) {
         provider.request(.postParticipateRoom(requestBody: requestBody)) { result in

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @State private var isRefreshing = false
+    @StateObject var viewModel: MainViewmodel
     
     var body: some View {
         VStack(spacing: 0) {
@@ -63,9 +64,12 @@ struct MainView: View {
             .padding(.top, 24)
         }
         .background(Color.ymWhite)
+        .onAppear {
+            viewModel.getFindRoomList()
+        }
     }
 }
 
-#Preview {
-    MainView()
-}
+//#Preview {
+//    MainView()
+//}
