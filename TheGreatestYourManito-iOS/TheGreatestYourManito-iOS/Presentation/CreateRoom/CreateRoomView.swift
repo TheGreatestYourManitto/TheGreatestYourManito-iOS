@@ -146,7 +146,7 @@ struct CreateRoomView: View {
                     )
                 }
                 Spacer()
-                YMButton(title: "확인", buttonType: .confirm, action: viewModel.postRoomInfo)
+                YMButton(title: "확인", buttonType: .confirm, action: viewModel.postMakeRoom)
             }
             Spacer()
         }

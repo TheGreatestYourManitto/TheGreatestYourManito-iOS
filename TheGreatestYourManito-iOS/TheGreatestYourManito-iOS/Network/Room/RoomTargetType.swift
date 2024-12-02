@@ -11,6 +11,7 @@ import Moya
 
 enum RoomTargetType {
     case getFindRoomList
+    case postMakeRoom(requestBody: MakeRoomRequestBody)
     case postParticipateRoom(requestBody: ParticipateRoomRequestBody)
     case getRoomInfo(roomId: Int)
     case deleteRoomMember(roomId: Int, userId: Int)
@@ -22,12 +23,10 @@ extension RoomTargetType: BaseTargetType {
     
     var method: Moya.Method {
         switch self {
-        case .getFindRoomList:
+        case .getFindRoomList, .getRoomInfo:
             return .get
-        case .postParticipateRoom:
+        case .postMakeRoom, .postParticipateRoom:
             return .post
-        case .getRoomInfo:
-            return .get
         case .deleteRoomMember:
             return .delete
         case .patchConfirmRoomStatus:
@@ -37,7 +36,7 @@ extension RoomTargetType: BaseTargetType {
     
     var path: String {
         switch self {
-        case .getFindRoomList:
+        case .getFindRoomList, .postMakeRoom:
             return "/room"
         case .postParticipateRoom:
             return "/room/participate"
@@ -50,6 +49,8 @@ extension RoomTargetType: BaseTargetType {
     
     var task: Task {
         switch self {
+        case .postMakeRoom(let requestBody):
+            return .requestJSONEncodable(requestBody)
         case .postParticipateRoom(let requestBody):
             return .requestJSONEncodable(requestBody)
         case .getFindRoomList, .getRoomInfo, .deleteRoomMember, .patchConfirmRoomStatus:

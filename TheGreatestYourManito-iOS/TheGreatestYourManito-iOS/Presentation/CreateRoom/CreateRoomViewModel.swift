@@ -30,12 +30,21 @@ final class CreateRoomViewModel: ObservableObject {
 }
 
 extension CreateRoomViewModel {
-    func postRoomInfo() {
+    
+    func postMakeRoom() {
         updateDateTime()
-        guard let endDateTime = endDateTime else {
-                   print("End date and time are not set.")
-                   return
-               }
-               print("roomName: \(roomName), endDateTime: \(endDateTime.toISO8601String()) 전송 API 요청")
+        guard let endDateTime = endDateTime else { return print("endDateTime error")}
+        print("roomName: \(roomName), endDateTime: \(endDateTime.toISO8601String()) 전송 API 요청")
+        let requestBody = MakeRoomRequestBody(roomName: roomName, endDate: endDateTime.toISO8601String())
+        NetworkService.shared.roomService.postMakeRoom(requestBody: requestBody, completion: { result in
+            switch result {
+            case .success(let response):
+                print("Success: \(response)")
+            default:
+                print("Failed to another reason")
+                return
+            }
+        })
     }
+    
 }
