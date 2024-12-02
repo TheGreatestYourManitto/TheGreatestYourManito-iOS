@@ -12,6 +12,7 @@ import SwiftUI
 struct AfterCreateRoomView: View {
     
     @EnvironmentObject var viewModel: CreateRoomViewModel
+    @State var isPresented: Bool = false
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -46,11 +47,17 @@ struct AfterCreateRoomView: View {
                         .foregroundStyle(.ymBlack)
                     Spacer()
                     Image(.icnClipboardCircle)
+                    // TODO: 여기에 복사 기능 추가해야함
                     }
                 .padding(.horizontal, 20)
                 }
             Spacer()
-            YMButton(title: "공유하기", buttonType: .confirm, action: {})
+            YMButton(title: "공유하기", buttonType: .confirm, action: {
+                isPresented = true
+            })
+            .sheet(isPresented: $isPresented) {
+                ActivityViewController(activityItems: [viewModel.joinCode])
+            }
         }
         .padding(.horizontal, 24)
         .navigationBarBackButtonHidden(true)
