@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+struct FindRoomListResponseBody: Codable {
+    let rooms: [Room]
+}
+
+struct Room: Codable {
+    let roomID: Int
+    let roomName, endDate: String
+}
