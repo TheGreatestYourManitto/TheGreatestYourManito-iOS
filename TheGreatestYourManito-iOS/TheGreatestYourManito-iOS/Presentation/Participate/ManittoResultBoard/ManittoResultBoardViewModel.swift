@@ -42,7 +42,8 @@ final class ManittoResultBoardViewModel: ObservableObject {
     }
     
     //TODO: roomId 필요
-    func delRemoveRoomFromList() {
+    // 마니또 방 목록에서 삭제하기
+    func delRemoveRoomFromList(roomId: Int) {
         NetworkService.shared.roomService.delRemoveRoomFromList(roomId: 21) {result in
             switch result {
             case .success(let response):
