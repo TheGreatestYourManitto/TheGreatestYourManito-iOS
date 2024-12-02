@@ -7,11 +7,13 @@
 
 import Foundation
 
+// MARK: - FindRoomListResponseBody
 struct FindRoomListResponseBody: Codable {
     let rooms: [Room]
 }
 
+// MARK: - Room
 struct Room: Codable {
-    let roomID: Int
+    let roomId: Int
     let roomName, endDate: String
 }
