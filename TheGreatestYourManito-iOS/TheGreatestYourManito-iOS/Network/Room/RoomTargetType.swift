@@ -18,6 +18,7 @@ enum RoomTargetType {
     case patchConfirmRoomStatus(roomId: Int)
     case getManittoReceiver(roomId: Int)
     case delRemoveRoomFromList(roomId: Int)
+    case getManittoResult(roomId: Int)
 //    /room/:roomId/member/:userId
 }
 
@@ -25,7 +26,7 @@ extension RoomTargetType: BaseTargetType {
     
     var method: Moya.Method {
         switch self {
-        case .getFindRoomList, .getRoomInfo, .getManittoReceiver:
+        case .getFindRoomList, .getRoomInfo, .getManittoReceiver, .getManittoResult:
             return .get
         case .postMakeRoom, .postParticipateRoom:
             return .post
@@ -50,6 +51,8 @@ extension RoomTargetType: BaseTargetType {
             return "/room/\(roomId)/receiver"
         case .delRemoveRoomFromList(let roomId):
             return "/room/\(roomId)/withdraw"
+        case .getManittoResult(let roomId):
+            return "/room/\(roomId)/result"
         }
     }
     
@@ -60,7 +63,7 @@ extension RoomTargetType: BaseTargetType {
         case .postParticipateRoom(let requestBody):
             return .requestJSONEncodable(requestBody)
         case .getFindRoomList, .getRoomInfo, .deleteRoomMember,
-                .patchConfirmRoomStatus, .getManittoReceiver, .delRemoveRoomFromList:
+                .patchConfirmRoomStatus, .getManittoReceiver, .delRemoveRoomFromList, .getManittoResult:
             return .requestPlain
         }
     }
