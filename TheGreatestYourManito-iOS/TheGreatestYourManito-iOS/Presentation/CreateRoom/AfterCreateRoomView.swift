@@ -20,7 +20,7 @@ struct AfterCreateRoomView: View {
                 Image(.icnBigCancle)
             }
             
-            Text("마니또 공개까지\nD-7 남았어요!")
+            Text("마니또 공개까지\nD-\(viewModel.dDay) 남았어요!")
                 .padding(.top, 36)
                 .font(.pretendardFont(for: .heading1))
             

@@ -14,6 +14,7 @@ final class CreateRoomViewModel: ObservableObject {
     @Published var endDateTime: Date? = nil
     @Published var roomId: Int = 0
     @Published var joinCode: String = ""
+    @Published var dDay: Int = 0
     
     func updateDateTime() {
         guard let date = selectedDate, let time = selectedTime else { return }
@@ -41,8 +42,10 @@ extension CreateRoomViewModel {
         NetworkService.shared.roomService.postMakeRoom(requestBody: requestBody, completion: { result in
             switch result {
             case .success(let response):
+                guard let invitationCode = response.result?.invitationCode, let endDate = response.result?.endDate else {return}
                 print("Success: \(response)")
-                self.joinCode = response.result?.invitationCode ?? ""
+                self.joinCode = invitationCode
+                self.dDay = Date.calculateDDay(from: endDate) ?? 0
                 onCompletion()
             default:
                 print("Failed to another reason")
