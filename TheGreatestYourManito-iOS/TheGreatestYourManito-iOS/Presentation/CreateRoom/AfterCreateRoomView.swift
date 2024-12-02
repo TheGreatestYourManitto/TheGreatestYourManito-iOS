@@ -5,12 +5,13 @@
 //  Created by 이자민 on 11/28/24.
 //
 
-//TODO: - d-day, 참여코드 등 세팅해야함
+//TODO: - d-day 세팅해야함
 
 import SwiftUI
 
 struct AfterCreateRoomView: View {
-    @Binding var joinCode: String
+    
+    @EnvironmentObject var viewModel: CreateRoomViewModel
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -40,7 +41,7 @@ struct AfterCreateRoomView: View {
                     .frame(height: 68)
                 
                 HStack {
-                    Text(joinCode)
+                    Text(viewModel.joinCode)
                         .font(.pretendardFont(for: .heading5))
                         .foregroundStyle(.ymBlack)
                     Spacer()
@@ -57,6 +58,6 @@ struct AfterCreateRoomView: View {
     }
 }
 
-#Preview {
-    AfterCreateRoomView(joinCode: .constant("ABCD1234"))
-}
+//#Preview {
+//    AfterCreateRoomView(joinCode: .constant("ABCD1234"))
+//}

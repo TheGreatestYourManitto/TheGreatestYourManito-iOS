@@ -13,6 +13,7 @@ final class CreateRoomViewModel: ObservableObject {
     @Published var selectedTime: Date? = nil
     @Published var endDateTime: Date? = nil
     @Published var roomId: Int = 0
+    @Published var joinCode: String = ""
     
     func updateDateTime() {
         guard let date = selectedDate, let time = selectedTime else { return }
@@ -41,7 +42,7 @@ extension CreateRoomViewModel {
             switch result {
             case .success(let response):
                 print("Success: \(response)")
-                self.roomId = 13
+                self.joinCode = response.result?.invitationCode ?? ""
                 onCompletion()
             default:
                 print("Failed to another reason")

@@ -75,6 +75,8 @@ struct CreateRoomView: View {
         }
         .navigationDestination(isPresented: $isSuccessCreateRoom) {
             // AfterCreateRoomView로 넘어가는 코드
+            AfterCreateRoomView()
+                .environmentObject(viewModel)
         }
     }
     
