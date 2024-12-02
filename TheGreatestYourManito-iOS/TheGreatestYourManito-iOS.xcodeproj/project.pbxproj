@@ -459,6 +459,8 @@
 		9E648DDB2CF74F6B004875B2 /* Cheer */ = {
 			isa = PBXGroup;
 			children = (
+				9E648E182CFE6499004875B2 /* RequestDTO */,
+				9E648E172CFE6492004875B2 /* ResponseDTO */,
 				9E648DE02CF74F96004875B2 /* CheerTargetType.swift */,
 				9E648DE22CF74F9E004875B2 /* CheerService.swift */,
 			);
@@ -495,6 +497,20 @@
 			isa = PBXGroup;
 			children = (
 				9E648DFB2CF78D31004875B2 /* ParticipateRoomRequestBody.swift */,
+			);
+			path = RequestDTO;
+			sourceTree = "<group>";
+		};
+		9E648E172CFE6492004875B2 /* ResponseDTO */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ResponseDTO;
+			sourceTree = "<group>";
+		};
+		9E648E182CFE6499004875B2 /* RequestDTO */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = RequestDTO;
 			sourceTree = "<group>";
