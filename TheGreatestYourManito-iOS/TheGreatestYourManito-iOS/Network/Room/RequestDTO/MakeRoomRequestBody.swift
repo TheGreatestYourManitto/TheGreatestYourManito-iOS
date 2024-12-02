@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct MakeRoomRequestBody: Encodable {
+    let roomName, endDate: String
+}
