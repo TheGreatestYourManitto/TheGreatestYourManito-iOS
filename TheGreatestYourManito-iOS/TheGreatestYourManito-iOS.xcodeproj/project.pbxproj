@@ -57,6 +57,7 @@
 		9E648DFE2CF7B3E9004875B2 /* ParticipateRoomResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DFD2CF7B3E9004875B2 /* ParticipateRoomResponseBody.swift */; };
 		9E648E002CF7B5C4004875B2 /* BaseHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DFF2CF7B5C4004875B2 /* BaseHeader.swift */; };
 		9E648E042CF7B77E004875B2 /* RoomInfoResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648E032CF7B77E004875B2 /* RoomInfoResponseBody.swift */; };
+		9E648E062CFE2606004875B2 /* FindRoomListResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648E052CFE2606004875B2 /* FindRoomListResponseBody.swift */; };
 		9E6699752CD368A50053960A /* YMBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699742CD368A50053960A /* YMBottomSheet.swift */; };
 		9E6699772CD3CF4D0053960A /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699762CD3CF4D0053960A /* StringLiterals.swift */; };
 		9E6699792CD3EE7D0053960A /* BottomSheetContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */; };
@@ -143,6 +144,7 @@
 		9E648DFD2CF7B3E9004875B2 /* ParticipateRoomResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateRoomResponseBody.swift; sourceTree = "<group>"; };
 		9E648DFF2CF7B5C4004875B2 /* BaseHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeader.swift; sourceTree = "<group>"; };
 		9E648E032CF7B77E004875B2 /* RoomInfoResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfoResponseBody.swift; sourceTree = "<group>"; };
+		9E648E052CFE2606004875B2 /* FindRoomListResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindRoomListResponseBody.swift; sourceTree = "<group>"; };
 		9E6699742CD368A50053960A /* YMBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMBottomSheet.swift; sourceTree = "<group>"; };
 		9E6699762CD3CF4D0053960A /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
 		9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetContentType.swift; sourceTree = "<group>"; };
@@ -485,6 +487,7 @@
 		9E648DF92CF78BFB004875B2 /* ResponseDTO */ = {
 			isa = PBXGroup;
 			children = (
+				9E648E052CFE2606004875B2 /* FindRoomListResponseBody.swift */,
 				9E648DFD2CF7B3E9004875B2 /* ParticipateRoomResponseBody.swift */,
 				9E648E032CF7B77E004875B2 /* RoomInfoResponseBody.swift */,
 			);
@@ -705,6 +708,7 @@
 				9EB811CE2CCFB25E003C104D /* YMCircleButton.swift in Sources */,
 				9EB6425A2CE3E77D00F7F156 /* YMLoadingView.swift in Sources */,
 				9E4F308A2CC7D484009C59A4 /* Font+.swift in Sources */,
+				9E648E062CFE2606004875B2 /* FindRoomListResponseBody.swift in Sources */,
 				9E6FCB052CDABD3500D2A816 /* BeforeJoinRoomView.swift in Sources */,
 				9E648DF52CF779DB004875B2 /* SignUpViewModel.swift in Sources */,
 				9EB642632CE5428700F7F156 /* MoyaLoggingPlugin.swift in Sources */,
