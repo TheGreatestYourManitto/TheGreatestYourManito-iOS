@@ -52,12 +52,8 @@ struct AfterCreateRoomView: View {
             Spacer()
             YMButton(title: "공유하기", buttonType: .confirm, action: {})
         }
-        
         .padding(.horizontal, 24)
-    
+        .navigationBarBackButtonHidden(true)
     }
+    
 }
-
-//#Preview {
-//    AfterCreateRoomView(joinCode: .constant("ABCD1234"))
-//}
