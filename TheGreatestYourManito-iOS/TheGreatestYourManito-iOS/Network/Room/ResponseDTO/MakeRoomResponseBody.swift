@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+// MARK: - MakeRoomResponseBody
+struct MakeRoomResponseBody: Codable {
+    let invitationCode, endDate: String
+}
