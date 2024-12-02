@@ -13,6 +13,8 @@ protocol CheerServiceProtocol {
     
     func getCheerMassage(type: String, completion: @escaping (NetworkResult<BaseResponseBody<CheerMessageResponseBody>>) -> ())
     
+    func postSendCheer(requestBody: SendCheerRequestBody, completion: @escaping (NetworkResult<BaseResponseBody<SendCheerResponseBody>>) -> ())
+    
 }
 
 final class CheerService: BaseService, CheerServiceProtocol {
@@ -28,6 +30,18 @@ final class CheerService: BaseService, CheerServiceProtocol {
             switch result {
             case .success(let response):
                 let networkResult: NetworkResult<BaseResponseBody<CheerMessageResponseBody>> = self.judgeStatus(statusCode: response.statusCode, data: response.data)
+                completion(networkResult)
+            case .failure(let err):
+                print(err)
+            }
+        }
+    }
+    
+    func postSendCheer(requestBody: SendCheerRequestBody, completion: @escaping (NetworkResult<BaseResponseBody<SendCheerResponseBody>>) -> ()) {
+        provider.request(.postSendCheer(requestBody: requestBody)) { result in
+            switch result {
+            case .success(let response):
+                let networkResult: NetworkResult<BaseResponseBody<SendCheerResponseBody>> = self.judgeStatus(statusCode: response.statusCode, data: response.data)
                 completion(networkResult)
             case .failure(let err):
                 print(err)
