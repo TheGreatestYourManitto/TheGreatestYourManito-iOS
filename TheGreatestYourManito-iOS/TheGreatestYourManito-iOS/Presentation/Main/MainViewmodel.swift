@@ -21,4 +21,17 @@ final class MainViewmodel: ObservableObject {
         })
     }
     
+    func getManittoReceiver(roomId: Int) {
+        NetworkService.shared.roomService.getRoomInfo(roomId: roomId, completion: { result in
+            switch result {
+            case .success(let response):
+                print("Success: \(response)")
+                guard let result = response.result else {return}
+            default:
+                print("Failed to another reason")
+                return
+            }
+        })
+    }
+    
 }
