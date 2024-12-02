@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+// MARK: - CheerMessageResponseBody
+struct CheerMessageResponseBody: Codable {
+    let message: Message
+}
+
+// MARK: - Message
+struct Message: Codable {
+    let cheerMessage: String
+
+    enum CodingKeys: String, CodingKey {
+        case cheerMessage = "cheer_message"
+    }
+}
