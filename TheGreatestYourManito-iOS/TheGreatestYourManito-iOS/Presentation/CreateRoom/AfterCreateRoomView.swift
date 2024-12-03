@@ -5,10 +5,14 @@
 //  Created by 이자민 on 11/28/24.
 //
 
+//TODO: - 복사 기능 달아야함
+
 import SwiftUI
 
 struct AfterCreateRoomView: View {
-    @Binding var joinCode: String
+    
+    @EnvironmentObject var viewModel: CreateRoomViewModel
+    @State var isPresented: Bool = false
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -17,7 +21,7 @@ struct AfterCreateRoomView: View {
                 Image(.icnBigCancle)
             }
             
-            Text("마니또 공개까지\nD-7 남았어요!")
+            Text("마니또 공개까지\nD-\(viewModel.dDay) 남았어요!")
                 .padding(.top, 36)
                 .font(.pretendardFont(for: .heading1))
             
@@ -38,23 +42,25 @@ struct AfterCreateRoomView: View {
                     .frame(height: 68)
                 
                 HStack {
-                    Text(joinCode)
+                    Text(viewModel.joinCode)
                         .font(.pretendardFont(for: .heading5))
                         .foregroundStyle(.ymBlack)
                     Spacer()
                     Image(.icnClipboardCircle)
+                    // TODO: 여기에 복사 기능 추가해야함
                     }
                 .padding(.horizontal, 20)
                 }
             Spacer()
-            YMButton(title: "공유하기", buttonType: .confirm, action: {})
+            YMButton(title: "공유하기", buttonType: .confirm, action: {
+                isPresented = true
+            })
+            .sheet(isPresented: $isPresented) {
+                ActivityViewController(activityItems: [viewModel.joinCode])
+            }
         }
-        
         .padding(.horizontal, 24)
-    
+        .navigationBarBackButtonHidden(true)
     }
-}
-
-#Preview {
-    AfterCreateRoomView(joinCode: .constant("ABCD1234"))
+    
 }

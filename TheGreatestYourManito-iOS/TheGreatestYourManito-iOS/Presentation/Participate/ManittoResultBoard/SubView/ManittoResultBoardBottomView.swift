@@ -23,7 +23,7 @@ struct ManittoResultBoardBottomView: View {
                 YMButton(
                     title: StringLiterals.PlayManittoResultBoard.bottomSheetDeleteButtonStr,
                     buttonType: .confirm,
-                    action: { viewModel.tapDeleteButton() }
+                    action: { viewModel.delRemoveRoomFromList() }
                 )
                 .padding(.bottom, 24)
             }

@@ -27,7 +27,31 @@ final class ManittoResultBoardViewModel: ObservableObject {
         self.manittoRankList = manittoRankList
     }
     
-    func tapDeleteButton() {
-        print("삭제 빵야")
+    //TODO: roomId 필요
+    // 마니또 결과 받기
+    func getManittoResult(roomId: Int) {
+        NetworkService.shared.roomService.getManittoResult(roomId: 21) {result in
+            switch result {
+            case .success(let response):
+                print("Success: \(response)")
+            default:
+                print("Failed to another reason")
+                return
+            }
+        }
+    }
+    
+    //TODO: roomId 필요
+    // 마니또 방 목록에서 삭제하기
+    func delRemoveRoomFromList(roomId: Int) {
+        NetworkService.shared.roomService.delRemoveRoomFromList(roomId: 21) {result in
+            switch result {
+            case .success(let response):
+                print("Success: \(response)")
+            default:
+                print("Failed to another reason")
+                return
+            }
+        }
     }
 }
