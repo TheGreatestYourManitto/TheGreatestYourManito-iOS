@@ -14,6 +14,7 @@ struct CreateRoomView: View {
     @State private var isDatePickerPresented: Bool = false
     @State private var isTimePickerPresented: Bool = false
     @State private var toastMessage: String? = nil
+    @State private var isSuccessCreateRoom: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -71,6 +72,11 @@ struct CreateRoomView: View {
                 .padding(.horizontal, 16)
             }
             .presentationDetents([.fraction(0.4)])
+        }
+        .navigationDestination(isPresented: $isSuccessCreateRoom) {
+            // AfterCreateRoomView로 넘어가는 코드
+            AfterCreateRoomView()
+                .environmentObject(viewModel)
         }
     }
     
@@ -146,7 +152,15 @@ struct CreateRoomView: View {
                     )
                 }
                 Spacer()
-                YMButton(title: "확인", buttonType: .confirm, action: viewModel.postRoomInfo)
+                YMButton(
+                    title: "확인",
+                    buttonType: .confirm,
+                    action: {
+                        viewModel.postMakeRoom {
+                            isSuccessCreateRoom = true
+                        }
+                    }
+                )
             }
             Spacer()
         }
@@ -166,4 +180,5 @@ struct CreateRoomView: View {
         formatter.dateFormat = "HH:mm"
         return formatter.string(from: date)
     }
+    
 }

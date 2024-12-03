@@ -57,6 +57,12 @@
 		9E648DFE2CF7B3E9004875B2 /* ParticipateRoomResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DFD2CF7B3E9004875B2 /* ParticipateRoomResponseBody.swift */; };
 		9E648E002CF7B5C4004875B2 /* BaseHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648DFF2CF7B5C4004875B2 /* BaseHeader.swift */; };
 		9E648E042CF7B77E004875B2 /* RoomInfoResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648E032CF7B77E004875B2 /* RoomInfoResponseBody.swift */; };
+		9E648E062CFE2606004875B2 /* FindRoomListResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648E052CFE2606004875B2 /* FindRoomListResponseBody.swift */; };
+		9E648E082CFE2B82004875B2 /* MainViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648E072CFE2B82004875B2 /* MainViewmodel.swift */; };
+		9E648E0C2CFE2F8C004875B2 /* MakeRoomResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648E0B2CFE2F8C004875B2 /* MakeRoomResponseBody.swift */; };
+		9E648E0E2CFE2FF4004875B2 /* MakeRoomRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648E0D2CFE2FF4004875B2 /* MakeRoomRequestBody.swift */; };
+		9E648E102CFE551C004875B2 /* ManittoReceiverResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648E0F2CFE551C004875B2 /* ManittoReceiverResponseBody.swift */; };
+		9E648E122CFE5E2A004875B2 /* GetManittoResultResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648E112CFE5E2A004875B2 /* GetManittoResultResponseBody.swift */; };
 		9E6699752CD368A50053960A /* YMBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699742CD368A50053960A /* YMBottomSheet.swift */; };
 		9E6699772CD3CF4D0053960A /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699762CD3CF4D0053960A /* StringLiterals.swift */; };
 		9E6699792CD3EE7D0053960A /* BottomSheetContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */; };
@@ -143,6 +149,12 @@
 		9E648DFD2CF7B3E9004875B2 /* ParticipateRoomResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateRoomResponseBody.swift; sourceTree = "<group>"; };
 		9E648DFF2CF7B5C4004875B2 /* BaseHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeader.swift; sourceTree = "<group>"; };
 		9E648E032CF7B77E004875B2 /* RoomInfoResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfoResponseBody.swift; sourceTree = "<group>"; };
+		9E648E052CFE2606004875B2 /* FindRoomListResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindRoomListResponseBody.swift; sourceTree = "<group>"; };
+		9E648E072CFE2B82004875B2 /* MainViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewmodel.swift; sourceTree = "<group>"; };
+		9E648E0B2CFE2F8C004875B2 /* MakeRoomResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeRoomResponseBody.swift; sourceTree = "<group>"; };
+		9E648E0D2CFE2FF4004875B2 /* MakeRoomRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeRoomRequestBody.swift; sourceTree = "<group>"; };
+		9E648E0F2CFE551C004875B2 /* ManittoReceiverResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManittoReceiverResponseBody.swift; sourceTree = "<group>"; };
+		9E648E112CFE5E2A004875B2 /* GetManittoResultResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetManittoResultResponseBody.swift; sourceTree = "<group>"; };
 		9E6699742CD368A50053960A /* YMBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMBottomSheet.swift; sourceTree = "<group>"; };
 		9E6699762CD3CF4D0053960A /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
 		9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetContentType.swift; sourceTree = "<group>"; };
@@ -485,8 +497,12 @@
 		9E648DF92CF78BFB004875B2 /* ResponseDTO */ = {
 			isa = PBXGroup;
 			children = (
+				9E648E052CFE2606004875B2 /* FindRoomListResponseBody.swift */,
+				9E648E0B2CFE2F8C004875B2 /* MakeRoomResponseBody.swift */,
 				9E648DFD2CF7B3E9004875B2 /* ParticipateRoomResponseBody.swift */,
 				9E648E032CF7B77E004875B2 /* RoomInfoResponseBody.swift */,
+				9E648E0F2CFE551C004875B2 /* ManittoReceiverResponseBody.swift */,
+				9E648E112CFE5E2A004875B2 /* GetManittoResultResponseBody.swift */,
 			);
 			path = ResponseDTO;
 			sourceTree = "<group>";
@@ -494,6 +510,7 @@
 		9E648DFA2CF78C05004875B2 /* RequestDTO */ = {
 			isa = PBXGroup;
 			children = (
+				9E648E0D2CFE2FF4004875B2 /* MakeRoomRequestBody.swift */,
 				9E648DFB2CF78D31004875B2 /* ParticipateRoomRequestBody.swift */,
 			);
 			path = RequestDTO;
@@ -592,6 +609,7 @@
 			isa = PBXGroup;
 			children = (
 				ED831DF42CCD4A7600486C5A /* MainView.swift */,
+				9E648E072CFE2B82004875B2 /* MainViewmodel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -695,6 +713,8 @@
 				9EB811D82CCFBD64003C104D /* AfterJoinRoomView.swift in Sources */,
 				9E648DE92CF7507A004875B2 /* UserIdentifyRequestBody.swift in Sources */,
 				9EB811D02CCFB4BC003C104D /* YMJoinCodeStackView.swift in Sources */,
+				9E648E0E2CFE2FF4004875B2 /* MakeRoomRequestBody.swift in Sources */,
+				9E648E102CFE551C004875B2 /* ManittoReceiverResponseBody.swift in Sources */,
 				ED53F6D62CF7885D00E5BD1C /* AfterCreateRoomView.swift in Sources */,
 				9E648E042CF7B77E004875B2 /* RoomInfoResponseBody.swift in Sources */,
 				9EB642612CE5424E00F7F156 /* BaseTargetType.swift in Sources */,
@@ -705,6 +725,7 @@
 				9EB811CE2CCFB25E003C104D /* YMCircleButton.swift in Sources */,
 				9EB6425A2CE3E77D00F7F156 /* YMLoadingView.swift in Sources */,
 				9E4F308A2CC7D484009C59A4 /* Font+.swift in Sources */,
+				9E648E062CFE2606004875B2 /* FindRoomListResponseBody.swift in Sources */,
 				9E6FCB052CDABD3500D2A816 /* BeforeJoinRoomView.swift in Sources */,
 				9E648DF52CF779DB004875B2 /* SignUpViewModel.swift in Sources */,
 				9EB642632CE5428700F7F156 /* MoyaLoggingPlugin.swift in Sources */,
@@ -723,6 +744,7 @@
 				8832C3772CDF2CB700B8DFAB /* ManittoResultBoardViewModel.swift in Sources */,
 				8832C36E2CDF195400B8DFAB /* ManittoResultBoardView.swift in Sources */,
 				88A3564A2CCF728A005E2893 /* PlayManittoView.swift in Sources */,
+				9E648E0C2CFE2F8C004875B2 /* MakeRoomResponseBody.swift in Sources */,
 				9E648DEF2CF75868004875B2 /* BaseResponseBody.swift in Sources */,
 				9E648DEB2CF754E5004875B2 /* MakeUserRequestBody.swift in Sources */,
 				9E648DD92CF74F18004875B2 /* UserService.swift in Sources */,
@@ -734,6 +756,7 @@
 				88A356522CCFB062005E2893 /* CheerType.swift in Sources */,
 				9E648DF12CF75B82004875B2 /* Device.swift in Sources */,
 				9E648E002CF7B5C4004875B2 /* BaseHeader.swift in Sources */,
+				9E648E122CFE5E2A004875B2 /* GetManittoResultResponseBody.swift in Sources */,
 				9E6699752CD368A50053960A /* YMBottomSheet.swift in Sources */,
 				ED831DEF2CC8E1A100486C5A /* SignUpView.swift in Sources */,
 				9EB6426A2CE5437300F7F156 /* Config.swift in Sources */,
@@ -751,6 +774,7 @@
 				9EB642562CE3853500F7F156 /* BeforeJoinRoomBottomView.swift in Sources */,
 				9E648DDF2CF74F8D004875B2 /* RoomService.swift in Sources */,
 				9EB6426E2CE5473500F7F156 /* Development.xcconfig in Sources */,
+				9E648E082CFE2B82004875B2 /* MainViewmodel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

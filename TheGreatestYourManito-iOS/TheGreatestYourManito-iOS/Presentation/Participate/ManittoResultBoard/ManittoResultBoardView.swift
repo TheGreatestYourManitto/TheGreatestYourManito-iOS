@@ -44,6 +44,10 @@ struct ManittoResultBoardView: View {
             }
         })
         .ignoresSafeArea(.container, edges: .bottom)
+        .onAppear {
+            //TODO: roomId 필요
+            viewModel.getManittoResult(roomId: <#T##Int#>)
+        }
     }
 }
 
