@@ -63,6 +63,9 @@
 		9E648E0E2CFE2FF4004875B2 /* MakeRoomRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648E0D2CFE2FF4004875B2 /* MakeRoomRequestBody.swift */; };
 		9E648E102CFE551C004875B2 /* ManittoReceiverResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648E0F2CFE551C004875B2 /* ManittoReceiverResponseBody.swift */; };
 		9E648E122CFE5E2A004875B2 /* GetManittoResultResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648E112CFE5E2A004875B2 /* GetManittoResultResponseBody.swift */; };
+		9E648E1A2CFE6505004875B2 /* CheerMessageResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648E192CFE6505004875B2 /* CheerMessageResponseBody.swift */; };
+		9E648E1C2CFE6715004875B2 /* SendCheerResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648E1B2CFE6715004875B2 /* SendCheerResponseBody.swift */; };
+		9E648E1E2CFE675B004875B2 /* SendCheerRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E648E1D2CFE675B004875B2 /* SendCheerRequestBody.swift */; };
 		9E6699752CD368A50053960A /* YMBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699742CD368A50053960A /* YMBottomSheet.swift */; };
 		9E6699772CD3CF4D0053960A /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699762CD3CF4D0053960A /* StringLiterals.swift */; };
 		9E6699792CD3EE7D0053960A /* BottomSheetContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */; };
@@ -155,6 +158,9 @@
 		9E648E0D2CFE2FF4004875B2 /* MakeRoomRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeRoomRequestBody.swift; sourceTree = "<group>"; };
 		9E648E0F2CFE551C004875B2 /* ManittoReceiverResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManittoReceiverResponseBody.swift; sourceTree = "<group>"; };
 		9E648E112CFE5E2A004875B2 /* GetManittoResultResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetManittoResultResponseBody.swift; sourceTree = "<group>"; };
+		9E648E192CFE6505004875B2 /* CheerMessageResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheerMessageResponseBody.swift; sourceTree = "<group>"; };
+		9E648E1B2CFE6715004875B2 /* SendCheerResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendCheerResponseBody.swift; sourceTree = "<group>"; };
+		9E648E1D2CFE675B004875B2 /* SendCheerRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendCheerRequestBody.swift; sourceTree = "<group>"; };
 		9E6699742CD368A50053960A /* YMBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMBottomSheet.swift; sourceTree = "<group>"; };
 		9E6699762CD3CF4D0053960A /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
 		9E6699782CD3EE7D0053960A /* BottomSheetContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetContentType.swift; sourceTree = "<group>"; };
@@ -471,6 +477,8 @@
 		9E648DDB2CF74F6B004875B2 /* Cheer */ = {
 			isa = PBXGroup;
 			children = (
+				9E648E182CFE6499004875B2 /* RequestDTO */,
+				9E648E172CFE6492004875B2 /* ResponseDTO */,
 				9E648DE02CF74F96004875B2 /* CheerTargetType.swift */,
 				9E648DE22CF74F9E004875B2 /* CheerService.swift */,
 			);
@@ -512,6 +520,23 @@
 			children = (
 				9E648E0D2CFE2FF4004875B2 /* MakeRoomRequestBody.swift */,
 				9E648DFB2CF78D31004875B2 /* ParticipateRoomRequestBody.swift */,
+			);
+			path = RequestDTO;
+			sourceTree = "<group>";
+		};
+		9E648E172CFE6492004875B2 /* ResponseDTO */ = {
+			isa = PBXGroup;
+			children = (
+				9E648E192CFE6505004875B2 /* CheerMessageResponseBody.swift */,
+				9E648E1B2CFE6715004875B2 /* SendCheerResponseBody.swift */,
+			);
+			path = ResponseDTO;
+			sourceTree = "<group>";
+		};
+		9E648E182CFE6499004875B2 /* RequestDTO */ = {
+			isa = PBXGroup;
+			children = (
+				9E648E1D2CFE675B004875B2 /* SendCheerRequestBody.swift */,
 			);
 			path = RequestDTO;
 			sourceTree = "<group>";
@@ -703,6 +728,7 @@
 				ED831DF22CC8E1EE00486C5A /* IntroView.swift in Sources */,
 				8832C3702CDF232300B8DFAB /* Color+.swift in Sources */,
 				ED831DF52CCD4A7600486C5A /* MainView.swift in Sources */,
+				9E648E1C2CFE6715004875B2 /* SendCheerResponseBody.swift in Sources */,
 				9E6699772CD3CF4D0053960A /* StringLiterals.swift in Sources */,
 				88A356542CCFB24E005E2893 /* ManittoEventStatus.swift in Sources */,
 				9E4F30722CC7CE5F009C59A4 /* ContentView.swift in Sources */,
@@ -741,6 +767,7 @@
 				9E648DD22CF73291004875B2 /* JoinRoomViewModel.swift in Sources */,
 				9EB6425D2CE4295C00F7F156 /* OpenManitoView.swift in Sources */,
 				88FEBFFC2CD3BA630013B9E1 /* PlayManittoResultView.swift in Sources */,
+				9E648E1E2CFE675B004875B2 /* SendCheerRequestBody.swift in Sources */,
 				8832C3772CDF2CB700B8DFAB /* ManittoResultBoardViewModel.swift in Sources */,
 				8832C36E2CDF195400B8DFAB /* ManittoResultBoardView.swift in Sources */,
 				88A3564A2CCF728A005E2893 /* PlayManittoView.swift in Sources */,
@@ -770,6 +797,7 @@
 				ED53F6D22CF72BFF00E5BD1C /* CreateRoomView.swift in Sources */,
 				ED831DF72CCD506600486C5A /* RoomCardView.swift in Sources */,
 				9E648DF32CF77583004875B2 /* IntroViewModel.swift in Sources */,
+				9E648E1A2CFE6505004875B2 /* CheerMessageResponseBody.swift in Sources */,
 				9E648DD72CF74EA0004875B2 /* UserTargetType.swift in Sources */,
 				9EB642562CE3853500F7F156 /* BeforeJoinRoomBottomView.swift in Sources */,
 				9E648DDF2CF74F8D004875B2 /* RoomService.swift in Sources */,
