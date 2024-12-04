@@ -39,7 +39,7 @@ final class MainViewmodel: ObservableObject {
         })
     }
     
-    func getManittoReceiver(roomId: Int) {
+    func getRoomInfoInMainView(roomId: Int) {
         NetworkService.shared.roomService.getRoomInfo(roomId: roomId, completion: { result in
             switch result {
             case .success(let response):

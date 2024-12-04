@@ -89,9 +89,9 @@ struct MainView: View {
                     CreateRoomView(viewModel: CreateRoomViewModel())
                 } else {
                     if viewModel.isConfirmed == 1 {
-                        IntroView(viewModel: IntroViewModel(isIdentified: false))
+                        OpenManitoView(manitoResultType: .notOpen, viewModel: OpenMaintoViewModel(roomId: viewModel.roomId))
                     } else { // 시작되지 않았다면
-                        if viewModel.isTapRoom { // 해당 변수로 통제하지않으면,viewModel.getManittoReceiver(roomId: viewModel.roomId)로 값이 세팅되기 이전 BeforeJoinRoomView로 이동해버림
+                        if viewModel.isTapRoom { // 해당 변수로 통제하지않으면,viewModel.getRoomInfoInMainView(roomId: viewModel.roomId)로 값이 세팅되기 이전 BeforeJoinRoomView로 이동해버림
                             BeforeJoinRoomView(viewModel: JoinRoomViewModel(roomType: viewModel.roomType, joinCode: viewModel.joinCode, roomName: viewModel.roomName, memberCount: viewModel.memberCount, memberListModel: viewModel.memberListModel)
                             )
                         }
@@ -107,7 +107,7 @@ struct MainView: View {
         viewModel.isConfirmed = room.isConfirmed
         viewModel.roomId = room.roomId
         if viewModel.isConfirmed == 0 {
-            viewModel.getManittoReceiver(roomId: viewModel.roomId)
+            viewModel.getRoomInfoInMainView(roomId: viewModel.roomId)
         }
         print("아아아아아",viewModel.roomName)
         isPresented = true
