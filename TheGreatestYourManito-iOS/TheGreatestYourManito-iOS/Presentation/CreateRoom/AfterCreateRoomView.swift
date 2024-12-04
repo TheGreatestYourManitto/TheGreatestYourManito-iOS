@@ -5,7 +5,6 @@
 //  Created by 이자민 on 11/28/24.
 //
 
-//TODO: - 복사 기능 달아야함
 
 import SwiftUI
 
@@ -13,6 +12,7 @@ struct AfterCreateRoomView: View {
     
     @EnvironmentObject var viewModel: CreateRoomViewModel
     @State var isPresented: Bool = false
+    @State var isCopyOnClipBoard: Bool
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -46,21 +46,51 @@ struct AfterCreateRoomView: View {
                         .font(.pretendardFont(for: .heading5))
                         .foregroundStyle(.ymBlack)
                     Spacer()
-                    Image(.icnClipboardCircle)
-                    // TODO: 여기에 복사 기능 추가해야함
+                    Button(action: {
+                        copyToClipboard()
+                        print(isCopyOnClipBoard)
+                    }) {
+                        Image(.icnClipboardCircle)
                     }
-                .padding(.horizontal, 20)
                 }
-            Spacer()
-            YMButton(title: "공유하기", buttonType: .confirm, action: {
-                isPresented = true
-            })
-            .sheet(isPresented: $isPresented) {
-                ActivityViewController(activityItems: [viewModel.joinCode])
+                .padding(.horizontal, 20)
             }
+            Spacer()
+            VStack(spacing: 16) {
+                
+                YMButton(title: "공유하기", buttonType: .confirm, action: {
+                    isPresented = true
+                })
+                .sheet(isPresented: $isPresented) {
+                    ActivityViewController(activityItems: [viewModel.joinCode])
+                }
+            }
+            .overlay(
+                Group {
+                    if isCopyOnClipBoard {
+                        VStack {
+                            Spacer()
+                            CopyToastView()
+                                .padding(.bottom, 140)
+                                .padding(.horizontal, 16)
+                                .transition(.move(edge: .bottom).combined(with: .opacity))
+                        }
+                    }
+                }
+            )
+            .animation(.easeOut(duration: 0.3), value: isCopyOnClipBoard)
         }
         .padding(.horizontal, 24)
         .navigationBarBackButtonHidden(true)
+    }
+    
+    private func copyToClipboard() {
+        UIPasteboard.general.string = viewModel.joinCode
+        isCopyOnClipBoard = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            isCopyOnClipBoard = false
+        }
+        print(isCopyOnClipBoard)
     }
     
 }
