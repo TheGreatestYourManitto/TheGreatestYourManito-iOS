@@ -13,6 +13,21 @@ enum CheerType: CaseIterable {
     case fire
     case gift
     
+    init?(name: String) {
+        switch name.lowercased() {
+        case "luck":
+            self = .luck
+        case "love":
+            self = .love
+        case "fire":
+            self = .fire
+        case "present":
+            self = .gift
+        default:
+            return nil
+        }
+    }
+    
     var defaultImage: ImageResource {
         switch self {
             
