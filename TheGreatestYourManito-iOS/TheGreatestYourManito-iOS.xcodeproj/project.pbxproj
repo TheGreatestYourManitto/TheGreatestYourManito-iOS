@@ -88,6 +88,7 @@
 		9EB811DF2CCFC497003C104D /* AfterJoinRoomBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811DE2CCFC497003C104D /* AfterJoinRoomBottomView.swift */; };
 		9EB811E12CD0CA31003C104D /* JoinMemberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811E02CD0CA31003C104D /* JoinMemberModel.swift */; };
 		9ECD65042D00302D000B6D0B /* NetworkActivityPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECD65032D00302D000B6D0B /* NetworkActivityPlugin.swift */; };
+		9ECD65062D007827000B6D0B /* AppStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECD65052D007827000B6D0B /* AppStates.swift */; };
 		ED53F6D22CF72BFF00E5BD1C /* CreateRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53F6D12CF72BFF00E5BD1C /* CreateRoomView.swift */; };
 		ED53F6D42CF7417900E5BD1C /* YMSelectableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53F6D32CF7417900E5BD1C /* YMSelectableTextField.swift */; };
 		ED53F6D62CF7885D00E5BD1C /* AfterCreateRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53F6D52CF7885D00E5BD1C /* AfterCreateRoomView.swift */; };
@@ -183,6 +184,7 @@
 		9EB811DE2CCFC497003C104D /* AfterJoinRoomBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterJoinRoomBottomView.swift; sourceTree = "<group>"; };
 		9EB811E02CD0CA31003C104D /* JoinMemberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinMemberModel.swift; sourceTree = "<group>"; };
 		9ECD65032D00302D000B6D0B /* NetworkActivityPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkActivityPlugin.swift; sourceTree = "<group>"; };
+		9ECD65052D007827000B6D0B /* AppStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStates.swift; sourceTree = "<group>"; };
 		ED53F6D12CF72BFF00E5BD1C /* CreateRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomView.swift; sourceTree = "<group>"; };
 		ED53F6D32CF7417900E5BD1C /* YMSelectableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMSelectableTextField.swift; sourceTree = "<group>"; };
 		ED53F6D52CF7885D00E5BD1C /* AfterCreateRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterCreateRoomView.swift; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 			children = (
 				88A356582CCFB57E005E2893 /* roundCorner.swift */,
 				9E648DF02CF75B82004875B2 /* Device.swift */,
+				9ECD65052D007827000B6D0B /* AppStates.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -768,6 +771,7 @@
 				9EB642632CE5428700F7F156 /* MoyaLoggingPlugin.swift in Sources */,
 				9E648DDD2CF74F82004875B2 /* RoomTargetType.swift in Sources */,
 				9E648DE32CF74F9E004875B2 /* CheerService.swift in Sources */,
+				9ECD65062D007827000B6D0B /* AppStates.swift in Sources */,
 				9E648DE12CF74F96004875B2 /* CheerTargetType.swift in Sources */,
 				88A3565F2CCFC005005E2893 /* PlayManittoViewModel.swift in Sources */,
 				9EB642652CE542B600F7F156 /* NetworkResult.swift in Sources */,
