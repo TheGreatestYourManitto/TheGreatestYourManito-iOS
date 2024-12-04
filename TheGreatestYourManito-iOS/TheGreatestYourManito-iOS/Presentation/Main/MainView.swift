@@ -16,7 +16,6 @@ struct MainView: View {
     @StateObject var viewModel: MainViewmodel
     
     var body: some View {
-        NavigationStack {
             VStack(spacing: 0) {
                 HStack {
                     Image(.icnSmallLogo)
@@ -99,8 +98,7 @@ struct MainView: View {
                 }
                 
             }
-        }
-        .navigationBarBackButtonHidden()
+            .navigationBarBackButtonHidden()
     }
     
     func handleRoomSelection(_ room: Room) {
