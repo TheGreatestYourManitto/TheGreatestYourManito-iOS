@@ -9,48 +9,70 @@ import Foundation
 
 final class ManittoResultBoardViewModel: ObservableObject {
     
-    let manittoName: String
-    let manittoRoomName: String
-    let cheerCounts: [CheerType: Int]
-    var totalCheerCount: Int { cheerCounts.values.reduce(0, +) }
-    let manittoRankList: ManittoRankList
+    @Published var deleteCompleted: Bool = false
+    @Published var manittoName: String = ""
+    @Published var cheerCounts: [CheerType: Int] = [:]
+    @Published var manittoRankList: ManittoRankList = []
     
-    init(
-        manittoName: String,
-        manittoRoomName: String,
-        cheerCounts: [CheerType : Int],
-        manittoRankList: ManittoRankList
-    ) {
-        self.manittoName = manittoName
+    let manittoRoomName: String
+    let manittoRoomId: Int
+    
+    var totalCheerCount: Int { cheerCounts.values.reduce(0, +) }
+    
+    init (manittoRoomName: String, manittoRoomId: Int) {
         self.manittoRoomName = manittoRoomName
-        self.cheerCounts = cheerCounts
-        self.manittoRankList = manittoRankList
+        self.manittoRoomId = manittoRoomId
     }
     
-    //TODO: roomId 필요
+    func onAppear() {
+        getManittoResult(roomId: self.manittoRoomId)
+    }
+    
+    func tapDeleteButton() {
+        delRemoveRoomFromList(roomId: self.manittoRoomId)
+    }
+}
+
+// MARK: API
+private extension ManittoResultBoardViewModel {
+    
     // 마니또 결과 받기
     func getManittoResult(roomId: Int) {
-        NetworkService.shared.roomService.getManittoResult(roomId: 21) {result in
+        NetworkService.shared.roomService.getManittoResult(roomId: roomId) { [weak self] result in
             switch result {
             case .success(let response):
-                print("Success: \(response)")
+                #if DEBUG
+                print(print("Success: \(response)"))
+                #endif
+                guard let result = response.result else {return}
+                self?.manittoName = result.manitto.userName
+                self?.cheerCounts = result.cheerCounts.toCheerCountDic()
+                self?.manittoRankList =  result.manittoRank.toManittoRankList()
+                
             default:
-                print("Failed to another reason")
-                return
+                #if DEBUG
+                print("error: \(result)")
+                #endif
+                break
             }
         }
     }
     
-    //TODO: roomId 필요
     // 마니또 방 목록에서 삭제하기
     func delRemoveRoomFromList(roomId: Int) {
-        NetworkService.shared.roomService.delRemoveRoomFromList(roomId: 21) {result in
+        NetworkService.shared.roomService.delRemoveRoomFromList(roomId: roomId) { [weak self] result in
             switch result {
             case .success(let response):
-                print("Success: \(response)")
+                #if DEBUG
+                print(print("Success: \(response)"))
+                #endif
+                self?.deleteCompleted = true
+                
             default:
-                print("Failed to another reason")
-                return
+                #if DEBUG
+                print("error: \(result)")
+                #endif
+                break
             }
         }
     }
