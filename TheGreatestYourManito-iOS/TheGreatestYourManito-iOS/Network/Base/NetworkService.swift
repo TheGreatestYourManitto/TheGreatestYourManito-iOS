@@ -16,8 +16,8 @@ final class NetworkService {
     let userService: UserServiceProtocol = UserService.shared
     
     let roomService: RoomServiceProtocol = RoomService.shared
-    // ex
-    // let openManitoService: OpenManitoService = OpenManitoService()
+    
+    let cheerService: CheerServiceProtocol = CheerService.shared
     
 }
 
