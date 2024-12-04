@@ -58,8 +58,9 @@ struct MainView: View {
                     
                     ScrollView {
                         VStack(spacing: 16) {
-                            RoomCardView(title: "Test", subtitle: "test", endDate: Date())
-                            RoomCardView(title: "Test", subtitle: "test", endDate: Date())
+                            ForEach(viewModel.rooms, id: \.roomId) { room in
+                                RoomCardView(roomName: room.roomName, dDay: Date.calculateDDay(from: room.endDate) ?? 0)
+                            }
                         }
                         .padding(.top, 30)
                         .padding(.horizontal, 16)
