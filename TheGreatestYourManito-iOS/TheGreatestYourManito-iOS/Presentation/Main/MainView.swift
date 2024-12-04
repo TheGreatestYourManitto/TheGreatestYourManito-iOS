@@ -12,7 +12,7 @@ struct MainView: View {
     @State private var isRefreshing = false
     @State private var isCreateBtnTap: Bool = false
     @State private var isRoomTap: Bool = false
-    @State private var isPresented:Bool = false
+    
     @StateObject var viewModel: MainViewmodel
     
     var body: some View {
@@ -29,7 +29,7 @@ struct MainView: View {
                 HStack(spacing: 16) {
                     Button(action: {
                         isCreateBtnTap = true
-                        isPresented = true
+                        viewModel.isPresented = true
                     }) {   // 방 만들기
                         Image(.icnPlusCircle)
                         Text("방 만들기")
@@ -84,7 +84,7 @@ struct MainView: View {
             .onAppear {
                 viewModel.getFindRoomList()
             }
-            .navigationDestination(isPresented: $isPresented) {
+            .navigationDestination(isPresented: $viewModel.isPresented) {
                 if isCreateBtnTap {
                     CreateRoomView(viewModel: CreateRoomViewModel())
                 } else {
@@ -100,6 +100,7 @@ struct MainView: View {
                 
             }
         }
+        .navigationBarBackButtonHidden()
     }
     
     func handleRoomSelection(_ room: Room) {
@@ -109,8 +110,7 @@ struct MainView: View {
         if viewModel.isConfirmed == 0 {
             viewModel.getRoomInfoInMainView(roomId: viewModel.roomId)
         }
-        print("아아아아아",viewModel.roomName)
-        isPresented = true
+        
     }
     
 }

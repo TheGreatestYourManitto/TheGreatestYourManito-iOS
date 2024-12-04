@@ -18,6 +18,7 @@ final class MainViewmodel: ObservableObject {
     @Published var roomId: Int = 0
     @Published var joinCode: String = ""
     @Published var isTapRoom: Bool = false // 비밀
+    @Published var isPresented: Bool = false
     
     func getFindRoomList() {
         NetworkService.shared.roomService.getFindRoomList(completion: { result in
@@ -54,6 +55,7 @@ final class MainViewmodel: ObservableObject {
                 self.joinCode = result.invitationCode
                 
                 self.isTapRoom = true // 트리거
+                self.isPresented = true
             default:
                 print("Failed to another reason")
                 return

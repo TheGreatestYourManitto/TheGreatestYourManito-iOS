@@ -10,6 +10,7 @@ import SwiftUI
 struct IntroView: View {
     @State private var tag:Int? = nil
     @StateObject var viewModel: IntroViewModel
+    @State var isPresented: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -21,22 +22,26 @@ struct IntroView: View {
                 
                 Spacer()
                 
-                NavigationLink(
-                    destination:
-                        // isIdentified가 true면 이미 등록된 기기
-                    // 따라서 true인 곳에 CreateRoom 붙이면 됨!
-                    viewModel.isIdentified ?  SignUpView(viewModel: SignUpViewModel()) : SignUpView(viewModel: SignUpViewModel()),
-                    tag: 1,
-                    selection: self.$tag
-                ) {
-                    YMButton(title: "시작하기", buttonType: .confirm, action: {self.tag = 1})
-                        .padding(.bottom, 20)
+                YMButton(title: "시작하기", buttonType: .confirm, action: {isPresented = true})
+                    .padding(.bottom, 20)
+                    
+            }.onAppear {
+                viewModel.postUserIdentify()
+            }
+            .navigationDestination(isPresented: $isPresented) {
+                if viewModel.isIdentified {
+                    MainView(viewModel: MainViewmodel())
+                        .environmentObject(viewModel)
+                        
+                } else {
+                    SignUpView(viewModel: SignUpViewModel())
+                        .environmentObject(viewModel)
                 }
-                               .onAppear {
-                                   viewModel.postUserIdentify()
-                               }
             }
         }
         .padding(.horizontal, 16)
+        .navigationBarBackButtonHidden()
+        
     }
+    
 }

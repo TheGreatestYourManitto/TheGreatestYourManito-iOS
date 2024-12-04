@@ -93,6 +93,8 @@ struct CreateRoomView: View {
             AfterCreateRoomView(isCopyOnClipBoard: false)
                 .environmentObject(viewModel)
         }
+        .navigationBarBackButtonHidden()
+        
     }
     
     private var headerView: some View {
