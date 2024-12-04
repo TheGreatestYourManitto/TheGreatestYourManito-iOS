@@ -9,11 +9,7 @@ import SwiftUI
 
 final class IntroViewModel: ObservableObject {
     
-    @Published var isIdentified: Bool
-    
-    init(isIdentified: Bool) {
-        self.isIdentified = isIdentified
-    }
+    @Published var isIdentified: Bool = false
     
     func postUserIdentify() {
         let device = Device()
