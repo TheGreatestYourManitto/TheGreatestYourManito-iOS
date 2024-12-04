@@ -10,6 +10,7 @@ import SwiftUI
 struct RoomCardView: View {
     var roomName: String    
     var dDay: Int
+    let onTap: () -> Void
 
 
     var body: some View {
@@ -26,10 +27,9 @@ struct RoomCardView: View {
         .background(.ymWhite)
         .clipShape(.rect(cornerRadius: 10))
         .frame(height: 96)
+        .onTapGesture {
+            onTap() // 클릭 이벤트 실행
+        }
     }
-}
-
-#Preview {
-    RoomCardView(
-        roomName: "RoomTitle", dDay: 0)
+    
 }
