@@ -13,7 +13,7 @@ enum ManiitoRank {
     case third
     case other(num: Int)
     
-    init(rank: Int) {
+    init?(rank: Int) {
         switch rank {
         case 1:
             self = .first
@@ -21,10 +21,10 @@ enum ManiitoRank {
             self = .second
         case 3:
             self = .third
-        case let other where other > 0:
+        case let other where other > 3:
             self = .other(num: other)
         default:
-            self = .other(num: 0)
+            return nil
         }
     }
     

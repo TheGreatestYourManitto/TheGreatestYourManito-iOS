@@ -55,12 +55,13 @@ typealias ManittoRanks = [ManittoRank]
 
 extension ManittoRanks {
     func toManittoRankList() -> ManittoRankList {
-        self.map {
-            ManittoRankItem(
-                rank: ManiitoRank(rank: $0.rank),
-                fromPerson: User(id: $0.manittoUserId, name: $0.manittoUserName),
-                toPerson: User(id: $0.userId, name: $0.userName),
-                cheerCount: $0.cheerCount
+        self.compactMap { item in
+            guard let rank = ManiitoRank(rank: item.rank) else { return nil }
+            return ManittoRankItem(
+                rank: rank,
+                fromPerson: User(id: item.manittoUserId, name: item.manittoUserName),
+                toPerson: User(id: item.userId, name: item.userName),
+                cheerCount: item.cheerCount
             )
         }
     }
