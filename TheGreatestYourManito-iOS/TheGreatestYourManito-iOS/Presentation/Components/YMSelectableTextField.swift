@@ -8,21 +8,25 @@
 import SwiftUI
 
 struct YMSelectableTextField: View {
-    @State private var isFocused = false
+    private var isFilled: Bool { !text.isEmpty }
     var placeholder: String
     var text: String
     var backgroundColor: Color = .gray4
     var focusedBorderColor: Color = .ymPrimary
     var unfocusedBorderColor: Color = .gray3
     var action: () -> Void // 탭 시 실행할 액션
-
+    
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 16)
-                .stroke(isFocused ? focusedBorderColor : unfocusedBorderColor, lineWidth: 2)
-                .background(backgroundColor)
+                .foregroundStyle(backgroundColor)
+                .clipShape(RoundedRectangle(cornerRadius: 16))
+            
+                .overlay(
+                    RoundedRectangle(cornerRadius: 16)
+                        .stroke(isFilled ? focusedBorderColor : unfocusedBorderColor, lineWidth: 2)
+                )
                 .frame(height: 64)
-                
             
             Text(text.isEmpty ? placeholder : text)
                 .font(.pretendardFont(for: .heading5))
@@ -32,19 +36,19 @@ struct YMSelectableTextField: View {
         }
         .onTapGesture {
             action()
-            isFocused = true
+//            isFocused = true
         }
         .onDisappear {
-            isFocused = false
+//            isFocused = false
         }
     }
 }
 
-#Preview {
-    YMSelectableTextField(
-        placeholder: "Select Date",
-        text: "",
-        action: { print("Tapped!") }
-    )
-    .padding()
-}
+//#Preview {
+//    YMSelectableTextField(
+//        placeholder: "Select Date",
+//        text: "",
+//        action: { print("Tapped!") }
+//    )
+//    .padding()
+//}

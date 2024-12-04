@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct YMTextField: View {
-    @State private var isFocused = false
+//    @State private var isFocused = false
+    private var isFilled: Bool { !text.wrappedValue.isEmpty }
     var placeholder: String
     var text: Binding<String>
     var backgroundColor: Color = .gray4
@@ -24,17 +25,8 @@ struct YMTextField: View {
             .cornerRadius(16)
             .overlay(
                 RoundedRectangle(cornerRadius: 16)
-                    .stroke(isFocused ? focusedBorderColor : unfocusedBorderColor, lineWidth: 2)
+                    .stroke(isFilled ? focusedBorderColor : unfocusedBorderColor, lineWidth: 2)
             )
-            .onTapGesture {
-                isFocused = true
-            }
-            .onChange(of: text.wrappedValue) {
-                isFocused = true
-            }
-            .onDisappear {
-                isFocused = false
-            }
     }
 }
 
