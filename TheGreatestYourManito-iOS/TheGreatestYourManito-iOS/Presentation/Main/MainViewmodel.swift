@@ -8,12 +8,21 @@
 import SwiftUI
 
 final class MainViewmodel: ObservableObject {
+    @Published var rooms: [Room] = []
     
     func getFindRoomList() {
         NetworkService.shared.roomService.getFindRoomList(completion: { result in
             switch result {
             case .success(let response):
                 print("Success: \(response)")
+                self.rooms = response.result?.rooms.compactMap { roomData -> Room? in
+                    Room(
+                        roomId: roomData.roomId,
+                        roomName: roomData.roomName,
+                        endDate: roomData.endDate,
+                        isConfirmed: roomData.isConfirmed
+                    )
+                } ?? []
             default:
                 print("Failed to another reason")
                 return
