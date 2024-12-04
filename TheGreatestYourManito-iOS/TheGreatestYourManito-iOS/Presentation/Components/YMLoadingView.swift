@@ -8,30 +8,34 @@
 import SwiftUI
 
 struct YMLoadingView: View {
+    
     @State private var visibleCount = 0
     private let animationInterval = 0.4
+    private let loadingState = AppStates.shared
     let titleText: String
     
     var body: some View {
-        ZStack {
-            Color.black.opacity(0.7)
-                .ignoresSafeArea()
-            
-            VStack(spacing: 30) {
-                Text(titleText)
-                    .font(.pretendardFont(for: .heading4))
-                    .foregroundColor(.ymWhite)
-                HStack(spacing: 16) {
-                    ForEach(CheerType.allCases.indices, id: \.self) { index in
-                        Image(CheerType.allCases[index].defaultImage)
-                            .opacity(index < visibleCount ? 1 : 0)
-                            .animation(.easeInOut(duration: animationInterval), value: visibleCount)
+        if loadingState.isLoading {
+            ZStack {
+                Color.black.opacity(0.7)
+                    .ignoresSafeArea()
+                
+                VStack(spacing: 30) {
+                    Text(titleText)
+                        .font(.pretendardFont(for: .heading4))
+                        .foregroundColor(.ymWhite)
+                    HStack(spacing: 16) {
+                        ForEach(CheerType.allCases.indices, id: \.self) { index in
+                            Image(CheerType.allCases[index].defaultImage)
+                                .opacity(index < visibleCount ? 1 : 0)
+                                .animation(.easeInOut(duration: animationInterval), value: visibleCount)
+                        }
                     }
                 }
             }
-        }
-        .onAppear {
-            startAnimation()
+            .onAppear {
+                startAnimation()
+            }
         }
     }
     
@@ -44,5 +48,7 @@ struct YMLoadingView: View {
             }
         }
     }
+    
 }
+
 

@@ -10,6 +10,7 @@ import SwiftUI
 struct IntroView: View {
     @State private var tag:Int? = nil
     @StateObject var viewModel: IntroViewModel
+    private let loadingState = AppStates.shared
     
     var body: some View {
         NavigationStack {
@@ -36,7 +37,18 @@ struct IntroView: View {
                                    viewModel.postUserIdentify()
                                }
             }
+            
         }
         .padding(.horizontal, 16)
+        .overlay(
+            Group {
+                if loadingState.isLoading {
+                    YMLoadingView(titleText: "로딩중 ...")
+                        .onAppear(perform: {
+                            print("!~~~!@!@!@")
+                        })
+                }
+            }
+        )
     }
 }
