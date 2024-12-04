@@ -133,7 +133,9 @@ struct MemberListItemView: View {
                     .foregroundStyle(.ymBlack)
                 Spacer()
                 if case .owner = viewModel.roomType {
+                    
                     ymCircleDeleteButton(memberId: member.userId)
+                        .onAppear(perform: {viewModel.nickName = member.memberName})
                 }
             }
             .padding(.horizontal, 20)
@@ -151,13 +153,14 @@ struct MemberListItemView: View {
             showSheet: $showDeleteSheet,
             sheetHeight: 310,
             bottomSheetType: .nonDragBar
-        ))
+        )).environmentObject(viewModel)
     }
     
 }
 
 struct BottomSheetContentView: View {
     
+    @EnvironmentObject var viewModel: JoinRoomViewModel
     @Binding var showSheet: Bool
     let contentType: BottomSheetContentType
     var userName: String = ""
@@ -188,7 +191,7 @@ struct BottomSheetContentView: View {
         VStack(alignment: .center, spacing: 8) {
             if contentType == .delete {
                 HStack(spacing: 0) {
-                    Text(userName)
+                    Text(viewModel.nickName)
                         .font(.pretendardFont(for: .heading3))
                         .foregroundStyle(.ymPrimary)
                     contentType.titleText

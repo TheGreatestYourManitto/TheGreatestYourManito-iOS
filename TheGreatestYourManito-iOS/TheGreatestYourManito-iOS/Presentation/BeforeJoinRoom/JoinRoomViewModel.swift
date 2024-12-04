@@ -16,6 +16,7 @@ final class JoinRoomViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var roomId: Int = 0
     @Published var joinCode: String = "케케"
+    @Published var nickName: String = ""
     
     init(roomType: RoomType) {
         self.roomType = roomType
