@@ -9,12 +9,19 @@
 import SwiftUI
 
 struct CreateRoomView: View {
+    
+    enum FieldFocus {
+        case roomName
+        case endDate
+        case endTime
+    }
+    
     @Environment(\.dismiss) private var dismiss
     @StateObject var viewModel: CreateRoomViewModel
     @State private var isDatePickerPresented: Bool = false
     @State private var isTimePickerPresented: Bool = false
-    @State private var toastMessage: String? = nil
     @State private var isSuccessCreateRoom: Bool = false
+    @State private var focusField: FieldFocus?
     
     var body: some View {
         NavigationStack {
@@ -50,7 +57,12 @@ struct CreateRoomView: View {
                 .datePickerStyle(GraphicalDatePickerStyle())
                 
                 
-                YMButton(title: "확인", buttonType: .confirm, action: { isDatePickerPresented = false
+                YMButton(title: "확인", buttonType: .confirm, action: { 
+                    if viewModel.selectedDate == nil {
+                                    viewModel.selectedDate = Date() // 기본값 설정
+                                }
+                    viewModel.calculateDday(date: viewModel.selectedDate)
+                    isDatePickerPresented = false
                 })
                 .padding(.horizontal, 16)
             }
@@ -67,15 +79,18 @@ struct CreateRoomView: View {
                     displayedComponents: .hourAndMinute
                 )
                 .datePickerStyle(WheelDatePickerStyle())
-                YMButton(title: "확인", buttonType: .confirm, action: { isTimePickerPresented = false
+                YMButton(title: "확인", buttonType: .confirm, action: { 
+                    if viewModel.selectedTime == nil {
+                                    viewModel.selectedTime = Date() // 기본값 설정
+                                }
+                    isTimePickerPresented = false
                 })
                 .padding(.horizontal, 16)
             }
             .presentationDetents([.fraction(0.4)])
         }
         .navigationDestination(isPresented: $isSuccessCreateRoom) {
-            // AfterCreateRoomView로 넘어가는 코드
-            AfterCreateRoomView()
+            AfterCreateRoomView(isCopyOnClipBoard: false)
                 .environmentObject(viewModel)
         }
     }
@@ -152,15 +167,31 @@ struct CreateRoomView: View {
                     )
                 }
                 Spacer()
-                YMButton(
-                    title: "확인",
-                    buttonType: .confirm,
-                    action: {
-                        viewModel.postMakeRoom {
+                
+                VStack(spacing: 16) {
+                    if let _ = viewModel.selectedDate {
+                        
+                            HStack(spacing: 4) {
+                                Text("마니또 공개까지")
+                                    .font(.pretendardFont(for: .heading5))
+                                    .foregroundStyle(.gray1)
+                                YMDDayLabel(status: .ongoing(dDay: viewModel.dDay))
+                            }
+                        
+                    }
+                    
+                    YMButton(
+                        title: "확인",
+                        buttonType: .confirm,
+                        action: {
+                            viewModel.postMakeRoom {
+                                isSuccessCreateRoom = true
+                            }
                             isSuccessCreateRoom = true
                         }
-                    }
-                )
+                    )
+                }
+                
             }
             Spacer()
         }
