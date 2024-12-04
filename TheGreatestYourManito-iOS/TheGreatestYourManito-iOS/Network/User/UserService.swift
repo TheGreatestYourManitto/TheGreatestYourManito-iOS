@@ -22,8 +22,8 @@ final class UserService: BaseService, UserServiceProtocol {
     override private init() {}
     
     static let shared = UserService()
-    
-    let provider = MoyaProvider<UserTargetType>(plugins: [MoyaLoggingPlugin()])
+
+    var provider = MoyaProvider<UserTargetType>(plugins: [NetworkActivityPlugin(), MoyaLoggingPlugin()])
     
     func postUserIdentify(requestBody: UserIdentifyRequestBody, completion: @escaping (NetworkResult<BaseResponseBody<emptyResponse>>) -> ()) {
         provider.request(.postUserIdentify(requestBody: requestBody)) { result in
