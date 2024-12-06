@@ -15,6 +15,7 @@ enum manitoResultType {
 struct OpenManitoView: View {
     @State var manitoResultType: manitoResultType
     @State var isLoading: Bool = false
+    @StateObject var viewModel: OpenMaintoViewModel
     let manitoName: String = "psy"
     
     var body: some View {
@@ -87,6 +88,9 @@ struct OpenManitoView: View {
                 }
             }
         )
+        .onAppear {
+            viewModel.getManittoReceiver(roomId: viewModel.roomId)
+        }
     }
     
 }

@@ -24,7 +24,6 @@ struct CreateRoomView: View {
     @State private var focusField: FieldFocus?
     
     var body: some View {
-        NavigationStack {
             ZStack(alignment: .top) {
                 Color(.gray4)
                     .edgesIgnoringSafeArea(.top)
@@ -43,7 +42,7 @@ struct CreateRoomView: View {
                 })
             }
             .edgesIgnoringSafeArea(.bottom)
-        }
+        
         .sheet(isPresented: $isDatePickerPresented) {
             VStack {
                 DatePicker(
@@ -93,6 +92,8 @@ struct CreateRoomView: View {
             AfterCreateRoomView(isCopyOnClipBoard: false)
                 .environmentObject(viewModel)
         }
+        .navigationBarBackButtonHidden()
+        
     }
     
     private var headerView: some View {

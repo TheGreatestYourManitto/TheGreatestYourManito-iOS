@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct MainView: View {
+    
     @State private var isRefreshing = false
     @State private var isCreateBtnTap: Bool = false
+    @State private var isRoomTap: Bool = false
+    
     @StateObject var viewModel: MainViewmodel
     
     var body: some View {
-        NavigationStack {
             VStack(spacing: 0) {
                 HStack {
                     Image(.icnSmallLogo)
@@ -26,6 +28,7 @@ struct MainView: View {
                 HStack(spacing: 16) {
                     Button(action: {
                         isCreateBtnTap = true
+                        viewModel.isPresented = true
                     }) {   // 방 만들기
                         Image(.icnPlusCircle)
                         Text("방 만들기")
@@ -52,6 +55,7 @@ struct MainView: View {
                 }
                 .padding(.top, 40)
                 .padding(.horizontal, 16)
+                
                 ZStack {
                     Rectangle()
                         .foregroundColor(.gray4).ignoresSafeArea(edges: .bottom)
@@ -59,7 +63,14 @@ struct MainView: View {
                     ScrollView {
                         VStack(spacing: 16) {
                             ForEach(viewModel.rooms, id: \.roomId) { room in
-                                RoomCardView(roomName: room.roomName, dDay: Date.calculateDDay(from: room.endDate) ?? 0)
+                                RoomCardView(
+                                    roomName: room.roomName,
+                                    dDay: Date.calculateDDay(from: room.endDate) ?? 0,
+                                    onTap: {
+                                        isRoomTap = true
+                                        handleRoomSelection(room)
+                                    }
+                                )
                             }
                         }
                         .padding(.top, 30)
@@ -72,13 +83,32 @@ struct MainView: View {
             .onAppear {
                 viewModel.getFindRoomList()
             }
-            .navigationDestination(isPresented: $isCreateBtnTap) {
-                CreateRoomView(viewModel: CreateRoomViewModel())
+            .navigationDestination(isPresented: $viewModel.isPresented) {
+                if isCreateBtnTap {
+                    CreateRoomView(viewModel: CreateRoomViewModel())
+                } else {
+                    if viewModel.isConfirmed == 1 {
+                        OpenManitoView(manitoResultType: .notOpen, viewModel: OpenMaintoViewModel(roomId: viewModel.roomId))
+                    } else { // 시작되지 않았다면
+                        if viewModel.isTapRoom { // 해당 변수로 통제하지않으면,viewModel.getRoomInfoInMainView(roomId: viewModel.roomId)로 값이 세팅되기 이전 BeforeJoinRoomView로 이동해버림
+                            BeforeJoinRoomView(viewModel: JoinRoomViewModel(roomType: viewModel.roomType, joinCode: viewModel.joinCode, roomName: viewModel.roomName, memberCount: viewModel.memberCount, memberListModel: viewModel.memberListModel)
+                            )
+                        }
+                    }
+                }
+                
             }
-        }
+            .navigationBarBackButtonHidden()
     }
+    
+    func handleRoomSelection(_ room: Room) {
+        print("Selected room: \(room.roomName), ID: \(room.roomId)")
+        viewModel.isConfirmed = room.isConfirmed
+        viewModel.roomId = room.roomId
+        if viewModel.isConfirmed == 0 {
+            viewModel.getRoomInfoInMainView(roomId: viewModel.roomId)
+        }
+        
+    }
+    
 }
-
-//#Preview {
-//    MainView()
-//}

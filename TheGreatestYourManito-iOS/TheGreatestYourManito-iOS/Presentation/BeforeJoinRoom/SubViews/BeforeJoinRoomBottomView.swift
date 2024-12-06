@@ -10,7 +10,6 @@ import SwiftUI
 struct BeforeJoinRoomBottomView: View {
     
     @EnvironmentObject var viewModel: JoinRoomViewModel
-    @State private var joinCode: String = ""
     @State private var navigateToAfterJoinRoom = false
     
     var body: some View {
@@ -22,7 +21,7 @@ struct BeforeJoinRoomBottomView: View {
             .padding(.top, 48)
             
             VStack {
-                YMTextField(placeholder: "참여코드", text: $joinCode)
+                YMTextField(placeholder: "참여코드", text: $viewModel.joinCode)
                     .padding(.horizontal, 16)
                 Spacer(minLength: 20)
                 
@@ -37,8 +36,7 @@ struct BeforeJoinRoomBottomView: View {
         .padding(.bottom, 25)
         .navigationDestination(isPresented: $navigateToAfterJoinRoom) {
             AfterJoinRoomView(
-                viewModel: _viewModel,
-                joinCode: $joinCode
+                viewModel: _viewModel
             )
             .environmentObject(viewModel)
         }
@@ -62,8 +60,8 @@ struct BeforeJoinRoomBottomView: View {
     private func confirmButton() -> some View {
         YMButton(title: "확인", buttonType: .confirm) {
             viewModel.isLoading = true // 로딩 상태 활성화
-            print("joinCode: \(joinCode)")
-            viewModel.postParticipateRoom(invitationCode: joinCode)
+            print("joinCode: \(viewModel.joinCode)")
+            viewModel.postParticipateRoom(invitationCode: viewModel.joinCode)
             // 5초 후에 로딩 해제 및 화면 전환 수행
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
                 viewModel.isLoading = false

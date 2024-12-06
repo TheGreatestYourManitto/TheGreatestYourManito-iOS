@@ -13,7 +13,6 @@ struct BeforeJoinRoomView: View {
     @StateObject var viewModel: JoinRoomViewModel
     
     var body: some View {
-        NavigationStack {
             ZStack(alignment: .top) {
                 VStack(spacing: 32) {
                     headerView
@@ -30,14 +29,17 @@ struct BeforeJoinRoomView: View {
                 })
                 
             }.edgesIgnoringSafeArea(.bottom)
-        }
+        .navigationBarBackButtonHidden()
         .overlay(
             Group {
                 if viewModel.isLoading {
                     YMLoadingView(titleText: "방 만드는 중..")
+                        .edgesIgnoringSafeArea(.all)
                 }
             }
         )
+        
+        
     }
     
     private var headerView: some View {

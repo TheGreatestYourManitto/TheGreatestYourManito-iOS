@@ -30,6 +30,7 @@ struct YMLoadingView: View {
                 }
             }
         }
+        .ignoresSafeArea()
         .onAppear {
             startAnimation()
         }

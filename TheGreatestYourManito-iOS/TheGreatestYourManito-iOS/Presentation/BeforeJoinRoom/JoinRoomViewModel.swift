@@ -15,17 +15,19 @@ final class JoinRoomViewModel: ObservableObject {
     @Published var memberListModel: [JoinMemberModel] = []
     @Published var isLoading: Bool = false
     @Published var roomId: Int = 0
+    @Published var joinCode: String = "케케"
+    @Published var nickName: String = ""
     
     init(roomType: RoomType) {
         self.roomType = roomType
     }
     
-    init(roomType: RoomType, roomName: String, memberCount: Int, memberListModel: [JoinMemberModel], isLoading: Bool) {
+    init(roomType: RoomType, joinCode: String, roomName: String, memberCount: Int, memberListModel: [JoinMemberModel]) {
         self.roomType = roomType
+        self.joinCode = joinCode
         self.roomName = roomName
         self.memberCount = memberCount
         self.memberListModel = memberListModel
-        self.isLoading = isLoading
     }
     
     func postParticipateRoom(invitationCode: String) {

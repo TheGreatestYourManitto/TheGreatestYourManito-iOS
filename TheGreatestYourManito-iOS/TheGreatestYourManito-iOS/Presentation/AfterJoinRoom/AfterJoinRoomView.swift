@@ -13,7 +13,6 @@ struct AfterJoinRoomView: View {
     @EnvironmentObject var viewModel: JoinRoomViewModel
     @State private var isCopyOnClipBoard: Bool = false
     @State private var isShowingShareSheet: Bool = false
-    @Binding var joinCode: String
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -49,7 +48,7 @@ struct AfterJoinRoomView: View {
                         .foregroundColor(.ymBlack)
                     Spacer()
                 }
-                YMJoinCodeStackView(joinCode: joinCode, isCopyOnClipBoard: $isCopyOnClipBoard, isShowingShareSheet: $isShowingShareSheet)
+                YMJoinCodeStackView(joinCode: viewModel.joinCode, isCopyOnClipBoard: $isCopyOnClipBoard, isShowingShareSheet: $isShowingShareSheet)
             }
             .padding(.horizontal, 20)
         }

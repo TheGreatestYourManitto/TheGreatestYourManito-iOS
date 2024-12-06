@@ -87,6 +87,7 @@
 		9EB811D82CCFBD64003C104D /* AfterJoinRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811D72CCFBD64003C104D /* AfterJoinRoomView.swift */; };
 		9EB811DF2CCFC497003C104D /* AfterJoinRoomBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811DE2CCFC497003C104D /* AfterJoinRoomBottomView.swift */; };
 		9EB811E12CD0CA31003C104D /* JoinMemberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811E02CD0CA31003C104D /* JoinMemberModel.swift */; };
+		9ECD65082D009D34000B6D0B /* OpenMaintoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECD65072D009D34000B6D0B /* OpenMaintoViewModel.swift */; };
 		ED53F6D22CF72BFF00E5BD1C /* CreateRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53F6D12CF72BFF00E5BD1C /* CreateRoomView.swift */; };
 		ED53F6D42CF7417900E5BD1C /* YMSelectableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53F6D32CF7417900E5BD1C /* YMSelectableTextField.swift */; };
 		ED53F6D62CF7885D00E5BD1C /* AfterCreateRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53F6D52CF7885D00E5BD1C /* AfterCreateRoomView.swift */; };
@@ -181,6 +182,7 @@
 		9EB811D72CCFBD64003C104D /* AfterJoinRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterJoinRoomView.swift; sourceTree = "<group>"; };
 		9EB811DE2CCFC497003C104D /* AfterJoinRoomBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterJoinRoomBottomView.swift; sourceTree = "<group>"; };
 		9EB811E02CD0CA31003C104D /* JoinMemberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinMemberModel.swift; sourceTree = "<group>"; };
+		9ECD65072D009D34000B6D0B /* OpenMaintoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenMaintoViewModel.swift; sourceTree = "<group>"; };
 		ED53F6D12CF72BFF00E5BD1C /* CreateRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomView.swift; sourceTree = "<group>"; };
 		ED53F6D32CF7417900E5BD1C /* YMSelectableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMSelectableTextField.swift; sourceTree = "<group>"; };
 		ED53F6D52CF7885D00E5BD1C /* AfterCreateRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterCreateRoomView.swift; sourceTree = "<group>"; };
@@ -563,6 +565,7 @@
 			isa = PBXGroup;
 			children = (
 				9EB6425C2CE4295C00F7F156 /* OpenManitoView.swift */,
+				9ECD65072D009D34000B6D0B /* OpenMaintoViewModel.swift */,
 			);
 			path = OpenManito;
 			sourceTree = "<group>";
@@ -766,6 +769,7 @@
 				9E4F30702CC7CE5F009C59A4 /* TheGreatestYourManito_iOSApp.swift in Sources */,
 				9E648DD22CF73291004875B2 /* JoinRoomViewModel.swift in Sources */,
 				9EB6425D2CE4295C00F7F156 /* OpenManitoView.swift in Sources */,
+				9ECD65082D009D34000B6D0B /* OpenMaintoViewModel.swift in Sources */,
 				88FEBFFC2CD3BA630013B9E1 /* PlayManittoResultView.swift in Sources */,
 				9E648E1E2CFE675B004875B2 /* SendCheerRequestBody.swift in Sources */,
 				8832C3772CDF2CB700B8DFAB /* ManittoResultBoardViewModel.swift in Sources */,
