@@ -13,6 +13,7 @@
 		8832C3752CDF292100B8DFAB /* ManittoResultBoardBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8832C3742CDF292100B8DFAB /* ManittoResultBoardBottomView.swift */; };
 		8832C3772CDF2CB700B8DFAB /* ManittoResultBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8832C3762CDF2CB700B8DFAB /* ManittoResultBoardViewModel.swift */; };
 		88517B7B2D119B8000E10DD4 /* UXPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88517B7A2D119B8000E10DD4 /* UXPolicy.swift */; };
+		88517B7D2D11FC9900E10DD4 /* DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88517B7C2D11FC9900E10DD4 /* DismissKeyboard.swift */; };
 		88A3564A2CCF728A005E2893 /* PlayManittoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A356492CCF728A005E2893 /* PlayManittoView.swift */; };
 		88A3564D2CCF73FA005E2893 /* YMHeaderTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3564C2CCF73FA005E2893 /* YMHeaderTagView.swift */; };
 		88A3564F2CCF9E1E005E2893 /* PlayManittoBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3564E2CCF9E1E005E2893 /* PlayManittoBottomView.swift */; };
@@ -108,6 +109,7 @@
 		8832C3742CDF292100B8DFAB /* ManittoResultBoardBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManittoResultBoardBottomView.swift; sourceTree = "<group>"; };
 		8832C3762CDF2CB700B8DFAB /* ManittoResultBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManittoResultBoardViewModel.swift; sourceTree = "<group>"; };
 		88517B7A2D119B8000E10DD4 /* UXPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UXPolicy.swift; sourceTree = "<group>"; };
+		88517B7C2D11FC9900E10DD4 /* DismissKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissKeyboard.swift; sourceTree = "<group>"; };
 		88A356492CCF728A005E2893 /* PlayManittoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayManittoView.swift; sourceTree = "<group>"; };
 		88A3564C2CCF73FA005E2893 /* YMHeaderTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMHeaderTagView.swift; sourceTree = "<group>"; };
 		88A3564E2CCF9E1E005E2893 /* PlayManittoBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayManittoBottomView.swift; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 				88A356582CCFB57E005E2893 /* roundCorner.swift */,
 				9E648DF02CF75B82004875B2 /* Device.swift */,
 				88517B7A2D119B8000E10DD4 /* UXPolicy.swift */,
+				88517B7C2D11FC9900E10DD4 /* DismissKeyboard.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -747,6 +750,7 @@
 				9E648E042CF7B77E004875B2 /* RoomInfoResponseBody.swift in Sources */,
 				9EB642612CE5424E00F7F156 /* BaseTargetType.swift in Sources */,
 				9EB811E12CD0CA31003C104D /* JoinMemberModel.swift in Sources */,
+				88517B7D2D11FC9900E10DD4 /* DismissKeyboard.swift in Sources */,
 				ED6669EC2CC8CA680005D599 /* YMButton.swift in Sources */,
 				8832C3752CDF292100B8DFAB /* ManittoResultBoardBottomView.swift in Sources */,
 				9EB6425F2CE5421200F7F156 /* BaseService.swift in Sources */,

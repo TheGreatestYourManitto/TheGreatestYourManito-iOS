@@ -12,3 +12,9 @@ extension View {
         clipShape(RoundedCorner(radius: radius, corners: corners))
     }
 }
+
+extension View {
+    func dismissKeyboardOnTapOrDrag() -> some View {
+        self.modifier(DismissKeyboardModifier())
+    }
+}
