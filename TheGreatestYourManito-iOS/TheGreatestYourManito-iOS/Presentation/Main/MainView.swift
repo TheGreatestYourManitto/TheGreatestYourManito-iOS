@@ -11,6 +11,7 @@ struct MainView: View {
     
     @State private var isRefreshing = false
     @State private var isCreateBtnTap: Bool = false
+    @State private var isJoinBtnTap: Bool = false
     @State private var isRoomTap: Bool = false
     
     @StateObject var viewModel: MainViewmodel
@@ -40,7 +41,11 @@ struct MainView: View {
                     .background(.sub2)
                     .clipShape(RoundedRectangle(cornerRadius: 16))
                     
-                    Button(action: { }) {   // 방 입장하기
+                    Button(action: {
+                        isCreateBtnTap = true
+                        isJoinBtnTap = true
+                        viewModel.isPresented = true
+                    }) {   // 방 입장하기
                         Image(.icnCheckCircle)
                         Text("방 입장하기")
                             .padding(.leading, 8)
@@ -84,7 +89,11 @@ struct MainView: View {
             }
             .navigationDestination(isPresented: $viewModel.isPresented) {
                 if isCreateBtnTap {
-                    CreateRoomView(viewModel: CreateRoomViewModel())
+                    if isJoinBtnTap {
+                        BeforeJoinRoomView(viewModel: JoinRoomViewModel(roomType: .notOwner))
+                    } else {
+                        CreateRoomView(viewModel: CreateRoomViewModel())
+                    }
                 } else {
                     if viewModel.isConfirmed == 1 {
                         OpenManitoView(manitoResultType: .notOpen, viewModel: OpenMaintoViewModel(roomId: viewModel.roomId))
