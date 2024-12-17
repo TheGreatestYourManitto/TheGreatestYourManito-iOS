@@ -13,5 +13,10 @@ struct UXPolicy {
 }
 
 struct UserInputPolicy {
+    static let userNickNameRegex = "^[a-zA-Z가-힣]{1,7}$"
     static let roomNameMaxLength = 20
+    
+    static func userNickNameIsValid(_ userNickName: String) -> Bool {
+        return userNickName.range(of: userNickNameRegex, options: .regularExpression) != nil
+    }
 }

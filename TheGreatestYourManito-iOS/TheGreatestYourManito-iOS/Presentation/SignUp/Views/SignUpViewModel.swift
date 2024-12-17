@@ -10,6 +10,17 @@ import SwiftUI
 final class SignUpViewModel: ObservableObject {
     @Published var nickname: String = ""
     @Published var isSuccess: Bool = false
+    @Published var showToast: Bool = false
+    @Published var toastText: String = ""
+    
+    func confirmButtonTapped() {
+        guard UserInputPolicy.userNickNameIsValid(nickname) else {
+            toastPost("닉네임은 한글, 영문 7자 이하여야 합니다.")
+            return
+        }
+        
+        postMakeUser(nickname: nickname)
+    }
     
     func postMakeUser(nickname: String) {
         guard let deviceId = UserDefaults.standard.string(forKey: "deviceId") else {return}
@@ -23,11 +34,20 @@ final class SignUpViewModel: ObservableObject {
                 print(UserDefaults.standard.string(forKey: "userCode") ?? "")
                 self.isSuccess = true
             default:
-                print("Failed to another reason")
+                self.toastPost("네트워크 에러가 발생했습니다./n다시 시도해주세요.")
+                // TODO: Error 가져올 수 있게 해주세요 ㅠㅠ
+                // TODO: 409 에러 시 중복된 ID 토스트 필요
                 return
             }
         })
     }
     
+    private func toastPost(_ message: String) {
+        self.toastText = message
+        self.showToast = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + UXPolicy.toastDelay) { [weak self] in
+            self?.showToast = false
+        }
+    }
 }
 
