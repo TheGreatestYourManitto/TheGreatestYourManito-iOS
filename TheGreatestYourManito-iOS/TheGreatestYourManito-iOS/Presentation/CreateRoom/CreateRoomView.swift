@@ -90,7 +90,7 @@ struct CreateRoomView: View {
             .presentationDetents([.fraction(0.4)])
         }
         .navigationDestination(isPresented: $viewModel.isSuccessCreateRoom) {
-            AfterCreateRoomView(presentThis: $viewModel.isSuccessCreateRoom, isCopyOnClipBoard: false)
+            AfterCreateRoomView(isCopyOnClipBoard: false)
                 .environmentObject(viewModel)
         }
         .overlay(
