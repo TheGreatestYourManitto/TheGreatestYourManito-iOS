@@ -109,6 +109,9 @@ struct MemberListScrollView: View {
             }
             .padding(.horizontal, 24)
         }
+        .refreshable {
+            viewModel.refreshRoom()
+        }
         .frame(maxHeight: 280)
     }
     

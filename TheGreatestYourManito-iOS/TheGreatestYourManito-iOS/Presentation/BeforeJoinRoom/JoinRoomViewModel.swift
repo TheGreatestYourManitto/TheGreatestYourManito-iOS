@@ -34,6 +34,10 @@ final class JoinRoomViewModel: ObservableObject {
         self.roomId = roomId
     }
     
+    func refreshRoom() {
+        getRoomInfo(roomId: roomId)
+    }
+    
     func postParticipateRoom(invitationCode: String) {
         NetworkService.shared.roomService.postParticipateRoom(requestBody: ParticipateRoomRequestBody(invitationCode: invitationCode), completion: { result in
             switch result {
@@ -78,7 +82,7 @@ final class JoinRoomViewModel: ObservableObject {
             case .success(let response):
                 print("Success: \(response)")
                 self.showSheet = false
-                
+                self.refreshRoom()
             default:
                 print("Failed to another reason")
                 return
