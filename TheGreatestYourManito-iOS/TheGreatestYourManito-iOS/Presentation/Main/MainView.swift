@@ -78,9 +78,9 @@ struct MainView: View {
                 Rectangle()
                     .foregroundColor(.gray4).ignoresSafeArea(edges: .bottom)
                 
-                ScrollView {
-                    VStack(spacing: 16) {
-                        if !viewModel.rooms.isEmpty {
+                if !viewModel.rooms.isEmpty {
+                    ScrollView {
+                        VStack(spacing: 16) {
                             ForEach(viewModel.rooms, id: \.roomId) { room in
                                 RoomCardView(
                                     roomName: room.roomName,
@@ -90,23 +90,24 @@ struct MainView: View {
                                     }
                                 )
                             }
-                        } else {
-                            Spacer()
-                            VStack(spacing: 30) {
-                                HStack(spacing: 16) {
-                                    ForEach(CheerType.allCases.indices, id: \.self) { index in
-                                        Image(CheerType.allCases[index].defaultImage)
-                                    }
-                                }
-                                Text("참여중인 방이 없어요!")
-                                    .font(.pretendardFont(for: .heading4))
-                                    .foregroundColor(.purple)
-                            }
-                            Spacer()
                         }
                     }
                     .padding(.top, 30)
                     .padding(.horizontal, 16)
+                } else {
+                    VStack(spacing: 30) {
+                        Spacer()
+                        HStack(spacing: 16) {
+                            ForEach(CheerType.allCases.indices, id: \.self) { index in
+                                Image(CheerType.allCases[index].defaultImage)
+                            }
+                        }
+                        Text("참여중인 방이 없어요!")
+                            .font(.pretendardFont(for: .heading4))
+                            .foregroundColor(.purple)
+                        Spacer()
+                        Spacer()
+                    }
                 }
             }
             .padding(.top, 24)
