@@ -17,7 +17,7 @@ final class PlayManittoViewModel: ObservableObject {
     let receiverUserId: Int
     let manittoRoomName: String
     let manittoRoomId: Int
-    let manittoEndDate: Date
+    let manittoEndDate: String
     var todaysCheeringCount: Int = 0
     
     init(
@@ -25,7 +25,7 @@ final class PlayManittoViewModel: ObservableObject {
         receiverUserId: Int,
         manittoRoomName: String,
         manittoRoomId: Int,
-        manittoEndDate: Date
+        manittoEndDate: String
     ) {
         self.receiverUserName = receiverUserName
         self.receiverUserId = receiverUserId
@@ -82,6 +82,7 @@ private extension PlayManittoViewModel {
                 print(print("Success: \(response)"))
                 #endif
                 guard let result = response.result else {return}
+                self?.todaysCheeringCount = result.todaysCheeringCount
                 self?.isNextScreenActive = true
                 
             default:

@@ -33,7 +33,6 @@ struct IntroView: View {
                 if viewModel.isIdentified {
                     MainView(viewModel: MainViewmodel())
                         .environmentObject(viewModel)
-                    
                 } else {
                     SignUpView(viewModel: SignUpViewModel())
                         .environmentObject(viewModel)

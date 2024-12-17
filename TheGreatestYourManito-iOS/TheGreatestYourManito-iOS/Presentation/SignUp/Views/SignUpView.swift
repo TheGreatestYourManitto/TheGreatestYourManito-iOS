@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct SignUpView: View {
+    @EnvironmentObject var prevViewModel: IntroViewModel
     @StateObject var viewModel: SignUpViewModel
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text("닉네임을 입력하세요")
@@ -29,12 +31,15 @@ struct SignUpView: View {
                 buttonType: .confirm,
                 action: {
                     viewModel.postMakeUser(nickname: viewModel.nickname)
-                    // 메인뷰로 화면 전환 좀
                 }
             )
             .padding(.bottom, 20)
             
         }
+        .navigationDestination(isPresented: $viewModel.isSuccess) {
+            MainView(viewModel: MainViewmodel())
+        }
+        .padding(.horizontal, 16)
         .navigationBarBackButtonHidden()
     }
 }

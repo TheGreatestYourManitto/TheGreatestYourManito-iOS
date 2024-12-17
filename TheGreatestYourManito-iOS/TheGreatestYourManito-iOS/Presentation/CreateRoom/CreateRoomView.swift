@@ -22,6 +22,7 @@ struct CreateRoomView: View {
     @State private var isTimePickerPresented: Bool = false
     @State private var isSuccessCreateRoom: Bool = false
     @State private var focusField: FieldFocus?
+    @Binding var presentThis: Bool
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -42,7 +43,6 @@ struct CreateRoomView: View {
             })
         }
         .edgesIgnoringSafeArea(.bottom)
-        
         .sheet(isPresented: $isDatePickerPresented) {
             VStack {
                 DatePicker(
@@ -89,11 +89,13 @@ struct CreateRoomView: View {
             .presentationDetents([.fraction(0.4)])
         }
         .navigationDestination(isPresented: $isSuccessCreateRoom) {
-            AfterCreateRoomView(isCopyOnClipBoard: false)
+            AfterCreateRoomView(presentThis: $isSuccessCreateRoom, isCopyOnClipBoard: false)
                 .environmentObject(viewModel)
         }
         .navigationBarBackButtonHidden()
-        
+        .onChange(of: isSuccessCreateRoom, {
+            if !isSuccessCreateRoom { self.dismiss() }
+        })
     }
     
     private var headerView: some View {

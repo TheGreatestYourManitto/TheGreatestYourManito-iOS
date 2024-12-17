@@ -7,12 +7,24 @@
 
 import SwiftUI
 
+extension MainView {
+    enum PresentScreen {
+        case none
+        case BeforeJoinRoomView
+        case CreateRoomView
+        case OpenManitoView
+        case BeforeJoinRoomViewActivated
+    }
+}
+
 struct MainView: View {
     
     @State private var isRefreshing = false
-    @State private var isCreateBtnTap: Bool = false
-    @State private var isJoinBtnTap: Bool = false
-    @State private var isRoomTap: Bool = false
+//    @State private var isCreateBtnTap: Bool = false
+//    @State private var isJoinBtnTap: Bool = false
+//    @State private var isRoomTap: Bool = false
+    @State private var presentView: Bool = false
+    @State private var presentScreen: PresentScreen = .none
     
     @StateObject var viewModel: MainViewmodel
     
@@ -27,7 +39,8 @@ struct MainView: View {
             
             HStack(spacing: 16) {
                 Button(action: {
-                    isCreateBtnTap = true
+                    presentScreen = .CreateRoomView
+//                    isCreateBtnTap = true
                     viewModel.isPresented = true
                 }) {   // 방 만들기
                     Image(.icnPlusCircle)
@@ -42,8 +55,9 @@ struct MainView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 
                 Button(action: {
-                    isCreateBtnTap = true
-                    isJoinBtnTap = true
+//                    isCreateBtnTap = true
+//                    isJoinBtnTap = true
+                    presentScreen = .BeforeJoinRoomView
                     viewModel.isPresented = true
                 }) {   // 방 입장하기
                     Image(.icnCheckCircle)
@@ -66,15 +80,29 @@ struct MainView: View {
                 
                 ScrollView {
                     VStack(spacing: 16) {
-                        ForEach(viewModel.rooms, id: \.roomId) { room in
-                            RoomCardView(
-                                roomName: room.roomName,
-                                dDay: Date.calculateDDay(from: room.endDate) ?? 0,
-                                onTap: {
-                                    isRoomTap = true
-                                    handleRoomSelection(room)
+                        if !viewModel.rooms.isEmpty {
+                            ForEach(viewModel.rooms, id: \.roomId) { room in
+                                RoomCardView(
+                                    roomName: room.roomName,
+                                    dDay: Date.calculateDDay(from: room.endDate) ?? 0,
+                                    onTap: {
+                                        handleRoomSelection(room)
+                                    }
+                                )
+                            }
+                        } else {
+                            Spacer()
+                            VStack(spacing: 30) {
+                                HStack(spacing: 16) {
+                                    ForEach(CheerType.allCases.indices, id: \.self) { index in
+                                        Image(CheerType.allCases[index].defaultImage)
+                                    }
                                 }
-                            )
+                                Text("참여중인 방이 없어요!")
+                                    .font(.pretendardFont(for: .heading4))
+                                    .foregroundColor(.purple)
+                            }
+                            Spacer()
                         }
                     }
                     .padding(.top, 30)
@@ -88,23 +116,21 @@ struct MainView: View {
             viewModel.getFindRoomList()
         }
         .navigationDestination(isPresented: $viewModel.isPresented) {
-            if isCreateBtnTap {
-                if isJoinBtnTap {
-                    BeforeJoinRoomView(viewModel: JoinRoomViewModel(roomType: .notOwner))
-                } else {
-                    CreateRoomView(viewModel: CreateRoomViewModel())
-                }
-            } else {
-                if viewModel.isConfirmed == 1 {
-                    OpenManitoView(manitoResultType: .notOpen, viewModel: OpenMaintoViewModel(roomId: viewModel.roomId))
-                } else { // 시작되지 않았다면
-                    if viewModel.isTapRoom { // 해당 변수로 통제하지않으면,viewModel.getRoomInfoInMainView(roomId: viewModel.roomId)로 값이 세팅되기 이전 BeforeJoinRoomView로 이동해버림
-                        BeforeJoinRoomView(viewModel: JoinRoomViewModel(roomType: viewModel.roomType, joinCode: viewModel.joinCode, roomName: viewModel.roomName, memberCount: viewModel.memberCount, memberListModel: viewModel.memberListModel)
-                        )
-                    }
-                }
+            switch presentScreen {
+            case .BeforeJoinRoomView:
+                BeforeJoinRoomView(viewModel: JoinRoomViewModel(roomType: .notOwner))
+            case .CreateRoomView:
+                CreateRoomView(viewModel: CreateRoomViewModel(), presentThis: $viewModel.isPresented)
+            case .OpenManitoView:
+                OpenManitoView(manitoResultType: .notOpen, viewModel: OpenMaintoViewModel(room: viewModel.selectRoom))
+                    .navigationBarBackButtonHidden()
+            case .BeforeJoinRoomViewActivated:
+                let viewModel = JoinRoomViewModel(roomType: viewModel.roomType, joinCode: viewModel.joinCode, roomName: viewModel.roomName, memberCount: viewModel.memberCount, memberListModel: viewModel.memberListModel, roomId: viewModel.roomId)
+                AfterJoinRoomView()
+                    .environmentObject(viewModel)
+            default:
+                EmptyView()
             }
-            
         }
         .navigationBarBackButtonHidden()
     }
@@ -114,7 +140,13 @@ struct MainView: View {
         viewModel.isConfirmed = room.isConfirmed
         viewModel.roomId = room.roomId
         if viewModel.isConfirmed == 0 {
-            viewModel.getRoomInfoInMainView(roomId: viewModel.roomId)
+            viewModel.getRoomInfoInMainView(roomId: room.roomId)
+            presentScreen = .BeforeJoinRoomViewActivated
+        } else {
+            print("🔥🔥🔥")
+            viewModel.selectRoom = room
+            presentScreen = .OpenManitoView
+            viewModel.isPresented = true
         }
         
     }

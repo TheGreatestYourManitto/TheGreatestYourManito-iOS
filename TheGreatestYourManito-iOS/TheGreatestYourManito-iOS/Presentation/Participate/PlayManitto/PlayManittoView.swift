@@ -39,6 +39,7 @@ struct PlayManittoView: View {
             }
         })
         .ignoresSafeArea(.container, edges: .bottom)
-        .navigationDestination(isPresented: $viewModel.isNextScreenActive, destination: { PlayManittoResultView(todaysCheeringCount: viewModel.todaysCheeringCount) })
+        .navigationDestination(isPresented: $viewModel.isNextScreenActive, destination: { PlayManittoResultView(todaysCheeringCount: viewModel.todaysCheeringCount)
+            .navigationBarBackButtonHidden()})
     }
 }

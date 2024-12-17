@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PlayManittoResultView: View {
     
+    @Environment(\.dismiss) private var dismiss
     let todaysCheeringCount: Int
     
     var body: some View {
@@ -35,7 +36,7 @@ struct PlayManittoResultView: View {
             Spacer()
             
             YMButton(title: StringLiterals.PlayManittoResult.okayButtonStr, buttonType: .confirm, action: {
-                print("가라 집으로")
+                dismiss()
             })
             .padding(.horizontal, 16)
             .padding(.bottom, 24)

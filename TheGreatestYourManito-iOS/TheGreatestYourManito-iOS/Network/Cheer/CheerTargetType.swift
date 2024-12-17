@@ -28,7 +28,7 @@ extension CheerTargetType: BaseTargetType {
     var path: String {
         switch self {
         case .getCheerMessage(let type):
-            return "/room/\(type)/message"
+            return "/cheer/\(type)/message"
         case .postSendCheer:
             return "/cheer"
         }

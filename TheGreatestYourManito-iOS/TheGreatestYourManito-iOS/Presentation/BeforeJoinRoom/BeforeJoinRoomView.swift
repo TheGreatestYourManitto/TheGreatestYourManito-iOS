@@ -33,7 +33,7 @@ struct BeforeJoinRoomView: View {
             .overlay(
                 Group {
                     if viewModel.isLoading {
-                        YMLoadingView(titleText: "방 만드는 중..")
+                        YMLoadingView(titleText: "방 입장 중..")
                             .edgesIgnoringSafeArea(.all)
                     }
                 }
