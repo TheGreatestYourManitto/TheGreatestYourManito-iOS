@@ -22,6 +22,7 @@ final class JoinRoomViewModel: ObservableObject {
     @Published var removeTargetName: String? = nil
     @Published var removeTargetId: Int? = nil
     @Published var goMainView: Bool = false
+    let userId: Int? = LocalStorageManager.fetchUserId()
     
     init(roomType: RoomType) {
         self.roomType = roomType

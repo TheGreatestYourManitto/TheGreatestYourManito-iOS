@@ -18,7 +18,7 @@ class OpenMaintoViewModel: ObservableObject {
     }
     
     func onAppear() {
-        RoomHistoryManager.saveRoomId(room.roomId)
+        LocalStorageManager.saveRoomId(room.roomId)
         getManittoReceiver(roomId: room.roomId)
     }
     

@@ -149,7 +149,7 @@ struct MainView: View {
             viewModel.getRoomInfoInMainView(roomId: room.roomId)
             presentScreen = .BeforeJoinRoomViewActivated
         } else {
-            presentScreen = RoomHistoryManager.containsRoomId(room.roomId)
+            presentScreen = LocalStorageManager.containsRoomId(room.roomId)
             ? .PlayManittoView
             : .OpenManitoView
             viewModel.isPresented = true

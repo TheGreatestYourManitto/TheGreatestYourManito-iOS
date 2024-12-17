@@ -34,6 +34,9 @@ final class IntroViewModel: ObservableObject {
                                     
                 case .success(let response):
                     self.isIdentified = true
+                    if let userId = response.result?.userId {
+                        LocalStorageManager.saveUserId(userId)
+                    }
                     toastPost("로그인에 성공했습니다.")
                 case .requestErr:
                     self.isIdentified = false

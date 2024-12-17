@@ -13,7 +13,7 @@ struct AfterJoinRoomBottomView: View {
     @Binding var isCopyOnClipBoard: Bool
     @State private var showDeleteSheet = false
     @Environment(\.dismiss) var disMiss
-    
+   
     
     var body: some View {
         VStack(spacing: 0) {
@@ -138,7 +138,9 @@ struct MemberListItemView: View {
                     .foregroundStyle(.ymBlack)
                 Spacer()
                 if case .owner = viewModel.roomType {
-                    ymCircleDeleteButton(member: member)
+                    if member.userId != viewModel.userId {
+                        ymCircleDeleteButton(member: member)
+                    }
                 }
             }
             .padding(.horizontal, 20)

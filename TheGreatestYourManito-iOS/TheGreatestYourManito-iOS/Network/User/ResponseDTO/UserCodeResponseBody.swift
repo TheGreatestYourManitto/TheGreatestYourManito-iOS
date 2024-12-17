@@ -10,3 +10,8 @@ import Foundation
 struct MakeUserResponse: Decodable {
     let userCode: String
 }
+
+struct UserResponse: Decodable {
+    let userCode: String
+    let userId: Int
+}
