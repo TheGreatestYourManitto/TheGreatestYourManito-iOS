@@ -12,6 +12,7 @@
 		8832C3722CDF28CB00B8DFAB /* ManiitoRank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8832C3712CDF28CB00B8DFAB /* ManiitoRank.swift */; };
 		8832C3752CDF292100B8DFAB /* ManittoResultBoardBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8832C3742CDF292100B8DFAB /* ManittoResultBoardBottomView.swift */; };
 		8832C3772CDF2CB700B8DFAB /* ManittoResultBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8832C3762CDF2CB700B8DFAB /* ManittoResultBoardViewModel.swift */; };
+		88517B7B2D119B8000E10DD4 /* UXPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88517B7A2D119B8000E10DD4 /* UXPolicy.swift */; };
 		88A3564A2CCF728A005E2893 /* PlayManittoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A356492CCF728A005E2893 /* PlayManittoView.swift */; };
 		88A3564D2CCF73FA005E2893 /* YMHeaderTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3564C2CCF73FA005E2893 /* YMHeaderTagView.swift */; };
 		88A3564F2CCF9E1E005E2893 /* PlayManittoBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3564E2CCF9E1E005E2893 /* PlayManittoBottomView.swift */; };
@@ -106,6 +107,7 @@
 		8832C3712CDF28CB00B8DFAB /* ManiitoRank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManiitoRank.swift; sourceTree = "<group>"; };
 		8832C3742CDF292100B8DFAB /* ManittoResultBoardBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManittoResultBoardBottomView.swift; sourceTree = "<group>"; };
 		8832C3762CDF2CB700B8DFAB /* ManittoResultBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManittoResultBoardViewModel.swift; sourceTree = "<group>"; };
+		88517B7A2D119B8000E10DD4 /* UXPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UXPolicy.swift; sourceTree = "<group>"; };
 		88A356492CCF728A005E2893 /* PlayManittoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayManittoView.swift; sourceTree = "<group>"; };
 		88A3564C2CCF73FA005E2893 /* YMHeaderTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMHeaderTagView.swift; sourceTree = "<group>"; };
 		88A3564E2CCF9E1E005E2893 /* PlayManittoBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayManittoBottomView.swift; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 			children = (
 				88A356582CCFB57E005E2893 /* roundCorner.swift */,
 				9E648DF02CF75B82004875B2 /* Device.swift */,
+				88517B7A2D119B8000E10DD4 /* UXPolicy.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -763,6 +766,7 @@
 				9EB642582CE3C03C00F7F156 /* ActivityViewController.swift in Sources */,
 				ED53F6DA2CF7C2D900E5BD1C /* Date+.swift in Sources */,
 				9E4F30702CC7CE5F009C59A4 /* TheGreatestYourManito_iOSApp.swift in Sources */,
+				88517B7B2D119B8000E10DD4 /* UXPolicy.swift in Sources */,
 				9E648DD22CF73291004875B2 /* JoinRoomViewModel.swift in Sources */,
 				9EB6425D2CE4295C00F7F156 /* OpenManitoView.swift in Sources */,
 				9ECD65082D009D34000B6D0B /* OpenMaintoViewModel.swift in Sources */,

@@ -11,7 +11,7 @@ import SwiftUI
 struct TheGreatestYourManito_iOSApp: App {
     var body: some Scene {
         WindowGroup {
-            IntroView(viewModel: IntroViewModel(isIdentified: false))
+            IntroView(viewModel: IntroViewModel())
                 .navigationBarBackButtonHidden()
         }
     }
