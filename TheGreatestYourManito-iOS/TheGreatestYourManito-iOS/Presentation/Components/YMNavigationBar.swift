@@ -14,9 +14,9 @@ public struct YMNavigationBarModifier<C, L, R>: ViewModifier where C: View, L: V
     let backgroundColor: Color
     
     public init(
-        center: (() -> C)? = {EmptyView()},
-        left: (()-> L)? = {EmptyView()},
-        right: (()-> R)? = {EmptyView()},
+        center: (() -> C)? = {Spacer()},
+        left: (()-> L)? = {Spacer(minLength: 40)},
+        right: (()-> R)? = {Spacer(minLength: 40)},
         backgroundColor: Color? = nil
     ) {
         self.center = center
@@ -27,21 +27,15 @@ public struct YMNavigationBarModifier<C, L, R>: ViewModifier where C: View, L: V
     
     public func body(content: Content) -> some View {
         VStack(spacing: 0) {
-            ZStack {
-                HStack(spacing: 0) {
-                    left?()
-                    Spacer()
-                    right?()
-                }
-                .padding(.horizontal, 12)
-                .frame(maxWidth: .infinity)
-                
-                HStack {
-                    Spacer()
-                    center?()
-                    Spacer()
-                }
+            HStack {
+                left?()
+                Spacer()
+                center?()
+                Spacer()
+                right?()
             }
+            .padding(.horizontal, 12)
+            .frame(maxWidth: .infinity)
             .frame(height: 100)
             .background(.gray4)
             
