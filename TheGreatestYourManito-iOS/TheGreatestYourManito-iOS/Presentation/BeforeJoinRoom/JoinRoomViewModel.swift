@@ -21,6 +21,7 @@ final class JoinRoomViewModel: ObservableObject {
     @Published var sheetContentType: BottomSheetContentType = .confirm
     @Published var removeTargetName: String? = nil
     @Published var removeTargetId: Int? = nil
+    @Published var goMainView: Bool = false
     
     init(roomType: RoomType) {
         self.roomType = roomType
@@ -96,8 +97,8 @@ final class JoinRoomViewModel: ObservableObject {
             switch result {
             case .success(let response):
                 print("Success: \(response)")
-                print("🔥")
                 self.showSheet = false
+                self.goMainView = true
                 
             default:
                 print("Failed to another reason")

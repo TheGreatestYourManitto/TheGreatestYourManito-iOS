@@ -37,6 +37,9 @@ struct AfterJoinRoomView: View {
             viewModel.getRoomInfo(roomId: viewModel.roomId)
         }
         .edgesIgnoringSafeArea(.bottom)
+        .navigationDestination(isPresented: $viewModel.goMainView) {
+            MainView(viewModel: .init())
+        }
     }
     
     private var headerView: some View {

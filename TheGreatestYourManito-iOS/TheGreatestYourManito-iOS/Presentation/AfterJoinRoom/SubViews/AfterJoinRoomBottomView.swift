@@ -56,7 +56,7 @@ struct AfterJoinRoomBottomView: View {
     
     @ViewBuilder
     private func confirmButton() -> some View {
-        YMButton(title: "확인", buttonType: .confirm) {
+        YMButton(title: "확인", buttonType: .confirm, isEnabled: viewModel.memberCount > 1) {
             viewModel.sheetContentType = .confirm
             viewModel.showSheet.toggle()
         }
