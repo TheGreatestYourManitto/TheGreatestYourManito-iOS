@@ -92,6 +92,7 @@ struct MainView: View {
                             }
                         }
                     }
+                    .scrollIndicators(.hidden)
                     .padding(.top, 30)
                     .padding(.horizontal, 16)
                 } else {

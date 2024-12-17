@@ -110,6 +110,7 @@ struct MemberListScrollView: View {
             }
             .padding(.horizontal, 24)
         }
+        .scrollIndicators(.hidden)
         .refreshable {
             viewModel.refreshRoom()
         }
