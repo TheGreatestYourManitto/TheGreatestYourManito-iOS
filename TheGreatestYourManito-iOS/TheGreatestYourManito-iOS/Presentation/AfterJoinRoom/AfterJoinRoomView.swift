@@ -16,7 +16,7 @@ struct AfterJoinRoomView: View {
     
     var body: some View {
         ZStack(alignment: .top) {
-            VStack(spacing: 28) {
+            VStack() {
                 headerView
                 Spacer()
             }
@@ -46,6 +46,7 @@ struct AfterJoinRoomView: View {
                     Text(viewModel.roomName)
                         .font(.pretendardFont(for: .heading2))
                         .foregroundColor(.ymBlack)
+                        .lineLimit(2)
                     Spacer()
                 }
                 YMJoinCodeStackView(joinCode: viewModel.joinCode, isCopyOnClipBoard: $isCopyOnClipBoard, isShowingShareSheet: $isShowingShareSheet)

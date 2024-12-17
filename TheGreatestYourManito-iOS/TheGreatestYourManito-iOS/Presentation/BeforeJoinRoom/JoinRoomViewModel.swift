@@ -16,9 +16,10 @@ final class JoinRoomViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var roomId: Int = 0
     @Published var joinCode: String = ""
-    @Published var nickName: String = ""
     @Published var isVaildRoom: Bool = false
     @Published var showSheet = false
+    @Published var removeTargetName: String? = nil
+    @Published var removeTargetId: Int? = nil
     
     init(roomType: RoomType) {
         self.roomType = roomType
@@ -76,6 +77,8 @@ final class JoinRoomViewModel: ObservableObject {
             switch result {
             case .success(let response):
                 print("Success: \(response)")
+                self.showSheet = false
+                
             default:
                 print("Failed to another reason")
                 return

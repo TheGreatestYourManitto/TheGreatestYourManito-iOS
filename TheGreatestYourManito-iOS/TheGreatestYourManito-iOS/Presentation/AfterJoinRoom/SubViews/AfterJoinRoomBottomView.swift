@@ -24,7 +24,7 @@ struct AfterJoinRoomBottomView: View {
             .padding(.top, 40)
             
             VStack(spacing: 18) {
-                MemberListScrollView(showDeleteSheet: $showDeleteSheet)
+                MemberListScrollView(showDeleteSheet: $viewModel.showSheet)
                 if case .owner = viewModel.roomType {
                     Spacer(minLength: 20)
                     confirmButton()
@@ -103,7 +103,7 @@ struct MemberListScrollView: View {
         ScrollView {
             VStack(spacing: 16) {
                 ForEach(viewModel.memberListModel, id: \.memberName) { member in
-                    MemberListItemView(member: member, showDeleteSheet: $showDeleteSheet)
+                    MemberListItemView(member: member, showDeleteSheet: $viewModel.showSheet)
                         .environmentObject(viewModel)
                 }
             }
@@ -133,9 +133,7 @@ struct MemberListItemView: View {
                     .foregroundStyle(.ymBlack)
                 Spacer()
                 if case .owner = viewModel.roomType {
-                    
-                    ymCircleDeleteButton(memberId: member.userId)
-                        .onAppear(perform: {viewModel.nickName = member.memberName})
+                    ymCircleDeleteButton(member: member)
                 }
             }
             .padding(.horizontal, 20)
@@ -143,14 +141,15 @@ struct MemberListItemView: View {
     }
     
     @ViewBuilder
-    private func ymCircleDeleteButton(memberId: Int) -> some View {
+    private func ymCircleDeleteButton(member: JoinMemberModel) -> some View {
         YMCircleButton(circleBtnType: .cancel) {
-            viewModel.deleteRoomMember(roomId: viewModel.roomId, userId: memberId)
+            viewModel.removeTargetId = member.userId
+            viewModel.removeTargetName = member.memberName
             showDeleteSheet.toggle()
         }
         .modifier(YMBottomSheetModifier(
-            contentView: { BottomSheetContentView(showSheet: $showDeleteSheet, contentType: .delete) },
-            showSheet: $showDeleteSheet,
+            contentView: { BottomSheetContentView(showSheet: $viewModel.showSheet, contentType: .delete) },
+            showSheet: $viewModel.showSheet,
             sheetHeight: 310,
             bottomSheetType: .nonDragBar
         )).environmentObject(viewModel)
@@ -192,7 +191,7 @@ struct BottomSheetContentView: View {
         VStack(alignment: .center, spacing: 8) {
             if contentType == .delete {
                 HStack(spacing: 0) {
-                    Text(viewModel.nickName)
+                    Text(viewModel.removeTargetName ?? "")
                         .font(.pretendardFont(for: .heading3))
                         .foregroundStyle(.ymPrimary)
                     contentType.titleText
@@ -210,8 +209,15 @@ struct BottomSheetContentView: View {
                 showSheet = false
             }
             makeButton(color: .ymPrimary, text: contentType.rightBtnText) {
-                viewModel.patchConfirmRoomStatus(roomId: viewModel.roomId)
-//                disMiss()
+                switch contentType {
+                    
+                case .delete:
+                    if let removeTargetId = viewModel.removeTargetId{
+                        viewModel.deleteRoomMember(roomId: viewModel.roomId, userId: removeTargetId)
+                    }
+                case .confirm:
+                    viewModel.patchConfirmRoomStatus(roomId: viewModel.roomId)
+                }
             }
             
         }
