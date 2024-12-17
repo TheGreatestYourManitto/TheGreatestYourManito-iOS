@@ -12,6 +12,8 @@ final class PlayManittoViewModel: ObservableObject {
     @Published var cheerType: CheerType?
     @Published var cheerText: String = ""
     @Published var isNextScreenActive: Bool = false
+    @Published var showToast: Bool = false
+    @Published var toastText: String = ""
     
     let receiverUserName: String
     let receiverUserId: Int
@@ -40,8 +42,19 @@ final class PlayManittoViewModel: ObservableObject {
     }
     
     func tapSendButton() {
-        guard let cheerType else { return }
+        guard let cheerType else {
+            toastPost("응원 타입을 선택해주세요.")
+            return
+        }
         postCheer(with: cheerType, text: cheerText)
+    }
+    
+    private func toastPost(_ message: String) {
+        self.toastText = message
+        self.showToast = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + UXPolicy.toastDelay) { [weak self] in
+            self?.showToast = false
+        }
     }
 }
 
@@ -59,9 +72,7 @@ private extension PlayManittoViewModel {
                 self?.cheerText = result.message.cheerMessage
                 
             default:
-#if DEBUG
-                print("error: \(result)")
-#endif
+                self?.toastPost("네트워크 에러가 발생했습니다.\n다시 시도해주세요.")
                 break
             }
         }
@@ -86,9 +97,7 @@ private extension PlayManittoViewModel {
                 self?.isNextScreenActive = true
                 
             default:
-                #if DEBUG
-                print("error: \(result)")
-                #endif
+                self?.toastPost("네트워크 에러가 발생했습니다.\n다시 시도해주세요.")
                 break
             }
         }

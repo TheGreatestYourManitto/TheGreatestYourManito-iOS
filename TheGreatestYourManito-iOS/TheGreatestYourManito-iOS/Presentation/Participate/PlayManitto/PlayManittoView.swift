@@ -31,6 +31,18 @@ struct PlayManittoView: View {
                 .cornerRadius(40, corners: [.topLeft, .topRight])
                 .shadow(radius: 2)
         }
+        .overlay(
+            Group {
+                if viewModel.showToast {
+                    VStack {
+                        Spacer()
+                        CopyToastView(textTitle: viewModel.toastText)
+                            .padding(.bottom, 140)
+                            .padding(.horizontal, 16)
+                    }
+                }
+            }
+        )
         .dismissKeyboardOnTapOrDrag()
         .environmentObject(viewModel)
         .background(.gray4)
