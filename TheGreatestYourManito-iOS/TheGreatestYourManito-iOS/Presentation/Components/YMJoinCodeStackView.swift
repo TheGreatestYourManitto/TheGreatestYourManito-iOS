@@ -61,10 +61,11 @@ extension YMJoinCodeStackView {
 }
 
 struct CopyToastView: View {
-
+    var textTitle: String
+    
     var body: some View {
         VStack {
-            Text(StringLiterals.JoinRoomPublic.copyComent)
+            Text(textTitle)
                 .font(.pretendardFont(for: .heading6))
                 .foregroundStyle(.gray1)
                 .background(.gray3)

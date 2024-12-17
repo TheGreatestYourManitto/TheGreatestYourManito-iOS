@@ -53,4 +53,16 @@ enum ManittoEventStatus {
         
         return .ended
     }
+    
+    /// ISO8601 String -> EventStatus 반환
+    static func getStatus(from isoDateString: String) -> Self {
+        let isoFormatter = ISO8601DateFormatter()
+        isoFormatter.formatOptions = [.withFullDate] // ISO8601의 YYYY-MM-DD 형식
+        
+        guard let eventDate = isoFormatter.date(from: isoDateString) else {
+            return .ended // 유효하지 않은 날짜일 경우 종료 상태 반환
+        }
+        
+        return getStatus(from: eventDate)
+    }
 }

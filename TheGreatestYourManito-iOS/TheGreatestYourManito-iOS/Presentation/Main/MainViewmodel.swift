@@ -19,6 +19,7 @@ final class MainViewmodel: ObservableObject {
     @Published var joinCode: String = ""
     @Published var isTapRoom: Bool = false // 비밀
     @Published var isPresented: Bool = false
+    @Published var selectRoom: Room = Room(roomId: 0, roomName: "", endDate: "", isConfirmed: 0)
     
     func getFindRoomList() {
         NetworkService.shared.roomService.getFindRoomList(completion: { result in

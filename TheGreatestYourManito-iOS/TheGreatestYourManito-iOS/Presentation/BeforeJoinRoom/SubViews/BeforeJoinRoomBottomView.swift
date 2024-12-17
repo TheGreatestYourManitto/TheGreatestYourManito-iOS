@@ -11,6 +11,7 @@ struct BeforeJoinRoomBottomView: View {
     
     @EnvironmentObject var viewModel: JoinRoomViewModel
     @State private var navigateToAfterJoinRoom = false
+    @State private var isErrorViewStart: Bool = false
     
     var body: some View {
         VStack(spacing: 0) {
@@ -35,13 +36,23 @@ struct BeforeJoinRoomBottomView: View {
         .background(Color.white)
         .padding(.bottom, 25)
         .navigationDestination(isPresented: $navigateToAfterJoinRoom) {
-            AfterJoinRoomView(
-                viewModel: _viewModel
-            )
+            AfterJoinRoomView()
             .environmentObject(viewModel)
         }
-        
-        
+        .overlay(
+            Group {
+                if isErrorViewStart {
+                    VStack {
+                        Spacer()
+                        CopyToastView(textTitle: "이미 방에 참여하였거나 코드가 잘못되었어요!")
+                            .padding(.bottom, 140)
+                            .padding(.horizontal, 16)
+                            .transition(.move(edge: .bottom).combined(with: .opacity))
+                    }
+                }
+            }
+        )
+        .animation(.easeOut(duration: 0.3), value: isErrorViewStart)
     }
     
     private var BeforeJoinRoomBottomSheetTitleView: some View {
@@ -65,8 +76,19 @@ struct BeforeJoinRoomBottomView: View {
             // 5초 후에 로딩 해제 및 화면 전환 수행
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
                 viewModel.isLoading = false
-                navigateToAfterJoinRoom = true
+                if viewModel.isVaildRoom {
+                    navigateToAfterJoinRoom = true
+                } else {
+                    showError()
+                }
             }
+        }
+    }
+    
+    private func showError() {
+        self.isErrorViewStart = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.isErrorViewStart = false
         }
     }
     

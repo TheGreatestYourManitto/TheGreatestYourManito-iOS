@@ -9,6 +9,7 @@ import SwiftUI
 
 final class SignUpViewModel: ObservableObject {
     @Published var nickname: String = ""
+    @Published var isSuccess: Bool = false
     
     func postMakeUser(nickname: String) {
         guard let deviceId = UserDefaults.standard.string(forKey: "deviceId") else {return}
@@ -20,6 +21,7 @@ final class SignUpViewModel: ObservableObject {
                 print("Success: \(response)")
                 UserDefaults.standard.set(response.result?.userCode, forKey: "userCode")
                 print(UserDefaults.standard.string(forKey: "userCode") ?? "")
+                self.isSuccess = true
             default:
                 print("Failed to another reason")
                 return

@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct YMTextField: View {
-//    @State private var isFocused = false
+    //    @State private var isFocused = false
     private var isFilled: Bool { !text.wrappedValue.isEmpty }
     var placeholder: String
     var text: Binding<String>
     var backgroundColor: Color = .gray4
     var focusedBorderColor: Color = .ymPrimary
     var unfocusedBorderColor: Color = .gray3
-
+    
     var body: some View {
         TextField(placeholder, text: text)
             .font(.pretendardFont(for: .heading5))

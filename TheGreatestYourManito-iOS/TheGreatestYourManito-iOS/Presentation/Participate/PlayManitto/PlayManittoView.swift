@@ -19,7 +19,7 @@ struct PlayManittoView: View {
                 name: viewModel.receiverUserName,
                 afterNameText: StringLiterals.PlayManitto.headerTopDescriptionLabelAfterNameStr
             )
-                .padding(.horizontal, 16)
+            .padding(.horizontal, 16)
             Spacer()
             PlayManittoBottomView()
                 .frame(height: 557)
@@ -39,6 +39,7 @@ struct PlayManittoView: View {
             }
         })
         .ignoresSafeArea(.container, edges: .bottom)
-        .navigationDestination(isPresented: $viewModel.isNextScreenActive, destination: { PlayManittoResultView(todaysCheeringCount: viewModel.todaysCheeringCount) })
+        .navigationDestination(isPresented: $viewModel.isNextScreenActive, destination: { PlayManittoResultView(todaysCheeringCount: viewModel.todaysCheeringCount)
+            .navigationBarBackButtonHidden()})
     }
 }

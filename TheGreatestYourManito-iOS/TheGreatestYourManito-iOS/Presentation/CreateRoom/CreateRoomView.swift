@@ -22,27 +22,27 @@ struct CreateRoomView: View {
     @State private var isTimePickerPresented: Bool = false
     @State private var isSuccessCreateRoom: Bool = false
     @State private var focusField: FieldFocus?
+    @Binding var presentThis: Bool
     
     var body: some View {
-            ZStack(alignment: .top) {
-                Color(.gray4)
-                    .edgesIgnoringSafeArea(.top)
-                VStack(spacing: 32) {
-                    headerView
-                    contentView
-                        .frame(maxHeight: .infinity)
-                        .background(.ymWhite)
-                        .cornerRadius(40, corners: [.topLeft, .topRight])
-                        .shadow(radius: 2)
-                }
-                .ymNavBar(left: {
-                    Button(action: { dismiss() }) {
-                        Image(.icnLeftnarrow)
-                    }
-                })
+        ZStack(alignment: .top) {
+            Color(.gray4)
+                .edgesIgnoringSafeArea(.top)
+            VStack(spacing: 32) {
+                headerView
+                contentView
+                    .frame(maxHeight: .infinity)
+                    .background(.ymWhite)
+                    .cornerRadius(40, corners: [.topLeft, .topRight])
+                    .shadow(radius: 2)
             }
-            .edgesIgnoringSafeArea(.bottom)
-        
+            .ymNavBar(left: {
+                Button(action: { dismiss() }) {
+                    Image(.icnLeftnarrow)
+                }
+            })
+        }
+        .edgesIgnoringSafeArea(.bottom)
         .sheet(isPresented: $isDatePickerPresented) {
             VStack {
                 DatePicker(
@@ -58,8 +58,8 @@ struct CreateRoomView: View {
                 
                 YMButton(title: "확인", buttonType: .confirm, action: { 
                     if viewModel.selectedDate == nil {
-                                    viewModel.selectedDate = Date() // 기본값 설정
-                                }
+                        viewModel.selectedDate = Date() // 기본값 설정
+                    }
                     viewModel.calculateDday(date: viewModel.selectedDate)
                     isDatePickerPresented = false
                 })
@@ -80,8 +80,8 @@ struct CreateRoomView: View {
                 .datePickerStyle(WheelDatePickerStyle())
                 YMButton(title: "확인", buttonType: .confirm, action: { 
                     if viewModel.selectedTime == nil {
-                                    viewModel.selectedTime = Date() // 기본값 설정
-                                }
+                        viewModel.selectedTime = Date() // 기본값 설정
+                    }
                     isTimePickerPresented = false
                 })
                 .padding(.horizontal, 16)
@@ -89,11 +89,13 @@ struct CreateRoomView: View {
             .presentationDetents([.fraction(0.4)])
         }
         .navigationDestination(isPresented: $isSuccessCreateRoom) {
-            AfterCreateRoomView(isCopyOnClipBoard: false)
+            AfterCreateRoomView(presentThis: $isSuccessCreateRoom, isCopyOnClipBoard: false)
                 .environmentObject(viewModel)
         }
         .navigationBarBackButtonHidden()
-        
+        .onChange(of: isSuccessCreateRoom, {
+            if !isSuccessCreateRoom { self.dismiss() }
+        })
     }
     
     private var headerView: some View {
@@ -172,12 +174,12 @@ struct CreateRoomView: View {
                 VStack(spacing: 16) {
                     if let _ = viewModel.selectedDate {
                         
-                            HStack(spacing: 4) {
-                                Text("마니또 공개까지")
-                                    .font(.pretendardFont(for: .heading5))
-                                    .foregroundStyle(.gray1)
-                                YMDDayLabel(status: .ongoing(dDay: viewModel.dDay))
-                            }
+                        HStack(spacing: 4) {
+                            Text("마니또 공개까지")
+                                .font(.pretendardFont(for: .heading5))
+                                .foregroundStyle(.gray1)
+                            YMDDayLabel(status: .ongoing(dDay: viewModel.dDay))
+                        }
                         
                     }
                     

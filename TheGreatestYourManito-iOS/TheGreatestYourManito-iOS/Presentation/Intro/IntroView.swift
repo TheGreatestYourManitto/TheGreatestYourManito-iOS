@@ -24,7 +24,8 @@ struct IntroView: View {
                 
                 YMButton(title: "시작하기", buttonType: .confirm, action: {isPresented = true})
                     .padding(.bottom, 20)
-                    
+                
+                
             }.onAppear {
                 viewModel.postUserIdentify()
             }
@@ -32,14 +33,13 @@ struct IntroView: View {
                 if viewModel.isIdentified {
                     MainView(viewModel: MainViewmodel())
                         .environmentObject(viewModel)
-                        
                 } else {
                     SignUpView(viewModel: SignUpViewModel())
                         .environmentObject(viewModel)
                 }
             }
+            .padding(.horizontal, 16)
         }
-        .padding(.horizontal, 16)
         .navigationBarBackButtonHidden()
         
     }

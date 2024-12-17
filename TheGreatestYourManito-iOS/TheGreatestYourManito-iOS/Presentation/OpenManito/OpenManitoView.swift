@@ -16,7 +16,6 @@ struct OpenManitoView: View {
     @State var manitoResultType: manitoResultType
     @State var isLoading: Bool = false
     @StateObject var viewModel: OpenMaintoViewModel
-    let manitoName: String = "psy"
     
     var body: some View {
         VStack {
@@ -52,7 +51,7 @@ struct OpenManitoView: View {
                 .background(.gray3)
                 .clipShape(.rect(cornerRadius: 16))
             case .open:
-                Text(manitoName+"!")
+                Text(viewModel.receiverName+"!")
                     .font(.pretendardFont(for: .heading1))
                     .foregroundColor(.ymBlack)
             }
@@ -76,10 +75,22 @@ struct OpenManitoView: View {
             case .open:
                 YMButton(title: StringLiterals.OpenManito.openButtonStr, buttonType: .confirm, action: {
                     print("공개 이후")
+                    viewModel.isOpenType = true
                 })
                 .padding(.horizontal, 16)
                 .padding(.bottom, 20)
             }
+        }
+        .navigationDestination(isPresented: $viewModel.isOpenType) {
+            PlayManittoView(
+                viewModel: PlayManittoViewModel(
+                    receiverUserName: viewModel.receiverName,
+                    receiverUserId: viewModel.receiverID,
+                    manittoRoomName: viewModel.room.roomName,
+                    manittoRoomId: viewModel.room.roomId,
+                    manittoEndDate: viewModel.room.endDate
+                )
+            )
         }
         .overlay(
             Group {
@@ -89,7 +100,7 @@ struct OpenManitoView: View {
             }
         )
         .onAppear {
-            viewModel.getManittoReceiver(roomId: viewModel.roomId)
+            viewModel.getManittoReceiver(roomId: viewModel.room.roomId)
         }
     }
     

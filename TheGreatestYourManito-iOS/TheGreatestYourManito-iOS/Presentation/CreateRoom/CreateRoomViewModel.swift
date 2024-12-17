@@ -43,7 +43,7 @@ final class CreateRoomViewModel: ObservableObject {
         // 날짜 차이를 계산
         dDay = calendar.dateComponents([.day], from: today, to: targetDate).day ?? 0
     }
-
+    
 }
 
 extension CreateRoomViewModel {

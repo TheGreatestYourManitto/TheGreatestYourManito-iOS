@@ -12,7 +12,8 @@ struct AfterJoinRoomBottomView: View {
     @EnvironmentObject var viewModel: JoinRoomViewModel
     @Binding var isCopyOnClipBoard: Bool
     @State private var showDeleteSheet = false
-    @State private var showSheet = false
+    @Environment(\.dismiss) var disMiss
+    
     
     var body: some View {
         VStack(spacing: 0) {
@@ -35,7 +36,7 @@ struct AfterJoinRoomBottomView: View {
                     if isCopyOnClipBoard {
                         VStack {
                             Spacer()
-                            CopyToastView()
+                            CopyToastView(textTitle: StringLiterals.JoinRoomPublic.copyComent)
                                 .padding(.bottom, 90)
                                 .padding(.horizontal, 16)
                                 .transition(.move(edge: .bottom).combined(with: .opacity))
@@ -56,13 +57,12 @@ struct AfterJoinRoomBottomView: View {
     @ViewBuilder
     private func confirmButton() -> some View {
         YMButton(title: "확인", buttonType: .confirm) {
-            viewModel.patchConfirmRoomStatus(roomId: viewModel.roomId)
-            showSheet.toggle()
+            viewModel.showSheet.toggle()
         }
         .padding(16)
         .modifier(YMBottomSheetModifier(
-            contentView: { BottomSheetContentView(showSheet: $showSheet, contentType: .confirm) },
-            showSheet: $showSheet,
+            contentView: { BottomSheetContentView(showSheet: $viewModel.showSheet, contentType: .confirm) },
+            showSheet: $viewModel.showSheet,
             sheetHeight: 310,
             bottomSheetType: .nonDragBar
         ))
@@ -162,6 +162,7 @@ struct BottomSheetContentView: View {
     
     @EnvironmentObject var viewModel: JoinRoomViewModel
     @Binding var showSheet: Bool
+    
     let contentType: BottomSheetContentType
     var userName: String = ""
     
@@ -208,7 +209,11 @@ struct BottomSheetContentView: View {
             makeButton(color: .gray3, text: contentType.leftBtnText) {
                 showSheet = false
             }
-            makeButton(color: .ymPrimary, text: contentType.rightBtnText)
+            makeButton(color: .ymPrimary, text: contentType.rightBtnText) {
+                viewModel.patchConfirmRoomStatus(roomId: viewModel.roomId)
+//                disMiss()
+            }
+            
         }
         .padding(.horizontal, 15)
     }

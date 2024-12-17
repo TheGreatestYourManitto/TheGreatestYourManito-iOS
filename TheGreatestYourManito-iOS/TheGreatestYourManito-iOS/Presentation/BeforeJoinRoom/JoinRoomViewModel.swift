@@ -15,19 +15,22 @@ final class JoinRoomViewModel: ObservableObject {
     @Published var memberListModel: [JoinMemberModel] = []
     @Published var isLoading: Bool = false
     @Published var roomId: Int = 0
-    @Published var joinCode: String = "케케"
+    @Published var joinCode: String = ""
     @Published var nickName: String = ""
+    @Published var isVaildRoom: Bool = false
+    @Published var showSheet = false
     
     init(roomType: RoomType) {
         self.roomType = roomType
     }
     
-    init(roomType: RoomType, joinCode: String, roomName: String, memberCount: Int, memberListModel: [JoinMemberModel]) {
+    init(roomType: RoomType, joinCode: String, roomName: String, memberCount: Int, memberListModel: [JoinMemberModel], roomId: Int) {
         self.roomType = roomType
         self.joinCode = joinCode
         self.roomName = roomName
         self.memberCount = memberCount
         self.memberListModel = memberListModel
+        self.roomId = roomId
     }
     
     func postParticipateRoom(invitationCode: String) {
@@ -35,9 +38,13 @@ final class JoinRoomViewModel: ObservableObject {
             switch result {
             case .success(let response):
                 print("Success: \(response)")
+                self.isVaildRoom = true
                 guard let roomId = response.result?.roomId else {return}
                 self.roomId = roomId
                 print("self.roomId : \(self.roomId)")
+            case .requestErr:
+                print("에러 출동")
+                self.isVaildRoom = false
             default:
                 print("Failed to another reason")
                 return
@@ -81,6 +88,9 @@ final class JoinRoomViewModel: ObservableObject {
             switch result {
             case .success(let response):
                 print("Success: \(response)")
+                print("🔥")
+                self.showSheet = false
+                
             default:
                 print("Failed to another reason")
                 return

@@ -8,12 +8,13 @@
 import SwiftUI
 
 class OpenMaintoViewModel: ObservableObject {
-    
+    @Published var room: Room
     @Published var receiverName: String = ""
-    let roomId: Int
+    @Published var receiverID: Int = 0
+    @Published var isOpenType: Bool = false
     
-    init(roomId: Int) {
-        self.roomId = roomId
+    init(room: Room) {
+        self.room = room
     }
     
     func getManittoReceiver(roomId: Int) {
@@ -23,6 +24,7 @@ class OpenMaintoViewModel: ObservableObject {
                 print("Success: \(response)")
                 guard let result = response.result else {return}
                 self.receiverName = result.receiver.userName
+                self.receiverID = result.receiver.userId
             default:
                 print("Failed to another reason")
                 return

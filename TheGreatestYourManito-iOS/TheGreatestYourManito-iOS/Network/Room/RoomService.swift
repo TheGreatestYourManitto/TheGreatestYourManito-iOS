@@ -101,7 +101,7 @@ final class RoomService: BaseService, RoomServiceProtocol {
     }
     
     func patchConfirmRoomStatus(roomId: Int, completion: @escaping (NetworkResult<BaseResponseBody<emptyResponse>>) -> ()) {
-        provider.request(.getRoomInfo(roomId: roomId)) { result in
+        provider.request(.patchConfirmRoomStatus(roomId: roomId)) { result in
             switch result {
             case .success(let response):
                 let networkResult: NetworkResult<BaseResponseBody<emptyResponse>> = self.judgeStatus(statusCode: response.statusCode, data: response.data)

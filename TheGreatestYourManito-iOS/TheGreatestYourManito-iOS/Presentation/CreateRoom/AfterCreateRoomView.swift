@@ -11,6 +11,8 @@ import SwiftUI
 struct AfterCreateRoomView: View {
     
     @EnvironmentObject var viewModel: CreateRoomViewModel
+    @Environment(\.dismiss) var dismiss
+    @Binding var presentThis: Bool
     @State var isPresented: Bool = false
     @State var isCopyOnClipBoard: Bool
     
@@ -18,7 +20,15 @@ struct AfterCreateRoomView: View {
         VStack(alignment: .leading) {
             HStack {
                 Spacer()
-                Image(.icnBigCancle)
+                Button(action: {
+                    presentThis = false
+                }, label: {
+                    Image(.icnBigCancle)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 44, height: 44)
+                })
+                
             }
             
             Text("마니또 공개까지\nD-\(viewModel.dDay) 남았어요!")
@@ -70,7 +80,7 @@ struct AfterCreateRoomView: View {
                     if isCopyOnClipBoard {
                         VStack {
                             Spacer()
-                            CopyToastView()
+                            CopyToastView(textTitle: StringLiterals.JoinRoomPublic.copyComent)
                                 .padding(.bottom, 140)
                                 .padding(.horizontal, 16)
                                 .transition(.move(edge: .bottom).combined(with: .opacity))
@@ -92,5 +102,9 @@ struct AfterCreateRoomView: View {
         }
         print(isCopyOnClipBoard)
     }
-    
+    func dismissPrev(handler: @escaping ()-> ()) {
+        DispatchQueue.main.async {
+            handler()
+        }
+    }
 }
