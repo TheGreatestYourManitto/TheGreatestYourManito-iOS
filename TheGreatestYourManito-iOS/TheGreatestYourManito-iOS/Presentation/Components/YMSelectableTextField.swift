@@ -36,19 +36,8 @@ struct YMSelectableTextField: View {
         }
         .onTapGesture {
             action()
-            //            isFocused = true
         }
         .onDisappear {
-            //            isFocused = false
         }
     }
 }
-
-//#Preview {
-//    YMSelectableTextField(
-//        placeholder: "Select Date",
-//        text: "",
-//        action: { print("Tapped!") }
-//    )
-//    .padding()
-//}
