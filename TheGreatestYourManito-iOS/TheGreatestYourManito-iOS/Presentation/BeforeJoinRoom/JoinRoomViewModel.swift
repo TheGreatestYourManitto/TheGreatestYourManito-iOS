@@ -18,6 +18,7 @@ final class JoinRoomViewModel: ObservableObject {
     @Published var joinCode: String = ""
     @Published var isVaildRoom: Bool = false
     @Published var showSheet = false
+    @Published var sheetContentType: BottomSheetContentType = .confirm
     @Published var removeTargetName: String? = nil
     @Published var removeTargetId: Int? = nil
     

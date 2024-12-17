@@ -57,11 +57,12 @@ struct AfterJoinRoomBottomView: View {
     @ViewBuilder
     private func confirmButton() -> some View {
         YMButton(title: "확인", buttonType: .confirm) {
+            viewModel.sheetContentType = .confirm
             viewModel.showSheet.toggle()
         }
         .padding(16)
         .modifier(YMBottomSheetModifier(
-            contentView: { BottomSheetContentView(showSheet: $viewModel.showSheet, contentType: .confirm) },
+            contentView: { BottomSheetContentView(showSheet: $viewModel.showSheet, contentType: viewModel.sheetContentType) },
             showSheet: $viewModel.showSheet,
             sheetHeight: 310,
             bottomSheetType: .nonDragBar
@@ -148,10 +149,11 @@ struct MemberListItemView: View {
         YMCircleButton(circleBtnType: .cancel) {
             viewModel.removeTargetId = member.userId
             viewModel.removeTargetName = member.memberName
+            viewModel.sheetContentType = .delete
             showDeleteSheet.toggle()
         }
         .modifier(YMBottomSheetModifier(
-            contentView: { BottomSheetContentView(showSheet: $viewModel.showSheet, contentType: .delete) },
+            contentView: { BottomSheetContentView(showSheet: $viewModel.showSheet, contentType: viewModel.sheetContentType) },
             showSheet: $viewModel.showSheet,
             sheetHeight: 310,
             bottomSheetType: .nonDragBar
