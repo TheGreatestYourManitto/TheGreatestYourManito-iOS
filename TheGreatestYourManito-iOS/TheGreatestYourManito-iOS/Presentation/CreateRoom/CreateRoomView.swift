@@ -20,7 +20,6 @@ struct CreateRoomView: View {
     @StateObject var viewModel: CreateRoomViewModel
     @State private var isDatePickerPresented: Bool = false
     @State private var isTimePickerPresented: Bool = false
-    @State private var isSuccessCreateRoom: Bool = false
     @State private var focusField: FieldFocus?
     @Binding var presentThis: Bool
     
@@ -90,14 +89,24 @@ struct CreateRoomView: View {
             }
             .presentationDetents([.fraction(0.4)])
         }
-        .navigationDestination(isPresented: $isSuccessCreateRoom) {
-            AfterCreateRoomView(presentThis: $isSuccessCreateRoom, isCopyOnClipBoard: false)
+        .navigationDestination(isPresented: $viewModel.isSuccessCreateRoom) {
+            AfterCreateRoomView(presentThis: $viewModel.isSuccessCreateRoom, isCopyOnClipBoard: false)
                 .environmentObject(viewModel)
         }
+        .overlay(
+            Group {
+                if viewModel.showToast {
+                    VStack {
+                        Spacer()
+                        CopyToastView(textTitle: viewModel.toastText)
+                            .padding(.bottom, 140)
+                            .padding(.horizontal, 16)
+                            .transition(.move(edge: .bottom).combined(with: .opacity))
+                    }
+                }
+            }
+        )
         .navigationBarBackButtonHidden()
-        .onChange(of: isSuccessCreateRoom, {
-            if !isSuccessCreateRoom { self.dismiss() }
-        })
     }
     
     private var headerView: some View {
@@ -189,10 +198,7 @@ struct CreateRoomView: View {
                         title: "확인",
                         buttonType: .confirm,
                         action: {
-                            viewModel.postMakeRoom {
-                                isSuccessCreateRoom = true
-                            }
-                            isSuccessCreateRoom = true
+                            viewModel.createButtonTapped()
                         }
                     )
                 }

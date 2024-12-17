@@ -11,3 +11,7 @@ struct UXPolicy {
     static let apiDelay: TimeInterval = 1
     static let toastDelay: TimeInterval = 2
 }
+
+struct UserInputPolicy {
+    static let roomNameMaxLength = 20
+}
