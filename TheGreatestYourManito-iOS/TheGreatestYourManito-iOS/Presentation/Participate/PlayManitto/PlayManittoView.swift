@@ -26,6 +26,7 @@ struct PlayManittoView: View {
                 .cornerRadius(40, corners: [.topLeft, .topRight])
                 .shadow(radius: 10)
         }
+        .dismissKeyboardOnTapOrDrag()
         .environmentObject(viewModel)
         .background(.gray4)
         .ymNavBar(center: {

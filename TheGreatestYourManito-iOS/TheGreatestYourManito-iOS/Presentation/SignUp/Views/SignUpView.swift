@@ -36,6 +36,7 @@ struct SignUpView: View {
             .padding(.bottom, 20)
             
         }
+        .dismissKeyboardOnTapOrDrag()
         .navigationDestination(isPresented: $viewModel.isSuccess) {
             MainView(viewModel: MainViewmodel())
         }
