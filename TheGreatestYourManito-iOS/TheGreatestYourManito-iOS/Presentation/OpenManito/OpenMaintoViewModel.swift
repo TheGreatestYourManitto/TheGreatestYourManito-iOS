@@ -17,6 +17,11 @@ class OpenMaintoViewModel: ObservableObject {
         self.room = room
     }
     
+    func onAppear() {
+        RoomHistoryManager.saveRoomId(room.roomId)
+        getManittoReceiver(roomId: room.roomId)
+    }
+    
     func getManittoReceiver(roomId: Int) {
         NetworkService.shared.roomService.getManittoReceiver(roomId: roomId, completion: { result in
             switch result {

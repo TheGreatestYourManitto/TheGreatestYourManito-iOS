@@ -14,6 +14,7 @@
 		8832C3772CDF2CB700B8DFAB /* ManittoResultBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8832C3762CDF2CB700B8DFAB /* ManittoResultBoardViewModel.swift */; };
 		88517B7B2D119B8000E10DD4 /* Policy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88517B7A2D119B8000E10DD4 /* Policy.swift */; };
 		88517B7D2D11FC9900E10DD4 /* DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88517B7C2D11FC9900E10DD4 /* DismissKeyboard.swift */; };
+		88517B802D12306500E10DD4 /* RoomHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88517B7F2D12306500E10DD4 /* RoomHistoryManager.swift */; };
 		88A3564A2CCF728A005E2893 /* PlayManittoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A356492CCF728A005E2893 /* PlayManittoView.swift */; };
 		88A3564D2CCF73FA005E2893 /* YMHeaderTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3564C2CCF73FA005E2893 /* YMHeaderTagView.swift */; };
 		88A3564F2CCF9E1E005E2893 /* PlayManittoBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3564E2CCF9E1E005E2893 /* PlayManittoBottomView.swift */; };
@@ -110,6 +111,7 @@
 		8832C3762CDF2CB700B8DFAB /* ManittoResultBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManittoResultBoardViewModel.swift; sourceTree = "<group>"; };
 		88517B7A2D119B8000E10DD4 /* Policy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Policy.swift; sourceTree = "<group>"; };
 		88517B7C2D11FC9900E10DD4 /* DismissKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissKeyboard.swift; sourceTree = "<group>"; };
+		88517B7F2D12306500E10DD4 /* RoomHistoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomHistoryManager.swift; sourceTree = "<group>"; };
 		88A356492CCF728A005E2893 /* PlayManittoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayManittoView.swift; sourceTree = "<group>"; };
 		88A3564C2CCF73FA005E2893 /* YMHeaderTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMHeaderTagView.swift; sourceTree = "<group>"; };
 		88A3564E2CCF9E1E005E2893 /* PlayManittoBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayManittoBottomView.swift; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 				9E648DF02CF75B82004875B2 /* Device.swift */,
 				88517B7A2D119B8000E10DD4 /* Policy.swift */,
 				88517B7C2D11FC9900E10DD4 /* DismissKeyboard.swift */,
+				88517B7F2D12306500E10DD4 /* RoomHistoryManager.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -805,6 +808,7 @@
 				ED53F6D22CF72BFF00E5BD1C /* CreateRoomView.swift in Sources */,
 				ED831DF72CCD506600486C5A /* RoomCardView.swift in Sources */,
 				9E648DF32CF77583004875B2 /* IntroViewModel.swift in Sources */,
+				88517B802D12306500E10DD4 /* RoomHistoryManager.swift in Sources */,
 				9E648E1A2CFE6505004875B2 /* CheerMessageResponseBody.swift in Sources */,
 				9E648DD72CF74EA0004875B2 /* UserTargetType.swift in Sources */,
 				9EB642562CE3853500F7F156 /* BeforeJoinRoomBottomView.swift in Sources */,

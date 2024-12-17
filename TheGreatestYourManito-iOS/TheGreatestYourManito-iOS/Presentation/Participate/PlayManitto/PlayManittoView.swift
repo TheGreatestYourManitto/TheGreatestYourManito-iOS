@@ -31,6 +31,9 @@ struct PlayManittoView: View {
                 .cornerRadius(40, corners: [.topLeft, .topRight])
                 .shadow(radius: 2)
         }
+        .onAppear {
+            viewModel.onAppear()
+        }
         .overlay(
             Group {
                 if viewModel.showToast {

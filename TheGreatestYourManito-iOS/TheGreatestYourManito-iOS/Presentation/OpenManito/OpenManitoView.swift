@@ -100,7 +100,7 @@ struct OpenManitoView: View {
             }
         )
         .onAppear {
-            viewModel.getManittoReceiver(roomId: viewModel.room.roomId)
+            viewModel.onAppear()
         }
     }
     

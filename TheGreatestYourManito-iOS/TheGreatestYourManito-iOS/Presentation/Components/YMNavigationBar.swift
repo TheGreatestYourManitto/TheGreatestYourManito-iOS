@@ -31,6 +31,7 @@ public struct YMNavigationBarModifier<C, L, R>: ViewModifier where C: View, L: V
                 left?()
                 Spacer()
                 center?()
+                    .frame(width: 250)
                 Spacer()
                 right?()
             }

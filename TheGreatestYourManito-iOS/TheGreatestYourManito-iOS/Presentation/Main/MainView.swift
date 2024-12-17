@@ -14,6 +14,7 @@ extension MainView {
         case CreateRoomView
         case OpenManitoView
         case BeforeJoinRoomViewActivated
+        case PlayManittoView
     }
 }
 
@@ -130,6 +131,8 @@ struct MainView: View {
                 let viewModel = JoinRoomViewModel(roomType: viewModel.roomType, joinCode: viewModel.joinCode, roomName: viewModel.roomName, memberCount: viewModel.memberCount, memberListModel: viewModel.memberListModel, roomId: viewModel.roomId)
                 AfterJoinRoomView()
                     .environmentObject(viewModel)
+            case .PlayManittoView:
+                PlayManittoView(viewModel: .init(manittoRoom: viewModel.selectRoom))
             default:
                 EmptyView()
             }
@@ -141,13 +144,14 @@ struct MainView: View {
         print("Selected room: \(room.roomName), ID: \(room.roomId)")
         viewModel.isConfirmed = room.isConfirmed
         viewModel.roomId = room.roomId
+        viewModel.selectRoom = room
         if viewModel.isConfirmed == 0 {
             viewModel.getRoomInfoInMainView(roomId: room.roomId)
             presentScreen = .BeforeJoinRoomViewActivated
         } else {
-            print("🔥🔥🔥")
-            viewModel.selectRoom = room
-            presentScreen = .OpenManitoView
+            presentScreen = RoomHistoryManager.containsRoomId(room.roomId)
+            ? .PlayManittoView
+            : .OpenManitoView
             viewModel.isPresented = true
         }
         
