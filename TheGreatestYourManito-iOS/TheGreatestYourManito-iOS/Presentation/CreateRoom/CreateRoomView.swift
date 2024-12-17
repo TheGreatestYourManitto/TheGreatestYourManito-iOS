@@ -51,6 +51,7 @@ struct CreateRoomView: View {
                         get: { viewModel.selectedDate ?? Date() },
                         set: { viewModel.selectedDate = $0 }
                     ),
+                    in: Date()..., // 현재 날짜 이후로만
                     displayedComponents: .date
                 )
                 .datePickerStyle(GraphicalDatePickerStyle())
@@ -145,9 +146,9 @@ struct CreateRoomView: View {
                     Text(StringLiterals.CreateRoom.EndDateTitleLabel)
                         .font(.pretendardFont(for: .heading4))
                         .foregroundColor(.ymBlack)
-                    Text(StringLiterals.CreateRoom.EndDateSubTitleLabel)
-                        .font(.pretendardFont(for: .subtitle1))
-                        .foregroundColor(.gray1)
+//                    Text(StringLiterals.CreateRoom.EndDateSubTitleLabel)
+//                        .font(.pretendardFont(for: .subtitle1))
+//                        .foregroundColor(.gray1)
                 }
                 HStack(spacing: 12) {
                     YMSelectableTextField(
