@@ -11,13 +11,14 @@ struct PlayManittoResultView: View {
     
     @Environment(\.dismiss) private var dismiss
     let todaysCheeringCount: Int
+    @State var goNext: Bool = false
     
     var body: some View {
         VStack {
             
             Spacer()
             
-            Text(StringLiterals.PlayManittoResult.sendCompleteTitleLabel) // TODO: Literal 파일 추가시 이동
+            Text(StringLiterals.PlayManittoResult.sendCompleteTitleLabel)
                 .font(.pretendardFont(for: .heading1))
                 .foregroundStyle(.ymBlack)
                 .padding(.top, 100)
@@ -25,10 +26,10 @@ struct PlayManittoResultView: View {
             Spacer(minLength: 240)
             
             VStack {
-                Text(StringLiterals.PlayManittoResult.todaySentCheerLabel) // TODO: Literal 파일 추가시 이동
+                Text(StringLiterals.PlayManittoResult.todaySentCheerLabel)
                     .font(.pretendardFont(for: .heading6))
                     .foregroundStyle(.ymBlack)
-                Text("\(todaysCheeringCount)\(StringLiterals.PlayManittoResult.cheerCountStr)") // TODO: Literal 파일 추가시 이동
+                Text("\(todaysCheeringCount)\(StringLiterals.PlayManittoResult.cheerCountStr)")
                     .font(.pretendardFont(for: .heading2))
                     .foregroundStyle(.ymBlack)
             }
@@ -36,10 +37,13 @@ struct PlayManittoResultView: View {
             Spacer()
             
             YMButton(title: StringLiterals.PlayManittoResult.okayButtonStr, buttonType: .confirm, action: {
-                dismiss()
+                goNext = true
             })
             .padding(.horizontal, 16)
             .padding(.bottom, 24)
+        }
+        .navigationDestination(isPresented: $goNext) {
+            MainView(viewModel: .init())
         }
     }
 }
