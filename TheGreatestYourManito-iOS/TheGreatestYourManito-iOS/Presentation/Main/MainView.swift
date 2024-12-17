@@ -20,7 +20,6 @@ struct MainView: View {
                 HStack {
                     Image(.icnSmallLogo)
                     Spacer()
-                    Image(.icnSetting)
                 }
                 .padding(.top, 24)
                 .padding(.horizontal, 16)
