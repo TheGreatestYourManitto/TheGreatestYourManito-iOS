@@ -17,7 +17,7 @@ struct YMButton: View {
     var buttonType: YMButtonType
     var isEnabled: Bool = true
     var action: () -> Void
-
+    
     var body: some View {
         Button(action: {
             if isEnabled {
@@ -35,7 +35,7 @@ struct YMButton: View {
         }
         .disabled(!isEnabled)
     }
-
+    
     private var backgroundColor: Color {
         switch buttonType {
         case .confirm:
@@ -44,7 +44,7 @@ struct YMButton: View {
             return .gray3
         }
     }
-
+    
     private var textColor: Color {
         switch buttonType {
         case .confirm:
@@ -53,11 +53,11 @@ struct YMButton: View {
             return .gray1
         }
     }
-
+    
     private var disabledBackgroundColor: Color {
         return .gray3
     }
-
+    
     private var disabledTextColor: Color {
         return .ymWhite
     }
@@ -73,7 +73,7 @@ struct YMButton: View {
             print("Confirm Button Tapped")
         })
         .padding()
-
+        
         YMButton(title: "Cancel", buttonType: .cancel, isEnabled: true, action: {
             print("Cancel Button Tapped")
         })

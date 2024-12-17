@@ -11,14 +11,14 @@ struct RoomCardView: View {
     var roomName: String    
     var dDay: Int
     let onTap: () -> Void
-
-
+    
+    
     var body: some View {
         HStack(spacing: 24) {
             
-                Text(roomName)
-                    .font(.pretendardFont(for: .heading5))
-                    .foregroundStyle(.ymBlack)
+            Text(roomName)
+                .font(.pretendardFont(for: .heading5))
+                .foregroundStyle(.ymBlack)
             Spacer()
             YMDDayLabel(status: .ongoing(dDay: dDay))
             Image(.icnRightarrow)

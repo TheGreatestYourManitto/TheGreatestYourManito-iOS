@@ -21,7 +21,7 @@ struct PlayManittoBottomView: View {
                     text: $viewModel.cheerText
                 )
             }
-           
+            
             Spacer(minLength: 100)
             
             VStack(spacing: 20) {

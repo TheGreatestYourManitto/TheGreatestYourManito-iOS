@@ -41,18 +41,18 @@ private extension ManittoResultBoardViewModel {
         NetworkService.shared.roomService.getManittoResult(roomId: roomId) { [weak self] result in
             switch result {
             case .success(let response):
-                #if DEBUG
+#if DEBUG
                 print(print("Success: \(response)"))
-                #endif
+#endif
                 guard let result = response.result else {return}
                 self?.manittoName = result.manitto.userName
                 self?.cheerCounts = result.cheerCounts.toCheerCountDic()
                 self?.manittoRankList =  result.manittoRank.toManittoRankList()
                 
             default:
-                #if DEBUG
+#if DEBUG
                 print("error: \(result)")
-                #endif
+#endif
                 break
             }
         }
@@ -63,15 +63,15 @@ private extension ManittoResultBoardViewModel {
         NetworkService.shared.roomService.delRemoveRoomFromList(roomId: roomId) { [weak self] result in
             switch result {
             case .success(let response):
-                #if DEBUG
+#if DEBUG
                 print(print("Success: \(response)"))
-                #endif
+#endif
                 self?.deleteCompleted = true
                 
             default:
-                #if DEBUG
+#if DEBUG
                 print("error: \(result)")
-                #endif
+#endif
                 break
             }
         }

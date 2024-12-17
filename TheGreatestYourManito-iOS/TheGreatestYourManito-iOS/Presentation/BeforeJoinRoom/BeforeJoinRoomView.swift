@@ -13,31 +13,31 @@ struct BeforeJoinRoomView: View {
     @StateObject var viewModel: JoinRoomViewModel
     
     var body: some View {
-            ZStack(alignment: .top) {
-                VStack(spacing: 32) {
-                    headerView
-                    bottomView
-                        .frame(height: 495)
-                        .background(.ymWhite)
-                        .cornerRadius(40, corners: [.topLeft, .topRight])
-                        .shadow(radius: 2)
-                }
-                .ymNavBar(left: {
-                    Button(action: { dismiss() }) {
-                        Image(.icnLeftnarrow)
-                    }
-                })
-                
-            }.edgesIgnoringSafeArea(.bottom)
-        .navigationBarBackButtonHidden()
-        .overlay(
-            Group {
-                if viewModel.isLoading {
-                    YMLoadingView(titleText: "방 만드는 중..")
-                        .edgesIgnoringSafeArea(.all)
-                }
+        ZStack(alignment: .top) {
+            VStack(spacing: 32) {
+                headerView
+                bottomView
+                    .frame(height: 495)
+                    .background(.ymWhite)
+                    .cornerRadius(40, corners: [.topLeft, .topRight])
+                    .shadow(radius: 2)
             }
-        )
+            .ymNavBar(left: {
+                Button(action: { dismiss() }) {
+                    Image(.icnLeftnarrow)
+                }
+            })
+            
+        }.edgesIgnoringSafeArea(.bottom)
+            .navigationBarBackButtonHidden()
+            .overlay(
+                Group {
+                    if viewModel.isLoading {
+                        YMLoadingView(titleText: "방 만드는 중..")
+                            .edgesIgnoringSafeArea(.all)
+                    }
+                }
+            )
         
         
     }
