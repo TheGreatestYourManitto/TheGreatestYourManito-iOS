@@ -9,7 +9,6 @@ import Foundation
 
 enum NetworkResult<T> {
    case success(T)               // 서버 통신 성공했을 때,
-   case tokenExpired(T)             // 토큰 만료일 떄,
    case requestErr               // 요청 에러 발생했을 때,
    case decodedErr               // 디코딩 오류 발생했을 때
    case pathErr                  // 경로 에러 발생했을 때,
