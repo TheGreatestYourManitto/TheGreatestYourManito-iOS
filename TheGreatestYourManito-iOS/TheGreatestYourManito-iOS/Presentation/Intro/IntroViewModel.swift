@@ -38,9 +38,11 @@ final class IntroViewModel: ObservableObject {
                         LocalStorageManager.saveUserId(userId)
                     }
                     toastPost("로그인에 성공했습니다.")
-                case .requestErr:
+                case .requestErr(let errorResponse):
                     self.isIdentified = false
-                    toastPost("서버 에러가 발생했습니다.\n다시 시도해주세요.")
+                    if errorResponse?.message != "해당 유저를 찾을 수 없습니다." {
+                        toastPost("서버 에러가 발생했습니다.\n다시 시도해주세요.")
+                    }
                 default:
                     toastPost("알 수 없는 오류가 발생했습니다.\n다시 시도해주세요.")
                     return
