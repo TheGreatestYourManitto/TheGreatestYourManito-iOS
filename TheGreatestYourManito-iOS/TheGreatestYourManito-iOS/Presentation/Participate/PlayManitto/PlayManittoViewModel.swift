@@ -17,6 +17,7 @@ final class PlayManittoViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var receiverUserName: String = ""
     @Published var receiverUserId: Int = 0
+    @Published var isEnded: Bool = false
     
     let manittoRoomName: String
     let manittoRoomId: Int

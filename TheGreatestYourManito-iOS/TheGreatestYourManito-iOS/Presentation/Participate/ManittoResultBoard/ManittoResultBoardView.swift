@@ -27,7 +27,8 @@ struct ManittoResultBoardView: View {
             
             Spacer()
             
-            ManittoResultBoardBottomView(viewModel)
+            ManittoResultBoardBottomView()
+                .environmentObject(viewModel)
                 .frame(height: 423)
                 .cornerRadius(40, corners: [.topLeft, .topRight])
                 .shadow(radius: 10)

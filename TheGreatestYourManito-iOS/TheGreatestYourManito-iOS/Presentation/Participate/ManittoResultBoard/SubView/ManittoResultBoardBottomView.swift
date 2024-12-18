@@ -8,11 +8,7 @@
 import SwiftUI
 
 struct ManittoResultBoardBottomView: View {
-    var viewModel: ManittoResultBoardViewModel
-    
-    init(_ viewModel: ManittoResultBoardViewModel) {
-        self.viewModel = viewModel
-    }
+    @EnvironmentObject var viewModel: ManittoResultBoardViewModel
     
     var body: some View {
         
