@@ -16,9 +16,7 @@ extension Date {
         return isoFormatter.string(from: self)
     }
     
-    static func calculateDDay(from dateString: String) -> Int? {
-        print(dateString, ": dateString")
-        
+    static func calculateDDay(from dateString: String) -> Int? {        
         let dateFormatter = ISO8601DateFormatter()
         dateFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
         

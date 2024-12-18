@@ -12,16 +12,16 @@ struct AfterCreateRoomView: View {
     
     @EnvironmentObject var viewModel: CreateRoomViewModel
     @Environment(\.dismiss) var dismiss
-    @Binding var presentThis: Bool
     @State var isPresented: Bool = false
     @State var isCopyOnClipBoard: Bool
+    @State var goNext: Bool = false
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
                 Spacer()
                 Button(action: {
-                    presentThis = false
+                    goNext = true
                 }, label: {
                     Image(.icnBigCancle)
                         .resizable()
@@ -92,6 +92,9 @@ struct AfterCreateRoomView: View {
         }
         .padding(.horizontal, 24)
         .navigationBarBackButtonHidden(true)
+        .navigationDestination(isPresented: $goNext) {
+            MainView(viewModel: .init())
+        }
     }
     
     private func copyToClipboard() {

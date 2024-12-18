@@ -16,9 +16,13 @@ final class JoinRoomViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var roomId: Int = 0
     @Published var joinCode: String = ""
-    @Published var nickName: String = ""
     @Published var isVaildRoom: Bool = false
     @Published var showSheet = false
+    @Published var sheetContentType: BottomSheetContentType = .confirm
+    @Published var removeTargetName: String? = nil
+    @Published var removeTargetId: Int? = nil
+    @Published var goMainView: Bool = false
+    let userId: Int? = LocalStorageManager.fetchUserId()
     
     init(roomType: RoomType) {
         self.roomType = roomType
@@ -31,6 +35,10 @@ final class JoinRoomViewModel: ObservableObject {
         self.memberCount = memberCount
         self.memberListModel = memberListModel
         self.roomId = roomId
+    }
+    
+    func refreshRoom() {
+        getRoomInfo(roomId: roomId)
     }
     
     func postParticipateRoom(invitationCode: String) {
@@ -76,6 +84,8 @@ final class JoinRoomViewModel: ObservableObject {
             switch result {
             case .success(let response):
                 print("Success: \(response)")
+                self.showSheet = false
+                self.refreshRoom()
             default:
                 print("Failed to another reason")
                 return
@@ -88,8 +98,8 @@ final class JoinRoomViewModel: ObservableObject {
             switch result {
             case .success(let response):
                 print("Success: \(response)")
-                print("🔥")
                 self.showSheet = false
+                self.goMainView = true
                 
             default:
                 print("Failed to another reason")

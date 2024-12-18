@@ -20,7 +20,6 @@ struct CreateRoomView: View {
     @StateObject var viewModel: CreateRoomViewModel
     @State private var isDatePickerPresented: Bool = false
     @State private var isTimePickerPresented: Bool = false
-    @State private var isSuccessCreateRoom: Bool = false
     @State private var focusField: FieldFocus?
     @Binding var presentThis: Bool
     
@@ -36,6 +35,7 @@ struct CreateRoomView: View {
                     .cornerRadius(40, corners: [.topLeft, .topRight])
                     .shadow(radius: 2)
             }
+            .dismissKeyboardOnTapOrDrag()
             .ymNavBar(left: {
                 Button(action: { dismiss() }) {
                     Image(.icnLeftnarrow)
@@ -51,6 +51,7 @@ struct CreateRoomView: View {
                         get: { viewModel.selectedDate ?? Date() },
                         set: { viewModel.selectedDate = $0 }
                     ),
+                    in: Date()..., // 현재 날짜 이후로만
                     displayedComponents: .date
                 )
                 .datePickerStyle(GraphicalDatePickerStyle())
@@ -88,14 +89,24 @@ struct CreateRoomView: View {
             }
             .presentationDetents([.fraction(0.4)])
         }
-        .navigationDestination(isPresented: $isSuccessCreateRoom) {
-            AfterCreateRoomView(presentThis: $isSuccessCreateRoom, isCopyOnClipBoard: false)
+        .navigationDestination(isPresented: $viewModel.isSuccessCreateRoom) {
+            AfterCreateRoomView(isCopyOnClipBoard: false)
                 .environmentObject(viewModel)
         }
+        .overlay(
+            Group {
+                if viewModel.showToast {
+                    VStack {
+                        Spacer()
+                        CopyToastView(textTitle: viewModel.toastText)
+                            .padding(.bottom, 140)
+                            .padding(.horizontal, 16)
+                            .transition(.move(edge: .bottom).combined(with: .opacity))
+                    }
+                }
+            }
+        )
         .navigationBarBackButtonHidden()
-        .onChange(of: isSuccessCreateRoom, {
-            if !isSuccessCreateRoom { self.dismiss() }
-        })
     }
     
     private var headerView: some View {
@@ -145,9 +156,9 @@ struct CreateRoomView: View {
                     Text(StringLiterals.CreateRoom.EndDateTitleLabel)
                         .font(.pretendardFont(for: .heading4))
                         .foregroundColor(.ymBlack)
-                    Text(StringLiterals.CreateRoom.EndDateSubTitleLabel)
-                        .font(.pretendardFont(for: .subtitle1))
-                        .foregroundColor(.gray1)
+//                    Text(StringLiterals.CreateRoom.EndDateSubTitleLabel)
+//                        .font(.pretendardFont(for: .subtitle1))
+//                        .foregroundColor(.gray1)
                 }
                 HStack(spacing: 12) {
                     YMSelectableTextField(
@@ -187,10 +198,7 @@ struct CreateRoomView: View {
                         title: "확인",
                         buttonType: .confirm,
                         action: {
-                            viewModel.postMakeRoom {
-                                isSuccessCreateRoom = true
-                            }
-                            isSuccessCreateRoom = true
+                            viewModel.createButtonTapped()
                         }
                     )
                 }

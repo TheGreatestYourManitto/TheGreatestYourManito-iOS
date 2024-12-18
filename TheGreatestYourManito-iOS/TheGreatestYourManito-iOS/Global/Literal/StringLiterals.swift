@@ -36,7 +36,7 @@ enum StringLiterals {
         static let subTitleLabel1 = "두근두근"
         static let subTitleLabel2 = "나만의 마니또를 만나러 - !"
         static let RoomNameTitleLabel = "방 이름"
-        static let RoomNameSubTitleLabel = "최대 10자"
+        static let RoomNameSubTitleLabel = "최대 20자"
         static let RoomNamePlaceholder = "방 이름을 입력해주세요"
         static let EndDateTitleLabel = "종료일"
         static let EndDateSubTitleLabel = "최대 99일"

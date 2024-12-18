@@ -30,12 +30,25 @@ struct SignUpView: View {
                 title: "확인",
                 buttonType: .confirm,
                 action: {
-                    viewModel.postMakeUser(nickname: viewModel.nickname)
+                    viewModel.confirmButtonTapped()
                 }
             )
             .padding(.bottom, 20)
             
         }
+        .overlay(
+            Group {
+                if viewModel.showToast {
+                    VStack {
+                        Spacer()
+                        CopyToastView(textTitle: viewModel.toastText)
+                            .padding(.bottom, 140)
+                            .padding(.horizontal, 16)
+                    }
+                }
+            }
+        )
+        .dismissKeyboardOnTapOrDrag()
         .navigationDestination(isPresented: $viewModel.isSuccess) {
             MainView(viewModel: MainViewmodel())
         }

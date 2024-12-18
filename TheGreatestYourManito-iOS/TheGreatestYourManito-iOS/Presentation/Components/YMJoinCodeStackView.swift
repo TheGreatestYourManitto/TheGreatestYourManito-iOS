@@ -67,10 +67,11 @@ struct CopyToastView: View {
         VStack {
             Text(textTitle)
                 .font(.pretendardFont(for: .heading6))
+                .multilineTextAlignment(.center)
                 .foregroundStyle(.gray1)
                 .background(.gray3)
         }
-        .frame(height: 45)
+        .padding()
         .frame(maxWidth: .infinity)
         .background(.gray3)
         .clipShape(.rect(cornerRadius: 16))

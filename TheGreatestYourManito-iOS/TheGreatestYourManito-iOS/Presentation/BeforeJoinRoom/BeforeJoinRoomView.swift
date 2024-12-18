@@ -22,6 +22,7 @@ struct BeforeJoinRoomView: View {
                     .cornerRadius(40, corners: [.topLeft, .topRight])
                     .shadow(radius: 2)
             }
+            .dismissKeyboardOnTapOrDrag()
             .ymNavBar(left: {
                 Button(action: { dismiss() }) {
                     Image(.icnLeftnarrow)

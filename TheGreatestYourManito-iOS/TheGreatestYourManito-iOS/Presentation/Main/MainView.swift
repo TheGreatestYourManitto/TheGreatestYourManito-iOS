@@ -14,6 +14,7 @@ extension MainView {
         case CreateRoomView
         case OpenManitoView
         case BeforeJoinRoomViewActivated
+        case PlayManittoView
     }
 }
 
@@ -78,9 +79,9 @@ struct MainView: View {
                 Rectangle()
                     .foregroundColor(.gray4).ignoresSafeArea(edges: .bottom)
                 
-                ScrollView {
-                    VStack(spacing: 16) {
-                        if !viewModel.rooms.isEmpty {
+                if !viewModel.rooms.isEmpty {
+                    ScrollView {
+                        VStack(spacing: 16) {
                             ForEach(viewModel.rooms, id: \.roomId) { room in
                                 RoomCardView(
                                     roomName: room.roomName,
@@ -90,23 +91,25 @@ struct MainView: View {
                                     }
                                 )
                             }
-                        } else {
-                            Spacer()
-                            VStack(spacing: 30) {
-                                HStack(spacing: 16) {
-                                    ForEach(CheerType.allCases.indices, id: \.self) { index in
-                                        Image(CheerType.allCases[index].defaultImage)
-                                    }
-                                }
-                                Text("참여중인 방이 없어요!")
-                                    .font(.pretendardFont(for: .heading4))
-                                    .foregroundColor(.purple)
-                            }
-                            Spacer()
                         }
                     }
+                    .scrollIndicators(.hidden)
                     .padding(.top, 30)
                     .padding(.horizontal, 16)
+                } else {
+                    VStack(spacing: 30) {
+                        Spacer()
+                        HStack(spacing: 16) {
+                            ForEach(CheerType.allCases.indices, id: \.self) { index in
+                                Image(CheerType.allCases[index].defaultImage)
+                            }
+                        }
+                        Text("참여중인 방이 없어요!")
+                            .font(.pretendardFont(for: .heading4))
+                            .foregroundColor(.purple)
+                        Spacer()
+                        Spacer()
+                    }
                 }
             }
             .padding(.top, 24)
@@ -128,6 +131,8 @@ struct MainView: View {
                 let viewModel = JoinRoomViewModel(roomType: viewModel.roomType, joinCode: viewModel.joinCode, roomName: viewModel.roomName, memberCount: viewModel.memberCount, memberListModel: viewModel.memberListModel, roomId: viewModel.roomId)
                 AfterJoinRoomView()
                     .environmentObject(viewModel)
+            case .PlayManittoView:
+                PlayManittoView(viewModel: .init(manittoRoom: viewModel.selectRoom))
             default:
                 EmptyView()
             }
@@ -139,13 +144,14 @@ struct MainView: View {
         print("Selected room: \(room.roomName), ID: \(room.roomId)")
         viewModel.isConfirmed = room.isConfirmed
         viewModel.roomId = room.roomId
+        viewModel.selectRoom = room
         if viewModel.isConfirmed == 0 {
             viewModel.getRoomInfoInMainView(roomId: room.roomId)
             presentScreen = .BeforeJoinRoomViewActivated
         } else {
-            print("🔥🔥🔥")
-            viewModel.selectRoom = room
-            presentScreen = .OpenManitoView
+            presentScreen = LocalStorageManager.containsRoomId(room.roomId)
+            ? .PlayManittoView
+            : .OpenManitoView
             viewModel.isPresented = true
         }
         
