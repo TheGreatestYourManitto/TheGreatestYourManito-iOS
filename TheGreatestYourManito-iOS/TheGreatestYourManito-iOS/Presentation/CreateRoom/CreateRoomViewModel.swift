@@ -8,9 +8,21 @@
 import SwiftUI
 
 final class CreateRoomViewModel: ObservableObject {
-    @Published var roomName: String = ""
-    @Published var selectedDate: Date? = nil
-    @Published var selectedTime: Date? = nil
+    @Published var roomName: String = "" {
+        didSet {
+            isAllVailed()
+        }
+    }
+    @Published var selectedDate: Date? = nil {
+        didSet {
+            isAllVailed()
+        }
+    }
+    @Published var selectedTime: Date? = nil {
+        didSet {
+            isAllVailed()
+        }
+    }
     @Published var endDateTime: Date? = nil
     @Published var roomId: Int = 0
     @Published var joinCode: String = ""
@@ -18,6 +30,7 @@ final class CreateRoomViewModel: ObservableObject {
     @Published var isSuccessCreateRoom: Bool = false
     @Published var toastText: String = ""
     @Published var showToast: Bool = false
+    @Published var isEnabled: Bool = false
     
     func updateDateTime(date: Date?, time: Date?) throws {
         guard let date = selectedDate, let time = selectedTime else {
@@ -43,6 +56,14 @@ final class CreateRoomViewModel: ObservableObject {
         
         // 날짜 차이를 계산
         dDay = calendar.dateComponents([.day], from: today, to: targetDate).day ?? 0
+    }
+    
+    func isAllVailed() {
+        if !roomName.isEmpty && roomName.count <= UserInputPolicy.roomNameMaxLength && selectedDate != nil && selectedTime != nil {
+            self.isEnabled = true
+        } else {
+            self.isEnabled = false
+        }
     }
     
     func createButtonTapped() {
