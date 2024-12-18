@@ -74,7 +74,10 @@ struct CopyToastView: View {
         .padding()
         .frame(maxWidth: .infinity)
         .background(.gray3)
+        .border(.ymPrimary, width: 1)
         .clipShape(.rect(cornerRadius: 16))
+        .overlay(RoundedRectangle(cornerRadius: 16)
+            .stroke(.sub1, lineWidth: 2))
         
     }
     
