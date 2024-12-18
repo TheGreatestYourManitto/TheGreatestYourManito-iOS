@@ -8,19 +8,16 @@
 import SwiftUI
 
 final class SignUpViewModel: ObservableObject {
-    @Published var nickname: String = ""
+    
+    @Published var nickname: String = "" {
+        didSet {
+            validateNickname()
+        }
+    }
+    @Published var isEnabled: Bool = false
     @Published var isSuccess: Bool = false
     @Published var showToast: Bool = false
     @Published var toastText: String = ""
-    
-    func confirmButtonTapped() {
-        guard UserInputPolicy.userNickNameIsValid(nickname) else {
-            toastPost("닉네임은 한글, 영문 7자 이하여야 합니다.")
-            return
-        }
-        
-        postMakeUser(nickname: nickname)
-    }
     
     func postMakeUser(nickname: String) {
         guard let deviceId = UserDefaults.standard.string(forKey: "deviceId") else {return}
@@ -42,6 +39,40 @@ final class SignUpViewModel: ObservableObject {
         })
     }
     
+    private func validateNickname() {
+        if containsCombinedHangul(nickname) {
+            showToast = true
+            toastText = "조합형 한글은 닉네임에 사용할 수 없습니다."
+        } else {
+            showToast = false
+        }
+        isEnabled = !nickname.isEmpty &&
+        nickname.count <= 7 &&
+        !containsCombinedHangul(nickname)
+    }
+    
+    private func containsCombinedHangul(_ text: String) -> Bool {
+        let regex = "[ㄱ-ㅎㅏ-ㅣ]"
+        do {
+            let regex = try NSRegularExpression(pattern: regex)
+            let range = NSRange(location: 0, length: text.utf16.count)
+            // 문자열 내에 조합형 한글이 하나라도 있으면 true 반환 ex)ㅋㅔㅂㅏㅂ
+            return regex.firstMatch(in: text, options: [], range: range) != nil
+        } catch {
+            print("Invalid regex: \(error.localizedDescription)")
+            return false
+        }
+    }
+    
+    func confirmButtonTapped() {
+        guard UserInputPolicy.userNickNameIsValid(nickname) else {
+            toastPost("닉네임은 한글, 영문 7자 이하여야 합니다.")
+            return
+        }
+        
+        postMakeUser(nickname: nickname)
+    }
+    
     private func toastPost(_ message: String) {
         self.toastText = message
         self.showToast = true
@@ -49,5 +80,6 @@ final class SignUpViewModel: ObservableObject {
             self?.showToast = false
         }
     }
+    
 }
 
