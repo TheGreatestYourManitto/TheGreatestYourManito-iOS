@@ -75,15 +75,6 @@ private extension ManittoResultBoardView {
                     .foregroundStyle(.gray1)
             }
             Spacer()
-            Button(action: {}, label: {
-                Text(StringLiterals.PlayManittoResultBoard.boardShowDetailStr)
-                    .font(.pretendardFont(for: .heading6))
-                    .foregroundStyle(.gray1)
-                    .padding(.horizontal, 13)
-                    .padding(.vertical, 8)
-                    .background(Color.gray3)
-                    .clipShape(.rect(cornerRadius: 16))
-            })
         }
     }
     
