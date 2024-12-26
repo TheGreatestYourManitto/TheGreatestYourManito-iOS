@@ -21,7 +21,7 @@ struct SignUpView: View {
                     .font(.pretendardFont(for: .subtitle1))
                     .foregroundStyle(.gray1)
                     .padding(.leading, 7)
-                YMTextField(placeholder: "한글, 영문 1자 이상, 7자 이하", text: $viewModel.nickname)
+                YMTextField(placeholder: StringLiterals.ToastMessage.nicknamePlaceholderLabel, text: $viewModel.nickname)
             }
             .padding(.top, 56)
             

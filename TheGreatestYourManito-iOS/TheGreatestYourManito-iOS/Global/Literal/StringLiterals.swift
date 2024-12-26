@@ -9,6 +9,10 @@ import SwiftUI
 
 enum StringLiterals {
     
+    enum ToastMessage {
+        static let nicknamePlaceholderLabel = "한글, 영문 1자 이상, 7자 이하"
+    }
+    
     enum AfterJoinRoom {
         static let ownerNoticeWordLabel = "참여자가 다 모이면 확인 버튼을 눌러주세요!"
         static let notOwnerNoticeWordLabel = "참여자를 기다리고있어요~"
