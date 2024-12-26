@@ -64,7 +64,7 @@ typealias ManittoRanks = [ManittoRank]
 extension ManittoRanks {
     func toManittoRankList() -> ManittoRankList {
         return self
-            .map { item -> ManittoRankItem? in
+            .compactMap { item -> ManittoRankItem? in
                 // rank 변환 실패 시 nil 반환
                 guard let rank = ManiitoRank(rank: item.rank) else {
                     return nil
@@ -78,7 +78,6 @@ extension ManittoRanks {
                     cheerCount: item.cheerCount
                 )
             }
-            .compactMap { $0 }  // nil을 필터링하여 제거
     }
 }
 
