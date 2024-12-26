@@ -31,11 +31,7 @@ struct PlayManittoBottomView: View {
                     buttonType: .confirm,
                     action: {
                         // 상태에 맞는 행동을 viewModel에서 처리하도록 함
-                        if case .ongoing = status {
-                            viewModel.tapSendButton()  // 진행 중일 때의 액션
-                        } else if case .ended = status {
-                            viewModel.isEnded = true
-                        }
+                        viewModel.isEndedStatus(status: status)
                     }
                 )
             }
