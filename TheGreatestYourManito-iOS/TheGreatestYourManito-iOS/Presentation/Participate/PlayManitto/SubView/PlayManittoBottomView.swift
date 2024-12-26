@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct PlayManittoBottomView: View {
-    
     @EnvironmentObject var viewModel: PlayManittoViewModel
     
     var body: some View {
+        let status = ManittoEventStatus.getStatus(from: viewModel.manittoEndDate)
         VStack {
             VStack(alignment: .leading, spacing: 24) {
                 cheerLabelView()
@@ -26,15 +26,24 @@ struct PlayManittoBottomView: View {
             
             VStack(spacing: 20) {
                 OpenLabelView(status: ManittoEventStatus.getStatus(from: viewModel.manittoEndDate))
-                YMButton(title: StringLiterals.PlayManitto.bottomSheetSendButtonStr, buttonType: .confirm, action: {
-                    viewModel.tapSendButton()
-                })
+                YMButton(
+                    title: status.buttonTitle,
+                    buttonType: .confirm,
+                    action: {
+                        // 상태에 맞는 행동을 viewModel에서 처리하도록 함
+                        viewModel.isEndedStatus(status: status)
+                    }
+                )
             }
         }
         .padding(.horizontal, 16)
         .padding(.top, 48)
         .padding(.bottom, 54)
         .background(.ymWhite)
+        .navigationDestination(isPresented: $viewModel.isEnded) {
+            ManittoResultBoardView(viewModel: ManittoResultBoardViewModel(manittoRoomName: viewModel.manittoRoomName, manittoRoomId: viewModel.manittoRoomId))
+                .environmentObject(viewModel)
+        }
     }
 }
 

@@ -10,60 +10,76 @@ import Foundation
 // MARK: - GetManittoResultResponseBody
 struct GetManittoResultResponseBody: Codable {
     let manitto: Manitto
-    let cheerCounts: [CheerCount]
+    let cheerCounts: CheerCounts // CheerCounts의 타입을 맞추기 위해 수정
     let manittoRank: [ManittoRank]
 }
 
-// MARK: - CheerCount
-struct CheerCount: Codable {
-    let type: String
-    let count: Int
+// MARK: - CheerCounts
+struct CheerCounts: Codable {
+    let luck, love, fire, present: Int
 }
-
-typealias CheerCounts = [CheerCount]
 
 extension CheerCounts {
     func toCheerCountDic() -> [CheerType: Int] {
-        self.compactMap { cheerCount -> (CheerType, Int)? in
-            if let cheerType = CheerType(name: cheerCount.type) {
-                return (cheerType, cheerCount.count)
-            } else {
-                return nil
-            }
-        }.reduce(into: [CheerType: Int]()) { result, pair in
-            result[pair.0] = pair.1
-        }
+        [
+            .luck: luck,
+            .love: love,
+            .fire: fire,
+            .gift: present
+        ]
     }
 }
 
 // MARK: - Manitto
 struct Manitto: Codable {
     let userName: String
-    let userId: Int
+    let userID: Int
+
+    enum CodingKeys: String, CodingKey {
+        case userName
+        case userID = "userId"
+    }
 }
 
 // MARK: - ManittoRank
 struct ManittoRank: Codable {
-    let rank, userId: Int
+    let rank, userID: Int
     let userName: String
-    let manittoUserId: Int
+    let manittoUserID: Int
     let manittoUserName: String
     let cheerCount: Int
+
+    enum CodingKeys: String, CodingKey {
+        case rank
+        case userID = "userId"
+        case userName
+        case manittoUserID = "manittoUserId"
+        case manittoUserName, cheerCount
+    }
 }
+
 
 typealias ManittoRanks = [ManittoRank]
 
 extension ManittoRanks {
     func toManittoRankList() -> ManittoRankList {
-        self.compactMap { item in
-            guard let rank = ManiitoRank(rank: item.rank) else { return nil }
-            return ManittoRankItem(
-                rank: rank,
-                fromPerson: User(id: item.manittoUserId, name: item.manittoUserName),
-                toPerson: User(id: item.userId, name: item.userName),
-                cheerCount: item.cheerCount
-            )
-        }
+        return self
+            .compactMap { item -> ManittoRankItem? in
+                // rank 변환 실패 시 nil 반환
+                guard let rank = ManiitoRank(rank: item.rank) else {
+                    return nil
+                }
+                
+                // rank 변환 성공 시 ManittoRankItem 반환
+                return ManittoRankItem(
+                    rank: rank,
+                    fromPerson: User(id: item.userID, name: item.userName),
+                    toPerson: User(id: item.manittoUserID, name: item.manittoUserName),
+                    cheerCount: item.cheerCount
+                )
+            }
     }
 }
+
+
 

@@ -17,6 +17,7 @@ final class PlayManittoViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var receiverUserName: String = ""
     @Published var receiverUserId: Int = 0
+    @Published var isEnded: Bool = false
     
     let manittoRoomName: String
     let manittoRoomId: Int
@@ -53,7 +54,15 @@ final class PlayManittoViewModel: ObservableObject {
         getCheerText(with: cheerType)
     }
     
-    func tapSendButton() {
+    func isEndedStatus(status: ManittoEventStatus) {
+        if case .ongoing = status {
+            self.tapSendButton()  // 진행 중일 때의 액션
+        } else if case .ended = status {
+            self.isEnded = true
+        }
+    }
+    
+    private func tapSendButton() {
         guard let cheerType else {
             toastPost("응원 타입을 선택해주세요.")
             return
@@ -76,6 +85,7 @@ final class PlayManittoViewModel: ObservableObject {
             }
         }
     }
+    
 }
 
 // MARK: API

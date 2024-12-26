@@ -48,6 +48,7 @@ private extension ManittoResultBoardViewModel {
                 self?.manittoName = result.manitto.userName
                 self?.cheerCounts = result.cheerCounts.toCheerCountDic()
                 self?.manittoRankList =  result.manittoRank.toManittoRankList()
+                print("🔥\n\(self?.manittoRankList)")
                 
             default:
 #if DEBUG

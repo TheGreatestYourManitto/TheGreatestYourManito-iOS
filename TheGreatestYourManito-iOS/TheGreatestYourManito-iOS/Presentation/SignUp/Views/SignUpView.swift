@@ -21,7 +21,7 @@ struct SignUpView: View {
                     .font(.pretendardFont(for: .subtitle1))
                     .foregroundStyle(.gray1)
                     .padding(.leading, 7)
-                YMTextField(placeholder: "한글, 영문 7자 이하", text: $viewModel.nickname)
+                YMTextField(placeholder: StringLiterals.ToastMessage.nicknamePlaceholderLabel, text: $viewModel.nickname)
             }
             .padding(.top, 56)
             
@@ -29,6 +29,7 @@ struct SignUpView: View {
             YMButton(
                 title: "확인",
                 buttonType: .confirm,
+                isEnabled: viewModel.isEnabled,
                 action: {
                     viewModel.confirmButtonTapped()
                 }
@@ -42,7 +43,7 @@ struct SignUpView: View {
                     VStack {
                         Spacer()
                         CopyToastView(textTitle: viewModel.toastText)
-                            .padding(.bottom, 140)
+                            .padding(.bottom, 20)
                             .padding(.horizontal, 16)
                     }
                 }
