@@ -49,10 +49,11 @@ final class CreateRoomViewModel: ObservableObject {
         endDateTime = calendar.date(from: combinedComponents)
     }
     
-    func calculateDday(date: Date?) {
+    func tappedConfirmButton() {
+        selectedDate = Date() // 기본값 설정
         let calendar = Calendar.current
         let today = calendar.startOfDay(for: Date()) // 오늘의 날짜를 00:00으로 설정
-        let targetDate = calendar.startOfDay(for: date ?? Date()) // 선택된 날짜를 00:00으로 설정
+        let targetDate = calendar.startOfDay(for: selectedDate ?? Date()) // 선택된 날짜를 00:00으로 설정
         
         // 날짜 차이를 계산
         dDay = calendar.dateComponents([.day], from: today, to: targetDate).day ?? 0

@@ -60,12 +60,10 @@ struct CreateRoomView: View {
                 YMButton(title: "확인",
                          buttonType: .confirm,
                          action: {
-                            if viewModel.selectedDate == nil {
-                                viewModel.selectedDate = Date() // 기본값 설정
-                            }
-                        viewModel.calculateDday(date: viewModel.selectedDate)
-                        isDatePickerPresented = false})
-                    .padding(.horizontal, 16)
+                            viewModel.tappedConfirmButton()
+                            isDatePickerPresented = false
+                })
+                .padding(.horizontal, 16)
             }
             .presentationDetents([.fraction(0.6)])
         }
