@@ -19,8 +19,8 @@ final class JoinRoomViewModel: ObservableObject {
     @Published var isVaildRoom: Bool = false
     @Published var showSheet = false
     @Published var sheetContentType: BottomSheetContentType = .confirm
-    @Published var removeTargetName: String? = nil
-    @Published var removeTargetId: Int? = nil
+    @Published var removeTargetName: String?
+    @Published var removeTargetId: Int?
     @Published var goMainView: Bool = false
     let userId: Int? = LocalStorageManager.fetchUserId()
     

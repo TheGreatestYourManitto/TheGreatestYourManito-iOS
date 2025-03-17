@@ -119,7 +119,6 @@ private extension PlayManittoViewModel {
                 
             default:
                 self?.toastPost("네트워크 에러가 발생했습니다.\n다시 시도해주세요.")
-                break
             }
         }
     }
@@ -144,7 +143,6 @@ private extension PlayManittoViewModel {
                 
             default:
                 self?.toastPost("네트워크 에러가 발생했습니다.\n다시 시도해주세요.")
-                break
             }
         }
     }

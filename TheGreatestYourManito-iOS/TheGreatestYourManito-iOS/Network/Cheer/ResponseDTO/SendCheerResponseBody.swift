@@ -11,4 +11,3 @@ import Foundation
 struct SendCheerResponseBody: Codable {
     let todaysCheeringCount: Int
 }
-

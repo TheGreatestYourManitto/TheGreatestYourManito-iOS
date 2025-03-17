@@ -19,13 +19,13 @@ protocol RoomServiceProtocol {
     
     func getRoomInfo(roomId: Int, completion: @escaping (NetworkResult<BaseResponseBody<RoomInfoResponseBody>>) -> ())
     
-    func deleteRoomMember(roomId: Int, userId: Int, completion: @escaping (NetworkResult<BaseResponseBody<emptyResponse>>) -> ())
+    func deleteRoomMember(roomId: Int, userId: Int, completion: @escaping (NetworkResult<BaseResponseBody<EmptyResponse>>) -> ())
     
-    func patchConfirmRoomStatus(roomId: Int, completion: @escaping (NetworkResult<BaseResponseBody<emptyResponse>>) -> ())
+    func patchConfirmRoomStatus(roomId: Int, completion: @escaping (NetworkResult<BaseResponseBody<EmptyResponse>>) -> ())
     
     func getManittoReceiver(roomId: Int, completion: @escaping (NetworkResult<BaseResponseBody<ManittoReceiverResponseBody>>) -> ())
     
-    func delRemoveRoomFromList(roomId: Int, completion: @escaping (NetworkResult<BaseResponseBody<emptyResponse>>) -> ())
+    func delRemoveRoomFromList(roomId: Int, completion: @escaping (NetworkResult<BaseResponseBody<EmptyResponse>>) -> ())
     
     func getManittoResult(roomId: Int, completion: @escaping (NetworkResult<BaseResponseBody<GetManittoResultResponseBody>>) -> ())
     
@@ -40,7 +40,7 @@ final class RoomService: BaseService, RoomServiceProtocol {
     let provider = MoyaProvider<RoomTargetType>(plugins: [MoyaLoggingPlugin()])
     
     func getFindRoomList(completion: @escaping (NetworkResult<BaseResponseBody<FindRoomListResponseBody>>) -> ()) {
-        provider.request(.getFindRoomList)  { result in
+        provider.request(.getFindRoomList) { result in
             switch result {
             case .success(let response):
                 let networkResult: NetworkResult<BaseResponseBody<FindRoomListResponseBody>> = self.judgeStatus(statusCode: response.statusCode, data: response.data)
@@ -75,7 +75,6 @@ final class RoomService: BaseService, RoomServiceProtocol {
         }
     }
     
-    
     func getRoomInfo(roomId: Int, completion: @escaping (NetworkResult<BaseResponseBody<RoomInfoResponseBody>>) -> ()) {
         provider.request(.getRoomInfo(roomId: roomId)) { result in
             switch result {
@@ -88,11 +87,11 @@ final class RoomService: BaseService, RoomServiceProtocol {
         }
     }
     
-    func deleteRoomMember(roomId: Int, userId: Int, completion: @escaping (NetworkResult<BaseResponseBody<emptyResponse>>) -> ()) {
+    func deleteRoomMember(roomId: Int, userId: Int, completion: @escaping (NetworkResult<BaseResponseBody<EmptyResponse>>) -> ()) {
         provider.request(.deleteRoomMember(roomId: roomId, userId: userId)) { result in
             switch result {
             case .success(let response):
-                let networkResult: NetworkResult<BaseResponseBody<emptyResponse>> = self.judgeStatus(statusCode: response.statusCode, data: response.data)
+                let networkResult: NetworkResult<BaseResponseBody<EmptyResponse>> = self.judgeStatus(statusCode: response.statusCode, data: response.data)
                 completion(networkResult)
             case .failure(let err):
                 print(err)
@@ -100,11 +99,11 @@ final class RoomService: BaseService, RoomServiceProtocol {
         }
     }
     
-    func patchConfirmRoomStatus(roomId: Int, completion: @escaping (NetworkResult<BaseResponseBody<emptyResponse>>) -> ()) {
+    func patchConfirmRoomStatus(roomId: Int, completion: @escaping (NetworkResult<BaseResponseBody<EmptyResponse>>) -> ()) {
         provider.request(.patchConfirmRoomStatus(roomId: roomId)) { result in
             switch result {
             case .success(let response):
-                let networkResult: NetworkResult<BaseResponseBody<emptyResponse>> = self.judgeStatus(statusCode: response.statusCode, data: response.data)
+                let networkResult: NetworkResult<BaseResponseBody<EmptyResponse>> = self.judgeStatus(statusCode: response.statusCode, data: response.data)
                 completion(networkResult)
             case .failure(let err):
                 print(err)
@@ -124,11 +123,11 @@ final class RoomService: BaseService, RoomServiceProtocol {
         }
     }
     
-    func delRemoveRoomFromList(roomId: Int, completion: @escaping (NetworkResult<BaseResponseBody<emptyResponse>>) -> ()) {
+    func delRemoveRoomFromList(roomId: Int, completion: @escaping (NetworkResult<BaseResponseBody<EmptyResponse>>) -> ()) {
         provider.request(.delRemoveRoomFromList(roomId: roomId)) { result in
             switch result {
             case .success(let response):
-                let networkResult: NetworkResult<BaseResponseBody<emptyResponse>> = self.judgeStatus(statusCode: response.statusCode, data: response.data)
+                let networkResult: NetworkResult<BaseResponseBody<EmptyResponse>> = self.judgeStatus(statusCode: response.statusCode, data: response.data)
                 completion(networkResult)
             case .failure(let err):
                 print(err)
@@ -149,4 +148,3 @@ final class RoomService: BaseService, RoomServiceProtocol {
     }
     
 }
-

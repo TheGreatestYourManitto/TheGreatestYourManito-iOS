@@ -82,7 +82,6 @@
 		9EB642652CE542B600F7F156 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB642642CE542B600F7F156 /* NetworkResult.swift */; };
 		9EB642672CE542DE00F7F156 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB642662CE542DE00F7F156 /* NetworkService.swift */; };
 		9EB6426A2CE5437300F7F156 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB642692CE5437300F7F156 /* Config.swift */; };
-		9EB6426E2CE5473500F7F156 /* Development.xcconfig in Sources */ = {isa = PBXBuildFile; fileRef = 9EB6426D2CE5473500F7F156 /* Development.xcconfig */; };
 		9EB811CA2CCE1FFC003C104D /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 9EB811C92CCE1FFC003C104D /* Moya */; };
 		9EB811CE2CCFB25E003C104D /* YMCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811CD2CCFB25E003C104D /* YMCircleButton.swift */; };
 		9EB811D02CCFB4BC003C104D /* YMJoinCodeStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811CF2CCFB4BC003C104D /* YMJoinCodeStackView.swift */; };
@@ -104,6 +103,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3DB56E6F2D855FEE00A8B07E /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		8832C36D2CDF195400B8DFAB /* ManittoResultBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManittoResultBoardView.swift; sourceTree = "<group>"; };
 		8832C36F2CDF232300B8DFAB /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		8832C3712CDF28CB00B8DFAB /* ManiitoRank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManiitoRank.swift; sourceTree = "<group>"; };
@@ -274,6 +274,7 @@
 		9E4F30632CC7CE5E009C59A4 = {
 			isa = PBXGroup;
 			children = (
+				3DB56E6F2D855FEE00A8B07E /* .swiftlint.yml */,
 				9E4F306E2CC7CE5F009C59A4 /* TheGreatestYourManito-iOS */,
 				9E4F306D2CC7CE5F009C59A4 /* Products */,
 			);
@@ -655,6 +656,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9E4F307A2CC7CE61009C59A4 /* Build configuration list for PBXNativeTarget "TheGreatestYourManito-iOS" */;
 			buildPhases = (
+				3DB56E6E2D855F5E00A8B07E /* SwiftLint Script */,
 				9E4F30682CC7CE5F009C59A4 /* Sources */,
 				9E4F30692CC7CE5F009C59A4 /* Frameworks */,
 				9E4F306A2CC7CE5F009C59A4 /* Resources */,
@@ -679,7 +681,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
-				LastUpgradeCheck = 1530;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					9E4F306B2CC7CE5F009C59A4 = {
 						CreatedOnToolsVersion = 15.3;
@@ -727,6 +729,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3DB56E6E2D855F5E00A8B07E /* SwiftLint Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9E4F30682CC7CE5F009C59A4 /* Sources */ = {
@@ -813,7 +837,6 @@
 				9E648DD72CF74EA0004875B2 /* UserTargetType.swift in Sources */,
 				9EB642562CE3853500F7F156 /* BeforeJoinRoomBottomView.swift in Sources */,
 				9E648DDF2CF74F8D004875B2 /* RoomService.swift in Sources */,
-				9EB6426E2CE5473500F7F156 /* Development.xcconfig in Sources */,
 				9E648E082CFE2B82004875B2 /* MainViewmodel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -859,7 +882,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -923,7 +946,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

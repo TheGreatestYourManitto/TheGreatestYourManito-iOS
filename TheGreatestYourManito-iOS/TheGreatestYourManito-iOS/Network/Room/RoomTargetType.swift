@@ -68,9 +68,8 @@ extension RoomTargetType: BaseTargetType {
         }
     }
     
-    var headers: [String : String]? {
+    var headers: [String: String]? {
         return BaseHeader.headerWithUserCode()
     }
     
 }
-

@@ -11,4 +11,3 @@ struct JoinMemberModel {
     var userId: Int
     var memberName: String
 }
-

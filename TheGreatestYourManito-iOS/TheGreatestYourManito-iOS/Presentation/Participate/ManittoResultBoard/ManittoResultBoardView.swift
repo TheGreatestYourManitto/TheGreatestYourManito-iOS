@@ -65,7 +65,7 @@ private extension ManittoResultBoardView {
     func BoardHeader(totalCount: Int) -> some View {
         HStack(spacing: 0) {
             HStack(spacing: 0) {
-                Text(StringLiterals.PlayManittoResultBoard.boardHeaderTotalStr) // TODO: Literal 파일 추가시 이동
+                Text(StringLiterals.PlayManittoResultBoard.boardHeaderTotalStr)
                     .font(.pretendardFont(for: .heading5))
                     .foregroundStyle(.gray1)
                 Text("\(totalCount)\(StringLiterals.PlayManittoResultBoard.boardCountStr)")
@@ -78,7 +78,7 @@ private extension ManittoResultBoardView {
         }
     }
     
-    func CheerCountList(cheerCount: [CheerType:Int]) -> some View {
+    func CheerCountList(cheerCount: [CheerType: Int]) -> some View {
         let columns = [GridItem(.fixed(84)), GridItem(.fixed(84))]
         
         return LazyVGrid(columns: columns, alignment: .leading, spacing: 4) {
@@ -96,5 +96,3 @@ private extension ManittoResultBoardView {
         }
     }
 }
-
-

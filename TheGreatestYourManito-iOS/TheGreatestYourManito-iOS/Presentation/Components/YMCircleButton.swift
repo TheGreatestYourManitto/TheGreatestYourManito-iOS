@@ -19,9 +19,9 @@ struct YMCircleButton: View {
     var action: () -> Void
     var body: some View {
         VStack {
-            Button(action: {
-                action()
-            }) {
+            Button(
+                action: { action() }
+            ) {
                 switch circleBtnType {
                 case .copy, .share:
                     Image(uiImage: image)

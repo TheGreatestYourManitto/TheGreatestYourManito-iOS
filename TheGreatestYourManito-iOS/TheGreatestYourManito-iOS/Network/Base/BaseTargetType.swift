@@ -22,8 +22,8 @@ extension BaseTargetType {
       return url
    }
    
-   var headers: [String : String]? {
-      let headers = ["Content-Type" : "application/json"]
+   var headers: [String: String]? {
+      let headers = ["Content-Type": "application/json"]
       return headers
    }
    

@@ -16,7 +16,7 @@ struct BeforeJoinRoomBottomView: View {
     var body: some View {
         VStack(spacing: 0) {
             HStack {
-                BeforeJoinRoomBottomSheetTitleView
+                beforeJoinRoomBottomSheetTitleView
                 Spacer()
             }
             .padding(.top, 48)
@@ -55,7 +55,7 @@ struct BeforeJoinRoomBottomView: View {
         .animation(.easeOut(duration: 0.3), value: isErrorViewStart)
     }
     
-    private var BeforeJoinRoomBottomSheetTitleView: some View {
+    private var beforeJoinRoomBottomSheetTitleView: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(StringLiterals.BeforeJoinRoom.bottomSheetTitleLabel)
                 .font(.pretendardFont(for: .heading4))

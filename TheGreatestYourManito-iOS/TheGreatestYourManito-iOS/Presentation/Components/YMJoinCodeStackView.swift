@@ -82,7 +82,3 @@ struct CopyToastView: View {
     }
     
 }
-
-//#Preview {
-//    YMJoinCodeStackView(joinCode: "asdfghjkl")
-//}

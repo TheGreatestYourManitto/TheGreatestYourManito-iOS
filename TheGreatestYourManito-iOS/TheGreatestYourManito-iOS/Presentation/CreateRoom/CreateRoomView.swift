@@ -5,7 +5,6 @@
 //  Created by 이자민 on 11/27/24.
 //
 
-
 import SwiftUI
 
 struct CreateRoomView: View {
@@ -55,8 +54,7 @@ struct CreateRoomView: View {
                     displayedComponents: .date
                 )
                 .datePickerStyle(GraphicalDatePickerStyle())
-                
-                
+                                
                 YMButton(title: "확인",
                          buttonType: .confirm,
                          action: {
@@ -151,7 +149,7 @@ struct CreateRoomView: View {
             }
             
             VStack(alignment: .leading, spacing: 16) {
-                HStack(spacing:8) {
+                HStack(spacing: 8) {
                     Text(StringLiterals.CreateRoom.EndDateTitleLabel)
                         .font(.pretendardFont(for: .heading4))
                         .foregroundColor(.ymBlack)
@@ -169,7 +167,6 @@ struct CreateRoomView: View {
                         }
                     )
                     
-                    
                     YMSelectableTextField(
                         placeholder: "종료 시간",
                         text: viewModel.selectedTime != nil ? formatTime(viewModel.selectedTime!) : "",
@@ -182,7 +179,7 @@ struct CreateRoomView: View {
                 Spacer()
                 
                 VStack(spacing: 16) {
-                    if let _ = viewModel.selectedDate {
+                    if viewModel.selectedDate != nil {
                         
                         HStack(spacing: 4) {
                             Text("마니또 공개까지")
@@ -210,7 +207,6 @@ struct CreateRoomView: View {
         .padding(.top, 48)
     }
     
-    
     private func formatDate(_ date: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
@@ -223,4 +219,8 @@ struct CreateRoomView: View {
         return formatter.string(from: date)
     }
     
+}
+
+#Preview {
+    CreateRoomView(viewModel: CreateRoomViewModel(), presentThis: .constant(false))
 }

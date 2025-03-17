@@ -16,7 +16,7 @@ struct AfterJoinRoomView: View {
     
     var body: some View {
         ZStack(alignment: .top) {
-            VStack() {
+            VStack {
                 headerView
                 Spacer()
             }
@@ -64,6 +64,3 @@ struct AfterJoinRoomView: View {
     }
     
 }
-
-
-

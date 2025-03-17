@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct IntroView: View {
-    @State private var tag:Int? = nil
+    @State private var tag: Int?
     @StateObject var viewModel: IntroViewModel
     @State var isPresented: Bool = false
     

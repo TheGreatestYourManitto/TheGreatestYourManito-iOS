@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-enum manitoResultType {
+enum ManitoResultType {
     case notOpen
     case open
 }
 
 struct OpenManitoView: View {
-    @State var manitoResultType: manitoResultType
+    @State var manitoResultType: ManitoResultType
     @State var isLoading: Bool = false
     @StateObject var viewModel: OpenMaintoViewModel
     
@@ -105,5 +105,3 @@ struct OpenManitoView: View {
     }
     
 }
-
-

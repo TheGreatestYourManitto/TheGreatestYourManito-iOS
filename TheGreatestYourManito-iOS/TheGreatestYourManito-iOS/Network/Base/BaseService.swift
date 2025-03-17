@@ -33,4 +33,3 @@ class BaseService {
       return .success(decodedData)
    }
 }
-

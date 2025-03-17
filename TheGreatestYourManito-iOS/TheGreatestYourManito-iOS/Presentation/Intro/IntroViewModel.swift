@@ -9,7 +9,7 @@ import SwiftUI
 
 final class IntroViewModel: ObservableObject {
     
-    @Published var isIdentified: Bool? = nil
+    @Published var isIdentified: Bool?
     @Published var isLoading: Bool = false
     @Published var toastOccurred: Bool = false
     @Published var toastText: String = ""

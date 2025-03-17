@@ -37,7 +37,7 @@ struct YMLoadingView: View {
     }
     
     private func startAnimation() {
-        Timer.scheduledTimer(withTimeInterval: animationInterval, repeats: true) { timer in
+        Timer.scheduledTimer(withTimeInterval: animationInterval, repeats: true) { _ in
             visibleCount += 1
             
             if visibleCount > CheerType.allCases.count {
@@ -46,4 +46,3 @@ struct YMLoadingView: View {
         }
     }
 }
-

@@ -58,7 +58,6 @@ struct ManittoRank: Codable {
     }
 }
 
-
 typealias ManittoRanks = [ManittoRank]
 
 extension ManittoRanks {
@@ -80,6 +79,3 @@ extension ManittoRanks {
             }
     }
 }
-
-
-

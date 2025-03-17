@@ -5,7 +5,6 @@
 //  Created by 이자민 on 11/28/24.
 //
 
-
 import SwiftUI
 
 struct AfterCreateRoomView: View {
@@ -105,7 +104,7 @@ struct AfterCreateRoomView: View {
         }
         print(isCopyOnClipBoard)
     }
-    func dismissPrev(handler: @escaping ()-> ()) {
+    func dismissPrev(handler: @escaping () -> ()) {
         DispatchQueue.main.async {
             handler()
         }

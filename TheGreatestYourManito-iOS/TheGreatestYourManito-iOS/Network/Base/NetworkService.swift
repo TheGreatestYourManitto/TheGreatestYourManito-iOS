@@ -20,4 +20,3 @@ final class NetworkService {
     let cheerService: CheerServiceProtocol = CheerService.shared
     
 }
-
