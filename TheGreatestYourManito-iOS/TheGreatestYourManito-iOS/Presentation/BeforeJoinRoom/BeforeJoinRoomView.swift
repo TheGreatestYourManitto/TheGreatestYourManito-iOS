@@ -39,8 +39,6 @@ struct BeforeJoinRoomView: View {
                     }
                 }
             )
-        
-        
     }
     
     private var headerView: some View {

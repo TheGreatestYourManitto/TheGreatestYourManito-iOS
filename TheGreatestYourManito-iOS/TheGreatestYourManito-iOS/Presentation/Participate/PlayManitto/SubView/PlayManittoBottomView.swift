@@ -14,8 +14,8 @@ struct PlayManittoBottomView: View {
         let status = ManittoEventStatus.getStatus(from: viewModel.manittoEndDate)
         VStack {
             VStack(alignment: .leading, spacing: 24) {
-                cheerLabelView()
-                buttonStack(cheerType: $viewModel.cheerType)
+                CheerLabelView()
+                ButtonStack(cheerType: $viewModel.cheerType)
                 YMTextField(
                     placeholder: StringLiterals.PlayManitto.bottomSheetTextFieldPlaceholder,
                     text: $viewModel.cheerText
@@ -48,7 +48,7 @@ struct PlayManittoBottomView: View {
 }
 
 extension PlayManittoBottomView {
-    struct cheerLabelView: View {
+    struct CheerLabelView: View {
         var body: some View {
             VStack(alignment: .leading, spacing: 8) {
                 Text(StringLiterals.PlayManitto.bottomSheetCheerLabel1)
@@ -61,7 +61,7 @@ extension PlayManittoBottomView {
 }
 
 extension PlayManittoBottomView {
-    struct buttonStack: View {
+    struct ButtonStack: View {
         @Binding var cheerType: CheerType?
         @EnvironmentObject var viewModel: PlayManittoViewModel
         

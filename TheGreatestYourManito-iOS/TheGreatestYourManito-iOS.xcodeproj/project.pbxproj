@@ -82,7 +82,6 @@
 		9EB642652CE542B600F7F156 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB642642CE542B600F7F156 /* NetworkResult.swift */; };
 		9EB642672CE542DE00F7F156 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB642662CE542DE00F7F156 /* NetworkService.swift */; };
 		9EB6426A2CE5437300F7F156 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB642692CE5437300F7F156 /* Config.swift */; };
-		9EB6426E2CE5473500F7F156 /* Development.xcconfig in Sources */ = {isa = PBXBuildFile; fileRef = 9EB6426D2CE5473500F7F156 /* Development.xcconfig */; };
 		9EB811CA2CCE1FFC003C104D /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 9EB811C92CCE1FFC003C104D /* Moya */; };
 		9EB811CE2CCFB25E003C104D /* YMCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811CD2CCFB25E003C104D /* YMCircleButton.swift */; };
 		9EB811D02CCFB4BC003C104D /* YMJoinCodeStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB811CF2CCFB4BC003C104D /* YMJoinCodeStackView.swift */; };
@@ -682,7 +681,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
-				LastUpgradeCheck = 1530;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					9E4F306B2CC7CE5F009C59A4 = {
 						CreatedOnToolsVersion = 15.3;
@@ -838,7 +837,6 @@
 				9E648DD72CF74EA0004875B2 /* UserTargetType.swift in Sources */,
 				9EB642562CE3853500F7F156 /* BeforeJoinRoomBottomView.swift in Sources */,
 				9E648DDF2CF74F8D004875B2 /* RoomService.swift in Sources */,
-				9EB6426E2CE5473500F7F156 /* Development.xcconfig in Sources */,
 				9E648E082CFE2B82004875B2 /* MainViewmodel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,7 +16,7 @@ struct SignUpView: View {
             Text("닉네임을 입력하세요")
                 .font(.pretendardFont(for: .heading2))
                 .padding(.top, 100)
-            VStack(alignment: .leading){
+            VStack(alignment: .leading) {
                 Text("닉네임")
                     .font(.pretendardFont(for: .subtitle1))
                     .foregroundStyle(.gray1)

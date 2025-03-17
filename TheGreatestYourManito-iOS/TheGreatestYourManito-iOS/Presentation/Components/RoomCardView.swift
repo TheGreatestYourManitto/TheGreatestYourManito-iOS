@@ -12,7 +12,6 @@ struct RoomCardView: View {
     var dDay: Int
     let onTap: () -> Void
     
-    
     var body: some View {
         HStack(spacing: 24) {
             

@@ -8,15 +8,15 @@
 import SwiftUI
 
 public struct YMNavigationBarModifier<C, L, R>: ViewModifier where C: View, L: View, R: View {
-    let center: (() ->C)?
+    let center: (() -> C)?
     let left: (() -> L)?
     let right: (() -> R)?
     let backgroundColor: Color
     
     public init(
         center: (() -> C)? = {Spacer()},
-        left: (()-> L)? = {Spacer(minLength: 40)},
-        right: (()-> R)? = {Spacer(minLength: 40)},
+        left: (() -> L)? = {Spacer(minLength: 40)},
+        right: (() -> R)? = {Spacer(minLength: 40)},
         backgroundColor: Color? = nil
     ) {
         self.center = center
@@ -97,7 +97,7 @@ public extension View {
     func ymNavBar<L, R> (
         left: @escaping (() -> L),
         right: @escaping (() -> R)
-    ) -> some View where L: View, R: View{
+    ) -> some View where L: View, R: View {
         modifier(YMNavigationBarModifier(left: left, right: right))
     }
 }

@@ -42,7 +42,7 @@ private extension ManittoResultBoardBottomView {
             .padding(.vertical, 20)
             
             VStack(spacing: 20) {
-                ForEach(Array(manittoRankList.enumerated()), id: \.offset) { (index, rank) in
+                ForEach(Array(manittoRankList.enumerated()), id: \.offset) { (_, rank) in
                     ManittoRankListItem(
                         rank: rank.rank,
                         personFrom: rank.fromPerson.name,

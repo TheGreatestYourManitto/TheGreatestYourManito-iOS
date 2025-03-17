@@ -13,17 +13,17 @@ final class CreateRoomViewModel: ObservableObject {
             isAllVailed()
         }
     }
-    @Published var selectedDate: Date? = nil {
+    @Published var selectedDate: Date? {
         didSet {
             isAllVailed()
         }
     }
-    @Published var selectedTime: Date? = nil {
+    @Published var selectedTime: Date? {
         didSet {
             isAllVailed()
         }
     }
-    @Published var endDateTime: Date? = nil
+    @Published var endDateTime: Date?
     @Published var roomId: Int = 0
     @Published var joinCode: String = ""
     @Published var dDay: Int = 0

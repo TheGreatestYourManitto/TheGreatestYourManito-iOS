@@ -14,7 +14,6 @@ struct AfterJoinRoomBottomView: View {
     @State private var showDeleteSheet = false
     @Environment(\.dismiss) var disMiss
    
-    
     var body: some View {
         VStack(spacing: 0) {
             HStack {
@@ -220,7 +219,7 @@ struct BottomSheetContentView: View {
                 switch contentType {
                     
                 case .delete:
-                    if let removeTargetId = viewModel.removeTargetId{
+                    if let removeTargetId = viewModel.removeTargetId {
                         viewModel.deleteRoomMember(roomId: viewModel.roomId, userId: removeTargetId)
                     }
                 case .confirm:
