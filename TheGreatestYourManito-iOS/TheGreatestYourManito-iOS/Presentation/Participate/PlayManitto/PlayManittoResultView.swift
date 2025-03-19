@@ -25,7 +25,7 @@ struct PlayManittoResultView: View {
             
             Spacer(minLength: 240)
             
-            VStack {
+            VStack(spacing: 14) {
                 Text(StringLiterals.PlayManittoResult.todaySentCheerLabel)
                     .font(.pretendardFont(for: .heading6))
                     .foregroundStyle(.ymBlack)
@@ -46,4 +46,8 @@ struct PlayManittoResultView: View {
             MainView(viewModel: .init())
         }
     }
+}
+
+#Preview {
+    PlayManittoResultView(todaysCheeringCount: 0)
 }

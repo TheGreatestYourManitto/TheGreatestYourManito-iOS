@@ -50,7 +50,6 @@ final class CreateRoomViewModel: ObservableObject {
     }
     
     func tappedConfirmButton() {
-        selectedDate = Date() // 기본값 설정
         let calendar = Calendar.current
         let today = calendar.startOfDay(for: Date()) // 오늘의 날짜를 00:00으로 설정
         let targetDate = calendar.startOfDay(for: selectedDate ?? Date()) // 선택된 날짜를 00:00으로 설정
@@ -101,7 +100,6 @@ final class CreateRoomViewModel: ObservableObject {
 }
 
 extension CreateRoomViewModel {
-    
     func postMakeRoom(onCompletion: @escaping () -> Void) {
         guard let endDateTime = endDateTime else { return print("endDateTime error")}
         print("roomName: \(roomName), endDateTime: \(endDateTime.toISO8601String()) 전송 API 요청")
