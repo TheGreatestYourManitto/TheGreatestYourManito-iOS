@@ -20,15 +20,17 @@ final class SignUpViewModel: ObservableObject {
     @Published var toastText: String = ""
     
     func postMakeUser(nickname: String) {
-        guard let deviceId = UserDefaults.standard.string(forKey: "deviceId") else {return}
+        guard let deviceId = UserDefaults.standard.string(forKey: UserDefaultsLiterals.deviceId) else {return}
         let requestBody = MakeUserRequestBody(nickname: nickname, deviceId: deviceId)
         
         NetworkService.shared.userService.postMakeUser(requestBody: requestBody, completion: { result in
             switch result {
             case .success(let response):
                 print("Success: \(response)")
-                UserDefaults.standard.set(response.result?.userCode, forKey: "userCode")
-                print(UserDefaults.standard.string(forKey: "userCode") ?? "")
+                UserDefaults.standard.set(response.result?.userCode, forKey: UserDefaultsLiterals.userCode)
+                UserDefaults.standard.set(response.result?.userId, forKey: UserDefaultsLiterals.userId)
+                print(UserDefaults.standard.string(forKey: UserDefaultsLiterals.userCode) ?? "")
+                print(UserDefaults.standard.string(forKey: UserDefaultsLiterals.userId) ?? "")
                 self.isSuccess = true
             default:
                 self.toastPost("네트워크 에러가 발생했습니다./n다시 시도해주세요.")

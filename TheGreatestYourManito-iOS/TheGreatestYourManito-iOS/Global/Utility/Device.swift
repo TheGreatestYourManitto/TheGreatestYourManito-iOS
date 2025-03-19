@@ -11,7 +11,7 @@ struct Device {
     
     func getDeviceUUID() -> String {
         let deviceId = UIDevice.current.identifierForVendor!.uuidString
-        UserDefaults.standard.set(deviceId, forKey: "deviceId")
+        UserDefaults.standard.set(deviceId, forKey: UserDefaultsLiterals.deviceId)
         return deviceId
     }
     

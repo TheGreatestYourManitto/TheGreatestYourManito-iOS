@@ -10,7 +10,7 @@ import Foundation
 struct BaseHeader {
     
     static func headerWithUserCode() -> [String: String] {
-        guard let userCode = UserDefaults.standard.string(forKey: "userCode") else {return ["": ""]}
+        guard let userCode = UserDefaults.standard.string(forKey: UserDefaultsLiterals.userCode) else {return ["": ""]}
         return ["userCode": userCode]
     }
     

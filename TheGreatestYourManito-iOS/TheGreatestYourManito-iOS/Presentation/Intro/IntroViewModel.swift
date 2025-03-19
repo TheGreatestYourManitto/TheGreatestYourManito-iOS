@@ -20,7 +20,7 @@ final class IntroViewModel: ObservableObject {
         
         let device = Device()
         _ = device.getDeviceUUID()
-        guard let deviceId = UserDefaults.standard.string(forKey: "deviceId") else {return}
+        guard let deviceId = UserDefaults.standard.string(forKey: UserDefaultsLiterals.deviceId) else {return}
         let requestBody = UserIdentifyRequestBody(deviceId: deviceId)
         
         NetworkService.shared.userService.postUserIdentify(
