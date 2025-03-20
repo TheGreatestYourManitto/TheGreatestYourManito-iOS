@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3D93459A2D8A97590040621E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D9345992D8A97590040621E /* GoogleService-Info.plist */; };
 		3D93459E2D8A98D60040621E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3D93459D2D8A98D60040621E /* FirebaseAnalytics */; };
 		3D9345A02D8A98D60040621E /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 3D93459F2D8A98D60040621E /* FirebaseAnalyticsOnDeviceConversion */; };
 		3D9345A22D8A98D60040621E /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 3D9345A12D8A98D60040621E /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		3D9345A42D8A98D60040621E /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 3D9345A32D8A98D60040621E /* FirebaseAppCheck */; };
 		3D9345A62D8A98D60040621E /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 3D9345A52D8A98D60040621E /* FirebaseAppDistribution-Beta */; };
 		3D9345AA2D8AA2820040621E /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 3D9345A92D8AA2820040621E /* FirebaseMessaging */; };
+		3D9345AD2D8AD08C0040621E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3D9345AC2D8AD08C0040621E /* FirebaseFirestore */; };
+		3D9345AF2D8ADBB80040621E /* UserDefaultsLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9345AE2D8ADBB80040621E /* UserDefaultsLiterals.swift */; };
 		8832C36E2CDF195400B8DFAB /* ManittoResultBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8832C36D2CDF195400B8DFAB /* ManittoResultBoardView.swift */; };
 		8832C3702CDF232300B8DFAB /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8832C36F2CDF232300B8DFAB /* Color+.swift */; };
 		8832C3722CDF28CB00B8DFAB /* ManiitoRank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8832C3712CDF28CB00B8DFAB /* ManiitoRank.swift */; };
@@ -110,8 +111,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3D9345992D8A97590040621E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3D9345A72D8A9AA20040621E /* TheGreatestYourManito-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TheGreatestYourManito-iOS.entitlements"; sourceTree = "<group>"; };
+		3D9345AE2D8ADBB80040621E /* UserDefaultsLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsLiterals.swift; sourceTree = "<group>"; };
 		3DB56E6F2D855FEE00A8B07E /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		8832C36D2CDF195400B8DFAB /* ManittoResultBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManittoResultBoardView.swift; sourceTree = "<group>"; };
 		8832C36F2CDF232300B8DFAB /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
@@ -219,6 +220,7 @@
 				3D9345AA2D8AA2820040621E /* FirebaseMessaging in Frameworks */,
 				9EB811CA2CCE1FFC003C104D /* Moya in Frameworks */,
 				3D9345A42D8A98D60040621E /* FirebaseAppCheck in Frameworks */,
+				3D9345AD2D8AD08C0040621E /* FirebaseFirestore in Frameworks */,
 				3D9345A22D8A98D60040621E /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				3D9345A62D8A98D60040621E /* FirebaseAppDistribution-Beta in Frameworks */,
 			);
@@ -237,7 +239,6 @@
 		3D9345AB2D8AA3C30040621E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3D9345992D8A97590040621E /* GoogleService-Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -428,6 +429,7 @@
 			children = (
 				9E4F30942CC7D686009C59A4 /* Font */,
 				9E6699762CD3CF4D0053960A /* StringLiterals.swift */,
+				3D9345AE2D8ADBB80040621E /* UserDefaultsLiterals.swift */,
 			);
 			path = Literal;
 			sourceTree = "<group>";
@@ -707,6 +709,7 @@
 				3D9345A32D8A98D60040621E /* FirebaseAppCheck */,
 				3D9345A52D8A98D60040621E /* FirebaseAppDistribution-Beta */,
 				3D9345A92D8AA2820040621E /* FirebaseMessaging */,
+				3D9345AC2D8AD08C0040621E /* FirebaseFirestore */,
 			);
 			productName = "TheGreatestYourManito-iOS";
 			productReference = 9E4F306C2CC7CE5F009C59A4 /* TheGreatestYourManito-iOS.app */;
@@ -759,7 +762,6 @@
 				9E4F30962CC7D686009C59A4 /* Pretendard-Bold.otf in Resources */,
 				9E4F309A2CC7D686009C59A4 /* Pretendard-Medium.otf in Resources */,
 				9E4F309B2CC7D686009C59A4 /* Pretendard-Regular.otf in Resources */,
-				3D93459A2D8A97590040621E /* GoogleService-Info.plist in Resources */,
 				9E4F30972CC7D686009C59A4 /* Pretendard-ExtraBold.otf in Resources */,
 				9E4F30992CC7D686009C59A4 /* Pretendard-Light.otf in Resources */,
 				9E4F309C2CC7D686009C59A4 /* Pretendard-SemiBold.otf in Resources */,
@@ -822,6 +824,7 @@
 				ED6669EC2CC8CA680005D599 /* YMButton.swift in Sources */,
 				8832C3752CDF292100B8DFAB /* ManittoResultBoardBottomView.swift in Sources */,
 				9EB6425F2CE5421200F7F156 /* BaseService.swift in Sources */,
+				3D9345AF2D8ADBB80040621E /* UserDefaultsLiterals.swift in Sources */,
 				9EB811CE2CCFB25E003C104D /* YMCircleButton.swift in Sources */,
 				9EB6425A2CE3E77D00F7F156 /* YMLoadingView.swift in Sources */,
 				9E4F308A2CC7D484009C59A4 /* Font+.swift in Sources */,
@@ -1035,7 +1038,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = TeamManittio.YourManitto;
+				PRODUCT_BUNDLE_IDENTIFIER = TeamManitto.YourManitto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1077,7 +1080,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = TeamManittio.YourManitto;
+				PRODUCT_BUNDLE_IDENTIFIER = TeamManitto.YourManitto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1162,6 +1165,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3D93459C2D8A98D60040621E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
+		};
+		3D9345AC2D8AD08C0040621E /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D93459C2D8A98D60040621E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 		9EB811C92CCE1FFC003C104D /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;
