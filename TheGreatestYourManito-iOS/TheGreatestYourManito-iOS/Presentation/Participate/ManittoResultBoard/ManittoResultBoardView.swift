@@ -48,8 +48,8 @@ struct ManittoResultBoardView: View {
         .onAppear {
             viewModel.onAppear()
         }
-        .onChange(of: viewModel.deleteCompleted) {
-            if viewModel.deleteCompleted { dismiss() }
+        .onChange(of: viewModel.deleteCompleted) { newValue in
+            if newValue { dismiss() }
         }
     }
 }

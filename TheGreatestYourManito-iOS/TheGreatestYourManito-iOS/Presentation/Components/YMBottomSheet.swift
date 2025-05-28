@@ -41,12 +41,12 @@ public struct YMBottomSheetModifier<V>: ViewModifier where V: View {
                 switch bottomSheetType {
                 case .dragBar:
                     contentView()
-                        .presentationCornerRadius(40)
+                        .cornerRadius(40, corners: [.topLeft, .topRight])
                         .presentationDragIndicator(.visible)
                         .presentationDetents([.height(sheetHeight)])
                 case .nonDragBar:
                     contentView()
-                        .presentationCornerRadius(40)
+                        .cornerRadius(40, corners: [.topLeft, .topRight])
                         .presentationDetents([.height(sheetHeight)])
                         .presentationDragIndicator(.hidden)
                         .interactiveDismissDisabled()

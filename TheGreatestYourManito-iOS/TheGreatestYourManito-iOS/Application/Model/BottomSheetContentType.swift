@@ -34,11 +34,11 @@ enum BottomSheetContentType: CaseIterable {
         case .delete:
             return Text(StringLiterals.AfterJoinRoom.removeMemberLabel)
                 .font(.pretendardFont(for: .heading3))
-                .foregroundStyle(.ymBlack)
+                .foregroundColor(.ymBlack)
         case .confirm:
             return Text(StringLiterals.AfterJoinRoom.confirmRoomLabel)
                 .font(.pretendardFont(for: .heading3))
-                .foregroundStyle(.ymBlack)
+                .foregroundColor(.ymBlack)
         }
     }
     
@@ -47,11 +47,11 @@ enum BottomSheetContentType: CaseIterable {
         case .delete:
             return Text(StringLiterals.AfterJoinRoom.removeMemberSubLabel)
                 .font(.pretendardFont(for: .heading6))
-                .foregroundStyle(.gray1)
+                .foregroundColor(.gray1)
         case .confirm:
             return Text(StringLiterals.AfterJoinRoom.confirmRoomSubLabel)
                 .font(.pretendardFont(for: .heading6))
-                .foregroundStyle(.gray1)
+                .foregroundColor(.gray1)
         }
     }
     
@@ -60,11 +60,11 @@ enum BottomSheetContentType: CaseIterable {
         case .delete:
             return Text(StringLiterals.AfterJoinRoom.deleteBottomSheetLeftBtnLabel)
                 .font(.pretendardFont(for: .heading4))
-                .foregroundStyle(.gray1)
+                .foregroundColor(.gray1)
         case .confirm:
             return Text(StringLiterals.AfterJoinRoom.confirmBottomSheetLeftBtnLabel)
                 .font(.pretendardFont(for: .heading4))
-                .foregroundStyle(.gray1)
+                .foregroundColor(.gray1)
         }
     }
     
@@ -73,11 +73,11 @@ enum BottomSheetContentType: CaseIterable {
         case .delete:
             return Text(StringLiterals.AfterJoinRoom.deleteBottomSheetRightBtnLabel)
                 .font(.pretendardFont(for: .heading4))
-                .foregroundStyle(.ymWhite)
+                .foregroundColor(.ymWhite)
         case .confirm:
             return Text(StringLiterals.AfterJoinRoom.confirmBottomSheetRightBtnLabel)
                 .font(.pretendardFont(for: .heading4))
-                .foregroundStyle(.ymWhite)
+                .foregroundColor(.ymWhite)
         }
     }
 }
